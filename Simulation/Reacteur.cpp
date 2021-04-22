@@ -26,11 +26,11 @@ void reacteur::set_bore(double valeur_demandee){
     }
 }
 
-double reacteur::get_bore(){
+double reacteur::get_bore() const{
     return taux;
 }
 
-double reacteur::get_injecteur(){
+double reacteur::get_injecteur() const{
     return etat_injecteur;
 }
 
@@ -45,31 +45,28 @@ void reacteur::set_graphite(double valeur_demandee){
     }
 }
 
-double reacteur::get_graphite(){
+double reacteur::get_graphite() const{
     return proportion_graphite;
 }
 
-double reacteur::get_barre(){
+double reacteur::get_barre() const{
     return etat_graphite;
 }
 
-double reacteur::get_cuve(){
+double reacteur::get_cuve() const{
     return etat_cuve;
 }
 
-double reacteur::get_piscine(){
+double reacteur::get_piscine() const{
     return etat_piscine;
 }
 
-double reacteur::get_canaux(){
+double reacteur::get_canaux() const{
     return etat_canaux;
 }
 
-double reacteur::get_radiation(){
+double reacteur::get_radiation() const{
     return radiation_piscine;
 }
 
-int main(){
-    return(1);
-}
 

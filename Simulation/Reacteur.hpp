@@ -49,7 +49,7 @@ public:
      *
      * @return taux
      */
-     double get_bore();
+     double get_bore() const;
 
      /** 
      * @brief Permet d'obtenir l'état des injecteurs
@@ -57,7 +57,7 @@ public:
      *
      * @return etat_injecteur
      */
-     double get_injecteur();
+     double get_injecteur() const;
     
      /**
      * @brief Permet d'ajuster la proportion des barres de graphite
@@ -74,42 +74,42 @@ public:
      *
      * @return proportion_graphite
      */
-     double get_graphite();
+     double get_graphite() const;
 
      /**
      * @brief Permet d'obtenir l'état des barres de graphite
      *
      * @return etat_graphite
      */
-     double get_barre();
+     double get_barre() const;
 
      /**
      * @brief Permet d'obtenir l'état de la cuve
      *
      * @return etat_cuve
      */
-     double get_cuve();
+     double get_cuve() const;
 
      /**
      * @brief Permet d'obtenir l'état de la piscine
      *
      * @return etat_piscine
      */
-     double get_piscine();
+     double get_piscine() const;
 
      /**
      * @brief Permet d'obtenir l'état des canaux
      *
      * @return etat_canaux
      */
-     double get_canaux();
+     double get_canaux() const;
 
      /**
      * @brief Permet d'obtenir les radiations de la piscine
      *
      * @return radiation_piscine
      */
-     double get_radiation();
+     double get_radiation() const;
 
 
 private:

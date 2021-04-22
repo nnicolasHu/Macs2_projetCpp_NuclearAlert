@@ -13,26 +13,22 @@ centrale::centrale(){
 
 /** Méthodes **/
 
-double centrale::get_etat_enceinte(){
+double centrale::get_etat_enceinte() const{
     return etat_enceinte;
 }
 
-double centrale::get_etat_centrale(){
+double centrale::get_etat_centrale() const{
     return etat_centrale;
 }
 
-double centrale::get_pression(){
+double centrale::get_pression() const{
     return pression_enceinte;
 }
 
-double centrale::get_production(){
+double centrale::get_production() const{
     return production;
 }
 
-double centrale::get_radioactivite(){
+double centrale::get_radioactivite() const{
     return radioactivité;
-}
-
-int main(){
-    return EXIT_SUCCESS;
 }

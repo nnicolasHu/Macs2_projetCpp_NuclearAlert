@@ -31,35 +31,35 @@ public:
      *
      * @return etat_enceinte
      */
-    double get_etat_enceinte();
+    double get_etat_enceinte() const;
 
     /** 
      * @brief Permet d'obtenir l'état de la centrale
      *
      * @return etat_centrale
      */
-    double get_etat_centrale();
+    double get_etat_centrale() const;
 
     /**
      * @brief Permet d'obtenir la pression subit par l'enceinte
      *
      * @return pression_enceinte
      */
-    double get_pression();
+    double get_pression() const;
 
     /**
      * @brief Permet d'obtenir la production de la centrale
      *
      * @return production
      */
-    double get_production();
+    double get_production() const;
 
     /**
      * @brief Permet d'obtenir la radioactivité à l'intérieur de l'enceinte
      *
      * @return radioactivité
      */
-    double get_radioactivite();
+    double get_radioactivite() const;
 
 
 private:
