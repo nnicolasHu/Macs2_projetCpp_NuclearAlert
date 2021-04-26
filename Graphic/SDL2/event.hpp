@@ -1,14 +1,15 @@
 #ifndef _SDL2_EVENT_HPP_
 #define _SDL2_EVENT_HPP_
 #if defined(_WIN32)
-#  include <SDL2/SDL.h>
+#include <SDL2/SDL.h>
 #else
-#  include <SDL.h>
+#include <SDL.h>
 #endif
 #include <cstdint>
 #include <vector>
 #include <memory>
 #include <algorithm>
+#include <array>
 
 namespace sdl2
 {
