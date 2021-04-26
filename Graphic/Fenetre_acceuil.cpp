@@ -49,11 +49,11 @@ std::string Fenetre_acceuil(){
                         if(keychar == 8){
 
                             pseudo.pop_back();
-                            std::cout << pseudo << std::endl;
+                            
                         } 
                         else {
                             pseudo.operator+=(keychar);
-                            std::cout << pseudo << std::endl;
+                            
                         }
                         
                     }
