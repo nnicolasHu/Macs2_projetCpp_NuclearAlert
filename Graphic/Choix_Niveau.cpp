@@ -42,17 +42,17 @@ int Choix_Niveau(){
                     auto[px, py] = boutton.position();
                     if(boutton.state() == sdl2::event_mouse_button::released){
                         if((px>=325 && px<=475) & (py>=170 && py<=270)){
-                            std::cout << "Niveau 1" << std::endl;
+                            //std::cout << "Niveau 1" << std::endl;
                             level = 1;
                             quitting = true;
                         }
                         else if((px>=325 && px<=475) & (py>=290 && py<=390)){
-                            std::cout << "Niveau 2"<<std::endl;
+                            //std::cout << "Niveau 2"<<std::endl;
                             level = 2;
                             quitting = true;
                         }
                         else if((px>=325 && px<=475) & (py>=410 && py<=510)){
-                            std::cout << "Niveau 3" << std::endl;
+                            //std::cout << "Niveau 3" << std::endl;
                             level = 3;
                             quitting = true;
                         }
