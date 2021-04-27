@@ -4,6 +4,7 @@
 
 std::string Fenetre_acceuil();
 int Choix_Niveau();
+void Centrale_tab();
 
 #endif
 
