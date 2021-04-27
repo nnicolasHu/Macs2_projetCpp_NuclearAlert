@@ -3,6 +3,7 @@
 #include<string>
 
 std::string Fenetre_acceuil();
+int Choix_Niveau(std::string pseudo);
 
 #endif
 

@@ -41,8 +41,8 @@ SDL2/formated_texte.o : SDL2/window.hpp SDL2/font.hpp SDL2/formated_text.hpp SDL
 SDL2/image.o : SDL2/window.hpp SDL2/image.hpp SDL2/image.cpp
 	$(CXX) $(CXXFLAGS) -c SDL2/image.cpp -o SDL2/image.o
 
-Teste.exe : $(OBJS) Fenetre_acceuil.cpp
-	$(CXX) $(CXXFLAGS) $(OBJS) Fenetre_acceuil.cpp -o Teste.exe $(LIBS)
+Teste.exe : $(OBJS) Fenetre_acceuil.cpp Choix_Niveau.cpp
+	$(CXX) $(CXXFLAGS) $(OBJS) Fenetre_acceuil.cpp Choix_Niveau.cpp -o Teste.exe $(LIBS)
 
 help:
 	@echo "Available targets : "

@@ -7,7 +7,7 @@ std::string Fenetre_acceuil(){
     sdl2::font fonte_texte("./data/Lato-Thin.ttf", 18);
     sdl2::font fonte_titre("./data/Lato-Bold.ttf", 28);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
-    sdl2::window fenêtre("Nuclear Alert : Console principale", {800, 600});
+    sdl2::window fenêtre("Nuclear Alert : Authentification", {800, 600});
 
     sdl2::texte phrase("Entrez votre pseudo : ", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     phrase.at(310, 310);
