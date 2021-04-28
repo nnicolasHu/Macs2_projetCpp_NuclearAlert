@@ -42,37 +42,37 @@ public:
     /** 
      * @brief Permet d'obtenir l'état de l'enceinte 
      *
-     * @return etat_enceinte
+     * @return E_enceinte
      */
-    double get_etat_enceinte() const override;
+    double get_E_enceinte() const override;
 
     /** 
      * @brief Permet d'obtenir l'état de la centrale
      *
-     * @return etat_centrale
+     * @return E_centrale
      */
-    double get_etat_centrale() const override;
+    double get_E_centrale() const override;
 
     /**
      * @brief Permet d'obtenir la pression subit par l'enceinte
      *
-     * @return pression_enceinte
+     * @return P_enceinte
      */
-    double get_pression() const override;
+    double get_P_enceinte() const override;
 
     /**
      * @brief Permet d'obtenir la production de la centrale
      *
-     * @return production
+     * @return MW
      */
-    double get_production() const override;
+    double get_MW() const override;
 
     /**
      * @brief Permet d'obtenir la radioactivité à l'intérieur de l'enceinte
      *
-     * @return radioactivité
+     * @return R_enceinte
      */
-    double get_radioactivite() const override;
+    double get_R_enceinte() const override;
 
     /**
      * @brief Permet de mettre à jour la pression de l'enceinte

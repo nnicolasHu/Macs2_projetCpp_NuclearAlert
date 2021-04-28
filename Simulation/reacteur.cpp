@@ -35,11 +35,11 @@ void reacteur::set_bore(double valeur_demandee){
     }
 }
 
-double reacteur::get_bore() const{
+double reacteur::get_TBore_eff() const{
     return TBore_eff;
 }
 
-double reacteur::get_etat_bore() const{
+double reacteur::get_E_bore() const{
     return E_bore;
 }
 
@@ -59,35 +59,35 @@ void reacteur::set_graphite(double valeur_demandee){
     }
 }
 
-double reacteur::get_graphite() const{
+double reacteur::get_TGraphite_eff() const{
     return TGraphite_eff;
 }
 
-double reacteur::get_etat_barre() const{
+double reacteur::get_E_barre() const{
     return E_barre;
 }
 
-double reacteur::get_etat_cuve() const{
+double reacteur::get_E_cuve() const{
     return E_cuve;
 }
 
-double reacteur::get_etat_piscine() const{
+double reacteur::get_E_piscine() const{
     return E_piscine;
 }
 
-double reacteur::get_etat_canaux() const{
+double reacteur::get_E_canaux() const{
     return E_canaux;
 }
 
-double reacteur::get_radiation_piscine() const{
+double reacteur::get_R_piscine() const{
     return R_piscine;
 }
 
-void reacteur::maj_radiation_piscine(double R1){
+void reacteur::maj_R_piscine(double R1){
     R_piscine = (1.- E_cuve)*R1 + 100 + RND(45);
 }
 
-void reacteur::degr_etat_cuve(double T1, double E_circuit_primaire){
+void reacteur::degr_E_cuve(double T1, double E_circuit_primaire){
     if ((T1>=50) && (E_circuit_primaire<0.6)){
         E_cuve -=  (RND(0.02))*(RND(1.)>=0.6);
     }
@@ -99,13 +99,13 @@ void reacteur::degr_etat_cuve(double T1, double E_circuit_primaire){
     }
 }
 
-void reacteur::degr_etat_piscine(double T1, double E_circuit_primaire){
+void reacteur::degr_E_piscine(double T1, double E_circuit_primaire){
     if ((T1>=50) && (E_circuit_primaire<0.2)){
         E_piscine -= (RND(0.06))*(RND(1.)>=0.2);
     }
 }
 
-void reacteur::degr_etat_barre(double T1, double TGraphite_eff){
+void reacteur::degr_E_barre(double T1, double TGraphite_eff){
     if ((T1>=50) && (E_canaux<0.6) && (TGraphite_eff>0.4) ){
         E_barre -= (RND(0.02))*(RND(1.)>=0.7);
     }
@@ -117,13 +117,13 @@ void reacteur::degr_etat_barre(double T1, double TGraphite_eff){
     }
 }
 
-void reacteur::degr_etat_canaux(double T1){
+void reacteur::degr_E_canaux(double T1){
     if ((T1>=50) && (E_cuve<0.5)){
         E_canaux -= (RND(0.05))*(RND(1.)>=0.5);
     }
 }
 
-void reacteur::degr_etat_bore(double T1, double E_circuit_primaire){
+void reacteur::degr_E_bore(double T1, double E_circuit_primaire){
     if ((T1>=50) && (E_cuve<0.5) && (E_circuit_primaire<0.5)){
         E_bore -= (RND(0.02))*(RND(1.)>=0.5);
     }

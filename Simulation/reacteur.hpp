@@ -49,7 +49,7 @@ public:
      *
      * @return TBore_eff
      */
-     double get_bore() const;
+     double get_TBore_eff() const;
 
      /** 
      * @brief Permet d'obtenir l'état des injecteurs
@@ -57,7 +57,7 @@ public:
      *
      * @return E_bore
      */
-     double get_etat_bore() const;
+     double get_E_bore() const;
     
      /**
      * @brief Permet d'ajuster la proportion des barres de graphite
@@ -74,49 +74,49 @@ public:
      *
      * @return TGraphite_eff
      */
-     double get_graphite() const;
+     double get_TGraphite_eff() const;
 
      /**
      * @brief Permet d'obtenir l'état des barres de graphite
      *
      * @return E_barre
      */
-     double get_etat_barre() const;
+     double get_E_barre() const;
 
      /**
      * @brief Permet d'obtenir l'état de la cuve
      *
      * @return E_cuve
      */
-     double get_etat_cuve() const;
+     double get_E_cuve() const;
 
      /**
      * @brief Permet d'obtenir l'état de la piscine
      *
      * @return E_piscine
      */
-     double get_etat_piscine() const;
+     double get_E_piscine() const;
 
      /**
      * @brief Permet d'obtenir l'état des canaux
      *
      * @return E_canaux
      */
-     double get_etat_canaux() const;
+     double get_E_canaux() const;
 
      /**
      * @brief Permet d'obtenir les radiations de la piscine
      *
      * @return R_piscine
      */
-     double get_radiation_piscine() const;
+     double get_R_piscine() const;
 
      /**
      * @brief Permet de mettre à jour les radiations de la piscine
      *
      * @param[in] R1 Radiation circuit primaire
      */
-     void maj_radiation_piscine(double R1);
+     void maj_R_piscine(double R1);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état de la cuve
@@ -124,7 +124,7 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] E_circuit_primaire Etat circuit primaire
      */
-     void degr_etat_cuve(double T1, double E_circuit_primaire);
+     void degr_E_cuve(double T1, double E_circuit_primaire);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état de la piscine
@@ -132,7 +132,7 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] E_circuit_primaire Etat circuit primaire
      */
-     void degr_etat_piscine(double T1, double E_circuit_primaire);
+     void degr_E_piscine(double T1, double E_circuit_primaire);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
@@ -141,7 +141,7 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] TGraphite_eff Taux de graphite effectif
      */
-     void degr_etat_barre(double T1, double TGraphite_eff);
+     void degr_E_barre(double T1, double TGraphite_eff);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
@@ -149,7 +149,7 @@ public:
      *
      * @param[in] T1 Temperature circuit primaire
      */
-     void degr_etat_canaux(double T1);
+     void degr_E_canaux(double T1);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
@@ -158,7 +158,7 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] E_circuit_primaire Etat circuit primaire
      */
-     void degr_etat_bore(double T1, double E_circuit_primaire);
+     void degr_E_bore(double T1, double E_circuit_primaire);
 
 
 
