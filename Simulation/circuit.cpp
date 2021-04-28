@@ -48,13 +48,13 @@ double circuit::get_F_pompe() const {
 
 // les setters
 void circuit::set_E_circuit(double etat) {
-    if (etat>=0 && etat<=1) E_circuit=etat;
+    if (etat>=0 & etat<=1) E_circuit=etat;
 }
 
 void circuit::set_E_pompe(double etat) {
-    if (etat>=0 && etat<=1) E_pompe=etat;
+    if (etat>=0 & etat<=1) E_pompe=etat;
 }
 
 void circuit::set_F_pompe(double regime) {
-    if (regime>=0 && regime<=this->E_pompe) F_pompe=regime;
+    if (regime>=0 & regime<=this->E_pompe) F_pompe=regime;
 }
