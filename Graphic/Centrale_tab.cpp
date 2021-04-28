@@ -22,12 +22,12 @@ void Centrale_tab(){
     circuit_refroid.at(400, 430);
     sdl2::texte vapeur("Vapeur d'eau", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     vapeur.at(550, 160);
-
+    
     bool quitting = false;
     sdl2::event_queue queue;
 
     while(not quitting){
-        fenêtre << centrale << echap << circuit_prim << circuit_sec << circuit_refroid << vapeur << sdl2::flush;
+        fenêtre << centrale << echap << circuit_prim << circuit_sec << circuit_refroid << vapeur << sdl2::rectangle({200, 300}, {100, 70}, {0xFF, 0, 0, 0xFF}, false)<< sdl2::flush;
         auto events = queue.pull_events();
         for(const auto& e : events){
             if(e->kind_of_event() == sdl2::event::quit) quitting = true;
