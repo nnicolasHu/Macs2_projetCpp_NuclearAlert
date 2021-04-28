@@ -1,3 +1,5 @@
+#Make_linux.inc
+#Make_msys2.inc
 include Make_osx.inc
 
 CXXFLAGS = -std=c++17 `sdl2-config --cflags`
