@@ -47,7 +47,7 @@ public:
      * @brief Permet d'obtenir le taux de bore
      * dans l'eau du circuit
      *
-     * @return taux
+     * @return TBore_eff
      */
      double get_bore() const;
 
@@ -55,9 +55,9 @@ public:
      * @brief Permet d'obtenir l'état des injecteurs
      * d'acide borique
      *
-     * @return etat_injecteur
+     * @return E_bore
      */
-     double get_injecteur() const;
+     double get_etat_bore() const;
     
      /**
      * @brief Permet d'ajuster la proportion des barres de graphite
@@ -72,70 +72,130 @@ public:
      * @brief Permet d'obtenir la proportion des barres de graphite
      * hors de l'eau
      *
-     * @return proportion_graphite
+     * @return TGraphite_eff
      */
      double get_graphite() const;
 
      /**
      * @brief Permet d'obtenir l'état des barres de graphite
      *
-     * @return etat_graphite
+     * @return E_barre
      */
-     double get_barre() const;
+     double get_etat_barre() const;
 
      /**
      * @brief Permet d'obtenir l'état de la cuve
      *
-     * @return etat_cuve
+     * @return E_cuve
      */
-     double get_cuve() const;
+     double get_etat_cuve() const;
 
      /**
      * @brief Permet d'obtenir l'état de la piscine
      *
-     * @return etat_piscine
+     * @return E_piscine
      */
-     double get_piscine() const;
+     double get_etat_piscine() const;
 
      /**
      * @brief Permet d'obtenir l'état des canaux
      *
-     * @return etat_canaux
+     * @return E_canaux
      */
-     double get_canaux() const;
+     double get_etat_canaux() const;
 
      /**
      * @brief Permet d'obtenir les radiations de la piscine
      *
-     * @return radiation_piscine
+     * @return R_piscine
      */
-     double get_radiation() const;
+     double get_radiation_piscine() const;
+
+     /**
+     * @brief Permet de mettre à jour les radiations de la piscine
+     *
+     * @param[in] R1 Radiation circuit primaire
+     */
+     void maj_radiation_piscine(double R1);
+
+     /**
+     * @brief Permet de simuler les dégradations sur l'état de la cuve
+     *
+     * @param[in] T1 Temperature circuit primaire
+     * @param[in] E_circuit_primaire Etat circuit primaire
+     */
+     void degr_etat_cuve(double T1, double E_circuit_primaire);
+
+     /**
+     * @brief Permet de simuler les dégradations sur l'état de la piscine
+     *
+     * @param[in] T1 Temperature circuit primaire
+     * @param[in] E_circuit_primaire Etat circuit primaire
+     */
+     void degr_etat_piscine(double T1, double E_circuit_primaire);
+
+     /**
+     * @brief Permet de simuler les dégradations sur l'état des
+     * barres de graphite
+     *
+     * @param[in] T1 Temperature circuit primaire
+     * @param[in] TGraphite_eff Taux de graphite effectif
+     */
+     void degr_etat_barre(double T1, double TGraphite_eff);
+
+     /**
+     * @brief Permet de simuler les dégradations sur l'état des
+     * canaux
+     *
+     * @param[in] T1 Temperature circuit primaire
+     */
+     void degr_etat_canaux(double T1);
+
+     /**
+     * @brief Permet de simuler les dégradations sur l'état des
+     * injecteurs boriques
+     *
+     * @param[in] T1 Temperature circuit primaire
+     * @param[in] E_circuit_primaire Etat circuit primaire
+     */
+     void degr_etat_bore(double T1, double E_circuit_primaire);
+
 
 
 private:
+     /** Taux de graphite hors de l'eau demandé **/
+     double Tx_graphite;
+
+     /** Taux de graphite hors de l'eau actuel **/
+     double TGraphite_eff;
+
+     /** Taux de bore demandé **/
+     double Tx_bore;
+
+     /** Taux de bore actuel **/
+     double TBore_eff;
+
      /** Etat de la cuve **/
-     double etat_cuve;
-    
-     /** Radiation de la piscine [ (1.-Ecuve)*R1 +100 + RND(45) ]**/
-     double radiation_piscine;
+     double E_cuve;
 
-     /** Etat de la piscine **/
-     double etat_piscine;
+     /** Radiation piscine **/
+     double R_piscine;
 
-     /** Etat des canaux **/
-     double etat_canaux;
+     /** Etat piscine **/
+     double E_piscine;
 
-     /** Taux de bore **/
-     double taux;
+     /** Etat barre **/
+     double E_barre;
 
-     /** Etat des injecteurs **/
-     double etat_injecteur;
+     /** Etat canaux **/
+     double E_canaux;
 
-     /** Proportion de graphite hors de l'eau **/
-     double proportion_graphite;
+     /** Etat bore **/
+     double E_bore;
 
-     /** Etat des barres de graphite **/
-     double etat_graphite;
+
+
+
      
 
 };
