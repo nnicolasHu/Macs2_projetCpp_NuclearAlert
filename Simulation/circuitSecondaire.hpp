@@ -1,7 +1,7 @@
 #ifndef _CIRCUIT_SECONDAIRE_HPP
 #define _CIRCUIT_SECONDAIRE_HPP
 
-#include "Circuit.hpp"
+#include "circuit.hpp"
 
 /**
  *  @brief   Cette classe décrit le circuit secondaire.
