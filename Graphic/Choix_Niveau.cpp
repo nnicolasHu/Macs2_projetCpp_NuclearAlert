@@ -12,7 +12,7 @@ int Choix_Niveau(){
     int level = 0;
 
     sdl2::texte bvn("Bienvenue", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    bvn.at(300, 50);
+    bvn.at(350, 50);
     sdl2::texte titre2("Veuillez choisir un niveau ", fonte_titre, fenêtre, {0xFF, 0, 0, 0xFF});
     titre2.at(250, 100);
     sdl2::texte niveau1("Niveau 1", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
