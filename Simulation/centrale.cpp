@@ -42,7 +42,7 @@ double centrale::get_R_enceinte() const{
     return R_enceinte;
 }
 
-void centrale::maj_pression_enceinte(){
+void centrale::maj_P_enceinte(){
     double P1 = Circuit_Primaire->get_Pression();
     double E_cuve = Reacteur->get_E_cuve();
     double E_piscine = Reacteur->get_E_piscine();

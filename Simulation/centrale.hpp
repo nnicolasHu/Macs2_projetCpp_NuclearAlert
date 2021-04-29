@@ -78,7 +78,7 @@ public:
      * @brief Permet de mettre à jour la pression de l'enceinte
      * 
      */
-    void maj_pression_enceinte();
+    void maj_P_enceinte();
 
     /**
      * @brief Permet de mettre à jour la radioactivité de l'enceinte
