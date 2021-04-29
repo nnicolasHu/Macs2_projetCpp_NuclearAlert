@@ -81,7 +81,7 @@ void circuitSecondaire::degrad_E_circuit(){
         }
     }
     if (this->get_Delta_ES() < 11 && this->get_T_vapeur() >= 130){
-        std::cout << "Risque possible de degradation du circuit secondaire du au refroidissement" << std::endl;
+        std::cout << "Risque possible de degradation du circuit secondaire du au refroidissement " << std::endl;
     }
 }
 

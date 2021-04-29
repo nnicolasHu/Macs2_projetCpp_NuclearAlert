@@ -6,7 +6,7 @@
 /**
  *  @brief   Cette classe décrit le circuit secondaire.
  *
- *  Le circuit primaire est composé d'un indicateur de l'état global du circuit, d'une pompe (composée d'un indicateur de régime, d'un indicateur du débit),
+ *  Le circuit secondaire est composé d'un indicateur de l'état global du circuit, d'une pompe (composée d'un indicateur de régime, d'un indicateur du débit),
  *  d'un générateur de vapeur (composé d'un indicateur de température, d'un indicateur de pression exercée par la vapeur), d'un condensateur 
  *  (composé d'un indcateur de l'état, d'un indicateur du régime de la pompe condensateur, d'un indicateur du différentiel de température entrée/sortie),
  *  d'un indicateur de l'inertie de la température de l'eau dans le circuit, d'un indicateur de la radioactivité dans le circuit.
