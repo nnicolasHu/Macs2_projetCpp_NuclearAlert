@@ -33,6 +33,10 @@ double circuit::get_Inertie() const {
     return Inertie;
 }
 
+double circuit::get_Temperature() const {
+    return Temperature
+}
+
 double circuit::get_Radioactivite() const {
     return Radioactivite;
 }

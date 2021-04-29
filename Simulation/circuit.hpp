@@ -57,6 +57,13 @@ public :
      * @return Inertie
      */
     double get_Inertie() const;
+ 
+    /**
+     * @brief Permet d'obtenir la température de l'eau dans le circuit
+     * 
+     * @return Temperature
+     */
+    double get_Temperature() const;
 
     /**
      * @brief Permet d'obtenir la radioactivité
