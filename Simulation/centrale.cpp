@@ -43,10 +43,10 @@ double centrale::get_R_enceinte() const{
 }
 
 void centrale::maj_pression_enceinte(){
-    double P1 = Circuit_Primaire->get_pression();
+    double P1 = Circuit_Primaire->get_Pression();
     double E_cuve = Reacteur->get_E_cuve();
     double E_piscine = Reacteur->get_E_piscine();
-    double E_C1 = Circuit_Primaire->get_etat_circuit();
+    double E_C1 = Circuit_Primaire->get_E_circuit();
     double E_vap = Circuit_Secondaire->get_etat_gen_vapeur();
     double P_vap = Circuit_Secondaire->get_pression_vapeur();
 
@@ -62,7 +62,7 @@ void centrale::maj_pression_enceinte(){
         P_enceinte += (1. - E_vap)/20;
     }
 
-    P_enceinte = min(P_enceinte,5.);
+    P_enceinte = fmin(P_enceinte,5.);
 
     if((E_enceinte>0.5) && (E_enceinte<0.6)){
         P_enceinte -= (1. - E_enceinte)/2 * P_enceinte;
@@ -72,9 +72,9 @@ void centrale::maj_pression_enceinte(){
 }
 
 void centrale::maj_R_enceinte(){
-    double E_C1 = Circuit_Primaire->get_etat_circuit();
-    double R1 = Circuit_Primaire->get_radioactivite();
-    double E_press = Circuit_Primaire->get_etat_pressuriseur();
+    double E_C1 = Circuit_Primaire->get_E_circuit();
+    double R1 = Circuit_Primaire->get_Radioactivite();
+    double E_press = Circuit_Primaire->get_E_pressuriseur();
     double E_piscine = Reacteur->get_E_piscine();
     double R_piscine = Reacteur->get_R_piscine();
 
@@ -99,14 +99,14 @@ void centrale::maj_E_centrale(){
     double E_barre = Reacteur->get_E_barre();
     double E_cuve = Reacteur->get_E_cuve();
     double E_piscine = Reacteur->get_E_piscine();
-    double E_p1 = Circuit_Primaire->get_etat_pompe();
-    double E_p2 = Circuit_Secondaire->get_etat_pompe();
-    double E_EC = Circuit_Primaire->get_etat_echangeur();
+    double E_p1 = Circuit_Primaire->get_E_pompe();
+    double E_p2 = Circuit_Secondaire->get_E_pompe();
+    double E_EC = Circuit_Primaire->get_E_echangeur();
     double E_vap = Circuit_Secondaire->get_etat_gen_vapeur();
-    double E_press = Circuit_Primaire->get_etat_pressuriseur();
-    double E_res = Circuit_Primaire->get_etat_resistance();
-    double E_C1 = Circuit_Primaire->get_etat_circuit();
-    double E_C2 = Circuit_Secondaire->get_etat_circuit();
+    double E_press = Circuit_Primaire->get_E_pressuriseur();
+    double E_res = Circuit_Primaire->get_E_resistance();
+    double E_C1 = Circuit_Primaire->get_E_circuit();
+    double E_C2 = Circuit_Secondaire->get_E_circuit();
     double E_bore = Reacteur->get_E_bore();
     double E_cond = Circuit_Secondaire->get_etat_condensateur();
 
@@ -116,16 +116,16 @@ void centrale::maj_E_centrale(){
 
 void centrale::maj_MW(){
     double T_vap = Circuit_Secondaire->get_temp_vapeur();
-    double E_C2 = Circuit_Secondaire->get_etat_circuit();
+    double E_C2 = Circuit_Secondaire->get_E_circuit();
     double P_vap = Circuit_Secondaire->get_pression_vapeur();
-    double P1 = Circuit_Primaire->get_pression();
+    double P1 = Circuit_Primaire->get_Pression();
 
     if ((T_vap<120.) || (E_C2<0.22)){
         MW = 0;
     }
 
     if (T_vap<3000.){
-        MW = (int) max(5.787*(T_vap-120.)+28.118*(P_vap-1.)+P1,0);
+        MW = (int) fmax(5.787*(T_vap-120.)+28.118*(P_vap-1.)+P1,0);
     }
 
     else {
@@ -162,12 +162,12 @@ void centrale::maj_Reacteur(){
     double T1 = Circuit_Primaire->get_Temperature();
     double E_C1 = Circuit_Primaire->get_E_circuit();
 
-    Reacteur->maj_radiation_piscine(R1));
-    Reacteur->degr_etat_barre(T1);
-    Reacteur->degr_etat_bore(T1, E_C1);
-    Reacteur->degr_etat_canaux(T1);
-    Reacteur->degr_etat_cuve(T1, E_C1);
-    Reacteur->degr_etat_piscine(T1, E_C1);
+    Reacteur->maj_R_piscine(R1);
+    Reacteur->degr_E_barre(T1);
+    Reacteur->degr_E_bore(T1, E_C1);
+    Reacteur->degr_E_canaux(T1);
+    Reacteur->degr_E_cuve(T1, E_C1);
+    Reacteur->degr_E_piscine(T1, E_C1);
 } 
 
 /* void centrale::maj_Circuit_Primaire(){

@@ -38,6 +38,6 @@ public :
      * @return R_enceinte
      */
     virtual double get_R_enceinte() const = 0;
-}
+};
 
 #endif
