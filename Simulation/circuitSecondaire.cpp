@@ -1,26 +1,28 @@
 #include <iostream>
-#include "CircuitSecondaire.hpp"
+#include "circuitSecondaire.hpp"
+#include "RND.hpp"
 
 /** Constructeur(s) **/
 
 circuitSecondaire::circuitSecondaire()
-    :etat_gen_vapeur{1.0},
-     etat_condensateur{1.0},
-     regime_pompe_condensateur{0.0},
-     temperature_vap{25.0},
-     pression_vapeur{1.0},
-     debit_cond{0.0},
-     delta_cond{0.0}
+    :circuit(),
+     E_vapeur{1.0},
+     E_condenseur{1.0},
+     F_condenseur{0.0},
+     T_vapeur{25.0},
+     P_vapeur{1.0},
+     D_condenseur{0.0},
+     Delta_ES{0.0}
      {}
 
 /** Méthodes **/
 
-void circuitSecondaire::set_regime_pompe_cond(double valeur_demandee){
+void circuitSecondaire::set_F_condenseur(double valeur_demandee){
 
-    double etat_cond = this->get_etat_condensateur();
+    double etat_cond = this->get_E_condenseur();
 
     if((valeur_demandee >= 0) && (valeur_demandee<= etat_cond )){
-        this->regime_pompe_condensateur = valeur_demandee;
+        this->F_condenseur = valeur_demandee;
     }
 
     else{
@@ -28,31 +30,91 @@ void circuitSecondaire::set_regime_pompe_cond(double valeur_demandee){
     }
 }
 
-double circuitSecondaire::get_regime_pompe_cond() const{
-    return this->regime_pompe_condensateur;
+double circuitSecondaire::get_F_condenseur() const{
+    return this->F_condenseur;
 }
 
-double circuitSecondaire::get_etat_gen_vapeur() const{
-    return this->etat_gen_vapeur;
+double circuitSecondaire::get_E_vapeur() const{
+    return this->E_vapeur;
 }
 
-double circuitSecondaire::get_etat_condensateur() const{
-    return this->etat_condensateur;
+double circuitSecondaire::get_E_condenseur() const{
+    return this->E_condenseur;
 }
 
-double circuitSecondaire::get_temp_vapeur() const{
-    return this->temperature_vap;
+double circuitSecondaire::get_T_vapeur() const{
+    return this->T_vapeur;
 }
 
-double circuitSecondaire::get_pression_vapeur() const{
-    return this->pression_vapeur;
+double circuitSecondaire::get_P_vapeur() const{
+    return this->P_vapeur;
 }
 
-double circuitSecondaire::get_debit_cond() const{
-    return this->debit_cond;
+double circuitSecondaire::get_D_condenseur() const{
+    return this->D_condenseur;
 }
 
-double circuitSecondaire::get_delta_cond() const{
-    return this->delta_cond;
+double circuitSecondaire::get_Delta_ES() const{
+    return this->Delta_ES;
 }
 
+void circuitSecondaire::degrad_all(double E_chaleur){
+    this->degrad_E_circuit();
+    this->degrad_E_pompe();
+    this->degrad_E_vapeur(E_chaleur);
+    this->degrad_E_chaleur(E_chaleur);
+}
+
+void circuitSecondaire::degrad_E_circuit(){
+    if (this->get_T_vapeur() > 130 && this->get_E_circuit() < 0.5){ // cas T_vap > 130 && E_ec < 0.5
+        double degrad = (RND(1.) <= 0.3) * RND(0.015);
+        std::cout << "Risque important de degradation du circuit secondaire" << std::endl;
+        if (degrad > 0){
+            this->set_E_circuit(this->get_E_circuit() - degrad);
+        }
+    }
+    if (this->get_T_vapeur() >= 310){ // cas T_vap >= 310 °C
+        double degrad = (RND(1.) <= 0.25) * RND(0.04);
+        std::cout << "Risque important de degradation du circuit secondaire a cause de la temperature" << std::endl;
+        if (degrad > 0){
+            this->set_E_circuit(this->get_E_circuit() - degrad);
+        }
+    }
+    if (this->get_Delta_ES() < 11 && this->get_T_vapeur() >= 130){
+        std::cout << "Risque possible de degradation du circuit secondaire du au refroidissement" << std::endl;
+    }
+}
+
+void circuitSecondaire::degrad_E_pompe(){
+    if (this->get_E_circuit() < 0.6) {
+        double degrad = (RND(1.) <= 0.3) * RND(0.02);
+        std::cout << "Risque important de degradation de la pompe du circuit secondaire" << std::endl;
+        if (degrad > 0){
+            this->set_E_pompe(this->get_E_pompe() - degrad);
+        }
+    }
+    // faire cas E_ec
+}
+
+void circuitSecondaire::degrad_E_vapeur(double E_chaleur){
+    if (this->get_E_circuit() < 0.4){ // cas E_c2 < 0.6
+        double degrad = (RND(1.0) <= 0.3) * RND(0.02);
+        std::cout << "Risque important de degradation du générateur de vapeur" << std::endl;
+        if (degrad > 0){
+            this->E_vapeur = this->get_E_vapeur() - degrad; 
+        }
+    }
+    if (E_chaleur < 0.4){
+        double degrad = (RND(1.0) <= 0.25) * RND(0.03);
+        std::cout << "Risque important de dégradation de l’echangeur de chaleur" << std::endl;
+        if (degrad > 0){
+            this->E_vapeur = this->get_E_vapeur() - degrad; 
+        }
+    }
+}
+
+void circuitSecondaire::degrad_E_chaleur(double E_chaleur){
+    if (E_chaleur < 0.7){
+        std::cout << "Probleme d’echange entre le circuit primaire et le circuit secondaire" << std::endl;
+    }
+}
