@@ -26,7 +26,6 @@ void Centrale_tab(){
     bool quitting = false;
     sdl2::event_queue queue;
 
-    while(not quitting){
         fenêtre << centrale << echap << circuit_prim << circuit_sec << circuit_refroid << vapeur << sdl2::rectangle({200, 300}, {100, 70}, {0xFF, 0, 0, 0xFF}, false)<< sdl2::flush;
         auto events = queue.pull_events();
         for(const auto& e : events){
@@ -40,5 +39,5 @@ void Centrale_tab(){
                 
             }
         }
-    }
+    
 }
