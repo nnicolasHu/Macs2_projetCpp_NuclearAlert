@@ -139,9 +139,8 @@ public:
      * barres de graphite
      *
      * @param[in] T1 Temperature circuit primaire
-     * @param[in] TGraphite_eff Taux de graphite effectif
      */
-     void degr_E_barre(double T1, double TGraphite_eff);
+     void degr_E_barre(double T1);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des

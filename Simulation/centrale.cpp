@@ -157,14 +157,27 @@ void centrale::degr_E_enceinte(){
     }
 }
 
-/* void centrale::maj_Reacteur(){
+void centrale::maj_Reacteur(){
+    double R1 = Circuit_Primaire->get_Radioactivite();
+    double T1 = Circuit_Primaire->get_Temperature();
+    double E_C1 = Circuit_Primaire->get_E_circuit();
 
+    Reacteur->maj_radiation_piscine(R1));
+    Reacteur->degr_etat_barre(T1);
+    Reacteur->degr_etat_bore(T1, E_C1);
+    Reacteur->degr_etat_canaux(T1);
+    Reacteur->degr_etat_cuve(T1, E_C1);
+    Reacteur->degr_etat_piscine(T1, E_C1);
+} 
 
+/* void centrale::maj_Circuit_Primaire(){
 
-    Reacteur->maj_radiation_piscine());
-    Reacteur->degr_etat_barre();
-    Reacteur->degr_etat_bore();
-    Reacteur->degr_etat_canaux();
-    Reacteur->degr_etat_cuve();
-    Reacteur->degr_etat_piscine();
-} */
+    Circuit_Primaire->maj_Debit_eau();
+    Circuit_Primaire->maj_Inertie();
+    Circuit_Primaire->maj_Pression();
+    Circuit_Primaire->maj_Radioactivite();
+    Circuit_Primaire->maj_T_pressuriseur_eff();
+    Circuit_Primaire->maj_Temperature();
+}
+ */
+

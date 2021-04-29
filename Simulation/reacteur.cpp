@@ -105,7 +105,7 @@ void reacteur::degr_E_piscine(double T1, double E_circuit_primaire){
     }
 }
 
-void reacteur::degr_E_barre(double T1, double TGraphite_eff){
+void reacteur::degr_E_barre(double T1){
     if ((T1>=50) && (E_canaux<0.6) && (TGraphite_eff>0.4) ){
         E_barre -= (RND(0.02))*(RND(1.)>=0.7);
     }

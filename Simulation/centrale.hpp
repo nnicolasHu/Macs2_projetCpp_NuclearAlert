@@ -111,6 +111,17 @@ public:
      */
     void maj_Reacteur();
     
+    /**
+     * @brief Maj de toutes les maj et degradations du circuit primaire
+     * 
+     */
+    void maj_Circuit_Primaire();
+
+    /**
+     * @brief Maj de toutes les maj et degradations du circuit primaire
+     * 
+     */
+    void maj_Circuit_Secondaire();
 
 
 private:
