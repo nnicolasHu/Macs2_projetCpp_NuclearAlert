@@ -27,13 +27,23 @@ public:
       */
      reacteur();
 
+     /**
+      * @brief Constructeur de copie
+      * 
+      */
+     reacteur( const reacteur& R ) = delete; // Interdiction de copier
+
+     /**
+      * @brief Constructeur de déplacement
+      * 
+      */
+     reacteur( reacteur&& R ) = delete; // Interdiction de déplacer
+
      /** 
       * @brief Destructeur par défaut
       *
      */
      ~reacteur() = default;
-
-     
      
      /**
      * @brief Permet d'ajuster le taux de bore 

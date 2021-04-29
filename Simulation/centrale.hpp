@@ -33,6 +33,18 @@ public:
      */
     centrale();
 
+    /**
+      * @brief Constructeur de copie
+      * 
+      */
+    centrale( const centrale& C ) = delete; 
+
+    /**
+      * @brief Constructeur de déplacement
+      * 
+      */
+    centrale( centrale&& C ) = delete; 
+
     /** 
      * @brief  Destructeur par défaut.
      *
@@ -115,14 +127,90 @@ public:
      * @brief Maj de toutes les maj et degradations du circuit primaire
      * 
      */
-    void maj_Circuit_Primaire();
+    /* void maj_Circuit_Primaire(); */
 
     /**
      * @brief Maj de toutes les maj et degradations du circuit primaire
      * 
      */
-    void maj_Circuit_Secondaire();
+    /* void maj_Circuit_Secondaire(); */
 
+    /**
+     * @brief Renvoie la variable Evac
+     * 
+     * @return Evac
+     */
+    double get_Evac() const;
+
+    /**
+     * @brief Renvoie la variable Order
+     * 
+     * @return Order
+     */
+    int get_Order() const;
+
+    /**
+     * @brief Permet de donner l'ordre d'évacuer
+     * 
+     * @param[in] entier soit 0 soit 1.
+     */
+    void set_Order(int entier);
+
+    /**
+     * @brief Renvoie la radioactivité de l'air 
+     * 
+     * @return R_air
+     */
+    double get_R_air() const;
+
+    /**
+     * @brief Renvoie la radioactivité de l'eau 
+     * 
+     * @return R_eau
+     */
+    double get_R_eau() const;
+
+    /**
+     * @brief Renvoie la contamination 
+     * 
+     * @return Contamination
+     */
+    int get_Contamination() const;
+
+    /**
+     * @brief Mise à jour de l'évacuation
+     * 
+     * @return Evac
+     */
+    void maj_Evac();
+
+    /**
+     * @brief Mise à jour de la radioactivité de l'air
+     * 
+     * @return R_air
+     */
+    void maj_R_air();
+
+    /**
+     * @brief Mise à jour de la radioactivité de l'eau
+     * 
+     * @return R_eau
+     */
+    void maj_R_eau();
+
+    /**
+     * @brief Mise à jour de la contamination
+     * 
+     * @return Contamination
+     */
+    void maj_Contamination();
+
+    /**
+     * @brief Mise à jour des variables liées à la population
+     * 
+     * @return Contamination
+     */
+    void maj_Population();
 
 private:
     static centrale* la_centrale;
@@ -150,6 +238,21 @@ private:
 
     /** Production de la centrale **/
     unsigned int MW;
+
+    /** Population evacuée **/
+    double Evac;
+
+    /** Ordre evacuation, 0 : pas d'evacuation, 1 : ordre d'évacuer  **/ 
+    int Order;
+
+    /** Radioactivité air **/
+    double R_air;
+
+    /** Radioactivité eau **/
+    double R_eau;
+
+    /** Contamination **/
+    unsigned int Contamination;
     
     
 };
