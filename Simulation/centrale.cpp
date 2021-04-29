@@ -271,6 +271,3 @@ void centrale::maj_Population(){
     maj_Evac();
 }
 
-int main(){
-    return EXIT_SUCCESS;
-}
