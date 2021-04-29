@@ -1,5 +1,4 @@
 #include "circuitPrimaire.hpp"
-#include <iostream>
 
 
 /** Constructeur(s) **/
@@ -52,7 +51,80 @@ void circuitPrimaire::set_E_echangeur(double etat) {
 }
 
 void circuitPrimaire::set_T_pressuriseur(double temperature) {
-    if (temperature>=25 & temperature<=100*(this->E_pressuriseur + this->E_resistance)) T_pressuriseur=temperature;
+    if (temperature>=25 & temperature<=100*(E_pressuriseur + E_resistance)) T_pressuriseur=temperature;
+}
+
+
+
+// les mises a jour
+void circuitPrimaire::maj_Pression() {
+    Pression = std::max((T_pressuriseur_eff - 25.)/3.24 + (Temperature - 100.)/83.3 * (E_circuit + 0.1)*(E_echangeur + 0.1), 1.);
+}
+
+void circuitPrimaire::maj_Debit_eau(double E_cuve) {
+    Debit_eau = E_circuit * E_cuve * F_pompe * 90;
+}
+
+void circuitPrimaire::maj_Inertie(double TBore_eff, double TGraphite_eff, double T_vapeur) {
+    // T_vapeur, c'est Temperature dans circuitSecondaire
+    if (E_echangeur<50 & TBore_eff<25 & TGraphite_eff<50) {
+        Inertie += RND(26.);
+    }
+    if (T_vapeur<Temperature) {
+        Inertie += (T_vapeur-Temperature)/3.;
+    }
+    else {
+        Inertie = std::max(0.,Inertie-RND(16.));
+    }
+}
+
+void circuitPrimaire::maj_Temperature(double TBore_eff, double TGraphite_eff) {
+    Temperature = std::max(25., 2*(0.5-TBore_eff)*(645*TGraphite_eff - 140*Debit_eau/90. + 2*Pression) + 26 + Inertie);
+}
+
+void circuitPrimaire::maj_Radioactivite(double TBore_eff, unsigned int MW) {
+    Radioactivite = 98*(Debit_eau+1) + RND(90.) + (0.5-TBore_eff)*(MW+0.1)*6.54;
+}
+
+void circuitPrimaire::maj_T_pressuriseur_eff() {
+    T_pressuriseur_eff += (T_pressuriseur_eff<T_pressuriseur) - (T_pressuriseur_eff>T_pressuriseur);
+}
+
+
+// les incréments et décréments
+void circuitPrimaire::incr_T_pressuriseur() {
+    if (T_pressuriseur<= (100*(E_pressuriseur+E_resistance)-1) ) T_pressuriseur +=1;
+}
+
+void circuitPrimaire::decr_T_pressuriseur() {
+    if (T_pressuriseur>= 26) T_pressuriseur += -1;
+}
+
+void circuitPrimaire::incr_F_pompe() {
+    if (F_pompe <= E_pompe - 0.05) F_pompe += 0.05;
+}
+
+void circuitPrimaire::decr_F_pompe() {
+    if (F_pompe => 0.05) F_pompe += -0.05;
+}
+
+//les dégradations
+void circuitPrimaire::degr_E_circuit() {
+    if (Temperature>=420) {
+        E_circuit += -RND(0.02);
+    }
+    if (Temperature>=40*Pression) {
+        E_circuit += -RND(0.03);
+    }
+    if (Temperature>=50 & Pression>10) {
+        E_circuit += -RND(0.02)*(RND(1.)<0.2);
+    }
+}
+
+void circuitPrimaire::degr_E_pompe() {
+    if (Temperature>=50 & E_circuit<0.58) {
+        E_pompe += -RND(0.03)*(RND(1.)<0.5);
+    }
 }
 
 /*
@@ -76,6 +148,11 @@ void circuitPrimaire::set_temp_pressuriseur(double valeur_demandee){
 
 int main() {
     circuitPrimaire C1;
-    std::cout << "état du circuit = " <<C1.get_E_circuit() << std::endl;
+    //std::cout << "état du circuit = " <<C1.get_E_circuit() << std::endl;
+    double a=4.;
+    std::cout << a << std::endl;
+    a += -1;
+    std::cout << a << std::endl;
+
     return EXIT_SUCCESS;
 }

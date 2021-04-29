@@ -11,7 +11,7 @@ circuit::circuit() {
     Temperature = 25.;
     Radioactivite = 0.;
     E_pompe = 1.;
-    F_pompe = 0.;
+    F_pompe = 0.5;
 }
 
 /** Méthodes **/
@@ -34,7 +34,7 @@ double circuit::get_Inertie() const {
 }
 
 double circuit::get_Temperature() const {
-    return Temperature
+    return Temperature;
 }
 
 double circuit::get_Radioactivite() const {

@@ -1,7 +1,9 @@
 #ifndef _CIRCUIT_PRIMAIRE_HPP_
 #define _CIRCUIT_PRIMAIRE_HPP_
 
+#include <iostream>
 #include "circuit.hpp"
+#include "RND.hpp"
 
 /**
  * @brief    Cette classe décrit le circuit primaire.
@@ -89,6 +91,22 @@ public:
 
 
 
+     void maj_Pression();
+     void maj_Debit_eau(double E_cuve);
+     void maj_Inertie(double TBore_eff, double TGraphite_eff, double T_vapeur);
+     void maj_Temperature(double TBore_eff, double TGraphite_eff);
+     void maj_Radioactivite(double TBore_eff, unsigned int MW);
+
+     void maj_T_pressuriseur_eff();
+     void incr_T_pressuriseur();
+     void decr_T_pressuriseur();
+
+     void incr_F_pompe();
+     void decr_F_pompe();
+
+
+     void degr_E_circuit();
+     void degr_E_pompe();
 
 private:
      /** Etat du pressuriseur **/

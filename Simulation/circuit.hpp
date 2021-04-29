@@ -109,7 +109,7 @@ public :
     void set_F_pompe(double regime);
 
 
-private : 
+protected : 
     /** Etat du circuit **/
     double E_circuit;
 
