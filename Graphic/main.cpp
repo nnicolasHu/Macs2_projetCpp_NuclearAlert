@@ -4,7 +4,8 @@
 
 int main(int argc, char* args[]){
     sdl2::init(argc, args);
-    Centrale_tab();
+    int level = 1;
+    Controle_win(level);
     sdl2::finalize();
     return 0;
 }

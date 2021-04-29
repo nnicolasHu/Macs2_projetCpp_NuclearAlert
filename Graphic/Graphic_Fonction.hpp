@@ -5,6 +5,7 @@
 std::string Fenetre_acceuil();
 int Choix_Niveau();
 void Centrale_tab();
+void Controle_win(int level);
 
 #endif
 
