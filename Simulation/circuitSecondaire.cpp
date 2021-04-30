@@ -66,49 +66,67 @@ void circuitSecondaire::degrad_all(double E_chaleur){
 }
 
 void circuitSecondaire::degrad_E_circuit(){
-    if (this->get_T_vapeur() > 130 && this->get_E_circuit() < 0.5){ // cas T_vap > 130 && E_ec < 0.5
-        double degrad = (RND(1.) <= 0.3) * RND(0.015);
-        std::cout << "Risque important de degradation du circuit secondaire" << std::endl;
-        if (degrad > 0){
-            this->set_E_circuit(this->get_E_circuit() - degrad);
+    if (this->get_E_circuit() > 0) {
+        if (this->get_T_vapeur() > 130 && this->get_E_circuit() < 0.5){ // cas T_vap > 130 && E_ec < 0.5
+            double degrad = (RND(1.) <= 0.3) * RND(0.015);
+            std::cout << "Risque important de degradation du circuit secondaire" << std::endl;
+            if (degrad > 0){
+                this->set_E_circuit(this->get_E_circuit() - degrad);
+            }
         }
-    }
-    if (this->get_T_vapeur() >= 310){ // cas T_vap >= 310 °C
-        double degrad = (RND(1.) <= 0.25) * RND(0.04);
-        std::cout << "Risque important de degradation du circuit secondaire a cause de la temperature" << std::endl;
-        if (degrad > 0){
-            this->set_E_circuit(this->get_E_circuit() - degrad);
+        if (this->get_T_vapeur() >= 310){ // cas T_vap >= 310 °C
+            double degrad = (RND(1.) <= 0.25) * RND(0.04);
+            std::cout << "Risque important de degradation du circuit secondaire a cause de la temperature" << std::endl;
+            if (this->get_E_circuit() - degrad > 0){
+                this->set_E_circuit(this->get_E_circuit() - degrad);
+            }
+            else {
+                this->set_E_circuit(0);
+            }
         }
-    }
-    if (this->get_Delta_ES() < 11 && this->get_T_vapeur() >= 130){
-        std::cout << "Risque possible de degradation du circuit secondaire du au refroidissement " << std::endl;
+        if (this->get_Delta_ES() < 11 && this->get_T_vapeur() >= 130){
+            std::cout << "Risque possible de degradation du circuit secondaire du au refroidissement " << std::endl;
+        }
     }
 }
 
 void circuitSecondaire::degrad_E_pompe(){
-    if (this->get_E_circuit() < 0.6) {
-        double degrad = (RND(1.) <= 0.3) * RND(0.02);
-        std::cout << "Risque important de degradation de la pompe du circuit secondaire" << std::endl;
-        if (degrad > 0){
-            this->set_E_pompe(this->get_E_pompe() - degrad);
+    if (this->get_E_pompe() > 0 ){
+
+        if (this->get_E_circuit() < 0.6) {
+            double degrad = (RND(1.) <= 0.3) * RND(0.02);
+            std::cout << "Risque important de degradation de la pompe du circuit secondaire" << std::endl;
+            if ( this->get_E_pompe() - degrad > 0 ){
+                this->set_E_pompe(this->get_E_pompe() - degrad);
+            }
+            else {
+                this->set_E_pompe(0);
+            }
         }
     }
-    // faire cas E_ec
 }
 
 void circuitSecondaire::degrad_E_vapeur(double E_chaleur){
-    if (this->get_E_circuit() < 0.4){ // cas E_c2 < 0.6
-        double degrad = (RND(1.0) <= 0.3) * RND(0.02);
-        std::cout << "Risque important de degradation du générateur de vapeur" << std::endl;
-        if (degrad > 0){
-            this->E_vapeur = this->get_E_vapeur() - degrad; 
+    if (this->get_E_vapeur() > 0 ){
+        if (this->get_E_circuit() < 0.4){ // cas E_c2 < 0.6
+            double degrad = (RND(1.0) <= 0.3) * RND(0.02);
+            std::cout << "Risque important de degradation du générateur de vapeur" << std::endl;
+            if (this->E_vapeur - degrad > 0){
+                this->E_vapeur = this->get_E_vapeur() - degrad; 
+            }
+            else {
+                this->E_vapeur = 0;
+            }
         }
-    }
-    if (E_chaleur < 0.4){
-        double degrad = (RND(1.0) <= 0.25) * RND(0.03);
-        std::cout << "Risque important de dégradation de l’echangeur de chaleur" << std::endl;
-        if (degrad > 0){
-            this->E_vapeur = this->get_E_vapeur() - degrad; 
+        if (E_chaleur < 0.4){
+            double degrad = (RND(1.0) <= 0.25) * RND(0.03);
+            std::cout << "Risque important de dégradation de l’echangeur de chaleur" << std::endl;
+            if (this->E_vapeur - degrad > 0){
+                this->E_vapeur = this->get_E_vapeur() - degrad; 
+            }
+            else {
+                this->E_vapeur = 0;
+            }
         }
     }
 }
