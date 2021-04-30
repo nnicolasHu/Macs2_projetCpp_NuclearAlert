@@ -127,13 +127,21 @@ public:
      * @brief Maj de toutes les maj et degradations du circuit primaire
      * 
      */
-    /* void maj_Circuit_Primaire(); */
+    void maj_Circuit_Primaire(); 
 
     /**
-     * @brief Maj de toutes les maj et degradations du circuit primaire
+     * @brief Maj de toutes les maj et degradations du circuit secondaire
      * 
      */
-    /* void maj_Circuit_Secondaire(); */
+    void maj_Circuit_Secondaire(); 
+
+    /**
+     * @brief Maj de toutes les maj et degradations de la centrale
+     * 
+     * ON FAIT AUSSI, EN APPELANT maj_Centrale(), UNE MAJ SUR LE POPULATION (maj_Centrale() fait appel à maj_Population())
+     * 
+     */
+    void maj_Centrale(); 
 
     /**
      * @brief Renvoie la variable Evac
