@@ -136,3 +136,50 @@ void circuitSecondaire::degrad_E_chaleur(double E_chaleur){
         std::cout << "Probleme d’echange entre le circuit primaire et le circuit secondaire" << std::endl;
     }
 }
+
+void circuitSecondaire::update_T_vapeur(double E_ec,double T1,double It2){
+    double new_T = std::max(99.0 , E_ec*(T1/1.51) + 26 + It2*(It2 > 3) );
+    this->Temperature = new_T;
+}
+
+void circuitSecondaire::update_P_vapeur(){
+    if (this->get_P_vapeur() < 120){
+        this->P_vapeur = 1.0 ;
+    }
+    else {
+        double new_P_vapeur = std::max(1.0 , (this->get_E_circuit() + 0.1)*this->get_E_vapeur()*(this->get_F_pompe()/50 + (this->get_T_vapeur() - 135)/10 ) );
+        this->P_vapeur = new_P_vapeur;
+    }
+}
+
+void circuitSecondaire::update_Debit_eau(){
+    double Z = this->get_E_circuit() * (this->get_E_condenseur() + 0.1)*this->get_E_vapeur()*this->get_F_pompe()*0.85;
+    if (this->get_T_vapeur() > 3 && Z < 3){
+        this->Debit_eau = this->get_E_circuit()*(this->get_E_condenseur() + 0.1)*this->get_E_vapeur()*1.3;
+    }
+    else {
+        this->Debit_eau = Z;
+    }
+}
+
+void circuitSecondaire::update_D_condenseur(){
+    this->D_condenseur = this->get_E_condenseur()*this->get_F_condenseur()*150;
+}
+
+void circuitSecondaire::update_Delta_ES(){
+    this->Delta_ES = this->get_D_condenseur()/7.5;
+}
+
+void circuitSecondaire::update_Inertie(double T_circuit_primaire){
+    if(this->get_F_pompe() < (0.55 + RND(0.15) )  && T_circuit_primaire > 200){
+        this->Inertie += RND(T_circuit_primaire/100);
+    }
+    else if (this->Inertie > 0){
+        this->Inertie = std::max(0.0 , this->Inertie - RND(3) );
+    }
+}
+
+void circuitSecondaire::update_Radioactivite(double E_ec, double Radioactivite_circuit_primaire){
+    double new_R2 = std::max(this->Radioactivite , (1-E_ec)*Radioactivite_circuit_primaire);
+    this->Radioactivite = new_R2;
+}

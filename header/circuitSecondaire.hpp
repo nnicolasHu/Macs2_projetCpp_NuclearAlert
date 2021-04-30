@@ -116,6 +116,40 @@ public:
      */
     void degrad_E_chaleur(double E_chaleur);
 
+    /**
+     * @brief met a jour la témpérature de la vapeur
+     */
+    void update_T_vapeur(double E_ec,double T1,double It2);
+
+    /**
+     * @brief met a jour la pression exercé par la vapeur
+     */
+    void update_P_vapeur();
+
+    /**
+     * @brief met a jour le débit d'eau
+     */
+    void update_Debit_eau();
+
+    /**
+     * @brief met a jour le débit au niveau du condenseur
+     */
+    void update_D_condenseur();
+
+    /**
+     * @brief met a jour la différence de chaleur entre l'entrée et la sortie du condensateur. Attention on met à jour Delta_ES APRES D_condenseur
+     */
+    void update_Delta_ES();
+
+    /**
+     * @brief met a jour l'inertie chaleur de l'eau du circuit
+     */
+    void update_Inertie(double T_circuit_primaire);
+
+    /**
+     * @brief met a jour la radioactivité du circuit secondaire
+     */
+    void update_Radioactivite(double E_ec, double Radioactivite_circuit_primaire);
     
 
 private:
