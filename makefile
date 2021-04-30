@@ -11,11 +11,15 @@ endif
 
 INCLUDES = -I./header #pour dire que les .h sont dans le dossier header
 OBJ_SIM = Simulation/centrale.o Simulation/circuit.o Simulation/circuitPrimaire.o Simulation/circuitSecondaire.o Simulation/reacteur.o Simulation/RND.o
+#les .o pour le dossier Simulation
 
-default : $(OBJ_SIM)
+OBJ_SDL = Graphic/SDL2/sdl2.o Graphic/SDL2/geometry.o Graphic/SDL2/window.o Graphic/SDL2/font.o Graphic/SDL2/event.o Graphic/SDL2/texte.o Graphic/SDL2/image.o Graphic/SDL2/formated_text.o
+#les .o pour la SDL2
+
+default : $(OBJ_SDL)
 
 clean :
-	@rm -fr *.o *.exe Simulation/*.o Simulation/*~
+	@rm -fr *.o *.exe Simulation/*.o Simulation/*~ Graphic/SDL2/*.o Graphic/SDL2/*~
 
 test.exe : test.o Simulation/circuit.o 
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o test.exe test.o Simulation/circuit.o 
@@ -46,4 +50,27 @@ Simulation/RND.o : Simulation/RND.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Simulation/RND.cpp -o Simulation/RND.o
 
 
+Graphic/SDL2/sdl2.o: Graphic/SDL2/sdl2.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/sdl2.cpp -o Graphic/SDL2/sdl2.o
+
+Graphic/SDL2/geometry.o: Graphic/SDL2/geometry.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/geometry.cpp -o Graphic/SDL2/geometry.o
+
+Graphic/SDL2/window.o: Graphic/SDL2/window.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/window.cpp -o Graphic/SDL2/window.o
+
+Graphic/SDL2/font.o: Graphic/SDL2/font.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/font.cpp -o Graphic/SDL2/font.o
+
+Graphic/SDL2/event.o : Graphic/SDL2/event.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/event.cpp -o Graphic/SDL2/event.o
+
+Graphic/SDL2/texte.o : Graphic/SDL2/texte.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/texte.cpp -o Graphic/SDL2/texte.o
+
+Graphic/SDL2/formated_text.o : Graphic/SDL2/formated_text.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/formated_text.cpp -o Graphic/SDL2/formated_text.o
+
+Graphic/SDL2/image.o : Graphic/SDL2/image.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/image.cpp -o Graphic/SDL2/image.o
 
