@@ -149,16 +149,21 @@ void centrale::maj_MW(){
 
 void centrale::degr_E_enceinte(){
 
-    if ((P_enceinte>2.) && (P_enceinte<3.4) && (E_enceinte>0.5)){
-        E_enceinte -= (RND(0.02))*(RND(1.)>=0.7);
-    }
+    if(E_enceinte>0.){
+        f ((P_enceinte>2.) && (P_enceinte<3.4) && (E_enceinte>0.5)){
+            E_enceinte -= (RND(0.02))*(RND(1.)>=0.7);
+        }
 
-    if ((P_enceinte>=3.4) && (P_enceinte<4.5) && (E_enceinte>0.25)){
-        E_enceinte -= (RND(0.06))*(RND(1.)>=0.4);
-    }
+        if ((P_enceinte>=3.4) && (P_enceinte<4.5) && (E_enceinte>0.25)){
+            E_enceinte -= (RND(0.06))*(RND(1.)>=0.4);
+        }
 
-    if ((P_enceinte>=4.5) || (E_enceinte == 0.)){
-        E_enceinte = 0.; //Gérer les risques pollution
+        if ((P_enceinte>=4.5) || (E_enceinte == 0.)){
+            E_enceinte = 0.; //Gérer les risques pollution
+        }
+    }
+    if (E_enceinte <= 0.){
+        E_enceinte = 0.;
     }
 }
 

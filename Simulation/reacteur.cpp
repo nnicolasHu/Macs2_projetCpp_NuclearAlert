@@ -88,43 +88,69 @@ void reacteur::maj_R_piscine(double R1){
 }
 
 void reacteur::degr_E_cuve(double T1, double E_circuit_primaire){
-    if ((T1>=50) && (E_circuit_primaire<0.6)){
-        E_cuve -=  (RND(0.02))*(RND(1.)>=0.6);
+    if (E_cuve>0.){
+        if ((T1>=50) && (E_circuit_primaire<0.6)){
+            E_cuve -=  (RND(0.02))*(RND(1.)>=0.6);
+        }
+        if ((T1>=50) && (E_circuit_primaire<0.3)){
+            E_cuve -=  (RND(0.03))*(RND(1.)>=0.7);
+        }
+        if ((T1>=50) && (E_circuit_primaire<0.2)){
+            E_cuve -=  (RND(0.06))*(RND(1.)>=0.2);
+        }
     }
-    if ((T1>=50) && (E_circuit_primaire<0.3)){
-        E_cuve -=  (RND(0.03))*(RND(1.)>=0.7);
-    }
-    if ((T1>=50) && (E_circuit_primaire<0.2)){
-        E_cuve -=  (RND(0.06))*(RND(1.)>=0.2);
+    if (E_cuve <= 0.){
+        E_cuve = 0.;
     }
 }
 
 void reacteur::degr_E_piscine(double T1, double E_circuit_primaire){
-    if ((T1>=50) && (E_circuit_primaire<0.2)){
+    if(E_piscine >0.){
+        if ((T1>=50) && (E_circuit_primaire<0.2)){
         E_piscine -= (RND(0.06))*(RND(1.)>=0.2);
+        }
+    }
+    if (E_piscine <= 0.){
+        E_piscine = 0.;
     }
 }
 
 void reacteur::degr_E_barre(double T1){
-    if ((T1>=50) && (E_canaux<0.6) && (TGraphite_eff>0.4) ){
-        E_barre -= (RND(0.02))*(RND(1.)>=0.7);
+    if(E_barre>0.){
+        if ((T1>=50) && (E_canaux<0.6) && (TGraphite_eff>0.4) ){
+            E_barre -= (RND(0.02))*(RND(1.)>=0.7);
+        }
+        if ((T1>=50) && (E_cuve<0.7) && (TGraphite_eff>0.4) ){
+            E_barre -= (RND(0.03))*(RND(1.)>=0.6);
+        }
+        if ((T1>=420) && (TGraphite_eff>0.2) ){
+            E_barre -= RND(0.03);
+        }
     }
-    if ((T1>=50) && (E_cuve<0.7) && (TGraphite_eff>0.4) ){
-        E_barre -= (RND(0.03))*(RND(1.)>=0.6);
-    }
-    if ((T1>=420) && (TGraphite_eff>0.2) ){
-        E_barre -= RND(0.03);
+    if (E_barre <= 0.){
+        E_barre = 0.;
     }
 }
 
 void reacteur::degr_E_canaux(double T1){
-    if ((T1>=50) && (E_cuve<0.5)){
-        E_canaux -= (RND(0.05))*(RND(1.)>=0.5);
+    if(E_canaux>0.){
+        if ((T1>=50) && (E_cuve<0.5)){
+            E_canaux -= (RND(0.05))*(RND(1.)>=0.5);
+        }
     }
+    if (E_canaux <= 0.){
+        E_canaux = 0.;
+    }
+
 }
 
 void reacteur::degr_E_bore(double T1, double E_circuit_primaire){
-    if ((T1>=50) && (E_cuve<0.5) && (E_circuit_primaire<0.5)){
-        E_bore -= (RND(0.02))*(RND(1.)>=0.5);
+    if(E_bore>0.){
+        if ((T1>=50) && (E_cuve<0.5) && (E_circuit_primaire<0.5)){
+            E_bore -= (RND(0.02))*(RND(1.)>=0.5);
+        }
+    }
+    if (E_bore <= 0.){
+        E_bore = 0.;
     }
 }
