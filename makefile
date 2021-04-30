@@ -1,6 +1,6 @@
-include Make_linux.inc
+#include Make_linux.inc
 #include Make_msys2.inc
-#include Make_osx.inc
+include Make_osx.inc
 
 CXXFLAGS = -std=c++17 `sdl2-config --cflags`
 ifdef DEBUG
@@ -9,6 +9,8 @@ else
 CXXFLAGS += -O3 -march=native -Wall
 endif
 
+LIBS = $(LIB) `sdl2-config --cflags` -lSDL2_ttf -lSDL2_image  `sdl2-config --libs` 
+
 INCLUDES = -I./header #pour dire que les .h sont dans le dossier header
 OBJ_SIM = Simulation/centrale.o Simulation/circuit.o Simulation/circuitPrimaire.o Simulation/circuitSecondaire.o Simulation/reacteur.o Simulation/RND.o
 #les .o pour le dossier Simulation
@@ -16,19 +18,25 @@ OBJ_SIM = Simulation/centrale.o Simulation/circuit.o Simulation/circuitPrimaire.
 OBJ_SDL = Graphic/SDL2/sdl2.o Graphic/SDL2/geometry.o Graphic/SDL2/window.o Graphic/SDL2/font.o Graphic/SDL2/event.o Graphic/SDL2/texte.o Graphic/SDL2/image.o Graphic/SDL2/formated_text.o
 #les .o pour la SDL2
 
-default : $(OBJ_SDL)
+OBJ_GRAPH =  Graphic/Fenetre_acceuil.o
+
+default : testGraphic.exe
 
 clean :
-	@rm -fr *.o *.exe Simulation/*.o Simulation/*~ Graphic/SDL2/*.o Graphic/SDL2/*~
+	@rm -fr *.o *.exe Simulation/*.o Simulation/*~ Graphic/SDL2/*.o Graphic/SDL2/*~ Graphic/*.o Graphic/*~
 
-test.exe : test.o Simulation/circuit.o 
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -o test.exe test.o Simulation/circuit.o 
+testSimulation.exe : testSimulation.o $(OBJ_SIM)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o testSimulation.exe testSimulation.o $(OBJ_SIM) 
 
-test.o : test.cpp
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c test.cpp -o test.o
+testSimulation.o : testSimulation.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c testSimulation.cpp -o testSimulation.o
 
 
+testGraphic.exe : testGraphic.o $(OBJ_SDL) $(OBJ_GRAPH)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o testGraphic.exe testGraphic.o $(OBJ_SDL) $(OBJ_GRAPH) $(LIBS)
 
+testGraphic.o : testGraphic.cpp 
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c testGraphic.cpp -o testGraphic.o 
 
 
 Simulation/centrale.o : Simulation/centrale.cpp
@@ -74,3 +82,5 @@ Graphic/SDL2/formated_text.o : Graphic/SDL2/formated_text.cpp
 Graphic/SDL2/image.o : Graphic/SDL2/image.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/image.cpp -o Graphic/SDL2/image.o
 
+Graphic/Fenetre_acceuil.o : Graphic/Fenetre_acceuil.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Fenetre_acceuil.cpp -o Graphic/Fenetre_acceuil.o 

@@ -145,14 +145,3 @@ void circuitPrimaire::set_temp_pressuriseur(double valeur_demandee){
 }
 */
 
-
-int main() {
-    circuitPrimaire C1;
-    //std::cout << "état du circuit = " <<C1.get_E_circuit() << std::endl;
-    double a=4.;
-    std::cout << a << std::endl;
-    a += -1;
-    std::cout << a << std::endl;
-
-    return EXIT_SUCCESS;
-}

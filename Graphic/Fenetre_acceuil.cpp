@@ -1,11 +1,11 @@
 #include "Graphic_Fonction.hpp"
-#include "SDL2/sdl2.hpp"
+#include "sdl2.hpp"
 #include<SDL2/SDL_ttf.h>
 #include <iostream>
 
 std::string Fenetre_acceuil(){
-    sdl2::font fonte_texte("./data/Lato-Thin.ttf", 18);
-    sdl2::font fonte_titre("./data/Lato-Bold.ttf", 28);
+    sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
+    sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     sdl2::window fenêtre("Nuclear Alert : Authentification", {800, 600});
 
@@ -17,7 +17,7 @@ std::string Fenetre_acceuil(){
     phrase4.at(250, 450);
     std::string pseudo;
 
-    sdl2::image Alert("data/Alert.png", fenêtre);
+    sdl2::image Alert("Graphic/data/Alert.png", fenêtre);
     Alert.at(320,110); // Emplacement sur la fenêtre 
     Alert.stretch({128,128}); // Taille 
     Alert.flip(sdl2::image::horizontal);
