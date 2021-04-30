@@ -1,15 +1,15 @@
 #include "Graphic_Fonction.hpp"
-#include "SDL2/sdl2.hpp"
+#include "sdl2.hpp"
 #include<SDL2/SDL_ttf.h>
 #include<iostream>
 
 void Centrale_tab(){
-    sdl2::font fonte_texte("./data/Lato-Thin.ttf", 18);
-    sdl2::font fonte_titre("./data/Lato-Bold.ttf", 28);
+    sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
+    sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     sdl2::window fenêtre("Nuclear Alert : Schéma de la centrale", {800, 600});
 
-    sdl2::image centrale("data/sch├®ma_centrale.png", fenêtre);
+    sdl2::image centrale("Graphic/data/sch├®ma_centrale.png", fenêtre);
     centrale.at(100, 100);
 
     sdl2::texte echap("Appuyez sur echap pour revenir à la fenêtre précédente", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});

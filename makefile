@@ -18,7 +18,7 @@ OBJ_SIM = Simulation/centrale.o Simulation/circuit.o Simulation/circuitPrimaire.
 OBJ_SDL = Graphic/SDL2/sdl2.o Graphic/SDL2/geometry.o Graphic/SDL2/window.o Graphic/SDL2/font.o Graphic/SDL2/event.o Graphic/SDL2/texte.o Graphic/SDL2/image.o Graphic/SDL2/formated_text.o
 #les .o pour la SDL2
 
-OBJ_GRAPH =  Graphic/Fenetre_acceuil.o
+OBJ_GRAPH =  Graphic/Fenetre_acceuil.o Graphic/Commande.o Graphic/Choix_Niveau.o Graphic/Centrale_tab.o
 
 default : testGraphic.exe
 
@@ -84,3 +84,12 @@ Graphic/SDL2/image.o : Graphic/SDL2/image.cpp
 
 Graphic/Fenetre_acceuil.o : Graphic/Fenetre_acceuil.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Fenetre_acceuil.cpp -o Graphic/Fenetre_acceuil.o 
+
+Graphic/Commande.o : Graphic/Commande.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Commande.cpp -o Graphic/Commande.o 
+
+Graphic/Choix_Niveau.o : Graphic/Choix_Niveau.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Choix_Niveau.cpp -o Graphic/Choix_Niveau.o
+
+Graphic/Centrale_tab.o : Graphic/Centrale_tab.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Centrale_tab.cpp -o Graphic/Centrale_tab.o

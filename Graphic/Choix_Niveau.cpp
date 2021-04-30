@@ -1,12 +1,12 @@
 #include "Graphic_Fonction.hpp"
-#include "SDL2/sdl2.hpp"
+#include "sdl2.hpp"
 #include<SDL2/SDL_ttf.h>
 #include <string>
 #include<iostream>
 
 int Choix_Niveau(){
-    sdl2::font fonte_texte("./data/Lato-Thin.ttf", 18);
-    sdl2::font fonte_titre("./data/Lato-Bold.ttf", 28);
+    sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
+    sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     sdl2::window fenêtre("Nuclear Alert : Choix Niveau", {800, 600});
     int level = 0;
