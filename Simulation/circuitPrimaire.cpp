@@ -105,7 +105,7 @@ void circuitPrimaire::incr_F_pompe() {
 }
 
 void circuitPrimaire::decr_F_pompe() {
-    if (F_pompe => 0.05) F_pompe += -0.05;
+    if (F_pompe >= 0.05) F_pompe += -0.05;
 }
 
 //les dégradations
