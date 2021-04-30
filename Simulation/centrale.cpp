@@ -175,16 +175,46 @@ void centrale::maj_Reacteur(){
     Reacteur->degr_E_piscine(T1, E_C1);
 } 
 
-/* void centrale::maj_Circuit_Primaire(){
+void centrale::maj_Circuit_Primaire(){
+    double E_cuve = Reacteur->get_E_cuve();
+    double TBore_eff = Reacteur->get_TBore_eff();
+    double TGraphite_eff = Reacteur->get_TGraphite_eff();
+    double T_vapeur = Circuit_Secondaire->get_T_vapeur();
 
-    Circuit_Primaire->maj_Debit_eau();
-    Circuit_Primaire->maj_Inertie();
+    Circuit_Primaire->maj_Debit_eau(E_cuve);
+    Circuit_Primaire->maj_Inertie(TBore_eff, TGraphite_eff, T_vapeur);
     Circuit_Primaire->maj_Pression();
-    Circuit_Primaire->maj_Radioactivite();
+    Circuit_Primaire->maj_Radioactivite(TBore_eff, MW);
     Circuit_Primaire->maj_T_pressuriseur_eff();
-    Circuit_Primaire->maj_Temperature();
+    Circuit_Primaire->maj_Temperature(TBore_eff, TGraphite_eff);
+    Circuit_Primaire->degr_E_circuit();
+    Circuit_Primaire->degr_E_pompe();
 }
- */
+
+void centrale::maj_Circuit_Secondaire(){
+    double E_chaleur = Circuit_Primaire->get_E_echangeur();
+    double T1 = Circuit_Primaire->get_Temperature();
+    double It2 = Circuit_Secondaire->get_Inertie();
+    double R1 = Circuit_Primaire->get_Radioactivite();
+    
+    Circuit_Secondaire->degrad_all(E_chaleur);
+    Circuit_Secondaire->update_T_vapeur(E_chaleur,T1,It2);
+    Circuit_Secondaire->update_P_vapeur();
+    Circuit_Secondaire->update_Debit_eau();
+    Circuit_Secondaire->update_D_condenseur();
+    Circuit_Secondaire->update_Inertie(T1);
+    Circuit_Secondaire->update_Radioactivite(E_chaleur,R1);
+
+} 
+
+void centrale::maj_Centrale(){
+    maj_Population();
+    maj_P_enceinte();
+    maj_R_enceinte();
+    maj_E_centrale();
+    maj_MW();
+    degr_E_enceinte();
+}
 
 double centrale::get_Evac() const{
     return Evac;
@@ -270,4 +300,3 @@ void centrale::maj_Population(){
     maj_R_eau();
     maj_Evac();
 }
-
