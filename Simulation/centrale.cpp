@@ -150,7 +150,7 @@ void centrale::maj_MW(){
 void centrale::degr_E_enceinte(){
 
     if(E_enceinte>0.){
-        f ((P_enceinte>2.) && (P_enceinte<3.4) && (E_enceinte>0.5)){
+        if ((P_enceinte>2.) && (P_enceinte<3.4) && (E_enceinte>0.5)){
             E_enceinte -= (RND(0.02))*(RND(1.)>=0.7);
         }
 
