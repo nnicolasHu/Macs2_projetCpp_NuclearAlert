@@ -110,20 +110,81 @@ void circuitPrimaire::decr_F_pompe() {
 
 //les dégradations
 void circuitPrimaire::degr_E_circuit() {
-    if (Temperature>=420) {
-        E_circuit += -RND(0.02);
+    if (E_circuit>0.){
+
+        if (Temperature>=420) {
+            E_circuit += -RND(0.02);
+        }
+        if (Temperature>=40*Pression) {
+            E_circuit += -RND(0.03);
+        }
+        if (Temperature>=50 & Pression>10) {
+            E_circuit += -RND(0.02)*(RND(1.)<0.2);
+        }
+        if (Temperature>=50 & E_echangeur<0.6) {
+            E_circuit += -RND(0.015)*(RND(1.)<0.3);
+        }
     }
-    if (Temperature>=40*Pression) {
-        E_circuit += -RND(0.03);
-    }
-    if (Temperature>=50 & Pression>10) {
-        E_circuit += -RND(0.02)*(RND(1.)<0.2);
+    if (E_circuit <=0.){
+        E_circuit = 0.;
     }
 }
 
 void circuitPrimaire::degr_E_pompe() {
-    if (Temperature>=50 & E_circuit<0.58) {
-        E_pompe += -RND(0.03)*(RND(1.)<0.5);
+    if (E_pompe>0.){
+        if (Temperature>=50 & E_circuit<0.58) {
+            E_pompe += -RND(0.03)*(RND(1.)<0.5);
+        }
+    }
+
+    if (E_pompe <=0.){
+        E_pompe = 0.;
+    }
+
+}
+
+void circuitPrimaire::degr_E_pressuriseur(){
+    if (E_pressuriseur>0.){
+        if(Temperature>=420){
+            E_pressuriseur -= (RND(0.02))*(RND(1.)<0.3);
+        }
+        if (Temperature>=40*Pression) {
+            E_pressuriseur -= RND(0.02);
+        }
+    }
+
+    if(E_pressuriseur<=0.){
+        E_pressuriseur = 0.;
+    }
+}
+
+void circuitPrimaire::degr_E_resistance(){
+    if (E_resistance>0.){
+        if(Temperature>=420){
+            E_resistance -= (RND(0.02))*(RND(1.)<0.3);
+        }
+        if (Temperature>=40*Pression) {
+            E_resistance -= RND(0.02)*(RND(1.)<0.3);
+        }
+        if ((Temperature>=50) && (E_pressuriseur<0.5)) {
+            E_resistance -= RND(0.03)*(RND(1.)<0.8);
+        }
+    }
+
+    if(E_resistance<=0.){
+        E_resistance = 0.;
+    }
+}
+
+void circuitPrimaire::degr_E_echangeur(){
+    if (E_echangeur>0.){
+        if((Temperature>=50) && (E_circuit<0.5)){
+            E_echangeur -= RND(0.04)*(RND(1.)<0.4);
+        }
+    }
+
+    if(E_echangeur<=0.){
+        E_echangeur = 0.;
     }
 }
 

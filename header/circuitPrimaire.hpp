@@ -28,15 +28,23 @@ public:
       */
      circuitPrimaire();
 
-     circuitPrimaire( const circuitPrimaire& C ) = delete; // Interdiction de copier
-     circuitPrimaire( circuitPrimaire&& C ) = delete; // Interdiction de déplacer
+     /**
+      * @brief Constructeur de copie
+      *
+      */
+     circuitPrimaire( const circuitPrimaire& C ) = delete;
+
+     /**
+      * @brief Constructeur de déplacement
+      *
+      */
+     circuitPrimaire( circuitPrimaire&& C ) = delete;
 
      /**
       * @brief  Destructeur par défaut
       *
       */
      ~circuitPrimaire() = default;
-
 
      /**
       * @brief Permet d'obtenir l'état du pressuriseur
@@ -74,9 +82,6 @@ public:
      double get_T_pressuriseur_eff() const;
 
 
-     //////////////////////////////////////////////////////////////////////////////////////
-     // comment doxygen à faire
-     ////////////////////////////////////////////////////////////////////////////////////
      void set_E_pressuriseur(double etat);
      void set_E_resistance(double etat);
      void set_E_echangeur (double etat);
@@ -90,11 +95,42 @@ public:
      void set_T_pressuriseur(double temperature);
 
 
-
+     /**
+      * @brief Permet de mettre à jour la pression du circuit Primaire
+      *
+      */
      void maj_Pression();
+
+     /**
+      * @brief Permet de mettre à jour le débit d'eau du circuit Primaire
+      *
+      * @param[in] E_cuve etat cuve reacteur
+      */
      void maj_Debit_eau(double E_cuve);
+
+     /**
+      * @brief Permet de mettre à jour l'inertie du circuit Primaire
+      *
+      * @param[in] TBore_eff taux de bore réel
+      * @param[in] TGraphite_eff taux de graphite réel
+      * @param[in] T_vapeur température vapeur (circuit secondaire)
+      */
      void maj_Inertie(double TBore_eff, double TGraphite_eff, double T_vapeur);
+
+     /**
+      * @brief Permet de mettre à jour la température du circuit Primaire
+      *
+      * @param[in] TBore_eff taux de bore réel
+      * @param[in] TGraphite_eff taux de graphite réel
+      */
      void maj_Temperature(double TBore_eff, double TGraphite_eff);
+
+     /**
+      * @brief Permet de mettre à jour la radioactivité du circuit Primaire
+      *
+      * @param[in] TBore_eff taux de bore réel
+      * @param[in] MW production 
+      */
      void maj_Radioactivite(double TBore_eff, unsigned int MW);
 
      void maj_T_pressuriseur_eff();
@@ -104,9 +140,35 @@ public:
      void incr_F_pompe();
      void decr_F_pompe();
 
-
+     /**
+      * @brief Permet de simuler les dégradations de l'état du circuit
+      *
+      */
      void degr_E_circuit();
+
+     /**
+      * @brief Permet de simuler les dégradations de l'état de la pompe
+      *
+      */
      void degr_E_pompe();
+
+     /**
+      * @brief Permet de simuler les dégradations de l'état du pressuriseur
+      *
+      */
+     void degr_E_pressuriseur();
+
+     /**
+      * @brief Permet de simuler les dégradations de l'état de la resistance du pressuriseur
+      *
+      */
+     void degr_E_resistance();
+
+     /**
+      * @brief Permet de simuler les dégradations de l'état de l'échangeur de chaleur
+      *
+      */
+     void degr_E_echangeur();
 
 private:
      /** Etat du pressuriseur **/
