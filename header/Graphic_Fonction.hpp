@@ -1,5 +1,7 @@
 #ifndef _GRAPHIC_FONCTION_HPP_
 #define _GRAPHIC_FONCTION_HPP_
+#include<iostream>
+#include"centrale.hpp"
 #include<string>
 #include"sdl2.hpp"
 
@@ -9,5 +11,6 @@ void Centrale_tab();
 void Controle_win(int level);
 void Commande();
 void Niveau1();
+void SalleDeControle();
 #endif
 
