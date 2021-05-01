@@ -3,12 +3,12 @@
 #include<SDL2/SDL_ttf.h>
 #include<iostream>
 
-void Commande(sdl2::window fenêtre){
+void Commande(){
     
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
-    //sdl2::window fenêtre("Nuclear Alert : Schéma de la centrale", {800, 600});
+    sdl2::window fenêtre("Nuclear Alert : Schéma de la centrale", {800, 600});
 
     sdl2::texte titre("COMMANDES", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     titre.at(300, 50);
@@ -40,7 +40,7 @@ void Commande(sdl2::window fenêtre){
     bool quitting = false;
     sdl2::event_queue queue;
 
-    while(not quitting){
+    
         fenêtre << sdl2::rectangle({0, 0}, {800, 600}, {0, 0, 0, 0}, true);
         fenêtre  << titre << command1 << command2 << commandB << commandT << commandP << commandR << commandU1 << commandU2 << commandTab << commandE << sdl2::flush;
         auto events = queue.pull_events();
@@ -55,6 +55,6 @@ void Commande(sdl2::window fenêtre){
                 
             }
         }
-    }
+    
 
 }
