@@ -7,6 +7,7 @@ int main(int argc, char* args[]){
     std::string pseudo = Fenetre_acceuil(); 
     std::cout << pseudo << std::endl;
     int level = Choix_Niveau();
+    if(level == 1) Niveau1();
     sdl2::finalize();
     return 0;
 }
