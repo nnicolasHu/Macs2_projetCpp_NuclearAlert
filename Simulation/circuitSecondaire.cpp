@@ -107,6 +107,8 @@ void circuitSecondaire::degrad_E_pompe(){
 }
 
 void circuitSecondaire::degrad_E_vapeur(double E_chaleur){
+    double E_enceinte = Centrale->get_E_enceinte();
+    
     if (this->get_E_vapeur() > 0 ){
         if (this->get_E_circuit() < 0.4){ // cas E_c2 < 0.6
             double degrad = (RND(1.0) <= 0.3) * RND(0.02);
@@ -128,6 +130,10 @@ void circuitSecondaire::degrad_E_vapeur(double E_chaleur){
                 this->E_vapeur = 0;
             }
         }
+        if (E_enceinte == 0){
+            this->E_vapeur -= 0.1 + RND(0.1);
+        }
+
     }
 }
 

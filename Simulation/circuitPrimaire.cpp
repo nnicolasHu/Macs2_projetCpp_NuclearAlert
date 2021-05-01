@@ -1,5 +1,5 @@
 #include "circuitPrimaire.hpp"
-
+#include "RND.hpp"
 
 /** Constructeur(s) **/
 
@@ -110,6 +110,8 @@ void circuitPrimaire::decr_F_pompe() {
 
 //les dégradations
 void circuitPrimaire::degr_E_circuit() {
+    double E_enceinte = Centrale->get_E_enceinte();
+
     if (E_circuit>0.){
 
         if (Temperature>=420) {
@@ -123,6 +125,9 @@ void circuitPrimaire::degr_E_circuit() {
         }
         if (Temperature>=50 & E_echangeur<0.6) {
             E_circuit += -RND(0.015)*(RND(1.)<0.3);
+        }
+        if (E_enceinte == 0.){
+            E_circuit -= (0.1 + RND(0.1))*(RND(1.)>=0.2);
         }
     }
     if (E_circuit <=0.){
@@ -144,12 +149,17 @@ void circuitPrimaire::degr_E_pompe() {
 }
 
 void circuitPrimaire::degr_E_pressuriseur(){
+    double E_enceinte = Centrale->get_E_enceinte();
+
     if (E_pressuriseur>0.){
         if(Temperature>=420){
             E_pressuriseur -= (RND(0.02))*(RND(1.)<0.3);
         }
         if (Temperature>=40*Pression) {
             E_pressuriseur -= RND(0.02);
+        }
+        if (E_enceinte == 0.){
+            E_pressuriseur -= (0.1)*(RND(1.)>=0.2);
         }
     }
 
@@ -159,6 +169,8 @@ void circuitPrimaire::degr_E_pressuriseur(){
 }
 
 void circuitPrimaire::degr_E_resistance(){
+    double E_enceinte = Centrale->get_E_enceinte();
+
     if (E_resistance>0.){
         if(Temperature>=420){
             E_resistance -= (RND(0.02))*(RND(1.)<0.3);
@@ -168,6 +180,9 @@ void circuitPrimaire::degr_E_resistance(){
         }
         if ((Temperature>=50) && (E_pressuriseur<0.5)) {
             E_resistance -= RND(0.03)*(RND(1.)<0.8);
+        }
+        if ((E_enceinte == 0.) && (E_pressuriseur<0.9)){
+            E_resistance -= (RND(0.1))*(RND(1.)>=0.2);
         }
     }
 
