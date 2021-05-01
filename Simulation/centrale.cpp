@@ -47,6 +47,41 @@ double centrale::get_R_enceinte() const{
     return R_enceinte;
 }
 
+void centrale::set_E_enceinte(double val){
+    E_enceinte = val;
+}
+
+void centrale::set_P_enceinte(double val){
+    P_enceinte = val;
+}
+void centrale::set_R_enceinte(double val){
+    R_enceinte = val;
+}
+
+void centrale::set_E_centrale(double val){
+    E_centrale = val;
+}
+
+void centrale::set_MW(int val){
+    MW = val;
+}
+
+void centrale::set_Evac(double val){
+    Evac = val;
+}
+
+void centrale::set_R_air(double val){
+    R_air = val;
+}
+
+void centrale::set_R_eau(double val){
+    R_eau = val;
+}
+
+void centrale::set_Contamination(int val){
+    Contamination = val;
+}
+
 void centrale::maj_P_enceinte(){
     double P1 = Circuit_Primaire->get_Pression();
     double E_cuve = Reacteur->get_E_cuve();

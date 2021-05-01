@@ -83,6 +83,30 @@ double reacteur::get_R_piscine() const{
     return R_piscine;
 }
 
+void reacteur::set_E_cuve(double val){
+    E_cuve = val;
+}
+
+void reacteur::set_E_piscine(double val){
+    E_piscine = val;
+}
+
+void reacteur::set_R_piscine(double val){
+    R_piscine = val;
+}
+
+void reacteur::set_E_barre(double val){
+    E_barre = val;
+}
+
+void reacteur::set_E_canaux(double val){
+    E_canaux = val;
+}
+
+void reacteur::set_E_bore(double val){
+    E_bore = val;
+}
+
 void reacteur::maj_R_piscine(double R1){
     R_piscine = (1.- E_cuve)*R1 + 100 + RND(45);
 }
