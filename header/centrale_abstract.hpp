@@ -4,6 +4,9 @@
 class centrale_abstract{
 
 public : 
+
+    virtual ~centrale_abstract() = default;
+    
     /** 
      * @brief Permet d'obtenir l'état de l'enceinte 
      *

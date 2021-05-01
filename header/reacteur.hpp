@@ -1,6 +1,9 @@
 #ifndef _REACTEUR_HPP
 #define _REACTEUR_HPP
 
+#include <memory>
+#include "centrale_abstract.hpp"
+
 
 /**
  * @brief    Cette classe décrit le réacteur.
@@ -180,6 +183,8 @@ public:
 
 
 private:
+     std::unique_ptr<centrale_abstract> Centrale;
+
      /** Taux de graphite hors de l'eau demandé **/
      double Tx_graphite;
 
