@@ -41,7 +41,6 @@ void Commande(){
     sdl2::event_queue queue;
 
     
-        fenêtre << sdl2::rectangle({0, 0}, {800, 600}, {0, 0, 0, 0}, true);
         fenêtre  << titre << command1 << command2 << commandB << commandT << commandP << commandR << commandU1 << commandU2 << commandTab << commandE << sdl2::flush;
         auto events = queue.pull_events();
         for(const auto& e : events){

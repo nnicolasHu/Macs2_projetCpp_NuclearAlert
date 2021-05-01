@@ -26,8 +26,14 @@ void Niveau1(){
                 if(key.state() == sdl2::event_keyboard::pressed){
                     char keychar = key.ascci_code();
                     if(keychar == 27) quitting = true;
-                    else if(keychar == 'h') Commande();
-                    else if(keychar == 9) Centrale_tab();
+                    else if(keychar == 'h') {
+                        fenêtre.cls({0, 0, 0, 0});
+                        Commande();
+                    }
+                    else if(keychar == 9) {
+                        fenêtre.cls({0, 0, 0, 0});
+                        Centrale_tab();
+                    }
                 }
             }
         }
