@@ -86,6 +86,20 @@ public:
      */
     double get_R_enceinte() const override;
 
+    /** Test **/
+    void set_E_enceinte(double val);
+    void set_P_enceinte(double val);
+    void set_R_enceinte(double val);
+    void set_E_centrale(double val);
+    void set_MW(int val);
+    void set_Evac(double val);
+    void set_R_air(double val);
+    void set_R_eau(double val);
+    void set_Contamination(int val);
+
+
+
+
     /**
      * @brief Permet de mettre à jour la pression de l'enceinte
      * 

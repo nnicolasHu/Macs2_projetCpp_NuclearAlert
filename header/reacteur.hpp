@@ -121,6 +121,14 @@ public:
      */
      double get_R_piscine() const;
 
+     /** Test **/
+     void set_E_cuve(double val);
+     void set_E_piscine(double val);
+     void set_R_piscine(double val);
+     void set_E_barre(double val);
+     void set_E_canaux(double val);
+     void set_E_bore(double val);
+
      /**
      * @brief Permet de mettre à jour les radiations de la piscine
      *
