@@ -38,7 +38,12 @@ testGraphic.exe : testGraphic.o $(OBJ_SDL) $(OBJ_GRAPH)
 testGraphic.o : testGraphic.cpp 
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c testGraphic.cpp -o testGraphic.o 
 
+# .o pour les niveaux de jeu
+Niveau1.o : Niveau1.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Niveau1.cpp -o Niveau1.o 
 
+
+# .o pour les calculs/Simulations
 Simulation/centrale.o : Simulation/centrale.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Simulation/centrale.cpp -o Simulation/centrale.o
 
@@ -57,7 +62,7 @@ Simulation/reacteur.o : Simulation/reacteur.cpp
 Simulation/RND.o : Simulation/RND.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Simulation/RND.cpp -o Simulation/RND.o
 
-
+#/ .o pour la SDL2
 Graphic/SDL2/sdl2.o: Graphic/SDL2/sdl2.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/sdl2.cpp -o Graphic/SDL2/sdl2.o
 
@@ -82,6 +87,7 @@ Graphic/SDL2/formated_text.o : Graphic/SDL2/formated_text.cpp
 Graphic/SDL2/image.o : Graphic/SDL2/image.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/SDL2/image.cpp -o Graphic/SDL2/image.o
 
+# .o pour les fonctions de Graphic
 Graphic/Fenetre_acceuil.o : Graphic/Fenetre_acceuil.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Fenetre_acceuil.cpp -o Graphic/Fenetre_acceuil.o 
 
@@ -93,10 +99,6 @@ Graphic/Choix_Niveau.o : Graphic/Choix_Niveau.cpp
 
 Graphic/Centrale_tab.o : Graphic/Centrale_tab.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Centrale_tab.cpp -o Graphic/Centrale_tab.o
-
-Niveau1.o : Niveau1.cpp
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Niveau1.cpp -o Niveau1.o 
-
 
 Graphic/Cadre.o : Graphic/Cadre.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Cadre.cpp -o Graphic/Cadre.o
