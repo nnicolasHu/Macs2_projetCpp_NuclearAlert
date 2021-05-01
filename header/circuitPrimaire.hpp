@@ -2,8 +2,9 @@
 #define _CIRCUIT_PRIMAIRE_HPP_
 
 #include <iostream>
+#include <memory>
+#include "centrale_abstract.hpp"
 #include "circuit.hpp"
-#include "RND.hpp"
 
 /**
  * @brief    Cette classe décrit le circuit primaire.
@@ -171,6 +172,8 @@ public:
      void degr_E_echangeur();
 
 private:
+     std::unique_ptr<centrale_abstract> Centrale;
+     
      /** Etat du pressuriseur **/
      double E_pressuriseur;
 

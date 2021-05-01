@@ -2,6 +2,8 @@
 #define _CIRCUIT_SECONDAIRE_HPP
 
 #include "circuit.hpp"
+#include <memory>
+#include "centrale_abstract.hpp"
 
 /**
  *  @brief   Cette classe décrit le circuit secondaire.
@@ -162,7 +164,8 @@ private:
       - Inertiertie | Inertie chaleur de l'eau du circuit
       - Radioactivite | radioactivité du circuit secondaire
     */
-   
+    std::unique_ptr<centrale_abstract> Centrale;
+    
      /** Etat du générateur de vapeur **/
      double E_vapeur;
 
