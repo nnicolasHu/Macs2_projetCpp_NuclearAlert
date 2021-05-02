@@ -95,6 +95,7 @@ public:
 
     /**
      * @brief met a jour les dégradations de l'état du générateur de vapeur
+     * @param[in] E_chaleur l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
      */
     void degrad_E_vapeur(double E_chaleur);
 
@@ -110,18 +111,22 @@ public:
 
     /**
      * @brief met a jour TOUTES les dégradations du circuit secondaire
+     * @param[in] E_chaleur l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
      */
     void degrad_all(double E_chaleur);
 
     /**
      * @brief met a jour les dégradations de l'état de l'échangeur de chaleur (communique avec circuitPrimaire)
+     * @param[in] E_chaleur l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
      */
     void degrad_E_chaleur(double E_chaleur);
 
     /**
      * @brief met a jour la témpérature de la vapeur
+     * @param[in] E_ec l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
+     * @param[in] T1 température eau dans le circuit primaire (attribut de circuitPrimaire)
      */
-    void update_T_vapeur(double E_ec,double T1,double It2);
+    void update_T_vapeur(double E_ec,double T1);
 
     /**
      * @brief met a jour la pression exercé par la vapeur
@@ -145,11 +150,14 @@ public:
 
     /**
      * @brief met a jour l'inertie chaleur de l'eau du circuit
+     * @param[in] T_circuit_primaire température eau dans le circuit primaire (attribut de circuitPrimaire)
      */
     void update_Inertie(double T_circuit_primaire);
 
     /**
      * @brief met a jour la radioactivité du circuit secondaire
+     * @param[in] E_ec état de l'échangeur de chaleur (attribut de circuitPrimaire)
+     * @param[in] Radioactivite_circuit_primaire radioactivité le circuit primaire (attribut de circuitPrimaire)
      */
     void update_Radioactivite(double E_ec, double Radioactivite_circuit_primaire);
     

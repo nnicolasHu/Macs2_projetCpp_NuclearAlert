@@ -143,7 +143,8 @@ void circuitSecondaire::degrad_E_chaleur(double E_chaleur){
     }
 }
 
-void circuitSecondaire::update_T_vapeur(double E_ec,double T1,double It2){
+void circuitSecondaire::update_T_vapeur(double E_ec,double T1){
+    double It2 = this->get_Inertie() ;
     double new_T = std::max(99.0 , E_ec*(T1/1.51) + 26 + It2*(It2 > 3) );
     this->Temperature = new_T;
 }
