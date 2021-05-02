@@ -39,19 +39,19 @@ double circuitPrimaire::get_T_pressuriseur_eff() const{
 
 // les setters
 void circuitPrimaire::set_E_pressuriseur(double etat) {
-    if (etat>=0 & etat<=1) E_pressuriseur=etat;
+    if (etat>=0 && etat<=1) E_pressuriseur=etat;
 }
 
 void circuitPrimaire::set_E_resistance(double etat) {
-    if (etat>=0 & etat<=1) E_resistance=etat;
+    if (etat>=0 && etat<=1) E_resistance=etat;
 }
 
 void circuitPrimaire::set_E_echangeur(double etat) {
-    if (etat>=0 & etat<=1) E_echangeur=etat;
+    if (etat>=0 && etat<=1) E_echangeur=etat;
 }
 
 void circuitPrimaire::set_T_pressuriseur(double temperature) {
-    if (temperature>=25 & temperature<=100*(E_pressuriseur + E_resistance)) T_pressuriseur=temperature;
+    if (temperature>=25 && temperature<=100*(E_pressuriseur + E_resistance)) T_pressuriseur=temperature;
 }
 
 
@@ -67,7 +67,7 @@ void circuitPrimaire::maj_Debit_eau(double E_cuve) {
 
 void circuitPrimaire::maj_Inertie(double TBore_eff, double TGraphite_eff, double T_vapeur) {
     // T_vapeur, c'est Temperature dans circuitSecondaire
-    if (E_echangeur<50 & TBore_eff<25 & TGraphite_eff<50) {
+    if (E_echangeur<50 && TBore_eff<25 && TGraphite_eff<50) {
         Inertie += RND(26.);
     }
     if (T_vapeur<Temperature) {
@@ -120,10 +120,10 @@ void circuitPrimaire::degr_E_circuit() {
         if (Temperature>=40*Pression) {
             E_circuit += -RND(0.03);
         }
-        if (Temperature>=50 & Pression>10) {
+        if (Temperature>=50 && Pression>10) {
             E_circuit += -RND(0.02)*(RND(1.)<0.2);
         }
-        if (Temperature>=50 & E_echangeur<0.6) {
+        if (Temperature>=50 && E_echangeur<0.6) {
             E_circuit += -RND(0.015)*(RND(1.)<0.3);
         }
         if (E_enceinte == 0.){
@@ -137,7 +137,7 @@ void circuitPrimaire::degr_E_circuit() {
 
 void circuitPrimaire::degr_E_pompe() {
     if (E_pompe>0.){
-        if (Temperature>=50 & E_circuit<0.58) {
+        if (Temperature>=50 && E_circuit<0.58) {
             E_pompe += -RND(0.03)*(RND(1.)<0.5);
         }
     }

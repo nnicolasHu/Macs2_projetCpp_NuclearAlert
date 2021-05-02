@@ -12,7 +12,7 @@ endif
 LIBS = $(LIB) `sdl2-config --cflags` -lSDL2_ttf -lSDL2_image  `sdl2-config --libs` 
 
 INCLUDES = -I./header #pour dire que les .h sont dans le dossier header
-OBJ_SIM = Simulation/centrale.o Simulation/circuit.o Simulation/circuitPrimaire.o Simulation/circuitSecondaire.o Simulation/reacteur.o Simulation/RND.o
+OBJ_SIM = Simulation/centrale.o Simulation/circuit.o Simulation/circuitPrimaire.o Simulation/circuitSecondaire.o Simulation/reacteur.o Simulation/RND.o Simulation/ouvriers.o
 #les .o pour le dossier Simulation
 
 OBJ_SDL = Graphic/SDL2/sdl2.o Graphic/SDL2/geometry.o Graphic/SDL2/window.o Graphic/SDL2/font.o Graphic/SDL2/event.o Graphic/SDL2/texte.o Graphic/SDL2/image.o Graphic/SDL2/formated_text.o
@@ -20,7 +20,7 @@ OBJ_SDL = Graphic/SDL2/sdl2.o Graphic/SDL2/geometry.o Graphic/SDL2/window.o Grap
 
 OBJ_GRAPH =  Graphic/Fenetre_acceuil.o Graphic/Commande.o Graphic/Choix_Niveau.o Graphic/Centrale_tab.o Niveau1.o Graphic/Cadre.o
 
-default : testGraphic.exe
+default : testSimulation.exe
 
 clean :
 	@rm -fr *.o *.exe Simulation/*.o Simulation/*~ Graphic/SDL2/*.o Graphic/SDL2/*~ Graphic/*.o Graphic/*~
@@ -61,6 +61,9 @@ Simulation/reacteur.o : Simulation/reacteur.cpp
 
 Simulation/RND.o : Simulation/RND.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Simulation/RND.cpp -o Simulation/RND.o
+
+Simulation/ouvriers.o : Simulation/ouvriers.cpp 
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Simulation/ouvriers.cpp -o Simulation/ouvriers.o
 
 #/ .o pour la SDL2
 Graphic/SDL2/sdl2.o: Graphic/SDL2/sdl2.cpp
