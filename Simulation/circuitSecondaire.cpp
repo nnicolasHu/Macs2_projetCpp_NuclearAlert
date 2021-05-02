@@ -190,3 +190,59 @@ void circuitSecondaire::update_Radioactivite(double E_ec, double Radioactivite_c
     double new_R2 = std::max(this->Radioactivite , (1-E_ec)*Radioactivite_circuit_primaire);
     this->Radioactivite = new_R2;
 }
+
+bool circuitSecondaire::reparation_condenseur(){
+    bool reparation_reussie = false;
+
+    if (RND(1.0) <= 0.3){ // lancer des 30% 
+        if (this->get_E_condenseur() > 0.98){ // reparation car pas très abîmé 
+            this->E_condenseur = 1;
+            reparation_reussie = true;
+        }
+
+        else {
+            double reparation = RND(0.02); // variable de réparation
+            this->E_condenseur += reparation;
+
+            if (this->E_condenseur == 1){
+                reparation_reussie = true;
+            }
+
+        }
+
+    }
+    return reparation_reussie;
+}
+
+bool circuitSecondaire::reparation_vapeur(){
+    bool reparation_reussie = false;
+    if (RND(1.0) <= 0.3){ // lancer des 30% 
+        if (this->get_E_vapeur() < 0.89){ // cas où E_vapeur < 0.89, dans le cas >= 0.89, il est considéré comme réparé
+            double reparation = RND(0.05);
+            this->set_E_vapeur(this->get_E_vapeur() + reparation); 
+        }
+    }
+
+    if (this->get_E_vapeur() == 1){
+        reparation_reussie = true;
+    }
+
+    return reparation_reussie;
+}
+
+bool circuitSecondaire::reparation_circuitSecondaire(){
+    bool reparation_reussie = false;
+
+    if (RND(1.0) <= 0.3){ // lancer des 30% 
+        if (this->get_E_circuit() < 0.78){ // E_circuit < 0.78 est le seul cas où on répare
+            double reparation = RND(0.02);
+            this->set_E_circuit(this->get_E_circuit() + reparation);
+        }
+    }
+
+    if (this->get_E_circuit() == 1){
+        reparation_reussie = true;
+    }
+
+    return reparation_reussie;
+}

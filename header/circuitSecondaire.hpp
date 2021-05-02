@@ -160,6 +160,21 @@ public:
      * @param[in] Radioactivite_circuit_primaire radioactivité le circuit primaire (attribut de circuitPrimaire)
      */
     void update_Radioactivite(double E_ec, double Radioactivite_circuit_primaire);
+
+    /**
+     * @brief Permet de réparer la pompe
+     */
+    bool reparation_condenseur();
+
+    /**
+     * @brief Permet de réparer le générateur de vapeur
+     */
+    bool reparation_vapeur();
+
+    /**
+     * @brief Permet de réparer le circuit secondaire
+     */
+    bool reparation_circuitSecondaire();
     
 
 private:

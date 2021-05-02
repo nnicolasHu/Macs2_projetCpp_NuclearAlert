@@ -171,6 +171,16 @@ public:
       */
      void degr_E_echangeur();
 
+     /**
+     * @brief Permet de réparer le circuit primaire
+     */
+    bool reparation_circuitPrimaire();
+
+    /**
+     * @brief Permet de réparer le circuit primaire
+     */
+    bool reparation_pressuriseurANDresistance();
+
 private:
      std::unique_ptr<centrale_abstract> Centrale;
      

@@ -1,4 +1,5 @@
 #include "circuit.hpp"
+#include "RND.hpp"
 
 
 /** Constructeur **/
@@ -61,4 +62,21 @@ void circuit::set_E_pompe(double etat) {
 
 void circuit::set_F_pompe(double regime) {
     if (regime>=0 && regime<=this->E_pompe) F_pompe=regime;
+}
+
+bool ::circuit::reparation_pompe(){
+    double reparation_reussi = false; 
+
+    if (RND(1.0) <= 0.3){ // lancer des 30% 
+
+        double reparation = RND(0.03); // tirage de réparation
+        this->set_E_pompe(this->get_E_pompe() + reparation);
+
+        if (this->get_E_pompe() > 0.97){
+            this->set_E_pompe(1);
+            reparation_reussi = true;
+        }
+    }
+
+    return (reparation_reussi);  // soit c'est réparé, soit non 
 }

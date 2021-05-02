@@ -108,6 +108,11 @@ public :
      */
     void set_F_pompe(double regime);
 
+    /**
+     * @brief Permet de réparer la pompe
+     */
+    bool reparation_pompe();
+
 
 protected : 
     /** Etat du circuit **/

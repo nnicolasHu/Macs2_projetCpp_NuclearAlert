@@ -221,3 +221,46 @@ void circuitPrimaire::set_temp_pressuriseur(double valeur_demandee){
 }
 */
 
+bool circuitPrimaire::reparation_circuitPrimaire(){
+    bool reparation_reussie = false;
+
+    if (RND(1.0) <= 0.3){ // lancer des 30% 
+        if (this->get_E_circuit() < 0.80){ // E_circuit < 0.80 est le seul cas où on répare
+            double reparation = RND(0.02);
+            this->set_E_circuit(this->get_E_circuit() + reparation);
+        }
+    }
+
+    if (this->get_E_circuit() == 1){
+        reparation_reussie = 1;
+    }
+    return reparation_reussie;
+}
+
+bool circuitPrimaire::reparation_pressuriseurANDresistance(){
+    bool reparation_reussie = false;
+
+    if (RND(1.0) <= 0.3){ // lancer des 30% 
+        if(this->get_E_pressuriseur() < 0.97){
+            double reparation_pres = RND(0.03);
+            double reparation_resis = RND(0.04);
+            this->set_E_pressuriseur(this->get_E_pressuriseur() + reparation_pres);
+            if (this->get_E_resistance() + reparation_resis > this->get_E_pressuriseur()){
+                this->set_E_resistance(this->get_E_pressuriseur()); 
+            }
+            else{
+                this->set_E_pressuriseur(this->get_E_resistance() + reparation_resis);
+            }
+        } 
+        else{
+            this->set_E_pressuriseur(1);
+            this->set_E_resistance(1);
+        }
+    }
+
+    if ( (this->get_E_pressuriseur() == 1) && (this->get_E_resistance() == 1) ){
+        reparation_reussie = 1;
+    }
+
+    return reparation_reussie;
+}
