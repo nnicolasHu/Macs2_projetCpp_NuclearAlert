@@ -173,11 +173,15 @@ public:
 
      /**
      * @brief Permet de réparer le circuit primaire
+     * 
+     * @return booléen, 1 si le circuit primaire est complètement réparé, 0 s'il est encore endommagé
      */
     bool reparation_circuitPrimaire();
 
     /**
-     * @brief Permet de réparer le circuit primaire
+     * @brief Permet de réparer le pressuriseur et la resistance
+     * 
+     * @return booléen, 1 si le pressuriseur et la resistance sont complètement réparés, 0 s'ils sont encore endommagés
      */
     bool reparation_pressuriseurANDresistance();
 

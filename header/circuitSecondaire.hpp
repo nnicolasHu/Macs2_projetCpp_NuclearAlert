@@ -162,17 +162,23 @@ public:
     void update_Radioactivite(double E_ec, double Radioactivite_circuit_primaire);
 
     /**
-     * @brief Permet de réparer la pompe
+     * @brief Permet de réparer le condenseur
+     * 
+     * @return booléen, 1 si le condenseur est complètement réparé, 0 s'il est encore endommagé
      */
     bool reparation_condenseur();
 
     /**
      * @brief Permet de réparer le générateur de vapeur
+     * 
+     * @return booléen, 1 si le générateur de vapeur est complètement réparé, 0 s'il est encore endommagé
      */
     bool reparation_vapeur();
 
     /**
      * @brief Permet de réparer le circuit secondaire
+     * 
+     * @return booléen, 1 si le circuit secondaire est complètement réparé, 0 s'il est encore endommagé
      */
     bool reparation_circuitSecondaire();
     

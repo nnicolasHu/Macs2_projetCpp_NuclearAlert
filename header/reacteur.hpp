@@ -180,6 +180,13 @@ public:
      */
      void degr_E_bore(double T1, double E_circuit_primaire);
 
+     /**
+      * @brief Permet d'effectuer les réparations sur l'injecteur borique
+      * 
+      * @return booléen, 1 si l'injecteur est complètement réparé, 0 s'il est encore endommagé
+      */
+     bool repa_E_bore();
+
 
 
 private:

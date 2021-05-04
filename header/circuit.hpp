@@ -19,7 +19,16 @@ public :
      */
     circuit();
 
+    /**
+     * @brief Constructeur de copie
+     * 
+     */
     circuit( const circuit& C ) = delete; // Interdiction de copier
+
+    /**
+     * @brief Constructeur de déplacement
+     * 
+     */
     circuit( circuit&& C ) = delete; // Interdiction de déplacer
 
     /**
@@ -110,6 +119,8 @@ public :
 
     /**
      * @brief Permet de réparer la pompe
+     * 
+     * @return booléen, 1 si la pompe est complètement réparée, 0 si elle est encore endommagée
      */
     bool reparation_pompe();
 
