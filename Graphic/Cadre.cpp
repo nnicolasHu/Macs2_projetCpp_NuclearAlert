@@ -109,20 +109,18 @@ void SalleDeControle(){//centrale* C
 
     bool quitting = false;
     sdl2::event_queue queue;
-        fenêtre << sdl2::flush;
-        auto events = queue.pull_events();
-        for(const auto& e : events){
-            if(e->kind_of_event() == sdl2::event::quit) quitting = true;
-            if(e->kind_of_event() == sdl2::event::key){
-                auto& key = dynamic_cast<sdl2::event_keyboard&>(*e);
-                if(key.state() == sdl2::event_keyboard::pressed){
-                    char keychar = key.ascci_code();
-                    if(keychar == 27) quitting = true;
-                }
-                
+    fenêtre << sdl2::flush;
+    auto events = queue.pull_events();
+    for(const auto& e : events){
+        if(e->kind_of_event() == sdl2::event::quit) quitting = true;
+        if(e->kind_of_event() == sdl2::event::key){
+            auto& key = dynamic_cast<sdl2::event_keyboard&>(*e);
+            if(key.state() == sdl2::event_keyboard::pressed){
+                char keychar = key.ascci_code();
+                if(keychar == 27) quitting = true;
             }
         }
-
+    }
     SDL_Delay(5000);
     
 }
