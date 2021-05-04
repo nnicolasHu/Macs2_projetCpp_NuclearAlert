@@ -3,21 +3,21 @@
 #include<SDL2/SDL_ttf.h>
 #include <iostream>
 
-std::string Fenetre_acceuil(){
+std::string Fenetre_acceuil(sdl2::window* fenêtre){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
-    sdl2::window fenêtre("Nuclear Alert : Authentification", {800, 600});
+    //sdl2::window fenêtre("Nuclear Alert : Authentification", {800, 600});
 
-    sdl2::texte phrase("Entrez votre pseudo : ", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte phrase("Entrez votre pseudo : ", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     phrase.at(310, 310);
-    sdl2::texte authentification("Authentification", fonte_titre, fenêtre, {0xFF, 0, 0, 0xFF});
+    sdl2::texte authentification("Authentification", fonte_titre, *fenêtre, {0xFF, 0, 0, 0xFF});
     authentification.at(290, 70);
-    sdl2::texte phrase4("Puis appuyez sur 'Entree' une fois terminé. ", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte phrase4("Puis appuyez sur 'Entree' une fois terminé. ", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     phrase4.at(250, 450);
     std::string pseudo;
 
-    sdl2::image Alert("Graphic/data/Alert.png", fenêtre);
+    sdl2::image Alert("Graphic/data/Alert.png", *fenêtre);
     Alert.at(320,110); // Emplacement sur la fenêtre 
     Alert.stretch({128,128}); // Taille 
     Alert.flip(sdl2::image::horizontal);
@@ -27,14 +27,14 @@ std::string Fenetre_acceuil(){
     int xinput = 300, yinput = 400;
     
     while(not quitting){
-        fenêtre << sdl2::rectangle({290,350}, {200, 75}, {0,0,0xFF,0xFF}, false);
-        fenêtre << phrase << phrase4 << Alert<< authentification << sdl2::flush;
-        fenêtre << sdl2::rectangle({289, 349}, {199, 74}, {0, 0, 0, 0}, true);
+        *fenêtre << sdl2::rectangle({290,350}, {200, 75}, {0,0,0xFF,0xFF}, false);
+        *fenêtre << phrase << phrase4 << Alert<< authentification << sdl2::flush;
+        *fenêtre << sdl2::rectangle({289, 349}, {199, 74}, {0, 0, 0, 0}, true);
         if (pseudo.size() > 0)
         {   
-            sdl2::texte name(pseudo, fonte_texte, fenêtre, {0xFF,0xFF,0xFF,0xFF});
+            sdl2::texte name(pseudo, fonte_texte, *fenêtre, {0xFF,0xFF,0xFF,0xFF});
             name.at(xinput,yinput);
-            fenêtre << name ; 
+            *fenêtre << name ; 
         }
         
         auto events = queue.pull_events();
