@@ -188,3 +188,23 @@ void reacteur::degr_E_bore(double T1, double E_circuit_primaire){
         E_bore = 0.;
     }
 }
+
+bool reacteur::repa_E_bore(){
+    bool reparation = false;
+
+    if (RND(1.)>=0.7){
+        if (E_bore < 0.96){
+            E_bore += RND(0.04);
+        }
+
+        if (E_bore >= 0.96){
+            E_bore = 1.;
+        }
+    }
+
+    if (E_bore == 1.){
+        reparation = true;
+    }
+
+    return reparation;
+}
