@@ -7,7 +7,7 @@
 
 std::string Fenetre_acceuil();
 int Choix_Niveau();
-void Centrale_tab();
+void Centrale_tab(sdl2::window* fenêtre);
 void Controle_win(int level);
 void Commande();
 void Niveau1();

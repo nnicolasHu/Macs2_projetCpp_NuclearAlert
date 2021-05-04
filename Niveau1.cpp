@@ -32,7 +32,7 @@ void Niveau1(){
                     }
                     else if(keychar == 9) {
                         fenêtre.cls({0, 0, 0, 0});
-                        Centrale_tab();
+                        Centrale_tab(&fenêtre);
                     }
                 }
             }
