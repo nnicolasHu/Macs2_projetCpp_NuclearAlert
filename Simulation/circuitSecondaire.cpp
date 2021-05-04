@@ -58,10 +58,10 @@ double circuitSecondaire::get_Delta_ES() const{
     return this->Delta_ES;
 }
 
-void circuitSecondaire::degrad_all(double E_chaleur){
+void circuitSecondaire::degrad_all(double E_chaleur,double E_enceinte){
     this->degrad_E_circuit();
     this->degrad_E_pompe();
-    this->degrad_E_vapeur(E_chaleur);
+    this->degrad_E_vapeur(E_chaleur,E_enceinte);
     this->degrad_E_chaleur(E_chaleur);
 }
 
@@ -106,8 +106,7 @@ void circuitSecondaire::degrad_E_pompe(){
     }
 }
 
-void circuitSecondaire::degrad_E_vapeur(double E_chaleur){
-    double E_enceinte = Centrale->get_E_enceinte();
+void circuitSecondaire::degrad_E_vapeur(double E_chaleur, double E_enceinte){
     
     if (this->get_E_vapeur() > 0 ){
         if (this->get_E_circuit() < 0.4){ // cas E_c2 < 0.6
@@ -219,7 +218,7 @@ bool circuitSecondaire::reparation_vapeur(){
     if (RND(1.0) <= 0.3){ // lancer des 30% 
         if (this->get_E_vapeur() < 0.89){ // cas où E_vapeur < 0.89, dans le cas >= 0.89, il est considéré comme réparé
             double reparation = RND(0.05);
-            this->set_E_vapeur(this->get_E_vapeur() + reparation); 
+            E_vapeur += reparation; 
         }
     }
 

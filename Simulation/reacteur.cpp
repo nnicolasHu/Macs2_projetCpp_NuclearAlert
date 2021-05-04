@@ -111,8 +111,7 @@ void reacteur::maj_R_piscine(double R1){
     R_piscine = (1.- E_cuve)*R1 + 100 + RND(45);
 }
 
-void reacteur::degr_E_cuve(double T1, double E_circuit_primaire){
-    double E_enceinte = Centrale->get_E_enceinte();
+void reacteur::degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte){
 
     if (E_cuve>0.){
         if ((T1>=50) && (E_circuit_primaire<0.6)){
@@ -133,8 +132,7 @@ void reacteur::degr_E_cuve(double T1, double E_circuit_primaire){
     }
 }
 
-void reacteur::degr_E_piscine(double T1, double E_circuit_primaire){
-    double E_enceinte = Centrale->get_E_enceinte();
+void reacteur::degr_E_piscine(double T1, double E_circuit_primaire,double E_enceinte){
 
     if(E_piscine >0.){
         if ((T1>=50) && (E_circuit_primaire<0.2)){

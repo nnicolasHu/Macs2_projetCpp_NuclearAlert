@@ -211,8 +211,8 @@ void centrale::maj_Reacteur(){
     Reacteur->degr_E_barre(T1);
     Reacteur->degr_E_bore(T1, E_C1);
     Reacteur->degr_E_canaux(T1);
-    Reacteur->degr_E_cuve(T1, E_C1);
-    Reacteur->degr_E_piscine(T1, E_C1);
+    Reacteur->degr_E_cuve(T1, E_C1, E_enceinte);
+    Reacteur->degr_E_piscine(T1, E_C1, E_enceinte);
 } 
 
 void centrale::maj_Circuit_Primaire(){
@@ -227,18 +227,20 @@ void centrale::maj_Circuit_Primaire(){
     Circuit_Primaire->maj_Radioactivite(TBore_eff, MW);
     Circuit_Primaire->maj_T_pressuriseur_eff();
     Circuit_Primaire->maj_Temperature(TBore_eff, TGraphite_eff);
-    Circuit_Primaire->degr_E_circuit();
+    Circuit_Primaire->degr_E_circuit(E_enceinte);
     Circuit_Primaire->degr_E_pompe();
+    Circuit_Primaire->degr_E_pressuriseur(E_enceinte);
+    Circuit_Primaire->degr_E_resistance(E_enceinte);
+    Circuit_Primaire->degr_E_echangeur();
 }
 
 void centrale::maj_Circuit_Secondaire(){
     double E_chaleur = Circuit_Primaire->get_E_echangeur();
     double T1 = Circuit_Primaire->get_Temperature();
-    double It2 = Circuit_Secondaire->get_Inertie();
     double R1 = Circuit_Primaire->get_Radioactivite();
     
-    Circuit_Secondaire->degrad_all(E_chaleur);
-    Circuit_Secondaire->update_T_vapeur(E_chaleur,T1,It2);
+    Circuit_Secondaire->degrad_all(E_chaleur,E_enceinte);
+    Circuit_Secondaire->update_T_vapeur(E_chaleur,T1);
     Circuit_Secondaire->update_P_vapeur();
     Circuit_Secondaire->update_Debit_eau();
     Circuit_Secondaire->update_D_condenseur();

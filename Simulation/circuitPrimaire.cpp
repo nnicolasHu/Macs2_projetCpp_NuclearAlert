@@ -109,8 +109,7 @@ void circuitPrimaire::decr_F_pompe() {
 }
 
 //les dégradations
-void circuitPrimaire::degr_E_circuit() {
-    double E_enceinte = Centrale->get_E_enceinte();
+void circuitPrimaire::degr_E_circuit(double E_enceinte) {
 
     if (E_circuit>0.){
 
@@ -148,8 +147,7 @@ void circuitPrimaire::degr_E_pompe() {
 
 }
 
-void circuitPrimaire::degr_E_pressuriseur(){
-    double E_enceinte = Centrale->get_E_enceinte();
+void circuitPrimaire::degr_E_pressuriseur(double E_enceinte){
 
     if (E_pressuriseur>0.){
         if(Temperature>=420){
@@ -168,8 +166,7 @@ void circuitPrimaire::degr_E_pressuriseur(){
     }
 }
 
-void circuitPrimaire::degr_E_resistance(){
-    double E_enceinte = Centrale->get_E_enceinte();
+void circuitPrimaire::degr_E_resistance(double E_enceinte){
 
     if (E_resistance>0.){
         if(Temperature>=420){
