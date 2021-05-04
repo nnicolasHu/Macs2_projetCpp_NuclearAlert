@@ -5,6 +5,9 @@
 #include<string>
 #include"sdl2.hpp"
 
+using namespace std::string_literals ;// Indispensable pour utiliser le suffixe s
+
+
 std::string Fenetre_acceuil(sdl2::window* fenêtre);
 int Choix_Niveau(sdl2::window* fenêtre);
 void Centrale_tab(sdl2::window* fenêtre);
