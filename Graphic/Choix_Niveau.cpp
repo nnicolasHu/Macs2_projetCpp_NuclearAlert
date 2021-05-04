@@ -11,17 +11,17 @@ int Choix_Niveau(sdl2::window* fenêtre){
     //sdl2::window fenêtre("Nuclear Alert : Choix Niveau", {800, 600});
     int level = 0;
 
-    sdl2::texte bvn("Bienvenue", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte bvn("Bienvenue"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     bvn.at(350, 50);
-    sdl2::texte titre2("Veuillez choisir un niveau ", fonte_titre, *fenêtre, {0xFF, 0, 0, 0xFF});
+    sdl2::texte titre2("Veuillez choisir un niveau "s, fonte_titre, *fenêtre, {0xFF, 0, 0, 0xFF});
     titre2.at(250, 100);
-    sdl2::texte niveau1("Niveau 1", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte niveau1("Niveau 1"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     niveau1.at(355, 180);
     niveau1.stretch({75, 75});
-    sdl2::texte niveau2("Niveau 2", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte niveau2("Niveau 2"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     niveau2.at(355, 300);
     niveau2.stretch({75, 75});
-    sdl2::texte niveau3("Niveau 3", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte niveau3("Niveau 3"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     niveau3.at(355, 420);
     niveau3.stretch({75, 75});
 
@@ -56,7 +56,7 @@ int Choix_Niveau(sdl2::window* fenêtre){
                             level = 3;
                             quitting = true;
                         }
-                        else std::cout << "Aucun niveau sélectionné !"<< std::endl;
+                        else std::cout << "Aucun niveau sélectionné !" << std::endl;
                         // std::cout << "px = " << px <<" et py = "<< py << std::endl;
                         
                     }

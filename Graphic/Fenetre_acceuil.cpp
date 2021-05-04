@@ -9,11 +9,11 @@ std::string Fenetre_acceuil(sdl2::window* fenêtre){
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     //sdl2::window fenêtre("Nuclear Alert : Authentification", {800, 600});
 
-    sdl2::texte phrase("Entrez votre pseudo : ", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte phrase("Entrez votre pseudo : "s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     phrase.at(310, 310);
-    sdl2::texte authentification("Authentification", fonte_titre, *fenêtre, {0xFF, 0, 0, 0xFF});
+    sdl2::texte authentification("Authentification"s, fonte_titre, *fenêtre, {0xFF, 0, 0, 0xFF});
     authentification.at(290, 70);
-    sdl2::texte phrase4("Puis appuyez sur 'Entree' une fois terminé. ", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte phrase4("Puis appuyez sur 'Entree' une fois terminé. "s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     phrase4.at(250, 450);
     std::string pseudo;
 

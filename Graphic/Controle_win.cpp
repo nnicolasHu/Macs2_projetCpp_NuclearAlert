@@ -7,12 +7,12 @@ void Controle_win(int level){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
-    sdl2::window fenêtre("Nuclear Alert : Fenêtre de Controle", {800, 600});
+    sdl2::window fenêtre("Nuclear Alert : Fenêtre de Controle"s, {800, 600});
     bool quitting = false;
 
-    sdl2::texte niveau1("Niveau 1", fonte_titre, fenêtre, {0xFF, 0xFF, 0xFF});
+    sdl2::texte niveau1("Niveau 1"s, fonte_titre, fenêtre, {0xFF, 0xFF, 0xFF});
     niveau1.at(325, 50);
-    sdl2::texte help("Appuyer sur h pour afficher les commandes", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte help("Appuyer sur h pour afficher les commandes"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     help.at(10, 10);
     sdl2::event_queue queue;
     while(not quitting){

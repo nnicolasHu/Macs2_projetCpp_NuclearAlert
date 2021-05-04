@@ -12,15 +12,15 @@ void Centrale_tab(sdl2::window * fenêtre){
     sdl2::image centrale("Graphic/data/sch├®ma_centrale.png", *fenêtre);
     centrale.at(100, 100);
 
-    sdl2::texte echap("Appuyez sur echap pour revenir à la fenêtre précédente", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte echap("Appuyez sur echap pour revenir à la fenêtre précédente"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     echap.at(200, 500);
-    sdl2::texte circuit_prim("Circuit primaire", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte circuit_prim("Circuit primaire"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     circuit_prim.at(70, 430);
-    sdl2::texte circuit_sec("Circuit secondaire", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte circuit_sec("Circuit secondaire"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     circuit_sec.at(230, 430);
-    sdl2::texte circuit_refroid("Circuit de refroidissement", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte circuit_refroid("Circuit de refroidissement"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     circuit_refroid.at(400, 430);
-    sdl2::texte vapeur("Vapeur d'eau", fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte vapeur("Vapeur d'eau"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     vapeur.at(550, 160);
     
     bool quitting = false;
