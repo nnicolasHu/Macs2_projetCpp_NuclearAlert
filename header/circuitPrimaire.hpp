@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <memory>
-#include "centrale_abstract.hpp"
 #include "circuit.hpp"
 
 /**
@@ -145,7 +144,7 @@ public:
       * @brief Permet de simuler les dégradations de l'état du circuit
       *
       */
-     void degr_E_circuit();
+     void degr_E_circuit(double E_enceinte);
 
      /**
       * @brief Permet de simuler les dégradations de l'état de la pompe
@@ -157,13 +156,13 @@ public:
       * @brief Permet de simuler les dégradations de l'état du pressuriseur
       *
       */
-     void degr_E_pressuriseur();
+     void degr_E_pressuriseur(double E_enceinte);
 
      /**
       * @brief Permet de simuler les dégradations de l'état de la resistance du pressuriseur
       *
       */
-     void degr_E_resistance();
+     void degr_E_resistance(double E_enceinte);
 
      /**
       * @brief Permet de simuler les dégradations de l'état de l'échangeur de chaleur
@@ -186,7 +185,6 @@ public:
     bool reparation_pressuriseurANDresistance();
 
 private:
-     std::unique_ptr<centrale_abstract> Centrale;
      
      /** Etat du pressuriseur **/
      double E_pressuriseur;

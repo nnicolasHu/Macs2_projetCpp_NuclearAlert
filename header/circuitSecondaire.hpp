@@ -3,7 +3,6 @@
 
 #include "circuit.hpp"
 #include <memory>
-#include "centrale_abstract.hpp"
 
 /**
  *  @brief   Cette classe décrit le circuit secondaire.
@@ -97,7 +96,7 @@ public:
      * @brief met a jour les dégradations de l'état du générateur de vapeur
      * @param[in] E_chaleur l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
      */
-    void degrad_E_vapeur(double E_chaleur);
+    void degrad_E_vapeur(double E_chaleur, double E_enceinte);
 
     /**
      * @brief met a jour les dégradations de l'état du circuit secondaire
@@ -111,9 +110,11 @@ public:
 
     /**
      * @brief met a jour TOUTES les dégradations du circuit secondaire
+     * 
      * @param[in] E_chaleur l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
+     * @param[in] E_enceinte l'état de l'enceinte de confinement
      */
-    void degrad_all(double E_chaleur);
+    void degrad_all(double E_chaleur, double E_enceinte);
 
     /**
      * @brief met a jour les dégradations de l'état de l'échangeur de chaleur (communique avec circuitPrimaire)
@@ -193,7 +194,6 @@ private:
       - Inertiertie | Inertie chaleur de l'eau du circuit
       - Radioactivite | radioactivité du circuit secondaire
     */
-    std::unique_ptr<centrale_abstract> Centrale;
     
      /** Etat du générateur de vapeur **/
      double E_vapeur;

@@ -145,7 +145,7 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] E_circuit_primaire Etat circuit primaire
      */
-     void degr_E_cuve(double T1, double E_circuit_primaire);
+     void degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état de la piscine
@@ -153,7 +153,7 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] E_circuit_primaire Etat circuit primaire
      */
-     void degr_E_piscine(double T1, double E_circuit_primaire);
+     void degr_E_piscine(double T1, double E_circuit_primaire,double E_enceinte);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
@@ -190,7 +190,6 @@ public:
 
 
 private:
-     std::unique_ptr<centrale_abstract> Centrale;
 
      /** Taux de graphite hors de l'eau demandé **/
      double Tx_graphite;
