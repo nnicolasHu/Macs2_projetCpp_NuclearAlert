@@ -51,24 +51,24 @@ double centrale::get_R_enceinte() const{
     return R_enceinte;
 }
 
-/*
-OK ça marche pas.....
-std::unique_ptr<reacteur> centrale::get_Reacteur() const {
-    return Reacteur* ;
+
+
+reacteur* centrale::get_Reacteur() const {
+    return ptrReacteur.get();
 }
 
-circuitPrimaire& centrale::get_Circuit_Primaire() const {
-    return *Circuit_Primaire;
+circuitPrimaire* centrale::get_Circuit_Primaire() const {
+    return ptrCircuit_Primaire.get();
 }
 
-circuitSecondaire& centrale::get_Circuit_Secondaire() const {
-    return *Circuit_Secondaire;
+circuitSecondaire* centrale::get_Circuit_Secondaire() const {
+    return ptrCircuit_Secondaire.get();
 }
 
-ouvriers& centrale::get_Ouvriers() const {
-    return *Ouvriers;
+ouvriers* centrale::get_Ouvriers() const {
+    return ptrOuvriers.get();
 }
-*/
+
 
 void centrale::set_E_enceinte(double val){
     E_enceinte = val;

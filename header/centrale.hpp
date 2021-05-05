@@ -86,10 +86,10 @@ public:
      */
     double get_R_enceinte() const override;
 
-    std::unique_ptr<reacteur> get_Reacteur() const;
-    circuitPrimaire& get_Circuit_Primaire() const;
-    circuitSecondaire& get_Circuit_Secondaire() const;
-    ouvriers& get_Ouvriers() const;
+    reacteur* get_Reacteur() const;
+    circuitPrimaire* get_Circuit_Primaire() const;
+    circuitSecondaire* get_Circuit_Secondaire() const;
+    ouvriers* get_Ouvriers() const;
 
     /** Test **/
     void set_E_enceinte(double val);
