@@ -18,9 +18,9 @@ OBJ_SIM = Simulation/centrale.o Simulation/circuit.o Simulation/circuitPrimaire.
 OBJ_SDL = Graphic/SDL2/sdl2.o Graphic/SDL2/geometry.o Graphic/SDL2/window.o Graphic/SDL2/font.o Graphic/SDL2/event.o Graphic/SDL2/texte.o Graphic/SDL2/image.o Graphic/SDL2/formated_text.o
 #les .o pour la SDL2
 
-OBJ_GRAPH =  Graphic/Fenetre_acceuil.o Graphic/Commande.o Graphic/Choix_Niveau.o Graphic/Centrale_tab.o Niveau1.o Graphic/Cadre.o
+OBJ_GRAPH =  Graphic/Fenetre_acceuil.o Graphic/Commande.o Graphic/Choix_Niveau.o Graphic/Centrale_tab.o Niveau1.o Graphic/Cadre.o Graphic/Radioprotection_win.o
 
-default : testGraphic.exe
+default : testGraphic.exe testSimulation.exe
 
 clean :
 	@rm -fr *.o *.exe Simulation/*.o Simulation/*~ Graphic/SDL2/*.o Graphic/SDL2/*~ Graphic/*.o Graphic/*~
@@ -105,3 +105,6 @@ Graphic/Centrale_tab.o : Graphic/Centrale_tab.cpp
 
 Graphic/Cadre.o : Graphic/Cadre.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Cadre.cpp -o Graphic/Cadre.o
+
+Graphic/Radioprotection_win.o : Graphic/Radioprotection_win.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Radioprotection_win.cpp -o Graphic/Radioprotection_win.o
