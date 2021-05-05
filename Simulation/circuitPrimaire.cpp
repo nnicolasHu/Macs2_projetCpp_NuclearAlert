@@ -228,7 +228,7 @@ bool circuitPrimaire::reparation_circuitPrimaire(){
         }
     }
 
-    if (this->get_E_circuit() == 1){
+    if (this->get_E_circuit() >= 0.8){
         reparation_reussie = 1;
     }
     return reparation_reussie;

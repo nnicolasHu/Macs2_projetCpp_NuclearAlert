@@ -200,7 +200,7 @@ bool reacteur::repa_E_bore(){
         }
     }
 
-    if (E_bore == 1.){
+    if (E_bore >= 0.96){
         reparation = true;
     }
 

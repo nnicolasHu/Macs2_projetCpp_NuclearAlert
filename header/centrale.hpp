@@ -3,10 +3,10 @@
 
 #include <memory>
 
-#include "centrale_abstract.hpp"
 #include "reacteur.hpp"
 #include "circuitPrimaire.hpp"
 #include "circuitSecondaire.hpp"
+#include "ouvriers.hpp"
 
 /**
  * @brief    Cette classe décrit la centrale dans sa globalité.
@@ -85,6 +85,11 @@ public:
      * @return R_enceinte
      */
     double get_R_enceinte() const override;
+
+    std::unique_ptr<reacteur> get_Reacteur() const;
+    circuitPrimaire& get_Circuit_Primaire() const;
+    circuitSecondaire& get_Circuit_Secondaire() const;
+    ouvriers& get_Ouvriers() const;
 
     /** Test **/
     void set_E_enceinte(double val);
@@ -234,17 +239,23 @@ public:
      */
     void maj_Population();
 
+    void envoie_intervention(int organe);
+    void maj_Reparation();
+
 private:
     static centrale* la_centrale;
     
     /** Reacteur **/
-    std::unique_ptr<reacteur> Reacteur;
+    std::unique_ptr<reacteur> ptrReacteur;
 
     /** Circuit Primaire **/
-    std::unique_ptr<circuitPrimaire> Circuit_Primaire;
+    std::unique_ptr<circuitPrimaire> ptrCircuit_Primaire;
 
-    /** Circuit Primaire **/
-    std::unique_ptr<circuitSecondaire> Circuit_Secondaire;
+    /** Circuit Secondaire **/
+    std::unique_ptr<circuitSecondaire> ptrCircuit_Secondaire;
+
+    /** Classe des ouvriers **/
+    std::unique_ptr<ouvriers> ptrOuvriers;
 
     /** Etat de l'enceinte **/
     double E_enceinte;

@@ -174,7 +174,7 @@ public:
      * 
      * @return booléen, 1 si le générateur de vapeur est complètement réparé, 0 s'il est encore endommagé
      */
-    bool reparation_vapeur();
+    bool reparation_vapeur(int nbOuvrier);
 
     /**
      * @brief Permet de réparer le circuit secondaire

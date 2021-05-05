@@ -17,6 +17,10 @@ centrale::centrale(){
     R_air = 0.;
     R_eau = 0.;
     Contamination = 0;
+    ptrReacteur = std::make_unique<reacteur>();
+    ptrCircuit_Primaire = std::make_unique<circuitPrimaire>();
+    ptrCircuit_Secondaire = std::make_unique<circuitSecondaire>();
+    ptrOuvriers = std::make_unique<ouvriers>();
 }
 
 centrale& centrale::get(){
@@ -46,6 +50,25 @@ double centrale::get_MW() const{
 double centrale::get_R_enceinte() const{
     return R_enceinte;
 }
+
+/*
+OK ça marche pas.....
+std::unique_ptr<reacteur> centrale::get_Reacteur() const {
+    return Reacteur* ;
+}
+
+circuitPrimaire& centrale::get_Circuit_Primaire() const {
+    return *Circuit_Primaire;
+}
+
+circuitSecondaire& centrale::get_Circuit_Secondaire() const {
+    return *Circuit_Secondaire;
+}
+
+ouvriers& centrale::get_Ouvriers() const {
+    return *Ouvriers;
+}
+*/
 
 void centrale::set_E_enceinte(double val){
     E_enceinte = val;
@@ -83,12 +106,12 @@ void centrale::set_Contamination(int val){
 }
 
 void centrale::maj_P_enceinte(){
-    double P1 = Circuit_Primaire->get_Pression();
-    double E_cuve = Reacteur->get_E_cuve();
-    double E_piscine = Reacteur->get_E_piscine();
-    double E_C1 = Circuit_Primaire->get_E_circuit();
-    double E_vap = Circuit_Secondaire->get_E_vapeur();
-    double P_vap = Circuit_Secondaire->get_P_vapeur();
+    double P1 = ptrCircuit_Primaire->get_Pression();
+    double E_cuve = ptrReacteur->get_E_cuve();
+    double E_piscine = ptrReacteur->get_E_piscine();
+    double E_C1 = ptrCircuit_Primaire->get_E_circuit();
+    double E_vap = ptrCircuit_Secondaire->get_E_vapeur();
+    double P_vap = ptrCircuit_Secondaire->get_P_vapeur();
 
     if (((P1>8.) && (E_cuve<1.) && (E_piscine<1.))||((E_cuve<0.3) && (E_piscine<0.4))){
         P_enceinte += (2. - E_cuve - E_piscine)/23;
@@ -112,11 +135,11 @@ void centrale::maj_P_enceinte(){
 }
 
 void centrale::maj_R_enceinte(){
-    double E_C1 = Circuit_Primaire->get_E_circuit();
-    double R1 = Circuit_Primaire->get_Radioactivite();
-    double E_press = Circuit_Primaire->get_E_pressuriseur();
-    double E_piscine = Reacteur->get_E_piscine();
-    double R_piscine = Reacteur->get_R_piscine();
+    double E_C1 = ptrCircuit_Primaire->get_E_circuit();
+    double R1 = ptrCircuit_Primaire->get_Radioactivite();
+    double E_press = ptrCircuit_Primaire->get_E_pressuriseur();
+    double E_piscine = ptrReacteur->get_E_piscine();
+    double R_piscine = ptrReacteur->get_R_piscine();
 
     R_enceinte = RND(1./55)+ 0.00002 + ((1. - E_C1)*R1)/(98.98) + (1. - E_press)*10.;
 
@@ -135,30 +158,30 @@ void centrale::maj_R_enceinte(){
 }
 
 void centrale::maj_E_centrale(){
-    double E_canaux = Reacteur->get_E_canaux();
-    double E_barre = Reacteur->get_E_barre();
-    double E_cuve = Reacteur->get_E_cuve();
-    double E_piscine = Reacteur->get_E_piscine();
-    double E_p1 = Circuit_Primaire->get_E_pompe();
-    double E_p2 = Circuit_Secondaire->get_E_pompe();
-    double E_EC = Circuit_Primaire->get_E_echangeur();
-    double E_vap = Circuit_Secondaire->get_E_vapeur();
-    double E_press = Circuit_Primaire->get_E_pressuriseur();
-    double E_res = Circuit_Primaire->get_E_resistance();
-    double E_C1 = Circuit_Primaire->get_E_circuit();
-    double E_C2 = Circuit_Secondaire->get_E_circuit();
-    double E_bore = Reacteur->get_E_bore();
-    double E_cond = Circuit_Secondaire->get_E_condenseur();
+    double E_canaux = ptrReacteur->get_E_canaux();
+    double E_barre = ptrReacteur->get_E_barre();
+    double E_cuve = ptrReacteur->get_E_cuve();
+    double E_piscine = ptrReacteur->get_E_piscine();
+    double E_p1 = ptrCircuit_Primaire->get_E_pompe();
+    double E_p2 = ptrCircuit_Secondaire->get_E_pompe();
+    double E_EC = ptrCircuit_Primaire->get_E_echangeur();
+    double E_vap = ptrCircuit_Secondaire->get_E_vapeur();
+    double E_press = ptrCircuit_Primaire->get_E_pressuriseur();
+    double E_res = ptrCircuit_Primaire->get_E_resistance();
+    double E_C1 = ptrCircuit_Primaire->get_E_circuit();
+    double E_C2 = ptrCircuit_Secondaire->get_E_circuit();
+    double E_bore = ptrReacteur->get_E_bore();
+    double E_cond = ptrCircuit_Secondaire->get_E_condenseur();
 
     E_centrale = (E_canaux + 2*E_barre + 8*E_cuve + 3*E_piscine + E_p1 + E_p2 + 5*E_EC + 4*E_vap + E_press + E_res + 4*E_enceinte + 8*E_C1 + 3*E_C2 + E_bore + E_cond)/44.;
 
 }
 
 void centrale::maj_MW(){
-    double T_vap = Circuit_Secondaire->get_T_vapeur();
-    double E_C2 = Circuit_Secondaire->get_E_circuit();
-    double P_vap = Circuit_Secondaire->get_P_vapeur();
-    double P1 = Circuit_Primaire->get_Pression();
+    double T_vap = ptrCircuit_Secondaire->get_T_vapeur();
+    double E_C2 = ptrCircuit_Secondaire->get_E_circuit();
+    double P_vap = ptrCircuit_Secondaire->get_P_vapeur();
+    double P1 = ptrCircuit_Primaire->get_Pression();
 
     if ((T_vap<120.) || (E_C2<0.22)){
         MW = 0;
@@ -203,49 +226,49 @@ void centrale::degr_E_enceinte(){
 }
 
 void centrale::maj_Reacteur(){
-    double R1 = Circuit_Primaire->get_Radioactivite();
-    double T1 = Circuit_Primaire->get_Temperature();
-    double E_C1 = Circuit_Primaire->get_E_circuit();
+    double R1 = ptrCircuit_Primaire->get_Radioactivite();
+    double T1 = ptrCircuit_Primaire->get_Temperature();
+    double E_C1 = ptrCircuit_Primaire->get_E_circuit();
 
-    Reacteur->maj_R_piscine(R1);
-    Reacteur->degr_E_barre(T1);
-    Reacteur->degr_E_bore(T1, E_C1);
-    Reacteur->degr_E_canaux(T1);
-    Reacteur->degr_E_cuve(T1, E_C1, E_enceinte);
-    Reacteur->degr_E_piscine(T1, E_C1, E_enceinte);
+    ptrReacteur->maj_R_piscine(R1);
+    ptrReacteur->degr_E_barre(T1);
+    ptrReacteur->degr_E_bore(T1, E_C1);
+    ptrReacteur->degr_E_canaux(T1);
+    ptrReacteur->degr_E_cuve(T1, E_C1, E_enceinte);
+    ptrReacteur->degr_E_piscine(T1, E_C1, E_enceinte);
 } 
 
 void centrale::maj_Circuit_Primaire(){
-    double E_cuve = Reacteur->get_E_cuve();
-    double TBore_eff = Reacteur->get_TBore_eff();
-    double TGraphite_eff = Reacteur->get_TGraphite_eff();
-    double T_vapeur = Circuit_Secondaire->get_T_vapeur();
+    double E_cuve = ptrReacteur->get_E_cuve();
+    double TBore_eff = ptrReacteur->get_TBore_eff();
+    double TGraphite_eff = ptrReacteur->get_TGraphite_eff();
+    double T_vapeur = ptrCircuit_Secondaire->get_T_vapeur();
 
-    Circuit_Primaire->maj_Debit_eau(E_cuve);
-    Circuit_Primaire->maj_Inertie(TBore_eff, TGraphite_eff, T_vapeur);
-    Circuit_Primaire->maj_Pression();
-    Circuit_Primaire->maj_Radioactivite(TBore_eff, MW);
-    Circuit_Primaire->maj_T_pressuriseur_eff();
-    Circuit_Primaire->maj_Temperature(TBore_eff, TGraphite_eff);
-    Circuit_Primaire->degr_E_circuit(E_enceinte);
-    Circuit_Primaire->degr_E_pompe();
-    Circuit_Primaire->degr_E_pressuriseur(E_enceinte);
-    Circuit_Primaire->degr_E_resistance(E_enceinte);
-    Circuit_Primaire->degr_E_echangeur();
+    ptrCircuit_Primaire->maj_Debit_eau(E_cuve);
+    ptrCircuit_Primaire->maj_Inertie(TBore_eff, TGraphite_eff, T_vapeur);
+    ptrCircuit_Primaire->maj_Pression();
+    ptrCircuit_Primaire->maj_Radioactivite(TBore_eff, MW);
+    ptrCircuit_Primaire->maj_T_pressuriseur_eff();
+    ptrCircuit_Primaire->maj_Temperature(TBore_eff, TGraphite_eff);
+    ptrCircuit_Primaire->degr_E_circuit(E_enceinte);
+    ptrCircuit_Primaire->degr_E_pompe();
+    ptrCircuit_Primaire->degr_E_pressuriseur(E_enceinte);
+    ptrCircuit_Primaire->degr_E_resistance(E_enceinte);
+    ptrCircuit_Primaire->degr_E_echangeur();
 }
 
 void centrale::maj_Circuit_Secondaire(){
-    double E_chaleur = Circuit_Primaire->get_E_echangeur();
-    double T1 = Circuit_Primaire->get_Temperature();
-    double R1 = Circuit_Primaire->get_Radioactivite();
+    double E_chaleur = ptrCircuit_Primaire->get_E_echangeur();
+    double T1 = ptrCircuit_Primaire->get_Temperature();
+    double R1 = ptrCircuit_Primaire->get_Radioactivite();
     
-    Circuit_Secondaire->degrad_all(E_chaleur,E_enceinte);
-    Circuit_Secondaire->update_T_vapeur(E_chaleur,T1);
-    Circuit_Secondaire->update_P_vapeur();
-    Circuit_Secondaire->update_Debit_eau();
-    Circuit_Secondaire->update_D_condenseur();
-    Circuit_Secondaire->update_Inertie(T1);
-    Circuit_Secondaire->update_Radioactivite(E_chaleur,R1);
+    ptrCircuit_Secondaire->degrad_all(E_chaleur,E_enceinte);
+    ptrCircuit_Secondaire->update_T_vapeur(E_chaleur,T1);
+    ptrCircuit_Secondaire->update_P_vapeur();
+    ptrCircuit_Secondaire->update_Debit_eau();
+    ptrCircuit_Secondaire->update_D_condenseur();
+    ptrCircuit_Secondaire->update_Inertie(T1);
+    ptrCircuit_Secondaire->update_Radioactivite(E_chaleur,R1);
 
 } 
 
@@ -290,7 +313,7 @@ void centrale::maj_Evac(){
 
 void centrale::maj_R_air(){
 
-    double E_C2 = Circuit_Secondaire->get_E_circuit();
+    double E_C2 = ptrCircuit_Secondaire->get_E_circuit();
 
     /** Peut-être pas utile **/
     if(E_enceinte>0.97){
@@ -304,8 +327,8 @@ void centrale::maj_R_air(){
 
 void centrale::maj_R_eau(){
 
-    double E_CD = Circuit_Secondaire->get_E_condenseur();
-    double R2 = Circuit_Secondaire->get_Radioactivite();
+    double E_CD = ptrCircuit_Secondaire->get_E_condenseur();
+    double R2 = ptrCircuit_Secondaire->get_Radioactivite();
 
     if ((E_CD>0.9) || (R2<2)){
         R_eau = 0.;
@@ -341,4 +364,58 @@ void centrale::maj_Population(){
     maj_R_air();
     maj_R_eau();
     maj_Evac();
+}
+
+void centrale::envoie_intervention(int organe) {
+    std::array<int,8> Max = {8, 8, 20, 60, 50, 45, 20, 10};
+    if (organe<=7 && organe>=0) {
+        ptrOuvriers->envoie_intervention(organe,Max[organe]-ptrOuvriers->get_nb_ouvriersEnIntervention(organe));
+    }
+}
+
+void centrale::maj_Reparation() {
+    // on check si des ouvriers sont gueris ou sont blesses
+    bool dangereux = (R_enceinte>12 || P_enceinte>3 || ptrCircuit_Secondaire->get_Temperature()>300 || MW>1000);
+    ptrOuvriers->maj_ouvriers(dangereux,(ptrCircuit_Primaire->get_E_circuit()<0.2));
+
+    if (ptrOuvriers->get_nb_ouvriersEnIntervention(0)>0) {
+        if (ptrCircuit_Primaire->reparation_pompe()) {
+            ptrOuvriers->retrait_intervention(0);
+        }
+    }
+    if (ptrOuvriers->get_nb_ouvriersEnIntervention(1)>0) {
+        if (ptrCircuit_Secondaire->reparation_pompe()) {
+            ptrOuvriers->retrait_intervention(1);
+        }
+    }
+    if (ptrOuvriers->get_nb_ouvriersEnIntervention(2)>0) {
+        if (ptrCircuit_Secondaire->reparation_condenseur()) {
+            ptrOuvriers->retrait_intervention(2);
+        }
+    }
+    if (ptrOuvriers->get_nb_ouvriersEnIntervention(3)>0) {
+        if (ptrCircuit_Secondaire->reparation_vapeur()) {
+            ptrOuvriers->retrait_intervention(3);
+        }
+    }
+    if (ptrOuvriers->get_nb_ouvriersEnIntervention(4)>0) {
+        if (ptrReacteur->repa_E_bore()) {
+            ptrOuvriers->retrait_intervention(4);
+        }
+    }
+    if (ptrOuvriers->get_nb_ouvriersEnIntervention(5)>0) {
+        if (ptrCircuit_Primaire->reparation_circuitPrimaire()) {
+            ptrOuvriers->retrait_intervention(5);
+        }
+    }
+    if (ptrOuvriers->get_nb_ouvriersEnIntervention(6)>0) {
+        if (ptrCircuit_Secondaire->reparation_circuitSecondaire()) {
+            ptrOuvriers->retrait_intervention(6);
+        }
+    }
+    if (ptrOuvriers->get_nb_ouvriersEnIntervention(7)>0) {
+        if (ptrCircuit_Primaire->reparation_pressuriseurANDresistance()) {
+            ptrOuvriers->retrait_intervention(7);
+        }
+    }
 }

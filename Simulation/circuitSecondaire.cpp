@@ -193,7 +193,17 @@ void circuitSecondaire::update_Radioactivite(double E_ec, double Radioactivite_c
 bool circuitSecondaire::reparation_condenseur(){
     bool reparation_reussie = false;
 
-    if (RND(1.0) <= 0.3){ // lancer des 30% 
+    if (RND(1.0) <= 0.3){ // lancer des 30%
+    /*
+        double reparation = RND(0.02); // variable de réparation
+        this->E_condenseur += reparation;
+        if (this->get_E_condenseur() > 0.98) {
+            this->E_condenseur = 1;
+            reparation_reussie = true;
+        }
+    }
+    return reparation_reussie;
+    */
         if (this->get_E_condenseur() > 0.98){ // reparation car pas très abîmé 
             this->E_condenseur = 1;
             reparation_reussie = true;
@@ -204,7 +214,7 @@ bool circuitSecondaire::reparation_condenseur(){
             this->E_condenseur += reparation;
 
             if (this->E_condenseur == 1){
-                reparation_reussie = true;
+                reparation_reussie = true; // tu vas presque jamais rentrer ici mdr
             }
 
         }
@@ -213,16 +223,16 @@ bool circuitSecondaire::reparation_condenseur(){
     return reparation_reussie;
 }
 
-bool circuitSecondaire::reparation_vapeur(){
+bool circuitSecondaire::reparation_vapeur(int nbOuvrier){
     bool reparation_reussie = false;
     if (RND(1.0) <= 0.3){ // lancer des 30% 
         if (this->get_E_vapeur() < 0.89){ // cas où E_vapeur < 0.89, dans le cas >= 0.89, il est considéré comme réparé
-            double reparation = RND(0.05);
+            double reparation = RND(0.05)*nbOuvrier/60.; //reparation propotionnelle aux personne sur le generateur de vapeur
             E_vapeur += reparation; 
         }
     }
 
-    if (this->get_E_vapeur() == 1){
+    if (this->get_E_vapeur() >= 0.89){
         reparation_reussie = true;
     }
 
@@ -239,7 +249,7 @@ bool circuitSecondaire::reparation_circuitSecondaire(){
         }
     }
 
-    if (this->get_E_circuit() == 1){
+    if (this->get_E_circuit() >= 0.78){
         reparation_reussie = true;
     }
 

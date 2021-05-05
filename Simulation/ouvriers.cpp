@@ -52,6 +52,7 @@ void ouvriers::set_nb_disponible(int nb) {
     nb_disponible = nb;
 }
 
+
 void ouvriers::envoie_intervention(int organe,int nbOuvrier) {
     if (nbOuvrier <= nb_disponible) {
         int curseur = 0;
@@ -62,7 +63,7 @@ void ouvriers::envoie_intervention(int organe,int nbOuvrier) {
             intervention[curseur]=organe;
         }
         nb_disponible += -nbOuvrier;
-        nb_ouvriersEnIntervention[organe] = nbOuvrier;
+        nb_ouvriersEnIntervention[organe] += nbOuvrier;
     }
 }
 
@@ -97,6 +98,7 @@ void ouvriers::maj_ouvriers(bool dangereux, bool dangereux_circuitPrimaire) {
                     intervention[i] = -1;
                     blesses[i] = 1;
                     nb_blesses++;
+                    compteur_jour[i] = 0;
                 }
             }
             std::fill(nb_ouvriersEnIntervention.begin(),nb_ouvriersEnIntervention.end(),0);
@@ -121,6 +123,7 @@ void ouvriers::maj_ouvriers(bool dangereux, bool dangereux_circuitPrimaire) {
                 blesses[i] = 1;
                 nb_blesses++;
                 nb_ouvriersEnIntervention[5] += -1;
+                compteur_jour[i] = 0;
             }
         }
     }
