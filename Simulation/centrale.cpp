@@ -378,6 +378,8 @@ void centrale::maj_Reparation() {
     bool dangereux = (R_enceinte>12 || P_enceinte>3 || ptrCircuit_Secondaire->get_Temperature()>300 || MW>1000);
     ptrOuvriers->maj_ouvriers(dangereux,(ptrCircuit_Primaire->get_E_circuit()<0.2));
 
+    // on verifie chaque sur chaque organe s'il y a une intervention.
+    // on repare et on verifie si l'intervention est finie.
     if (ptrOuvriers->get_nb_ouvriersEnIntervention(0)>0) {
         if (ptrCircuit_Primaire->reparation_pompe()) {
             ptrOuvriers->retrait_intervention(0);
@@ -393,8 +395,9 @@ void centrale::maj_Reparation() {
             ptrOuvriers->retrait_intervention(2);
         }
     }
-    if (ptrOuvriers->get_nb_ouvriersEnIntervention(3)>0) {
-        if (ptrCircuit_Secondaire->reparation_vapeur()) {
+    int ouvrierSurVapeur =ptrOuvriers->get_nb_ouvriersEnIntervention(3);
+    if (ouvrierSurVapeur>0) {
+        if (ptrCircuit_Secondaire->reparation_vapeur(ouvrierSurVapeur)) {
             ptrOuvriers->retrait_intervention(3);
         }
     }
