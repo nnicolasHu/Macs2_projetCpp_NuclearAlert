@@ -20,7 +20,7 @@ OBJ_SDL = Graphic/SDL2/sdl2.o Graphic/SDL2/geometry.o Graphic/SDL2/window.o Grap
 
 OBJ_GRAPH =  Graphic/Fenetre_acceuil.o Graphic/Commande.o Graphic/Choix_Niveau.o Graphic/Centrale_tab.o Niveau1.o Graphic/Cadre.o Graphic/Radioprotection_win.o
 
-default : testGraphic.exe testSimulation.exe
+default : testGraphic.exe 
 
 clean :
 	@rm -fr *.o *.exe Simulation/*.o Simulation/*~ Graphic/SDL2/*.o Graphic/SDL2/*~ Graphic/*.o Graphic/*~
@@ -32,8 +32,8 @@ testSimulation.o : testSimulation.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c testSimulation.cpp -o testSimulation.o
 
 
-testGraphic.exe : testGraphic.o $(OBJ_SDL) $(OBJ_GRAPH)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -o testGraphic.exe testGraphic.o $(OBJ_SDL) $(OBJ_GRAPH) $(LIBS)
+testGraphic.exe : testGraphic.o $(OBJ_SDL) $(OBJ_GRAPH) $(OBJ_SIM)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o testGraphic.exe testGraphic.o $(OBJ_SDL) $(OBJ_GRAPH) $(OBJ_SIM) $(LIBS) 
 
 testGraphic.o : testGraphic.cpp 
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c testGraphic.cpp -o testGraphic.o 
