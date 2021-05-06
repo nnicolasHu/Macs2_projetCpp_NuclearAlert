@@ -4,13 +4,13 @@
 #include<iostream>
 #include<cmath> 
 
-void Commande(sdl2::window * fenêtre, int *dim_x, double *dim_y){
+void Commande(sdl2::window * fenêtre, int *dim_x, int *dim_y){
     
     double rapport_x = (*dim_x)/800.;
     double rapport_y = (*dim_y)/800.;
 
-    sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18 + floor(rapport_x+rapport_y));
-    sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
+    sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18 + 2*floor(rapport_x+rapport_y));
+    sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28 + 2*floor(rapport_x+rapport_y));
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     //sdl2::window fenêtre("Nuclear Alert : Schéma de la centrale"s, {*dim_x, *dim_y});
 
@@ -45,19 +45,20 @@ void Commande(sdl2::window * fenêtre, int *dim_x, double *dim_y){
     sdl2::event_queue queue;
 
     
-        *fenêtre  << titre << command1 << command2 << commandB << commandT << commandP << commandR << commandU1 << commandU2 << commandTab << commandE << sdl2::flush;
-        auto events = queue.pull_events();
-        for(const auto& e : events){
-            if(e->kind_of_event() == sdl2::event::quit) quitting = true;
-            if(e->kind_of_event() == sdl2::event::key){
-                auto& key = dynamic_cast<sdl2::event_keyboard&>(*e); // obliger quand tu cree une dynamique class
-                if(key.state() == sdl2::event_keyboard::pressed){
-                    char keychar = key.ascci_code(); // code ascii
-                    if(keychar == 27) quitting = true; //27 touche echap
-                }
-                
+    *fenêtre  << titre << command1 << command2 << commandB << commandT << commandP << commandR << commandU1 << commandU2 << commandTab << commandE << sdl2::flush;
+    auto events = queue.pull_events();
+    for(const auto& e : events){
+        if(e->kind_of_event() == sdl2::event::quit) quitting = true;
+        if(e->kind_of_event() == sdl2::event::key){
+            auto& key = dynamic_cast<sdl2::event_keyboard&>(*e); // obliger quand tu cree une dynamique class
+            if(key.state() == sdl2::event_keyboard::pressed){
+                char keychar = key.ascci_code(); // code ascii
+                if(keychar == 27) quitting = true; //27 touche echap
             }
+                
         }
+    }
     
+    SDL_Delay(10000);
 
 }
