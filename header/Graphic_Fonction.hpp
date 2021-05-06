@@ -15,6 +15,6 @@ void Controle_win(int level);
 void Commande(sdl2::window * fenêtre);
 void Niveau1(sdl2::window* fenêtre);
 void SalleDeControle(sdl2::window* fenêtre);
-void Radioprotection_win(sdl2::window* fenêtre);
+void Radioprotection_win(sdl2::window* fenêtre, centrale* C);
 #endif
 
