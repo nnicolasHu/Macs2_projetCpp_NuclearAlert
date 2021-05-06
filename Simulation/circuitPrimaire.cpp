@@ -8,8 +8,8 @@ circuitPrimaire::circuitPrimaire() {
     E_pressuriseur = 1.;
     E_resistance = 1.;
     E_echangeur = 1.;
-    T_pressuriseur = 25.;
-    T_pressuriseur_eff = 25.;
+    T_pressuriseur = 25;
+    T_pressuriseur_eff = 25;
 }
 
 
@@ -28,11 +28,11 @@ double circuitPrimaire::get_E_echangeur() const{
     return E_echangeur;
 }
 
-double circuitPrimaire::get_T_pressuriseur() const{
+int circuitPrimaire::get_T_pressuriseur() const{
     return T_pressuriseur;
 }
 
-double circuitPrimaire::get_T_pressuriseur_eff() const{
+int circuitPrimaire::get_T_pressuriseur_eff() const{
     return T_pressuriseur_eff;
 }
 
@@ -50,7 +50,7 @@ void circuitPrimaire::set_E_echangeur(double etat) {
     if (etat>=0 && etat<=1) E_echangeur=etat;
 }
 
-void circuitPrimaire::set_T_pressuriseur(double temperature) {
+void circuitPrimaire::set_T_pressuriseur(int temperature) {
     if (temperature>=25 && temperature<=100*(E_pressuriseur + E_resistance)) T_pressuriseur=temperature;
 }
 

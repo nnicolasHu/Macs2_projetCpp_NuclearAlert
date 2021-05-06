@@ -14,7 +14,7 @@ void Centrale_tab(sdl2::window* fenêtre);
 void Controle_win(int level);
 void Commande(sdl2::window * fenêtre);
 void Niveau1(sdl2::window* fenêtre);
-void SalleDeControle();
+void SalleDeControle(sdl2::window* fenêtre);
 void Radioprotection_win(sdl2::window* fenêtre);
 #endif
 

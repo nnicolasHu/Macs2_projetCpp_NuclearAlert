@@ -72,14 +72,14 @@ public:
       *
       * @return T_pressuriseur()
       */
-     double get_T_pressuriseur() const;
+     int get_T_pressuriseur() const;
 
      /**
       * @brief Permet d'obtenir la température du pressuriseur actuel 
       *
       * @return T_pressuriseur_eff
       */
-     double get_T_pressuriseur_eff() const;
+     int get_T_pressuriseur_eff() const;
 
 
      void set_E_pressuriseur(double etat);
@@ -92,7 +92,7 @@ public:
       * @param[in] valeur_demandee La valeur demandée, comprise entre 25
       * et 100*(etat_pressuriseur + etat_resistance)
       */
-     void set_T_pressuriseur(double temperature);
+     void set_T_pressuriseur(int temperature);
 
 
      /**
@@ -196,10 +196,10 @@ private:
      double E_echangeur;
 
      /** Température du pressuriseur demandé **/
-     double T_pressuriseur;
+     int T_pressuriseur;
 
      /** Température  du pressuriseur actuel **/
-     double T_pressuriseur_eff;
+     int T_pressuriseur_eff;
 
 };
 
