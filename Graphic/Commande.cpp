@@ -2,12 +2,14 @@
 #include "sdl2.hpp"
 #include<SDL2/SDL_ttf.h>
 #include<iostream>
+#include<cmath> 
 
 void Commande(sdl2::window * fenêtre, int *dim_x, double *dim_y){
     
     double rapport_x = (*dim_x)/800.;
     double rapport_y = (*dim_y)/800.;
-    sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
+
+    sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18 + floor(rapport_x+rapport_y));
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     //sdl2::window fenêtre("Nuclear Alert : Schéma de la centrale"s, {*dim_x, *dim_y});
@@ -30,7 +32,7 @@ void Commande(sdl2::window * fenêtre, int *dim_x, double *dim_y){
     commandP.at(100*rapport_x, 300*rapport_y);
     sdl2::texte commandR("R : Rendement pompe condenseur"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandR.at(100*rapport_x, 350*rapport_y);
-    sdl2::texte commandU1("U : Autorise en cas d'urgence l'enfoncement rapide des barres dans le réacteur."s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte commandU1("U : Autorise en cas d'urgence l'enfoncement rapide des barres dans le réacteur."s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandU1.at(100*rapport_x, 400*rapport_y);
     sdl2::texte commandU2("(Cette procédure comporte des risques de dégradation.)"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandU2.at(100*rapport_x, 420*rapport_y);
