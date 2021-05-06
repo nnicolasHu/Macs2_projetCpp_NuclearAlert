@@ -11,10 +11,9 @@ using namespace std::string_literals ;// Indispensable pour utiliser le suffixe 
 std::string Fenetre_acceuil(sdl2::window* fenêtre);
 int Choix_Niveau(sdl2::window* fenêtre);
 void Centrale_tab(sdl2::window* fenêtre);
-void Controle_win(int level);
 void Commande(sdl2::window * fenêtre);
 void Niveau1(sdl2::window* fenêtre);
-void SalleDeControle(sdl2::window* fenêtre);
+void SalleDeControle(sdl2::window* fenêtre, centrale* C);
 void Radioprotection_win(sdl2::window* fenêtre, centrale* C);
 #endif
 
