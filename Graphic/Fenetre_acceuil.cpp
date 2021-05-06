@@ -3,14 +3,16 @@
 #include<SDL2/SDL_ttf.h>
 #include <iostream>
 
-std::string Fenetre_acceuil(sdl2::window* fenêtre){
+std::string Fenetre_acceuil(sdl2::window* fenêtre, int* dim_x, int* dim_y){
+    double a = (*dim_x)/800.;
+    double b = (*dim_y)/600.;
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     //sdl2::window fenêtre("Nuclear Alert : Authentification", {800, 600});
 
     sdl2::texte phrase("Entrez votre pseudo : "s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    phrase.at(310, 310);
+    phrase.at(310*a, 310*b);
     sdl2::texte authentification("Authentification"s, fonte_titre, *fenêtre, {0xFF, 0, 0, 0xFF});
     authentification.at(290, 70);
     sdl2::texte phrase4("Puis appuyez sur 'Entree' une fois terminé. "s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
