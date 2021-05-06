@@ -12,26 +12,26 @@ int Choix_Niveau(sdl2::window* fenêtre){
     int level = 0;
 
     sdl2::texte bvn("Bienvenue"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    bvn.at(650, 50);
+    bvn.at(550, 50);
     sdl2::texte titre2("Veuillez choisir un niveau "s, fonte_titre, *fenêtre, {0xFF, 0, 0, 0xFF});
-    titre2.at(500, 100);
+    titre2.at(400, 100);
     sdl2::texte niveau1("Niveau 1"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    niveau1.at(660, 250);
+    niveau1.at(560, 230);
     niveau1.stretch({100, 75});
     sdl2::texte niveau2("Niveau 2"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    niveau2.at(660, 400);
+    niveau2.at(560, 380);
     niveau2.stretch({100, 75});
     sdl2::texte niveau3("Niveau 3"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    niveau3.at(660, 550);
+    niveau3.at(560, 530);
     niveau3.stretch({100, 75});
 
     bool quitting = false;
     sdl2::event_queue queue;
     while(not quitting){
-        *fenêtre<< sdl2::rectangle({0, 0}, {1400, 800}, {0, 0, 0, 0}, true);
-        *fenêtre << sdl2::rectangle({610, 240}, {200, 100}, {0,0,0xFF,0xFF}, true);
-        *fenêtre << sdl2::rectangle({610, 390}, {200, 100}, {0, 0, 0xFF, 0xFF}, true);
-        *fenêtre << sdl2::rectangle({610, 540}, {200, 100}, {0, 0, 0xFF, 0xFF}, true);
+        *fenêtre<< sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
+        *fenêtre << sdl2::rectangle({510, 220}, {200, 100}, {0,0,0xFF,0xFF}, true);
+        *fenêtre << sdl2::rectangle({510, 370}, {200, 100}, {0, 0, 0xFF, 0xFF}, true);
+        *fenêtre << sdl2::rectangle({510, 520}, {200, 100}, {0, 0, 0xFF, 0xFF}, true);
         *fenêtre << niveau1 << niveau2 <<  bvn << niveau3 << titre2 << sdl2::flush;
         auto events =queue.pull_events();
         for(const auto& e : events){
