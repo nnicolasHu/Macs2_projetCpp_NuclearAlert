@@ -10,7 +10,6 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     
-    unsigned short a = 200;
     //sdl2::window fenêtre("Nuclear Alert : Poste de sécurité Radioprotection"s, {800, 600});
 
         /////////        Titre fenêtre      ////////
@@ -26,13 +25,12 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
 
     //piscine
     double R_piscine = C->get_Reacteur()->get_R_piscine();
-    //string R_p = to_string(R_piscine);
     sdl2::texte piscine("Piscine : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     piscine.at(45, 115);
     sdl2::texte af_piscine(to_string(R_piscine), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_piscine.at(800, 115);
     sdl2::texte unitp("bq"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    unitp.at(700+a, 115);
+    unitp.at(900, 115);
 
     //enceinte
     double R_enceinte = C->get_R_enceinte();
@@ -41,7 +39,7 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
     sdl2::texte af_enceinte(to_string(R_enceinte), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_enceinte.at(800, 150);
     sdl2::texte unitenc("rem/h"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    unitenc.at(700+a, 150);
+    unitenc.at(900, 150);
 
     //rejets atmo
     double R_air = C->get_R_air();
@@ -50,7 +48,7 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
     sdl2::texte af_air(to_string(R_air), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_air.at(800, 185);
     sdl2::texte unitatmo("mrem/h"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    unitatmo.at(700+a, 185);
+    unitatmo.at(900, 185);
 
     //rejets eau
     double R_eau = C->get_R_eau();
@@ -59,20 +57,20 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
     sdl2::texte af_eau(to_string(R_eau), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_eau.at(800, 220);
     sdl2::texte uniteau("mrem/h"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    uniteau.at(700+a, 220);
+    uniteau.at(900, 220);
 
     sdl2::rectangle Activité({30,65}, {950,200}, {0xFF,0xFF,0xFF,0xFF}, false);
     *fenêtre << Activité << titre << piscine << af_piscine << unitp << enceinte << af_enceinte << unitenc << atmo << af_air << unitatmo << eau << af_eau << uniteau;
 
     /////////     Cadre Effectif     ////////
     sdl2::texte titreeff("Effectif"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    titreeff.at(930+a, 65);
+    titreeff.at(1130, 65);
     //total
     int dispo = C->get_Ouvriers()->get_nb_disponible();
     sdl2::texte disp("disp. : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    disp.at(805+a, 115);
+    disp.at(1005, 115);
     sdl2::texte af_nb(to_string(dispo), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    af_nb.at(805+a+300, 115);
+    af_nb.at(1305, 115);
     
     //occup
     int occ = 0;
@@ -81,16 +79,16 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
     };
     
     sdl2::texte occup("occup. : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    occup.at(805+a, 150);
+    occup.at(1005, 150);
     sdl2::texte af_occ(to_string(occ), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    af_occ.at(805+a+300, 150);
+    af_occ.at(1305, 150);
     
     //blessés
     int blesses = C->get_Ouvriers()->get_nb_blesses();
     sdl2::texte bles("bles. : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    bles.at(805+a, 185);
+    bles.at(1005, 185);
     sdl2::texte af_bles(to_string(blesses), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    af_bles.at(805+a+300, 185);
+    af_bles.at(1305, 185);
     
     sdl2::rectangle Effectif({990,65}, {380,200}, {0xFF,0xFF,0xFF,0xFF}, false);
     *fenêtre << Effectif << titreeff << disp << af_nb << occup << af_occ << bles << af_bles;
@@ -107,99 +105,161 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
     e_canaux.at(460, 330);
 
     //Etat graphite
+    int E_graphite = (C->get_Reacteur()->get_E_barre())*100;
     sdl2::texte graph("Etat barre graphite : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     graph.at(45, 365);
-    //Etat graphite
+    sdl2::texte af_graph(to_string(E_graphite),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_graph.at(460, 365);
+
+    //Etat piscine
+    int E_piscine = (C->get_Reacteur()->get_E_piscine())*100;
     sdl2::texte e_piscine("Etat piscine : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     e_piscine.at(45, 400);
+    sdl2::texte af_pisc(to_string(E_piscine),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_pisc.at(460, 400);
+
     //Etat cuve
+     int E_cuve = (C->get_Reacteur()->get_E_cuve())*100;
     sdl2::texte cuve("Etat cuve : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     cuve.at(45, 435);
-    //Etat injecteur borique */
+    sdl2::texte af_cuve(to_string(E_cuve),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_cuve.at(460, 435);
+
+    //Etat injecteur borique 
+    int E_bore = (C->get_Reacteur()->get_E_bore())*100;
     sdl2::texte bor("Etat injecteur borique : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     bor.at(45, 470);
-
+    sdl2::texte af_bore(to_string(E_bore),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_bore.at(460, 470);
 
     sdl2::rectangle Reacteur({30,275}, {475,250}, {0xFF,0xFF,0xFF,0xFF}, false);
-    *fenêtre << Reacteur << titrereac << canaux << e_canaux << graph << e_piscine << cuve << bor;
+    *fenêtre << Reacteur << titrereac << canaux << af_canaux << graph << af_graph << e_piscine << af_pisc << cuve << af_cuve << bor << af_bore;
 
     ////////       Cadre Circuit Primaire     ////////
     sdl2::texte titrecp("Circuit Primaire"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     titrecp.at(645, 280);
     //Etat circuit primaire
+    int E_cp = (C->get_Circuit_Primaire()->get_E_circuit())*100;
     sdl2::texte e_cp("Etat circuit primaire : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     e_cp.at(530, 330);
+    sdl2::texte af_ecp(to_string(E_cp),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_ecp.at(930, 330);
+
     //Etat pompe
+    int E_pmp = (C->get_Circuit_Primaire()->get_E_pompe())*100;
     sdl2::texte pompe("Etat pompe : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     pompe.at(530, 365);
+    sdl2::texte af_epmp(to_string(E_pmp),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_epmp.at(930, 365);
+
     //Etat pressuriseur
+    int E_press = (C->get_Circuit_Primaire()->get_E_pressuriseur())*100;
     sdl2::texte pres("Etat pressuriseur : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     pres.at(530, 400);
+    sdl2::texte af_epress(to_string(E_press),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_epress.at(930, 400);
+
     //Etat res
+    int E_res = (C->get_Circuit_Primaire()->get_E_resistance())*100;
     sdl2::texte res("Etat resistance press. : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     res.at(530, 435);
+    sdl2::texte af_eres(to_string(E_res),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_eres.at(930, 435);
 
     sdl2::rectangle CircuitP({515,275}, {465,250}, {0xFF,0xFF,0xFF,0xFF}, false);
-    *fenêtre << CircuitP << titrecp << e_cp << pompe << pres << res;
+    *fenêtre << CircuitP << titrecp << e_cp << af_ecp << pompe << af_epmp << pres << af_epress << res << af_eres;
 
     ////////       Cadre Circuit Secondaire     ////////
     sdl2::texte titrecs("Circuit Secondaire"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     titrecs.at(870+a, 280);
-    //Etat circuit primaire
+    //Etat circuit secondaire
+    int E_cs = (C->get_Circuit_Secondaire()->get_E_circuit())*100;
     sdl2::texte e_cs("Etat circuit secondaire : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    e_cs.at(805+a, 330);
+    e_cs.at(1005, 330);
+    sdl2::texte af_ecs(to_string(E_cs),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_ecs.at(1320, 330);
+
     //Etat pompe
+    int E_pmp2 = (C->get_Circuit_Secondaire()->get_E_pompe())*100;
     sdl2::texte pompe2("Etat pompe : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    pompe2.at(805+a, 365);
+    pompe2.at(1005, 365);
+    sdl2::texte af_pmp2(to_string(E_pmp2),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_pmp2.at(1320, 365);
+
     //Etat pressuriseur
+    int E_gen = (C->get_Circuit_Secondaire()->get_E_vapeur())*100;
     sdl2::texte gen("Etat générateur de vapeur : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    gen.at(805+a, 400);
-    //Etat res
-    sdl2::texte ech("Etat réchangeur de vapeur : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    ech.at(805+a, 435);
+    gen.at(1005, 400);
+    sdl2::texte af_egen(to_string(E_gen),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_egen.at(1320, 400);
+
+    //Etat ech
+    int E_ech = (C->get_Circuit_Primaire()->get_E_echangeur())*100;
+    sdl2::texte ech("Etat échangeur de chaleur : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    ech.at(1005, 435);
+    sdl2::texte af_ech(to_string(E_ech),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_ech.at(1320, 435);
 
     sdl2::rectangle CircuitS({990,275}, {380,250}, {0xFF,0xFF,0xFF,0xFF}, false);
-    *fenêtre << CircuitS << titrecs << e_cs << pompe2 << gen << ech;
+    *fenêtre << CircuitS << titrecs << e_cs << af_ecs << pompe2 << af_pmp2 << gen << af_egen << ech << af_ech;
 
     ////////       Cadre Confinement     ////////
     sdl2::texte titreec("Enceinte de confinement"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     titreec.at(60, 545);
     //Etat enceinte
+    int E_enceinte = (C->get_E_enceinte())*100;
     sdl2::texte econf("Etat enceinte confinement : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     econf.at(45, 595);
+    sdl2::texte af_eenc(to_string(E_enceinte),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_eenc.at(360, 595);
 
     sdl2::rectangle Conf({30,535}, {375,250}, {0xFF,0xFF,0xFF,0xFF}, false);
-    *fenêtre << Conf << titreec << econf;
+    *fenêtre << Conf << titreec << econf << af_eenc;
 
     ////////       Cadre Condenseur     ////////
     sdl2::texte titrecond("Condenseur"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     titrecond.at(525, 545);
     //Etat cond
+    int E_cond = (C->get_Circuit_Secondaire()->get_E_condenseur())*100;
     sdl2::texte econd("Etat condensateur :"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     econd.at(430, 595);
+    sdl2::texte af_econd(to_string(E_cond),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_econd.at(730, 595);
     
 
     sdl2::rectangle Cond({415,535}, {365,250}, {0xFF,0xFF,0xFF,0xFF}, false);
-    *fenêtre << Cond << titrecond << econd;
+    *fenêtre << Cond << titrecond << econd << af_econd;
 
     ////////       Cadre Ordinateur     ////////
     sdl2::texte titreord("Ordinateur"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     titreord.at(910, 545);
     //Etat centrale
+    int E_centrale = (C->get_E_centrale())*100;
     sdl2::texte e_centrale("Etat général centrale :"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     e_centrale.at(805, 595);
+    sdl2::texte af_ecentrale(to_string(E_centrale), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_ecentrale.at(1120, 595);
+
     //Niveau d'alerte
     sdl2::texte alerte("Niveau d'alerte :"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     alerte.at(805, 630);
+
     //Population évacuée
+    int Evac = (C->get_Evac())*100;
     sdl2::texte popevac("Population évacuée :"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     popevac.at(805, 665);
+    sdl2::texte af_evac(to_string(Evac), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_evac.at(1120, 665);
+
     //Population contaminée
-    sdl2::texte popcont("Population contaminée :"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    unsigned int Contamination = (C->get_Contamination());
+    sdl2::texte popcont("Contamination :"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     popcont.at(805, 700);
+    sdl2::texte af_cont(to_string(Contamination), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_cont.at(1120, 700);
 
     sdl2::rectangle ord({790,535}, {380,250}, {0xFF,0xFF,0xFF,0xFF}, false);
-    *fenêtre << ord << titreord << e_centrale << alerte << popevac << popcont;
+    *fenêtre << ord << titreord << e_centrale << af_ecentrale << alerte << popevac << af_evac << popcont << af_cont;
 
 
     bool quitting = false;
