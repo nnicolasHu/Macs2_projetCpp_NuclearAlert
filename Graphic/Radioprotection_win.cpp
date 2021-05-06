@@ -101,8 +101,8 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
     int E_canaux = (C->get_Reacteur()->get_E_canaux())*100;
     sdl2::texte canaux("Etat canaux : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     canaux.at(45, 330);
-    sdl2::texte e_canaux(to_string(E_canaux),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    e_canaux.at(460, 330);
+    sdl2::texte af_canaux(to_string(E_canaux),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_canaux.at(460, 330);
 
     //Etat graphite
     int E_graphite = (C->get_Reacteur()->get_E_barre())*100;
@@ -171,7 +171,7 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
 
     ////////       Cadre Circuit Secondaire     ////////
     sdl2::texte titrecs("Circuit Secondaire"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    titrecs.at(870+a, 280);
+    titrecs.at(1070, 280);
     //Etat circuit secondaire
     int E_cs = (C->get_Circuit_Secondaire()->get_E_circuit())*100;
     sdl2::texte e_cs("Etat circuit secondaire : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
