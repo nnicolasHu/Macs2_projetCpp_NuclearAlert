@@ -11,15 +11,15 @@ std::string Fenetre_acceuil(sdl2::window* fenêtre){
     //sdl2::window fenêtre("Nuclear Alert : Authentification", {800, 600});
 
     sdl2::texte phrase("Entrez votre pseudo : "s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    phrase.at(580, 330);
+    phrase.at(530, 330);
     sdl2::texte authentification("Authentification"s, fonte_titre, *fenêtre, {0xFF, 0, 0, 0xFF});
-    authentification.at(550, 70);
+    authentification.at(500, 70);
     sdl2::texte phrase4("Puis appuyez sur 'Entree' une fois terminé. "s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     phrase4.at(470, 600);
     std::string pseudo;
 
     sdl2::image Alert("Graphic/data/Alert.png", *fenêtre);
-    Alert.at(630,140); // Emplacement sur la fenêtre 
+    Alert.at(580,140); // Emplacement sur la fenêtre 
     Alert.stretch({150,150}); // Taille 
     Alert.flip(sdl2::image::horizontal);
     Alert.rotate({64,64}, 0);
@@ -29,7 +29,7 @@ std::string Fenetre_acceuil(sdl2::window* fenêtre){
     int xinput = 560, yinput = 450;
 
     while(not quitting){
-        *fenêtre << sdl2::rectangle({550,400}, {300, 150}, {0,0,0xFF,0xFF}, false);
+        *fenêtre << sdl2::rectangle({500,400}, {300, 150}, {0,0,0xFF,0xFF}, false);
         *fenêtre << phrase << phrase4 << Alert<< authentification << sdl2::flush;
         *fenêtre << sdl2::rectangle({289, 349}, {199, 74}, {0, 0, 0, 0}, true);
         if (pseudo.size() > 0)
