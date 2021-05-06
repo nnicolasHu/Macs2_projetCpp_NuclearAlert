@@ -2,8 +2,11 @@
 #include"sdl2.hpp"
 #include<SDL2/SDL_ttf.h>
 #include "Graphic_Fonction.hpp"
+#include <string>
 
-void Radioprotection_win(sdl2::window* fenêtre){
+using namespace std;
+
+void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     
@@ -20,54 +23,89 @@ void Radioprotection_win(sdl2::window* fenêtre){
     /////////       Cadre Activité       /////////
     sdl2::texte titre("Activité"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     titre.at(460, 65);
+
     //piscine
+    double R_piscine = C->get_Reacteur()->get_R_piscine();
+    //string R_p = to_string(R_piscine);
     sdl2::texte piscine("Piscine : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     piscine.at(45, 115);
+    sdl2::texte af_piscine(to_string(R_piscine), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_piscine.at(800, 115);
     sdl2::texte unitp("bq"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     unitp.at(700+a, 115);
+
     //enceinte
+    double R_enceinte = C->get_R_enceinte();
     sdl2::texte enceinte("Enceinte : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     enceinte.at(45, 150);
+    sdl2::texte af_enceinte(to_string(R_enceinte), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_enceinte.at(800, 150);
     sdl2::texte unitenc("rem/h"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     unitenc.at(700+a, 150);
+
     //rejets atmo
+    double R_air = C->get_R_air();
     sdl2::texte atmo("Rejets atmosphériques : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     atmo.at(45, 185);
+    sdl2::texte af_air(to_string(R_air), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_air.at(800, 185);
     sdl2::texte unitatmo("mrem/h"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     unitatmo.at(700+a, 185);
+
     //rejets eau
-    sdl2::texte eau("Rejets atmosphériques : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    double R_eau = C->get_R_eau();
+    sdl2::texte eau("Rejets aqueux : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     eau.at(45, 220);
+    sdl2::texte af_eau(to_string(R_eau), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_eau.at(800, 220);
     sdl2::texte uniteau("mrem/h"s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     uniteau.at(700+a, 220);
 
     sdl2::rectangle Activité({30,65}, {950,200}, {0xFF,0xFF,0xFF,0xFF}, false);
-    *fenêtre << Activité << titre << piscine << unitp << enceinte << unitenc << atmo << unitatmo << eau << uniteau;
+    *fenêtre << Activité << titre << piscine << af_piscine << unitp << enceinte << af_enceinte << unitenc << atmo << af_air << unitatmo << eau << af_eau << uniteau;
 
     /////////     Cadre Effectif     ////////
     sdl2::texte titreeff("Effectif"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     titreeff.at(930+a, 65);
     //total
+    int dispo = C->get_Ouvriers()->get_nb_disponible();
     sdl2::texte disp("disp. : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     disp.at(805+a, 115);
+    sdl2::texte af_nb(to_string(dispo), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_nb.at(805+a+300, 115);
     
     //occup
+    int occ = 0;
+    for(int i=0; i<=7; i++){
+        occ += C->get_Ouvriers()->get_nb_ouvriersEnIntervention(i);
+    };
+    
     sdl2::texte occup("occup. : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     occup.at(805+a, 150);
+    sdl2::texte af_occ(to_string(occ), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_occ.at(805+a+300, 150);
     
     //blessés
+    int blesses = C->get_Ouvriers()->get_nb_blesses();
     sdl2::texte bles("bles. : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     bles.at(805+a, 185);
+    sdl2::texte af_bles(to_string(blesses), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_bles.at(805+a+300, 185);
     
     sdl2::rectangle Effectif({990,65}, {380,200}, {0xFF,0xFF,0xFF,0xFF}, false);
-    *fenêtre << Effectif << titreeff << disp << occup << bles;
+    *fenêtre << Effectif << titreeff << disp << af_nb << occup << af_occ << bles << af_bles;
 
     ////////       Cadre Reacteur     ////////
     sdl2::texte titrereac("Reacteur"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     titrereac.at(200, 280);
+
     //Etat canaux
+    int E_canaux = (C->get_Reacteur()->get_E_canaux())*100;
     sdl2::texte canaux("Etat canaux : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     canaux.at(45, 330);
+    sdl2::texte e_canaux(to_string(E_canaux),fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    e_canaux.at(460, 330);
+
     //Etat graphite
     sdl2::texte graph("Etat barre graphite : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     graph.at(45, 365);
@@ -83,7 +121,7 @@ void Radioprotection_win(sdl2::window* fenêtre){
 
 
     sdl2::rectangle Reacteur({30,275}, {475,250}, {0xFF,0xFF,0xFF,0xFF}, false);
-    *fenêtre << Reacteur << titrereac << canaux << graph << e_piscine << cuve << bor;
+    *fenêtre << Reacteur << titrereac << canaux << e_canaux << graph << e_piscine << cuve << bor;
 
     ////////       Cadre Circuit Primaire     ////////
     sdl2::texte titrecp("Circuit Primaire"s, fonte_titre, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
@@ -181,5 +219,6 @@ void Radioprotection_win(sdl2::window* fenêtre){
             }
         }
 
+    SDL_Delay(5000);
 }
 
