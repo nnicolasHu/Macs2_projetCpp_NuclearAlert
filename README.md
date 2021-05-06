@@ -15,4 +15,4 @@ Ce dépôt contient le code source du PROJET C++ de MACS2 consistant à simuler 
 * Grondin Matthieu
 * Badda Imad
 * Sive Christophe
-* Medjahed Harris 
+* Medjahed Haris 
