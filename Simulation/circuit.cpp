@@ -12,7 +12,7 @@ circuit::circuit() {
     Temperature = 25.;
     Radioactivite = 0.;
     E_pompe = 1.;
-    F_pompe = 0.5;
+    F_pompe = 0.;
 }
 
 /** Méthodes **/
