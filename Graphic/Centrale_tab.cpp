@@ -10,19 +10,21 @@ void Centrale_tab(sdl2::window * fenêtre){
     //sdl2::window fenêtre("Nuclear Alert : Schéma de la centrale", {800, 600});
 
     sdl2::image centrale("Graphic/data/sch├®ma_centrale.png", *fenêtre);
-    centrale.at(200, 100);
+    centrale.at(120, 100);
     centrale.stretch({1100, 500});
 
-    sdl2::texte echap("Appuyez sur echap pour revenir à la fenêtre précédente"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    echap.at(200, 500);
+    // Stan by : on verra comment on va le gerer 
+    // sdl2::texte echap("Appuyez sur echap pour revenir à la fenêtre précédente"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    // echap.at(200, 500); 
+
     sdl2::texte circuit_prim("Circuit primaire"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    circuit_prim.at(180, 550);
+    circuit_prim.at(130, 550);
     sdl2::texte circuit_sec("Circuit secondaire"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    circuit_sec.at(470, 550);
+    circuit_sec.at(390, 550);
     sdl2::texte circuit_refroid("Circuit de refroidissement"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    circuit_refroid.at(790, 550);
+    circuit_refroid.at(700, 550);
     sdl2::texte vapeur("Vapeur d'eau"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    vapeur.at(990, 180);
+    vapeur.at(910, 180);
     
     bool quitting = false;
     sdl2::event_queue queue;

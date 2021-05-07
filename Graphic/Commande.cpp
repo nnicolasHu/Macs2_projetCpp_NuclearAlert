@@ -10,7 +10,7 @@ void Commande(sdl2::window * fenêtre){
     *fenêtre<< sdl2::rectangle({0, 0}, {1400, 800}, {0, 0, 0, 0}, true);
 
     sdl2::texte titre("COMMANDES"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    titre.at(600, 20);
+    titre.at(550, 20);
     
     sdl2::texte command1("1 : Rendement de la pompe du circuit primaire"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     command1.at(100, 90);
