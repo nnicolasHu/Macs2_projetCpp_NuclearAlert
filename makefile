@@ -20,10 +20,16 @@ OBJ_SDL = Graphic/SDL2/sdl2.o Graphic/SDL2/geometry.o Graphic/SDL2/window.o Grap
 
 OBJ_GRAPH =  Graphic/Fenetre_acceuil.o Graphic/Commande.o Graphic/Choix_Niveau.o Graphic/Centrale_tab.o Niveau1.o Graphic/Cadre.o Graphic/Radioprotection_win.o Graphic/arrondi.o
 
-default : testGraphic.exe 
+default : testSquelette.exe 
 
 clean :
 	@rm -fr *.o *.exe Simulation/*.o Simulation/*~ Graphic/SDL2/*.o Graphic/SDL2/*~ Graphic/*.o Graphic/*~
+
+testSquelette.exe : testSquelette.o $(OBJ_SDL)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o testSquelette.exe testSquelette.o $(OBJ_SDL) $(LIBS)
+
+testSquelette.o : testSquelette.cpp 
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c testSquelette.cpp -o testSquelette.o 
 
 testSimulation.exe : testSimulation.o $(OBJ_SIM)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o testSimulation.exe testSimulation.o $(OBJ_SIM) 
