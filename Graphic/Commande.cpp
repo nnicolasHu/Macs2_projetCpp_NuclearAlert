@@ -4,10 +4,10 @@
 #include<iostream>
 #include<cmath> 
 
-void Commande(sdl2::window * fenêtre){
+void Commande1(sdl2::window * fenêtre){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 24);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 40);
-    *fenêtre<< sdl2::rectangle({0, 0}, {1400, 800}, {0, 0, 0, 0}, true);
+    *fenêtre<< sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
 
     sdl2::texte titre("COMMANDES"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     titre.at(550, 20);
@@ -41,6 +41,50 @@ void Commande(sdl2::window * fenêtre){
 
     
     *fenêtre  << titre << command1 << command2 << commandB << commandT << commandP << commandR << commandU1 << commandU2 << commandTab << commandE << sdl2::flush;
+    auto events = queue.pull_events();
+    for(const auto& e : events){
+        if(e->kind_of_event() == sdl2::event::quit) quitting = true;
+        if(e->kind_of_event() == sdl2::event::key){
+            auto& key = dynamic_cast<sdl2::event_keyboard&>(*e); // obliger quand tu cree une dynamique class
+            if(key.state() == sdl2::event_keyboard::pressed){
+                char keychar = key.ascci_code(); // code ascii
+                if(keychar == 27) quitting = true; //27 touche echap
+            }
+                
+        }
+    }
+    
+    SDL_Delay(8000);
+
+}
+
+
+void Commande2(sdl2::window * fenêtre){
+    sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 24);
+    sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 40);
+    *fenêtre<< sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
+
+    sdl2::texte titre("COMMANDES"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    titre.at(550, 20);
+    
+    sdl2::texte commandTab("Tab : Affiche le schéma de la centrale"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    commandTab.at(100, 150);
+    
+    sdl2::texte commandE("Espace : Passage en poste sécurité radioprotection"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    commandE.at(100, 210);
+    
+    sdl2::texte commandP("P : Demande l'évacuation de la population après confirmation"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    commandP.at(100, 270);
+    
+    sdl2::texte commandB("B : Bilan de l'activité ouvrière"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    commandB.at(100, 330);
+
+    sdl2::texte commandO("O : Rendement pressuriseur"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    commandO.at(100, 390);
+
+    bool quitting = false;
+    sdl2::event_queue queue;
+    *fenêtre  << titre << commandTab << commandE << commandP << commandB << commandP << commandO << sdl2::flush;
     auto events = queue.pull_events();
     for(const auto& e : events){
         if(e->kind_of_event() == sdl2::event::quit) quitting = true;
