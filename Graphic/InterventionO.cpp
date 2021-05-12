@@ -9,8 +9,8 @@ void InterventionO(sdl2::window * fenêtre){
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 40);
     *fenêtre<< sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
 
-    sdl2::texte titre("COMMANDES"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
-    titre.at(550, 20);
+    sdl2::texte titre("Intervention des ouvriers"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    titre.at(500, 20);
     
     sdl2::texte command1("1 : La pompe du circuit primaire"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     command1.at(100, 90);
@@ -53,6 +53,6 @@ void InterventionO(sdl2::window * fenêtre){
         }
     }
     
-    SDL_Delay(8000);
+    SDL_Delay(3000);
 
 }
