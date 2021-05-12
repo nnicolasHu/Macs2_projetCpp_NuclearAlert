@@ -72,10 +72,7 @@ void Radioprotection_win(sdl2::window* fenêtre,centrale* C){
     sdl2::texte af_nb(to_string(dispo), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_nb.at(1170, 120);
     //occup
-    int occ = 0;
-    for(int i=0; i<=7; i++){
-        occ += C->get_Ouvriers()->get_nb_ouvriersEnIntervention(i);
-    };
+    int occ = C->get_Ouvriers()->get_nb_ouvriersEnIntervention_tot();
     sdl2::texte occup("occup. : "s, fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
     occup.at(805, 140);
     sdl2::texte af_occ(to_string(occ), fonte_texte, *fenêtre, {0xAD, 0xFF, 0x2F, 0});
