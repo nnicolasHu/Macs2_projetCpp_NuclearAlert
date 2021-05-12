@@ -21,6 +21,7 @@ void Niveau1(sdl2::window* fenêtre);
 void SalleDeControle(sdl2::window* fenêtre, centrale* C);
 void Radioprotection_win(sdl2::window* fenêtre, centrale* C);
 void InterventionO(sdl2::window * fenêtre);
+void Bilanactiviteouvriere(sdl2::window* fenêtre,centrale* C);
 
 #endif
 
