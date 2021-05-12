@@ -18,7 +18,7 @@ OBJ_SIM = Simulation/centrale.o Simulation/circuit.o Simulation/circuitPrimaire.
 OBJ_SDL = Graphic/SDL2/sdl2.o Graphic/SDL2/geometry.o Graphic/SDL2/window.o Graphic/SDL2/font.o Graphic/SDL2/event.o Graphic/SDL2/texte.o Graphic/SDL2/image.o Graphic/SDL2/formated_text.o
 #les .o pour la SDL2
 
-OBJ_GRAPH =  Graphic/Fenetre_acceuil.o Graphic/Commande.o Graphic/Choix_Niveau.o Graphic/Centrale_tab.o Niveau1.o Graphic/Cadre.o Graphic/Radioprotection_win.o Graphic/arrondi.o Graphic/InterventionO.o
+OBJ_GRAPH =  Graphic/Fenetre_acceuil.o Graphic/Commande.o Graphic/Choix_Niveau.o Graphic/Centrale_tab.o Niveau1.o Graphic/Cadre.o Graphic/Radioprotection_win.o Graphic/arrondi.o Graphic/InterventionO.o Graphic/Bilanactiviteouvriere.o
 
 default : testGraphic.exe 
 
@@ -121,3 +121,6 @@ Graphic/arrondi.o : Graphic/arrondi.cpp
 
 Graphic/InterventionO.o : Graphic/InterventionO.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/InterventionO.cpp -o Graphic/InterventionO.o
+
+Graphic/Bilanactiviteouvriere.o : Graphic/Bilanactiviteouvriere.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c Graphic/Bilanactiviteouvriere.cpp -o Graphic/Bilanactiviteouvriere.o
