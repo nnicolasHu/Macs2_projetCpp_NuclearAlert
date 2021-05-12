@@ -24,6 +24,14 @@ int ouvriers::get_nb_ouvriersEnIntervention(int organe) const {
     return nb_ouvriersEnIntervention[organe];
 }
 
+int ouvriers::get_nb_ouvriersEnIntervention_tot() const{
+    int occ = 0;
+    for(int i=0; i<=7; i++){
+        occ += nb_ouvriersEnIntervention[i];
+    };
+    return occ;
+}
+
 int ouvriers::get_nb_blesses() const {
     return nb_blesses;
 }
