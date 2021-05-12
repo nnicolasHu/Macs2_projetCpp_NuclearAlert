@@ -70,7 +70,7 @@ void Commande2(sdl2::window * fenêtre){
     sdl2::texte commandTab("Tab : Affiche le schéma de la centrale"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandTab.at(100, 150);
     
-    sdl2::texte commandE("Espace : Passage en poste sécurité radioprotection"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte commandE("Espace : Retour à la salle de controle"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandE.at(100, 210);
     
     sdl2::texte commandP("P : Demande l'évacuation de la population après confirmation"s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});

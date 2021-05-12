@@ -61,7 +61,6 @@ std::string Fenetre_acceuil(sdl2::window* fenêtre){
                         }
                         
                     }
-
                 }
             }
         }
