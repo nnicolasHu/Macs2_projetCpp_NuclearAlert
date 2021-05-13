@@ -115,9 +115,6 @@ void Niveau1(sdl2::window& fenêtre){
                             O_selected = 1;
                             commande1_selected = 0;
                             commande2_selected = 1;
-                            
-                            std::cout << "la touche espace vaut : " << espace << std::endl;
-                            std::cout << "selected_controle vaut : " << selected_controle << std::endl;
                         }
 
                         //touche tab
@@ -129,8 +126,6 @@ void Niveau1(sdl2::window& fenêtre){
                             O_selected = 1;
                             commande1_selected = 0;
                             commande2_selected = 1;
-                            std::cout << "on affiche : " << affichage << std::endl;
-
                         }
                         //touche S
                         if ((keychar==115)  && (iskey_down==0) ) {
@@ -157,7 +152,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 commande1_selected = 0;
                                 if (selected_controle==1) selected_controle=0;
                                 else selected_controle=1;
-                                std::cout << "selected_controle vaut : " << selected_controle << std::endl;
                                 
                             }
 
@@ -167,7 +161,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 commande1_selected = 0;
                                 if (selected_controle==2) selected_controle=0;
                                 else selected_controle=2;
-                                std::cout << "selected_controle vaut : " << selected_controle << std::endl;
                                 
                             }
 
@@ -177,7 +170,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 commande1_selected = 0;
                                 if (selected_controle==3) selected_controle=0;
                                 else selected_controle=3;
-                                std::cout << "selected_controle vaut : " << selected_controle << std::endl;
                                 
                             }
 
@@ -187,7 +179,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 commande1_selected = 0;
                                 if (selected_controle==4) selected_controle=0;
                                 else selected_controle=4;
-                                std::cout << "selected_controle vaut : " << selected_controle << std::endl;
                                 
                             }
 
@@ -197,7 +188,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 commande1_selected = 0;
                                 if (selected_controle==5) selected_controle=0;
                                 else selected_controle=5;
-                                std::cout << "selected_controle vaut : " << selected_controle << std::endl;
                                 
                             }
 
@@ -207,7 +197,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 commande1_selected = 0;
                                 if (selected_controle==6) selected_controle=0;
                                 else selected_controle=6;
-                                std::cout << "selected_controle vaut : " << selected_controle << std::endl;
                                 
                             }
 
@@ -215,21 +204,31 @@ void Niveau1(sdl2::window& fenêtre){
                                 switch (selected_controle) {
                                 case 1:
                                     // on augmente le rendement de la pompe circuit primaire
+                                    C.get_Circuit_Primaire().incr_F_pompe();
                                     std::cout << "on augmente le rendement de la pompe circuit primaire" << std::endl;
                                     break;
                                 case 2:
+                                    // on augmente le rendement de la pompe circuit secondaire
+                                    C.get_Circuit_Secondaire().incr_F_pompe(); //problème?
+                                    std::cout << C.get_Circuit_Secondaire().get_F_pompe() << std::endl;
                                     std::cout << "on augmente le rendement de la pompe circuit secondaire" << std::endl;
                                     break;
                                 case 3:
+                                    // on sort les barres de graphite hors de l'eau
                                     std::cout << "on augmente TxGraphite" << std::endl;
                                     break;
                                 case 4:
+                                    // on augmente le taux de bore dans l'eau
                                     std::cout << "on augmente TxBore" << std::endl;
                                     break;
                                 case 5:
+                                    // on augmente la température du pressuriseur
+                                    C.get_Circuit_Primaire().incr_T_pressuriseur();
+                                    std::cout << C.get_Circuit_Primaire().get_T_pressuriseur() << std::endl;
                                     std::cout << "on augmente rendement pressuriseur" << std::endl;
                                     break;
                                 case 6:
+                                    // on augmente le rendement de la pompe condenseur
                                     std::cout << "on augmente rendement pompe condenseur" << std::endl;
                                     break;
                                 }
@@ -239,21 +238,28 @@ void Niveau1(sdl2::window& fenêtre){
                                 switch (selected_controle) {
                                 case 1:
                                     // on augmente le rendement de la pompe circuit primaire
-                                    std::cout << "on baisse le rendement de la pompe circuit primaire" << std::endl;
+                                    C.get_Circuit_Primaire().decr_F_pompe();
                                     break;
                                 case 2:
+                                    // on baisse le rendement de la pompe circuit secondaire
+                                    C.get_Circuit_Secondaire().decr_F_pompe();
                                     std::cout << "on baisse le rendement de la pompe circuit secondaire" << std::endl;
                                     break;
                                 case 3:
+                                    // on plonge les barres de graphite dans l'eau
                                     std::cout << "on baisse TxGraphite" << std::endl;
                                     break;
                                 case 4:
+                                    // on baisse le taux de bore dans l'eau
                                     std::cout << "on baisse TxBore" << std::endl;
                                     break;
                                 case 5:
+                                    // on baisse la température du pressuriseur
+                                    C.get_Circuit_Primaire().decr_T_pressuriseur();
                                     std::cout << "on baisse rendement pressuriseur" << std::endl;
                                     break;
                                 case 6:
+                                    // on baisse le rendement de la pompe condenseur
                                     std::cout << "on baisse rendement pompe condenseur" << std::endl;
                                     break;
                                 }
@@ -324,7 +330,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 B_pressed = 1;
                                 B_memoire = affichage;
                                 affichage = 3;
-                                std::cout << "on appuie sur B" << std::endl;
                             }
 
                             //touche O
@@ -332,7 +337,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 O_selected = 4 - O_selected +1; //varie entre 1 et 4 
                                 commande2_selected = 1;
                                 affichage = O_selected;
-                                std::cout << "O_selected vaut : " << O_selected << std::endl;
                             }
 
                             if (O_selected==4) {
@@ -340,7 +344,7 @@ void Niveau1(sdl2::window& fenêtre){
                                     std::cout << "on envoie vers 1" << std::endl;
                                 }
                                 if ((keychar==50) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers atchoum" << std::endl;
+                                    std::cout << "on envoie vers 2" << std::endl;
                                 }
                                 if ((keychar==99) && (iskey_down==0)) {
                                     std::cout << "on envoie vers C" << std::endl;

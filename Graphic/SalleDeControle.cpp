@@ -43,7 +43,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     circuit_secondaire.at(140, 280);
     sdl2::texte rendement2("Rendement : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     rendement2.at(60, 310);
-    sdl2::texte pourcentage2(arrondi(C.get_Circuit_Secondaire().get_F_pompe(),0) + " %"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte pourcentage2(arrondi((C.get_Circuit_Secondaire().get_F_pompe())*100,0) + " %"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     pourcentage2.at(300, 310);
     sdl2::texte temperature2("Température : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     temperature2.at(60, 330);
