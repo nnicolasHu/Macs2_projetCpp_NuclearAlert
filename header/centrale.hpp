@@ -2,11 +2,13 @@
 #define _CENTRALE_HPP
 
 #include <memory>
+#include <array>
 
 #include "reacteur.hpp"
 #include "circuitPrimaire.hpp"
 #include "circuitSecondaire.hpp"
 #include "ouvriers.hpp"
+
 
 /**
  * @brief    Cette classe décrit la centrale dans sa globalité.
@@ -86,9 +88,28 @@ public:
      */
     double get_R_enceinte() const override;
 
+    /** 
+     * @brief Permet d'accéder aux méthodes du reacteur
+     * 
+     */
     reacteur& get_Reacteur() const;
+
+    /** 
+     * @brief Permet d'accéder aux méthodes de la classe circuitPrimaire
+     * 
+     */
     circuitPrimaire& get_Circuit_Primaire() const;
+
+    /** 
+     * @brief Permet d'accéder aux méthodes de la classe circuitSecondaire
+     * 
+     */
     circuitSecondaire& get_Circuit_Secondaire() const;
+
+    /** 
+     * @brief Permet d'accéder aux méthodes de la classe ouvriers
+     * 
+     */
     ouvriers& get_Ouvriers() const;
 
     /** Test **/
@@ -101,9 +122,6 @@ public:
     void set_R_air(double val);
     void set_R_eau(double val);
     void set_Contamination(int val);
-
-
-
 
     /**
      * @brief Permet de mettre à jour la pression de l'enceinte
@@ -239,8 +257,38 @@ public:
      */
     void maj_Population();
 
+    /**
+     * @brief Permet d'envoyer des ouvriers en intervention lorsque c'est possible
+     * 
+     * @param[in] organe Entier correspondant à l'organe que l'on veut réparer
+     */
     void envoie_intervention(int organe);
+
+    /**
+     * @brief Permet de mettre à jour les réparations effectuées 
+     * 
+     */
     void maj_Reparation();
+
+    /**
+     * @brief Permet d'obtenir les organes qui se dégradent pour permettre de les faire clignoter
+     * 
+     * Convention : 
+     * 
+     * 0 : pompe circuit primaire
+     * 1 : pompe circuit secondaire
+     * 2 : condenseur
+     * 3 : générateur de vapeur
+     * 4 : injecteur borique
+     * 5 : circuit primaire
+     * 6 : circuit secondaire
+     * 7 : pressuriseur
+     * 
+     * O : tout se passe bien pour cette organe
+     * 1 : l'organe est endommagé
+     * 
+     */
+    std::array<double,8> get_clignotements();
 
 private:
     static centrale* la_centrale;
