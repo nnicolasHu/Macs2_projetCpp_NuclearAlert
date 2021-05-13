@@ -290,8 +290,8 @@ int centrale::get_Order() const{
     return Order;
 }
 
-void centrale::set_Order(int entier){
-    Order = entier;
+void centrale::set_Order(){
+    Order = true;
 }
 
 double centrale::get_R_air() const{
@@ -307,7 +307,7 @@ int centrale::get_Contamination() const{
 }
 
 void centrale::maj_Evac(){
-    if(Order == 1){
+    if(Order == true){
         Evac += 0.1*(RND(1.)>=0.6);
     }
 }

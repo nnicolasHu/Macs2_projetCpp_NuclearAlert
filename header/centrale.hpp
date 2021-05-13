@@ -197,9 +197,8 @@ public:
     /**
      * @brief Permet de donner l'ordre d'évacuer
      * 
-     * @param[in] entier soit 0 soit 1.
      */
-    void set_Order(int entier);
+    void set_Order();
 
     /**
      * @brief Renvoie la radioactivité de l'air 
@@ -331,7 +330,7 @@ private:
     double Evac;
 
     /** Ordre evacuation, 0 : pas d'evacuation, 1 : ordre d'évacuer  **/ 
-    int Order;
+    bool Order;
 
     /** Radioactivité air **/
     double R_air;
