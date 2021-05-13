@@ -38,15 +38,15 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
     commandP.at(100, 510);
 
     /// En cours ///
-    sdl2::texte en_cours("Intervention en cours"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    en_cours.at(1000, 20);
+    sdl2::texte en_cours("En cours"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    en_cours.at(990, 20);
 
     //En cours pompe circuitPrimaire
     string cpcp = "Non";
     if ((C.get_Ouvriers().get_nb_ouvriersEnIntervention(0) != 0)){
         cpcp = "Oui";
     }
-    sdl2::texte cours_pcp(cpcp, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte cours_pcp(cpcp, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     cours_pcp.at(1015, 90);
 
     //En cours pompe circuitSecondaire
@@ -54,7 +54,7 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
     if ((C.get_Ouvriers().get_nb_ouvriersEnIntervention(1) != 0)){
         cpcs = "Oui";
     }
-    sdl2::texte cours_pcs(cpcs, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte cours_pcs(cpcs, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     cours_pcs.at(1015, 150);
 
     //En cours condenseur
@@ -62,7 +62,7 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
     if ((C.get_Ouvriers().get_nb_ouvriersEnIntervention(2) != 0)){
         ccond = "Oui";
     }
-    sdl2::texte cours_cond(ccond, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte cours_cond(ccond, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     cours_cond.at(1015, 210);
 
     //En cours généréteur de vapeur
@@ -70,7 +70,7 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
     if ((C.get_Ouvriers().get_nb_ouvriersEnIntervention(3) != 0)){
         cgenvap = "Oui";
     }
-    sdl2::texte cours_gen_vap(cgenvap, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte cours_gen_vap(cgenvap, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     cours_gen_vap.at(1015, 270);
 
     //En cours injecteur
@@ -78,7 +78,7 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
     if ((C.get_Ouvriers().get_nb_ouvriersEnIntervention(4) != 0)){
         cinject = "Oui";
     }
-    sdl2::texte cours_inject(cinject, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte cours_inject(cinject, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     cours_inject.at(1015, 330);
 
     //En cours circuitPrimaire
@@ -86,7 +86,7 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
     if ((C.get_Ouvriers().get_nb_ouvriersEnIntervention(5) != 0)){
         ccp = "Oui";
     }
-    sdl2::texte cours_cp(ccp, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte cours_cp(ccp, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     cours_cp.at(1015, 390);
 
     //En cours circuitSecondaire
@@ -94,7 +94,7 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
     if ((C.get_Ouvriers().get_nb_ouvriersEnIntervention(6) != 0)){
         ccs = "Oui";
     }
-    sdl2::texte cours_cs(ccs, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte cours_cs(ccs, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     cours_cs.at(1015, 450);
 
     //En cours pressuriseur
@@ -102,9 +102,10 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
     if ((C.get_Ouvriers().get_nb_ouvriersEnIntervention(7) != 0)){
         cpress = "Oui";
     }
-    sdl2::texte cours_press(cpress, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte cours_press(cpress, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     cours_press.at(1015, 510);
     
+    fenêtre << en_cours << cours_pcp << cours_pcs << cours_cond << cours_gen_vap << cours_inject << cours_cp << cours_cs << cours_press;
 
     //bool quitting = false;
     //sdl2::event_queue queue;
@@ -122,6 +123,6 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
         }
     }*/
     
-    SDL_Delay(3000); 
+    //SDL_Delay(3000); 
 
 }
