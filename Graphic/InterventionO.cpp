@@ -34,10 +34,10 @@ void InterventionO(sdl2::window& fenêtre){
     commandP.at(100, 510);
 
 
-    bool quitting = false;
-    sdl2::event_queue queue;
+    //bool quitting = false;
+    //sdl2::event_queue queue;
     fenêtre  << titre << command1 << command2 << commandC << commandG << commandB << commandI << commandR << commandP << sdl2::flush;
-    auto events = queue.pull_events();
+    /* auto events = queue.pull_events();
     for(const auto& e : events){
         if(e->kind_of_event() == sdl2::event::quit) quitting = true;
         if(e->kind_of_event() == sdl2::event::key){
@@ -50,6 +50,6 @@ void InterventionO(sdl2::window& fenêtre){
         }
     }
     
-    SDL_Delay(3000);
+    SDL_Delay(3000); */
 
 }
