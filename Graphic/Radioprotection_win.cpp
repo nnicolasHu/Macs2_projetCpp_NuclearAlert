@@ -235,8 +235,20 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     sdl2::texte af_ecentrale(to_string(E_centrale), fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_ecentrale.at(1170, 500);
     //Niveau d'alerte
+    string NA = "Destruction imminente";
+    if((C.get_E_centrale()>0.5) && (C.get_E_centrale()<=0.6)){
+        NA = "DEFCOM 1";
+    }
+    if((C.get_E_centrale()>0.3) && (C.get_E_centrale()<=0.5)){
+        NA = "DEFCOM 2";
+    }
+    if((C.get_E_centrale()<=0.3)){
+        NA = "Destruction imminente";
+    }
     sdl2::texte alerte("Niveau d'alerte :"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     alerte.at(805, 530);
+    sdl2::texte af_alerte(NA, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    af_alerte.at(1050, 530);
     //Population évacuée
     int Evac = (C.get_Evac())*100;
     sdl2::texte popevac("Population évacuée :"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
@@ -251,7 +263,7 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     af_cont.at(1170, 590);
 
     sdl2::rectangle ord({790,440}, {430,195}, {0xFF,0xFF,0xFF,0xFF}, false);
-    fenêtre << ord << titreord << e_centrale << af_ecentrale << alerte << popevac << af_evac << popcont << af_cont;
+    fenêtre << ord << titreord << e_centrale << af_ecentrale << alerte << af_alerte << popevac << af_evac << popcont << af_cont;
 
     fenêtre << help << sdl2::flush;
   
