@@ -86,7 +86,7 @@ void Niveau1(sdl2::window& fenêtre){
                 Bilanactiviteouvriere(fenêtre,C);
                 break;
             case 4:
-                InterventionO(fenêtre);
+                InterventionO(fenêtre,C);
                 break;
             case 5:
                 Commande1(fenêtre);
