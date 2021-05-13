@@ -76,7 +76,7 @@ void Commande2(sdl2::window& fenêtre){
     sdl2::texte commandB("B : Bilan de l'activité ouvrière"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandB.at(100, 330);
 
-    sdl2::texte commandO("O : Rendement pressuriseur"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte commandO("O : Gestion de l'activité ouvrière"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandO.at(100, 390);
 
     //bool quitting = false;
