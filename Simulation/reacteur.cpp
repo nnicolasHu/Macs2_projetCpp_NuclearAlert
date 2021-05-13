@@ -19,7 +19,7 @@ reacteur::reacteur(){
 
 /** Méthodes **/
 
-void reacteur::set_bore(double valeur_demandee){
+/*void reacteur::set_bore(double valeur_demandee){
     if ((valeur_demandee <= 0.5) && (valeur_demandee >= 0.0)){
        Tx_bore = valeur_demandee; 
        if (TBore_eff < Tx_bore){
@@ -33,7 +33,24 @@ void reacteur::set_bore(double valeur_demandee){
         std::cout << " Erreur sur le taux de bore demandé ! " <<
         std::endl; 
     }
+}*/
+
+void reacteur::incr_bore() {
+    if ((TBore_eff<=0.5) && (Tx_bore<TBore_eff)){
+        Tx_bore += 0.01;
+    }
 }
+
+void reacteur::decr_bore() {
+    if ((TBore_eff>=0.) && (Tx_bore>TBore_eff)){
+        Tx_bore -= 0.01;
+    }
+}
+
+void reacteur::maj_bore(){
+    TBore_eff += 0.01*(Tx_bore<TBore_eff) - 0.01*(Tx_bore>TBore_eff);
+}
+
 
 double reacteur::get_TBore_eff() const{
     return TBore_eff;
@@ -43,7 +60,7 @@ double reacteur::get_E_bore() const{
     return E_bore;
 }
 
-void reacteur::set_graphite(double valeur_demandee){
+/*void reacteur::set_graphite(double valeur_demandee){
     if ((valeur_demandee>=(1. - E_barre)) && (valeur_demandee<=1.)){
         Tx_graphite = valeur_demandee;
         if (TGraphite_eff < Tx_graphite){
@@ -57,6 +74,22 @@ void reacteur::set_graphite(double valeur_demandee){
         std::cout << " Erreur sur la proportion de graphite demandée ! " <<
         std::endl; 
     }
+}*/
+
+void reacteur::incr_graphite() {
+    if ((TGraphite_eff<=0.5) && (Tx_graphite<TGraphite_eff)){
+        Tx_graphite += 0.01;
+    }
+}
+
+void reacteur::decr_graphite() {
+    if ((TGraphite_eff>=0.) && (Tx_graphite>TGraphite_eff)){
+        Tx_graphite -= 0.01;
+    }
+}
+
+void reacteur::maj_graphite(){
+    TGraphite_eff += 0.01*(Tx_graphite<TGraphite_eff) - 0.01*(Tx_graphite>TGraphite_eff);
 }
 
 double reacteur::get_TGraphite_eff() const{
@@ -111,7 +144,7 @@ void reacteur::maj_R_piscine(double R1){
     R_piscine = (1.- E_cuve)*R1 + 100 + RND(45);
 }
 
-void reacteur::degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte){
+void reacteur::degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte, bool urg){
 
     if (E_cuve>0.){
         if ((T1>=50) && (E_circuit_primaire<0.6)){
@@ -125,6 +158,9 @@ void reacteur::degr_E_cuve(double T1, double E_circuit_primaire, double E_encein
         }
         if (E_enceinte == 0.){
             E_cuve -= (0.5 + RND(0.1))*(RND(1.)>=0.35);
+        }
+        if (urg == true){
+            E_cuve -= (RND(0.08))*(RND(1.)>=0.6);
         }
     }
     if (E_cuve <= 0.){
@@ -147,7 +183,7 @@ void reacteur::degr_E_piscine(double T1, double E_circuit_primaire,double E_ence
     }
 }
 
-void reacteur::degr_E_barre(double T1){
+void reacteur::degr_E_barre(double T1, bool urg){
     if(E_barre>0.){
         if ((T1>=50) && (E_canaux<0.6) && (TGraphite_eff>0.4) ){
             E_barre -= (RND(0.02))*(RND(1.)>=0.7);
@@ -158,16 +194,22 @@ void reacteur::degr_E_barre(double T1){
         if ((T1>=420) && (TGraphite_eff>0.2) ){
             E_barre -= RND(0.03);
         }
+        if (urg == true){
+            E_barre -= (0.02 + RND(0.08))*(RND(1.)>=0.7);
+        }
     }
     if (E_barre <= 0.){
         E_barre = 0.;
     }
 }
 
-void reacteur::degr_E_canaux(double T1){
+void reacteur::degr_E_canaux(double T1, bool urg){
     if(E_canaux>0.){
         if ((T1>=50) && (E_cuve<0.5)){
             E_canaux -= (RND(0.05))*(RND(1.)>=0.5);
+        }
+        if (urg == true){
+            E_canaux -= ((0.05) + RND(0.1))*(RND(1.)>=0.2);
         }
     }
     if (E_canaux <= 0.){

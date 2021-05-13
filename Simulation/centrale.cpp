@@ -229,12 +229,13 @@ void centrale::maj_Reacteur(){
     double R1 = ptrCircuit_Primaire->get_Radioactivite();
     double T1 = ptrCircuit_Primaire->get_Temperature();
     double E_C1 = ptrCircuit_Primaire->get_E_circuit();
+    bool urg = arret_urgence();
 
     ptrReacteur->maj_R_piscine(R1);
-    ptrReacteur->degr_E_barre(T1);
+    ptrReacteur->degr_E_barre(T1, urg);
     ptrReacteur->degr_E_bore(T1, E_C1);
-    ptrReacteur->degr_E_canaux(T1);
-    ptrReacteur->degr_E_cuve(T1, E_C1, E_enceinte);
+    ptrReacteur->degr_E_canaux(T1, urg);
+    ptrReacteur->degr_E_cuve(T1, E_C1, E_enceinte, urg);
     ptrReacteur->degr_E_piscine(T1, E_C1, E_enceinte);
 } 
 
@@ -460,4 +461,22 @@ std::array<double,8> centrale::get_clignotements(){
 
     return(etat);
 
+}
+
+bool centrale::arret_urgence(){
+    bool urg = false;
+
+    double E_cuve = ptrReacteur->get_E_cuve();
+    double E_canaux = ptrReacteur->get_E_canaux();
+    double E_barre = ptrReacteur->get_E_barre();
+
+    if(RND(1.)<=0.7*E_cuve*E_canaux*E_barre+0.15){
+        ptrReacteur->decr_graphite();
+    }
+
+    else{
+        urg = true;
+    }
+
+    return urg;
 }
