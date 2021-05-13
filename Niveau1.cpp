@@ -35,6 +35,14 @@ void Niveau1(sdl2::window& fenêtre){
    
     bool tab_selected = false;
     bool O_selected = false;
+    int commande1_selected = 0; 
+    /* commande1_selected vaut 5 quand on veut afficher les commandes pour salle de controle
+        et vaut 0 si on ne l'affiche pas
+    */
+    int commande2_selected = 1;
+    /* commande2_selected vaut 6 quand on veut afficher les commandes pour salle de controle
+        et vaut 1 si on ne l'affiche pas
+    */
 
     bool S_pressed = false;
     bool B_pressed = false;
@@ -75,7 +83,7 @@ void Niveau1(sdl2::window& fenêtre){
                 std::cout << "on affiche interface ouvrier" << std::endl;
                 break;
             case 5:
-                std::cout << "on affiche commande de salle de controle" << std::endl;
+                Commande1(fenêtre);
                 break;
             case 6:
                 std::cout << "on affiche commande de poste sécurité" << std::endl;
@@ -101,6 +109,7 @@ void Niveau1(sdl2::window& fenêtre){
                             affichage = espace;
                             selected_controle = 0;
                             O_selected = 0;
+                            commande1_selected = 0;
                             
                             std::cout << "la touche espace vaut : " << espace << std::endl;
                             std::cout << "selected_controle vaut : " << selected_controle << std::endl;
@@ -113,6 +122,7 @@ void Niveau1(sdl2::window& fenêtre){
                             else affichage = espace;
                             selected_controle = 0;
                             O_selected = 0;
+                            commande1_selected = 0;
                             std::cout << "on affiche : " << affichage << std::endl;
 
                         }
@@ -122,13 +132,21 @@ void Niveau1(sdl2::window& fenêtre){
                             S_pressed = 1;
                             selected_controle = 0;
                             O_selected = 0;
+                            commande1_selected = 0;
                         }
 
                         //commande depuis la salle de contrôle
-                        if (espace == 0) {                             
+                        if (espace == 0) {
+                            //touche h
+                            if ((keychar==104) && (iskey_down==0) ) {
+                                commande1_selected = 5 - commande1_selected;
+                                affichage = commande1_selected;
+                            }                             
 
                             //touche 1
                             if ((keychar==49) && (iskey_down==0) ) {
+                                affichage = 0;
+                                commande1_selected = 0;
                                 if (selected_controle==1) selected_controle=0;
                                 else selected_controle=1;
                                 std::cout << "selected_controle vaut : " << selected_controle << std::endl;
@@ -137,6 +155,8 @@ void Niveau1(sdl2::window& fenêtre){
 
                             //touche 2
                             if ((keychar==50) && (iskey_down==0) ) {
+                                affichage = 0;
+                                commande1_selected = 0;
                                 if (selected_controle==2) selected_controle=0;
                                 else selected_controle=2;
                                 std::cout << "selected_controle vaut : " << selected_controle << std::endl;
@@ -145,6 +165,8 @@ void Niveau1(sdl2::window& fenêtre){
 
                             //touche B
                             if ((keychar==98) && (iskey_down==0) ) {
+                                affichage = 0;
+                                commande1_selected = 0;
                                 if (selected_controle==3) selected_controle=0;
                                 else selected_controle=3;
                                 std::cout << "selected_controle vaut : " << selected_controle << std::endl;
@@ -153,6 +175,8 @@ void Niveau1(sdl2::window& fenêtre){
 
                             //touche T
                             if ((keychar==116) && (iskey_down==0) ) {
+                                affichage = 0;
+                                commande1_selected = 0;
                                 if (selected_controle==4) selected_controle=0;
                                 else selected_controle=4;
                                 std::cout << "selected_controle vaut : " << selected_controle << std::endl;
@@ -161,6 +185,8 @@ void Niveau1(sdl2::window& fenêtre){
 
                             //touche P
                             if ((keychar==112) && (iskey_down==0) ) {
+                                affichage = 0;
+                                commande1_selected = 0;
                                 if (selected_controle==5) selected_controle=0;
                                 else selected_controle=5;
                                 std::cout << "selected_controle vaut : " << selected_controle << std::endl;
@@ -169,6 +195,8 @@ void Niveau1(sdl2::window& fenêtre){
 
                             //touche R
                             if ((keychar==114) && (iskey_down==0) ) {
+                                affichage = 0;
+                                commande1_selected = 0;
                                 if (selected_controle==6) selected_controle=0;
                                 else selected_controle=6;
                                 std::cout << "selected_controle vaut : " << selected_controle << std::endl;
@@ -226,7 +254,9 @@ void Niveau1(sdl2::window& fenêtre){
                             //touche U
                             if ((keychar==117) && (iskey_down==0) ) {
                                 demande_ArretUrgence = 1;
+                                affichage = 0;
                                 selected_controle = 0;
+                                commande1_selected = 0;
                             }
 
                             if (demande_ArretUrgence) {
