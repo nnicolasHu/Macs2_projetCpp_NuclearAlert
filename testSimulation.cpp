@@ -1,8 +1,9 @@
-#include "circuit.hpp"
+#include "centrale.hpp"
 #include <iostream>
 
 int main() {
-    circuit C;
-    std::cout << C.get_Temperature() << std::endl;
+    centrale C;
+    
+    std::cout << C.get_Reacteur().get_TBore_eff() << std::endl;
     return EXIT_SUCCESS;
 }

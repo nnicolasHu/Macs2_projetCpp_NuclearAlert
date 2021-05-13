@@ -5,21 +5,19 @@
 int main(int argc, char* args[]){
     sdl2::init(argc, args);
 
-    int dim_x = 1250, dim_y = 650;
+    sdl2::window fenêtre("Nuclear Alert", {1250, 650});
 
-    sdl2::window fenêtre("Nuclear Alert", {dim_x, dim_y});
-
-    //std::string pseudo = Fenetre_acceuil(&fenêtre, &dim_x, &dim_y); 
+    std::string pseudo = Fenetre_acceuil(fenêtre); 
     //Radioprotection_win(1);
     // std::cout << pseudo << std::endl;
-    // int level = Choix_Niveau(&fenêtre);
+    // int level = Choix_Niveau(fenêtre);
     // if(level == 1) {
     //     fenêtre.cls({0, 0, 0, 0});
-    //     Niveau1(&fenêtre);
+    //     Niveau1(fenêtre);
     // }
 
     // SalleDeControle();
-    Commande2(&fenêtre);
+    //Commande2(fenêtre);
     sdl2::finalize();
     return 0;
 }
