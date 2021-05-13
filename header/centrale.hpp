@@ -318,7 +318,7 @@ private:
     double E_centrale;
 
     /** Production de la centrale **/
-    unsigned int MW;
+    double MW;
 
     /** Population evacuée **/
     double Evac;
