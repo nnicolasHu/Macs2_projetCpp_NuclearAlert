@@ -54,7 +54,25 @@ public:
      *
      * @param[in] valeur_demandee La valeur demandée, comprise entre 0 et 0.5.
      */
-     void set_bore(double valeur_demandee);
+     /*void set_bore(double valeur_demandee);*/
+
+     /**
+     * @brief Permet d'incrémenter le Tx_bore
+     *
+     */
+     void incr_bore();
+
+     /**
+     * @brief Permet de décrémenter le Tx_bore
+     *
+     */
+     void decr_bore();
+
+     /**
+     * @brief Permet de mettre à jour le TBore_eff en fonction du Tx_bore
+     *
+     */
+     void maj_bore();
 
      /**
      * @brief Permet d'obtenir le taux de bore
@@ -79,8 +97,25 @@ public:
      * @param[in] valeur_demandee La proportion des barres de graphite à laisser hors de l'eau,
      * qui doit être comprise entre 1 - etat_barre et 1.
      */
-     void set_graphite(double valeur_demandee);
+     /*void set_graphite(double valeur_demandee);*/
 
+     /**
+     * @brief Permet d'incrémenter le Tx_bore
+     *
+     */
+     void incr_graphite();
+
+     /**
+     * @brief Permet de décrémenter le Tx_bore
+     *
+     */
+     void decr_graphite();
+
+     /**
+     * @brief Permet de mettre à jour le TBore_eff en fonction du Tx_bore
+     *
+     */
+     void maj_graphite();
      /**
      * @brief Permet d'obtenir la proportion des barres de graphite
      * hors de l'eau
@@ -144,14 +179,17 @@ public:
      *
      * @param[in] T1 Temperature circuit primaire
      * @param[in] E_circuit_primaire Etat circuit primaire
+     * @param[in] E_enceinte Etat enceinte
+     * @param[in] urg Booléen lié à la tentative d'arrêt d'urgence
      */
-     void degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte);
+     void degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte, bool urg);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état de la piscine
      *
      * @param[in] T1 Temperature circuit primaire
      * @param[in] E_circuit_primaire Etat circuit primaire
+     * @param[in] E_enceinte Etat enceinte
      */
      void degr_E_piscine(double T1, double E_circuit_primaire,double E_enceinte);
 
@@ -160,16 +198,18 @@ public:
      * barres de graphite
      *
      * @param[in] T1 Temperature circuit primaire
+     * @param[in] urg Booléen lié à la tentative d'arrêt d'urgence
      */
-     void degr_E_barre(double T1);
+     void degr_E_barre(double T1, bool urg);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
      * canaux
      *
      * @param[in] T1 Temperature circuit primaire
+     * @param[in] urg Booléen lié à la tentative d'arrêt d'urgence
      */
-     void degr_E_canaux(double T1);
+     void degr_E_canaux(double T1, bool urg);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des

@@ -290,6 +290,13 @@ public:
      */
     std::array<double,8> get_clignotements();
 
+    /**
+     * @brief Permet d'effectuer la tentative d'arrêt d'urgence
+     * 
+     * @return booléen permettant de savoir si la tenatative d'arrêt d'urgence doit dégrader des éléments du réacteur
+     */
+    bool arret_urgence();
+
 private:
     static centrale* la_centrale;
     
