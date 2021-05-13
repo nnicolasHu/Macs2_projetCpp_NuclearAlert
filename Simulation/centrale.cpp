@@ -426,19 +426,19 @@ void centrale::maj_Reparation() {
 std::array<double,8> centrale::get_clignotements(){
     std::array<double,8> etat = {0., 0., 0., 0., 0., 0., 0., 0.};
 
-    if(ptrCircuit_Primaire->get_E_pompe()<1.){
+    if(ptrCircuit_Primaire->get_E_pompe()<0.5){
         etat[0] = 1.;
     }
 
-    if(ptrCircuit_Secondaire->get_E_pompe()<1.){
+    if(ptrCircuit_Secondaire->get_E_pompe()<0.5){
         etat[1] = 1.;
     }
 
-    if(ptrCircuit_Secondaire->get_E_condenseur()<1.){
+    if(ptrCircuit_Secondaire->get_E_condenseur()<0.5){
         etat[2] = 1.;
     }
 
-    if(ptrCircuit_Secondaire->get_E_vapeur()<1.){
+    if(ptrCircuit_Secondaire->get_E_vapeur()<0.5){
         etat[3] = 1.;
     }
 
@@ -446,15 +446,15 @@ std::array<double,8> centrale::get_clignotements(){
         etat[4] = 1.;
     }
 
-    if(ptrCircuit_Primaire->get_E_circuit()<1.){
+    if(ptrCircuit_Primaire->get_E_circuit()<0.5){
         etat[5] = 1.;
     }
 
-    if(ptrCircuit_Secondaire->get_E_circuit()<1.){
+    if(ptrCircuit_Secondaire->get_E_circuit()<0.5){
         etat[6] = 1.;
     }
 
-    if(ptrCircuit_Primaire->get_E_pressuriseur()<1.){
+    if(ptrCircuit_Primaire->get_E_pressuriseur()<0.5){
         etat[6] = 1.;
     }
 
