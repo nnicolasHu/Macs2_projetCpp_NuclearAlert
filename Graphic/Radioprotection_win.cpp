@@ -235,7 +235,7 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     sdl2::texte af_ecentrale(to_string(E_centrale), fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_ecentrale.at(1170, 500);
     //Niveau d'alerte
-    string NA = "Destruction imminente";
+    string NA = "Nul";
     if((C.get_E_centrale()>0.5) && (C.get_E_centrale()<=0.6)){
         NA = "DEFCOM 1";
     }
