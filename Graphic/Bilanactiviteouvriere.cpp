@@ -6,6 +6,8 @@ void Bilanactiviteouvriere(sdl2::window& fenêtre,centrale& C){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 14);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 20);
 
+    fenêtre << sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
+
         /////////        Titre fenêtre      ////////
     sdl2::texte gdtitre("BILAN ACTIVITE OUVIERE"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     gdtitre.at(495, 53);
@@ -167,11 +169,11 @@ void Bilanactiviteouvriere(sdl2::window& fenêtre,centrale& C){
 
     fenêtre << en_cours << cours_pcp << cours_pcs << cours_cond << cours_gen_vap << cours_inject << cours_cp << cours_cs << cours_press;
 
-    bool quitting = false;
-    sdl2::event_queue queue;
+    //bool quitting = false;
+    //sdl2::event_queue queue;
 
-        fenêtre << sdl2::flush;
-        auto events = queue.pull_events();
+    fenêtre << sdl2::flush;
+        /*auto events = queue.pull_events();
         for(const auto& e : events){
             if(e->kind_of_event() == sdl2::event::quit) quitting = true;
             if(e->kind_of_event() == sdl2::event::key){
@@ -182,7 +184,6 @@ void Bilanactiviteouvriere(sdl2::window& fenêtre,centrale& C){
                 }
                 
             }
-        }
+        }*/
 
-    SDL_Delay(5000);
 }
