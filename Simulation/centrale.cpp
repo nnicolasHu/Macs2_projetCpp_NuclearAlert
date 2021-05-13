@@ -422,3 +422,42 @@ void centrale::maj_Reparation() {
         }
     }
 }
+
+std::array<double,8> centrale::get_clignotements(){
+    std::array<double,8> etat = {0., 0., 0., 0., 0., 0., 0., 0.};
+
+    if(ptrCircuit_Primaire->get_E_pompe()<1.){
+        etat[0] = 1.;
+    }
+
+    if(ptrCircuit_Secondaire->get_E_pompe()<1.){
+        etat[1] = 1.;
+    }
+
+    if(ptrCircuit_Secondaire->get_E_condenseur()<1.){
+        etat[2] = 1.;
+    }
+
+    if(ptrCircuit_Secondaire->get_E_vapeur()<1.){
+        etat[3] = 1.;
+    }
+
+    if(ptrReacteur->get_E_bore()<1.){
+        etat[4] = 1.;
+    }
+
+    if(ptrCircuit_Primaire->get_E_circuit()<1.){
+        etat[5] = 1.;
+    }
+
+    if(ptrCircuit_Secondaire->get_E_circuit()<1.){
+        etat[6] = 1.;
+    }
+
+    if(ptrCircuit_Primaire->get_E_pressuriseur()<1.){
+        etat[6] = 1.;
+    }
+
+    return(etat);
+
+}
