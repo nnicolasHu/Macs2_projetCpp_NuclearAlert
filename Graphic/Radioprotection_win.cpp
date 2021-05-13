@@ -253,23 +253,7 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     sdl2::rectangle ord({790,440}, {430,195}, {0xFF,0xFF,0xFF,0xFF}, false);
     fenêtre << ord << titreord << e_centrale << af_ecentrale << alerte << popevac << af_evac << popcont << af_cont;
 
-    // bool quitting = false;
-    //sdl2::event_queue queue;
-
     fenêtre << help << sdl2::flush;
-    //auto events = queue.pull_events();
-    //     for(const auto& e : events){
-    //         if(e->kind_of_event() == sdl2::event::quit) quitting = true;
-    //         if(e->kind_of_event() == sdl2::event::key){
-    //             auto& key = dynamic_cast<sdl2::event_keyboard&>(*e);
-    //             if(key.state() == sdl2::event_keyboard::pressed){
-    //                 char keychar = key.ascci_code();
-    //                 if(keychar == 27) quitting = true;
-    //             }
-                
-    //         }
-    //     }
-
-    //SDL_Delay(5000);
+  
 }
 
