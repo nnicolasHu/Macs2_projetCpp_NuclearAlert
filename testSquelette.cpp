@@ -38,6 +38,7 @@ int main(int argc, char* args[]){
    
     bool tab_selected = false;
     bool O_selected = false;
+    bool commande1_selected = false;
 
     bool S_pressed = false;
     bool B_pressed = false;
@@ -60,7 +61,7 @@ int main(int argc, char* args[]){
         loopEnd = SDL_GetTicks();
         while ((not quitting) && (loopEnd-loopBegin < 1000)) {
             //Affichage
-            switch (affichage) {
+            /* switch (affichage) {
             case 0:
                 std::cout << "on affiche salle de controle" << std::endl;
                 break;
@@ -82,7 +83,7 @@ int main(int argc, char* args[]){
             case 6:
                 std::cout << "on affiche commande de poste sécurité" << std::endl;
                 break;
-            }
+            } */
 
             //gestion des touches
             auto events = queue.pull_events();
@@ -119,6 +120,7 @@ int main(int argc, char* args[]){
                             std::cout << "on affiche : " << affichage << std::endl;
 
                         }
+
                         //touche S
                         if ((keychar==115)  && (iskey_down==0) ) {
                             stopBegin = SDL_GetTicks();
@@ -128,7 +130,14 @@ int main(int argc, char* args[]){
                         }
 
                         //commande depuis la salle de contrôle
-                        if (espace == 0) {                             
+                        if (espace == 0) {             
+
+                            //touche h
+                            if ((keychar==49) && (iskey_down==0) ) {
+                                commande1_selected = 1 - commande1_selected;
+
+                            }
+
 
                             //touche 1
                             if ((keychar==49) && (iskey_down==0) ) {
@@ -345,7 +354,6 @@ int main(int argc, char* args[]){
             }
             
             loopEnd = SDL_GetTicks();
-            fenêtre << sdl2::flush; //à enlever?
         }
 
 

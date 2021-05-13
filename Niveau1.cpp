@@ -61,17 +61,15 @@ void Niveau1(sdl2::window& fenêtre){
             switch (affichage) {
             case 0:
                 SalleDeControle(fenêtre,C);
-                //std::cout << "on affiche salle de controle" << std::endl;
                 break;
             case 1:
                 Radioprotection_win(fenêtre,C);
-                //std::cout << "on affiche poste de sécurité" << std::endl;
                 break;
             case 2:
-                std::cout << "on affiche carte" << std::endl;
+                Centrale_tab(fenêtre);
                 break;
             case 3:
-                std::cout << "on affiche bilan ouvrier" << std::endl;
+                Bilanactiviteouvriere(fenêtre,C);
                 break;
             case 4:
                 std::cout << "on affiche interface ouvrier" << std::endl;
@@ -97,7 +95,6 @@ void Niveau1(sdl2::window& fenêtre){
                     //quand on appuie sur une touche
                     if ( (key_ev.type_of_event() == sdl2::event::key_down) &&  (iskey_down == false) ) {
                         char keychar = key_ev.ascci_code();
-                        std::cout << int(keychar) << std::endl; // à enlever
                         //touche espace
                         if ((keychar==32) && (iskey_down==0) ) {
                             espace = 1 - espace;
@@ -345,7 +342,6 @@ void Niveau1(sdl2::window& fenêtre){
             }
             
             loopEnd = SDL_GetTicks();
-            fenêtre << sdl2::flush; //à enlever?
         }
     }
 
