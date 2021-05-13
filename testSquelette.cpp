@@ -37,7 +37,10 @@ int main(int argc, char* args[]){
     bool iskey_down = false;
    
     bool tab_selected = false;
-    bool O_selected = false;
+    int O_selected = 1;
+    /* O_selected vaut 4 quand on veut afficher l'interfaces pour l'intervention des ouvriers
+        et vaut 1 si on ne l'affiche pas
+    */
     int commande1_selected = 0; 
     /* commande1_selected vaut 5 quand on veut afficher les commandes pour salle de controle
         et vaut 0 si on ne l'affiche pas
@@ -49,6 +52,7 @@ int main(int argc, char* args[]){
 
     bool S_pressed = false;
     bool B_pressed = false;
+    int B_memoire = 0;
 
     bool demande_ArretUrgence = false;
     bool evacuation = false;
@@ -111,8 +115,9 @@ int main(int argc, char* args[]){
                             espace = 1 - espace;
                             affichage = espace;
                             selected_controle = 0;
-                            O_selected = 0;
+                            O_selected = 1;
                             commande1_selected = 0;
+                            commande2_selected = 1;
                             
                             std::cout << "la touche espace vaut : " << espace << std::endl;
                             std::cout << "selected_controle vaut : " << selected_controle << std::endl;
@@ -124,8 +129,9 @@ int main(int argc, char* args[]){
                             if (tab_selected) affichage=2;
                             else affichage = espace;
                             selected_controle = 0;
-                            O_selected = 0;
+                            O_selected = 1;
                             commande1_selected = 0;
+                            commande2_selected = 1;
                             std::cout << "on affiche : " << affichage << std::endl;
 
                         }
@@ -135,8 +141,9 @@ int main(int argc, char* args[]){
                             stopBegin = SDL_GetTicks();
                             S_pressed = 1;
                             selected_controle = 0;
-                            O_selected = 0;
+                            O_selected = 1;
                             commande1_selected = 0;
+                            commande2_selected = 1;
                         }
 
                         //commande depuis la salle de contrôle
@@ -146,6 +153,7 @@ int main(int argc, char* args[]){
                             if ((keychar==104) && (iskey_down==0) ) {
                                 commande1_selected = 5 - commande1_selected;
                                 affichage = commande1_selected;
+                                tab_selected = 0;
                             }
 
 
@@ -288,8 +296,16 @@ int main(int argc, char* args[]){
 
                         //commande depuis le poste de sécurité
                         if (espace == 1) { 
+                            //touche h
+                            if ((keychar==104) && (iskey_down==0) ) {
+                                commande2_selected = 6 - commande2_selected + 1; //varie entre 1 et 6
+                                affichage = commande2_selected;
+                                tab_selected = 0;
+                                O_selected = 1;
+                            }
+
                             //touche P
-                            if ((keychar==112) && (iskey_down==0) && (evacuation==0) && (not O_selected)) {
+                            if ((keychar==112) && (iskey_down==0) && (evacuation==0) && (O_selected!=4)) {
                                 demande_evacuation = 1;
                                 std::cout << "demande évacuation" << std::endl;
                             }
@@ -312,17 +328,20 @@ int main(int argc, char* args[]){
                             //touche B
                             if ((keychar==98) && (iskey_down==0)) {
                                 B_pressed = 1;
+                                B_memoire = affichage;
                                 affichage = 3;
                                 std::cout << "on appuie sur B" << std::endl;
                             }
 
                             //touche O
                             if ((keychar==111) && (iskey_down==0)) {
-                                O_selected = 1-O_selected;
+                                O_selected = 4 - O_selected +1; //varie entre 1 et 4 
+                                commande2_selected = 1;
+                                affichage = O_selected;
                                 std::cout << "O_selected vaut : " << O_selected << std::endl;
                             }
 
-                            if (O_selected) {
+                            if (O_selected==4) {
                                 if ((keychar==49) && (iskey_down==0)) {
                                     std::cout << "on envoie vers 1" << std::endl;
                                 }
@@ -364,7 +383,8 @@ int main(int argc, char* args[]){
                     if (key_ev.type_of_event() == sdl2::event::key_up) {
                         if (B_pressed) {
                             B_pressed = 0;
-                            affichage = 1; //on revient au poste de sécurité
+                            commande2_selected = 1;
+                            affichage = B_memoire; //on revient à ce qu'il y avait avant
                             //std::cout << "on affiche 1" << std::endl; 
                         }
                         S_pressed = 0;                        
