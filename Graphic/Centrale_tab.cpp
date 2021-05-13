@@ -24,21 +24,7 @@ void Centrale_tab(sdl2::window& fenêtre){
     circuit_refroid.at(700, 550);
     sdl2::texte vapeur("Vapeur d'eau"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     vapeur.at(910, 180);
-    
-    bool quitting = false;
-    //sdl2::event_queue queue;
 
     fenêtre << centrale << circuit_prim << circuit_sec << circuit_refroid << vapeur << sdl2::flush;
-        // auto events = queue.pull_events();
-        // for(const auto& e : events){
-        //     if(e->kind_of_event() == sdl2::event::quit) quitting = true;
-        //     if(e->kind_of_event() == sdl2::event::key){
-        //         auto& key = dynamic_cast<sdl2::event_keyboard&>(*e);
-        //         if(key.state() == sdl2::event_keyboard::pressed){
-        //             char keychar = key.ascci_code();
-        //             if(keychar == 27) quitting = true;
-        //         }
-                
-        //     }
-        // }
+    
 }
