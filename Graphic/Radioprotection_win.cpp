@@ -6,12 +6,15 @@ using namespace std;
 void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 14);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 20);
+    sdl2::font fonte_help("./Graphic/data/Lato-Thin.ttf", 18);
     
     //sdl2::window fenêtre("Nuclear Alert : Poste de sécurité Radioprotection"s, {800, 600});
 
         /////////        Titre fenêtre      ////////
     sdl2::texte gdtitre("POSTE DE SECURITE RADIOPROTECTION"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     gdtitre.at(470, 53);
+    sdl2::texte help("Appuyez sur 'h' pour voir les commandes disponibles", fonte_help, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    help.at(30, 10);
 
     sdl2::rectangle GD({30,40}, {1190,50}, {0xFF,0xFF,0xFF,0xFF}, false);
     fenêtre << GD << gdtitre; 
@@ -253,7 +256,7 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     bool quitting = false;
     sdl2::event_queue queue;
 
-        fenêtre << sdl2::flush;
+        fenêtre << help << sdl2::flush;
         auto events = queue.pull_events();
         for(const auto& e : events){
             if(e->kind_of_event() == sdl2::event::quit) quitting = true;
