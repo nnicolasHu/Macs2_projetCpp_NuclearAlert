@@ -4,6 +4,7 @@
 void Centrale_tab(sdl2::window& fenêtre){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 24);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
+    sdl2::font fonte_test("./Graphic/data/Lato-Black.ttf", 17);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     //sdl2::window fenêtre("Nuclear Alert : Schéma de la centrale", {800, 600});
     fenêtre << sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
@@ -25,6 +26,47 @@ void Centrale_tab(sdl2::window& fenêtre){
     sdl2::texte vapeur("Vapeur d'eau"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     vapeur.at(910, 180);
 
-    fenêtre << centrale << circuit_prim << circuit_sec << circuit_refroid << vapeur << sdl2::flush;
+    fenêtre << centrale << circuit_prim << circuit_sec << circuit_refroid << vapeur ;
+
+    //Condenseur en rouge
+    sdl2::texte condenseurR("Condenseur", fonte_test, fenêtre, {0xFF, 0, 0, 0xFF});
+    condenseurR.at(672, 384);
+    fenêtre << condenseurR;
+
+    //Circuit secondaire en rouge
+    sdl2::texte circuit_secR("Circuit secondaire"s, fonte_texte, fenêtre, {0xFF, 0, 0, 0xFF});
+    circuit_secR.at(390, 550);
+    fenêtre << circuit_secR;
+
+    //Circuit primaire en rouge
+    sdl2::texte circuit_primR("Circuit primaire"s, fonte_texte, fenêtre, {0xFF, 0, 0, 0xFF});
+    circuit_primR.at(130, 550);
+    fenêtre << circuit_primR;
+
+    //Pompe en rouge 
+    sdl2::texte pompe("Pompe", fonte_test, fenêtre, {0xFF, 0, 0, 0xFF});
+    pompe.at(320, 428);
+    fenêtre << pompe;
+
+    //Pressuriseur rouge 
+    sdl2::texte pressuriseur("Pressuriseur", fonte_test, fenêtre, {0xFF, 0, 0, 0xFF});
+    pressuriseur.at(230, 282);
+    fenêtre << pressuriseur;
+
+    //Cuve rouge
+    sdl2::texte cuve("Cuve  du", fonte_test, fenêtre, {0xFF, 0, 0, 0xFF});
+    cuve.at(223, 317);
+    sdl2::texte cuve1("reacteur", fonte_test, fenêtre, {0xFF, 0, 0, 0xFF});
+    cuve1.at(224, 334);
+    fenêtre << cuve << cuve1;
+
+    //Générateur de vapeur
+    sdl2::texte gen("Générateur", fonte_test, fenêtre, {0xFF, 0, 0, 0xFF});
+    gen.at(322, 228);
+    sdl2::texte gen1("de  vapeur", fonte_test, fenêtre, {0xFF, 0, 0, 0xFF});
+    gen1.at(326, 243);
+    fenêtre << gen << gen1;
+
+    fenêtre << sdl2::flush;
     
 }
