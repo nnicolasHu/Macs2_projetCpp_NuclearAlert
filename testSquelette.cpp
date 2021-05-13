@@ -13,7 +13,27 @@ int main(int argc, char* args[]){
     //Vaut 0 si on est sur la salle de contrôle et 1 si on est sur le poste de sécurité
 
     int affichage = 0;
+    /*
+    affichage vaut :    0 quand on veut afficher la salle de contrôle
+                        1 quand on veut afficher le poste de sécurité
+                        2 quand on veut afficher la carte
+                        3 quand on veut afficher bilan ouvrier
+                        4 interface ouvrier?
+                        5 commande1
+                        6 commande2
+
+    */
+
     int selected_controle = 0;
+    /*
+    selected_controle vaut :    0 si rien n'est selectionné
+                                1 pour le rendrement de la pompe du circuit primaire
+                                2 pour le rendrement de la pompe du circuit secondaire
+                                3 pour les barres de Graphite
+                                4 pour le taux de Bore
+                                5 pour le rendement du pressuriseur
+                                6 pour le rendement pompe condenseur
+    */
     bool iskey_down = false;
    
     bool tab_selected = false;
@@ -27,19 +47,42 @@ int main(int argc, char* args[]){
     bool demande_evacuation = false;
     
     
-    int t1,t2,t3,t4;
+    int loopBegin,loopEnd,stopBegin,stopEnd;
     sdl2::event_queue queue;
 
     while (not quitting) {
-        t1 = SDL_GetTicks();
+        loopBegin = SDL_GetTicks();
         // maj de la centrale
 
 
 
         
-        t2 = SDL_GetTicks();
-        while ((not quitting) && (t2-t1 < 1000)) {
+        loopEnd = SDL_GetTicks();
+        while ((not quitting) && (loopEnd-loopBegin < 1000)) {
             //Affichage
+            switch (affichage) {
+            case 0:
+                std::cout << "on affiche salle de controle" << std::endl;
+                break;
+            case 1:
+                std::cout << "on affiche poste de sécurité" << std::endl;
+                break;
+            case 2:
+                std::cout << "on affiche carte" << std::endl;
+                break;
+            case 3:
+                std::cout << "on affiche bilan ouvrier" << std::endl;
+                break;
+            case 4:
+                std::cout << "on affiche interface ouvrier" << std::endl;
+                break;
+            case 5:
+                std::cout << "on affiche commande de salle de controle" << std::endl;
+                break;
+            case 6:
+                std::cout << "on affiche commande de poste sécurité" << std::endl;
+                break;
+            }
 
             //gestion des touches
             auto events = queue.pull_events();
@@ -69,7 +112,7 @@ int main(int argc, char* args[]){
                         //touche tab
                         if ((keychar==9) && (iskey_down==0) ) {
                             tab_selected = 1 - tab_selected;
-                            if (tab_selected) affichage=3;
+                            if (tab_selected) affichage=2;
                             else affichage = espace;
                             selected_controle = 0;
                             O_selected = 0;
@@ -78,7 +121,7 @@ int main(int argc, char* args[]){
                         }
                         //touche S
                         if ((keychar==115)  && (iskey_down==0) ) {
-                            t3 = SDL_GetTicks();
+                            stopBegin = SDL_GetTicks();
                             S_pressed = 1;
                             selected_controle = 0;
                             O_selected = 0;
@@ -236,7 +279,7 @@ int main(int argc, char* args[]){
                             //touche B
                             if ((keychar==98) && (iskey_down==0)) {
                                 B_pressed = 1;
-                                affichage = 4;
+                                affichage = 3;
                                 std::cout << "on appuie sur B" << std::endl;
                             }
 
@@ -287,21 +330,21 @@ int main(int argc, char* args[]){
                     //quand on soulève une touche
                     if (key_ev.type_of_event() == sdl2::event::key_up) {
                         if (B_pressed) {
-                            affichage = 1;
-                            std::cout << "on affiche 1" << std::endl;
+                            B_pressed = 0;
+                            affichage = 1; //on revient au poste de sécurité
+                            //std::cout << "on affiche 1" << std::endl; 
                         }
-                        S_pressed = 0;
-                        B_pressed = 0;
+                        S_pressed = 0;                        
                         iskey_down = false;
                     }
                 }
                 if (S_pressed) {
-                    t4 = SDL_GetTicks();
-                    if (t4-t3>3000) quitting = true;
+                    stopEnd = SDL_GetTicks();
+                    if (stopEnd-stopBegin>3000) quitting = true;
                 }
             }
             
-            t2 = SDL_GetTicks();
+            loopEnd = SDL_GetTicks();
             fenêtre << sdl2::flush; //à enlever?
         }
 
@@ -319,17 +362,17 @@ int main(int argc, char* args[]){
     
     
     /*
-    int t1 = espace;
-    std::cout << t1 << std::endl;
+    int loopBegin = espace;
+    std::cout << loopBegin << std::endl;
     
     sdl2::event_queue queue;
-    t1 = SDL_GetTicks();
+    loopBegin = SDL_GetTicks();
     SDL_Delay(5000);
-    t2 = SDL_GetTicks();    
-    std::cout << t2-t1 << std::endl;
+    loopEnd = SDL_GetTicks();    
+    std::cout << loopEnd-loopBegin << std::endl;
     */
-    t4 = SDL_GetTicks();
-    std::cout << t4-t3 << std::endl;
+    stopEnd = SDL_GetTicks();
+    std::cout << stopEnd-stopBegin << std::endl;
     sdl2::finalize();
     return EXIT_SUCCESS;
 }
