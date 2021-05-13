@@ -1,24 +1,21 @@
 #include "Graphic_Fonction.hpp"
-#include "sdl2.hpp"
-#include<SDL2/SDL_ttf.h>
-#include <iostream>
 
-std::string Fenetre_acceuil(sdl2::window* fenêtre){
+std::string Fenetre_acceuil(sdl2::window& fenêtre){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 24);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 40);
     sdl2::font fonte_pseudo("./Graphic/data/Lato-Heavy.ttf", 24);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     //sdl2::window fenêtre("Nuclear Alert : Authentification", {800, 600});
 
-    sdl2::texte phrase("Entrez votre pseudo : "s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte phrase("Entrez votre pseudo : "s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     phrase.at(530, 330);
-    sdl2::texte authentification("Authentification"s, fonte_titre, *fenêtre, {0xFF, 0, 0, 0xFF});
+    sdl2::texte authentification("Authentification"s, fonte_titre, fenêtre, {0xFF, 0, 0, 0xFF});
     authentification.at(500, 70);
-    sdl2::texte phrase4("Puis appuyez sur 'Entree' une fois terminé. "s, fonte_texte, *fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte phrase4("Puis appuyez sur 'Entree' une fois terminé. "s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     phrase4.at(470, 600);
     std::string pseudo;
 
-    sdl2::image Alert("Graphic/data/Alert.png", *fenêtre);
+    sdl2::image Alert("Graphic/data/Alert.png", fenêtre);
     Alert.at(580,140); // Emplacement sur la fenêtre 
     Alert.stretch({150,150}); // Taille 
     Alert.flip(sdl2::image::horizontal);
@@ -29,14 +26,14 @@ std::string Fenetre_acceuil(sdl2::window* fenêtre){
     int xinput = 560, yinput = 450;
 
     while(not quitting){
-        *fenêtre << sdl2::rectangle({500,400}, {300, 150}, {0,0,0xFF,0xFF}, false);
-        *fenêtre << phrase << phrase4 << Alert<< authentification << sdl2::flush;
-        *fenêtre << sdl2::rectangle({289, 349}, {199, 74}, {0, 0, 0, 0}, true);
+        fenêtre << sdl2::rectangle({500,400}, {300, 150}, {0,0,0xFF,0xFF}, false);
+        fenêtre << phrase << phrase4 << Alert<< authentification << sdl2::flush;
+        fenêtre << sdl2::rectangle({289, 349}, {199, 74}, {0, 0, 0, 0}, true);
         if (pseudo.size() > 0)
         {   
-            sdl2::texte name(pseudo, fonte_pseudo, *fenêtre, {0xFF,0xFF,0xFF,0xFF});
+            sdl2::texte name(pseudo, fonte_pseudo, fenêtre, {0xFF,0xFF,0xFF,0xFF});
             name.at(xinput,yinput);
-            *fenêtre << name ; 
+            fenêtre << name ; 
         }
        
         auto events = queue.pull_events();
