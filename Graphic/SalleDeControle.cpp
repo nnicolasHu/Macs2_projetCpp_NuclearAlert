@@ -6,6 +6,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 24);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     //sdl2::window fenêtre("Nuclear Alert : Salle de controle", {800, 600});
+    fenêtre << sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true) << sdl2::flush;
 
     sdl2::texte help("Appuyez sur 'h' pour voir les commandes disponibles", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     help.at(50, 10);

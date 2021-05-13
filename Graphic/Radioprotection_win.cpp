@@ -7,6 +7,7 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 14);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 20);
     sdl2::font fonte_help("./Graphic/data/Lato-Thin.ttf", 18);
+    fenêtre << sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true) << sdl2::flush;
     
     //sdl2::window fenêtre("Nuclear Alert : Poste de sécurité Radioprotection"s, {800, 600});
 
@@ -252,23 +253,22 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     sdl2::rectangle ord({790,440}, {430,195}, {0xFF,0xFF,0xFF,0xFF}, false);
     fenêtre << ord << titreord << e_centrale << af_ecentrale << alerte << popevac << af_evac << popcont << af_cont;
 
-
-    bool quitting = false;
+    // bool quitting = false;
     sdl2::event_queue queue;
 
-        fenêtre << help << sdl2::flush;
-        auto events = queue.pull_events();
-        for(const auto& e : events){
-            if(e->kind_of_event() == sdl2::event::quit) quitting = true;
-            if(e->kind_of_event() == sdl2::event::key){
-                auto& key = dynamic_cast<sdl2::event_keyboard&>(*e);
-                if(key.state() == sdl2::event_keyboard::pressed){
-                    char keychar = key.ascci_code();
-                    if(keychar == 27) quitting = true;
-                }
+    fenêtre << help << sdl2::flush;
+    auto events = queue.pull_events();
+    //     for(const auto& e : events){
+    //         if(e->kind_of_event() == sdl2::event::quit) quitting = true;
+    //         if(e->kind_of_event() == sdl2::event::key){
+    //             auto& key = dynamic_cast<sdl2::event_keyboard&>(*e);
+    //             if(key.state() == sdl2::event_keyboard::pressed){
+    //                 char keychar = key.ascci_code();
+    //                 if(keychar == 27) quitting = true;
+    //             }
                 
-            }
-        }
+    //         }
+    //     }
 
     SDL_Delay(5000);
 }
