@@ -53,20 +53,20 @@ double centrale::get_R_enceinte() const{
 
 
 
-reacteur* centrale::get_Reacteur() const {
-    return ptrReacteur.get();
+reacteur& centrale::get_Reacteur() const {
+    return *ptrReacteur;
 }
 
-circuitPrimaire* centrale::get_Circuit_Primaire() const {
-    return ptrCircuit_Primaire.get();
+circuitPrimaire& centrale::get_Circuit_Primaire() const {
+    return *ptrCircuit_Primaire;
 }
 
-circuitSecondaire* centrale::get_Circuit_Secondaire() const {
-    return ptrCircuit_Secondaire.get();
+circuitSecondaire& centrale::get_Circuit_Secondaire() const {
+    return *ptrCircuit_Secondaire;
 }
 
-ouvriers* centrale::get_Ouvriers() const {
-    return ptrOuvriers.get();
+ouvriers& centrale::get_Ouvriers() const {
+    return *ptrOuvriers;
 }
 
 
