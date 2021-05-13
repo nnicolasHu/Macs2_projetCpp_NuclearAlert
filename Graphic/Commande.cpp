@@ -33,12 +33,12 @@ void Commande1(sdl2::window& fenêtre){
     sdl2::texte commandE("Espace : Passage en poste sécurité radioprotection"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandE.at(100, 610);
 
-    bool quitting = false;
-    sdl2::event_queue queue;
+    //bool quitting = false;
+    //sdl2::event_queue queue;
 
     
     fenêtre  << titre << command1 << command2 << commandB << commandT << commandP << commandR << commandU1 << commandU2 << commandTab << commandE << sdl2::flush;
-    auto events = queue.pull_events();
+/*     auto events = queue.pull_events();
     for(const auto& e : events){
         if(e->kind_of_event() == sdl2::event::quit) quitting = true;
         if(e->kind_of_event() == sdl2::event::key){
@@ -51,7 +51,7 @@ void Commande1(sdl2::window& fenêtre){
         }
     }
     
-    SDL_Delay(8000);
+    SDL_Delay(8000); */
 
 }
 
@@ -79,10 +79,10 @@ void Commande2(sdl2::window& fenêtre){
     sdl2::texte commandO("O : Rendement pressuriseur"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandO.at(100, 390);
 
-    bool quitting = false;
-    sdl2::event_queue queue;
+    //bool quitting = false;
+    //sdl2::event_queue queue;
     fenêtre  << titre << commandTab << commandE << commandP << commandB << commandP << commandO << sdl2::flush;
-    auto events = queue.pull_events();
+/*     auto events = queue.pull_events();
     for(const auto& e : events){
         if(e->kind_of_event() == sdl2::event::quit) quitting = true;
         if(e->kind_of_event() == sdl2::event::key){
@@ -95,6 +95,6 @@ void Commande2(sdl2::window& fenêtre){
         }
     }
     
-    SDL_Delay(8000);
+    SDL_Delay(8000); */
 
 }
