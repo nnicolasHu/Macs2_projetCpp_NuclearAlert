@@ -61,11 +61,11 @@ void Niveau1(sdl2::window& fenêtre){
             switch (affichage) {
             case 0:
                 SalleDeControle(fenêtre,C);
-                std::cout << "on affiche salle de controle" << std::endl;
+                //std::cout << "on affiche salle de controle" << std::endl;
                 break;
             case 1:
                 Radioprotection_win(fenêtre,C);
-                std::cout << "on affiche poste de sécurité" << std::endl;
+                //std::cout << "on affiche poste de sécurité" << std::endl;
                 break;
             case 2:
                 std::cout << "on affiche carte" << std::endl;
