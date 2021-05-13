@@ -54,6 +54,8 @@ void Niveau1(sdl2::window& fenêtre){
     bool demande_ArretUrgence = false;
     bool evacuation = false;
     bool demande_evacuation = false;
+
+    int clignotement;
     
     
     int loopBegin,loopEnd,stopBegin,stopEnd;
@@ -78,7 +80,7 @@ void Niveau1(sdl2::window& fenêtre){
                 Radioprotection_win(fenêtre,C);
                 break;
             case 2:
-                Centrale_tab(fenêtre);
+                Centrale_tab(fenêtre,C,clignotement);
                 break;
             case 3:
                 Bilanactiviteouvriere(fenêtre,C);
