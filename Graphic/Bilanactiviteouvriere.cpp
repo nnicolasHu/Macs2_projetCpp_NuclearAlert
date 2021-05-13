@@ -106,8 +106,14 @@ void Bilanactiviteouvriere(sdl2::window& fenêtre,centrale& C){
     sdl2::texte rep_press(rpress, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     rep_press.at(795, 415);
 
+    sdl2::texte leg1("POS : Réparation possible"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    leg1.at(665, 500);
+
+    sdl2::texte leg2("IMP : Réparation impossible"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    leg2.at(665, 535);
+
     sdl2::rectangle statut_cadre({630,95}, {360,540}, {0xFF,0xFF,0xFF,0xFF}, false);
-    fenêtre << statut_cadre << statut << rep_pompe_cp << rep_pompe_cs << rep_cond << rep_gen_vap << rep_inject << rep_cp << rep_cs << rep_press; 
+    fenêtre << statut_cadre << statut << rep_pompe_cp << rep_pompe_cs << rep_cond << rep_gen_vap << rep_inject << rep_cp << rep_cs << rep_press << leg1 << leg2; 
 
     /// En cours ///
     sdl2::texte en_cours("Ouvrier sur place"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
