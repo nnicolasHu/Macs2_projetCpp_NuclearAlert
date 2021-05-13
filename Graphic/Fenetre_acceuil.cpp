@@ -27,8 +27,8 @@ std::string Fenetre_acceuil(sdl2::window& fenêtre){
 
     while(not quitting){
         fenêtre << sdl2::rectangle({500,400}, {300, 150}, {0,0,0xFF,0xFF}, false);
-        fenêtre << phrase << phrase4 << Alert<< authentification << sdl2::flush;
-        fenêtre << sdl2::rectangle({289, 349}, {199, 74}, {0, 0, 0, 0}, true);
+        fenêtre << phrase << phrase4 << Alert<< authentification <<sdl2::flush;
+        fenêtre << sdl2::rectangle({501, 401}, {298, 148}, {0, 0, 0, 0}, true);
         if (pseudo.size() > 0)
         {   
             sdl2::texte name(pseudo, fonte_pseudo, fenêtre, {0xFF,0xFF,0xFF,0xFF});
