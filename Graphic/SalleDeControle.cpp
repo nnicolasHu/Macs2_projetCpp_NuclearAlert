@@ -6,7 +6,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 24);
     // Créer une fenêtre avec un titre et la résolution de la fenêtre (ici 800 x 600 pixels )
     //sdl2::window fenêtre("Nuclear Alert : Salle de controle", {800, 600});
-    fenêtre << sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true) << sdl2::flush;
+    fenêtre << sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
 
     sdl2::texte help("Appuyez sur 'h' pour voir les commandes disponibles", fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     help.at(50, 10);
@@ -122,11 +122,12 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     Sys_secur.at(940, 50);
     fenêtre << Sys_secur << sdl2::rectangle({840, 40},{390, 600}, {0xAD, 0xFF, 0x2F, 0}, false );
 
-    bool quitting = false;
-    sdl2::event_queue queue;
+    //bool quitting = false;
+    //sdl2::event_queue queue;
     fenêtre << help << sdl2::flush;
-    auto events = queue.pull_events();
-    for(const auto& e : events){
+    //auto events = queue.pull_events();
+    
+    /* for(const auto& e : events){
         if(e->kind_of_event() == sdl2::event::quit) quitting = true;
         if(e->kind_of_event() == sdl2::event::key){
             auto& key = dynamic_cast<sdl2::event_keyboard&>(*e);
@@ -136,6 +137,6 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
             }
         }
     }
-    SDL_Delay(3000);
+    SDL_Delay(3000); */
     
 }

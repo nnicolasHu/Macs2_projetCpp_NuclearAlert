@@ -294,7 +294,7 @@ int main(int argc, char* args[]){
                                     std::cout << "on envoie vers 1" << std::endl;
                                 }
                                 if ((keychar==50) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers atchoum" << std::endl;
+                                    std::cout << "on envoie vers 2" << std::endl;
                                 }
                                 if ((keychar==99) && (iskey_down==0)) {
                                     std::cout << "on envoie vers C" << std::endl;

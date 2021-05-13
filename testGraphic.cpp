@@ -1,13 +1,14 @@
 #include<iostream>
-#include"Graphic_Fonction.hpp"
+#include"niveaux.hpp"
 #include"sdl2.hpp"
 
 int main(int argc, char* args[]){
     sdl2::init(argc, args);
 
     sdl2::window fenêtre("Nuclear Alert", {1250, 650});
+    centrale C;
 
-    std::string pseudo = Fenetre_acceuil(fenêtre); 
+    Niveau1(fenêtre); 
     //Radioprotection_win(1);
     // std::cout << pseudo << std::endl;
     // int level = Choix_Niveau(fenêtre);
