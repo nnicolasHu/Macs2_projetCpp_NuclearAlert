@@ -64,6 +64,15 @@ void circuit::set_F_pompe(double regime) {
     if (regime>=0 && regime<=this->E_pompe) F_pompe=regime;
 }
 
+// les incréments et décréments
+void circuit::incr_F_pompe() {
+    if (F_pompe <= (E_pompe - 0.05)) F_pompe += 0.05;
+}
+
+void circuit::decr_F_pompe() {
+    if (F_pompe >= 0.05) F_pompe += -0.05;
+}
+
 bool ::circuit::reparation_pompe(){
     double reparation_reussi = false; 
 

@@ -100,14 +100,6 @@ void circuitPrimaire::decr_T_pressuriseur() {
     if (T_pressuriseur>= 26) T_pressuriseur += -1;
 }
 
-void circuitPrimaire::incr_F_pompe() {
-    if (F_pompe <= (E_pompe - 0.05)) F_pompe += 0.05;
-}
-
-void circuitPrimaire::decr_F_pompe() {
-    if (F_pompe >= 0.05) F_pompe += -0.05;
-}
-
 //les dégradations
 void circuitPrimaire::degr_E_circuit(double E_enceinte) {
 

@@ -137,8 +137,6 @@ public:
      void incr_T_pressuriseur();
      void decr_T_pressuriseur();
 
-     void incr_F_pompe();
-     void decr_F_pompe();
 
      /**
       * @brief Permet de simuler les dégradations de l'état du circuit

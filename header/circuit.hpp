@@ -117,6 +117,9 @@ public :
      */
     void set_F_pompe(double regime);
 
+    void incr_F_pompe();
+    void decr_F_pompe();
+
     /**
      * @brief Permet de réparer la pompe
      * 
