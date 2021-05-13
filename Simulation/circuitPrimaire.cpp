@@ -101,7 +101,7 @@ void circuitPrimaire::decr_T_pressuriseur() {
 }
 
 void circuitPrimaire::incr_F_pompe() {
-    if (F_pompe <= E_pompe - 0.05) F_pompe += 0.05;
+    if (F_pompe <= (E_pompe - 0.05)) F_pompe += 0.05;
 }
 
 void circuitPrimaire::decr_F_pompe() {
