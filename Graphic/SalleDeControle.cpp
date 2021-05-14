@@ -207,5 +207,8 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     sdl2::texte Sys_secur("Système de sécutité "s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     Sys_secur.at(940, 50);
     fenêtre << Sys_secur << sdl2::rectangle({840, 40},{390, 600}, {0xAD, 0xFF, 0x2F, 0}, false );
+
+    fenêtre << sdl2::flush;
+
     
 }
