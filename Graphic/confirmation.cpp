@@ -1,6 +1,7 @@
 #include"Graphic_Fonction.hpp"
 
-
+// A decommenter si besoin de confirmation pour quitter
+// penser a l'ajouter dans Graphic_Fonction.hpp
 // void quit_confirmation(sdl2::window& fenêtre, centrale& C){
 //     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 20);
 //     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 30);
@@ -32,6 +33,7 @@ void message_confirmation(sdl2::window& fenêtre){
     fenêtre << sdl2::rectangle({350, 260}, {590, 110}, {0, 0, 0, 0}, true);
     fenêtre << sdl2::rectangle({350, 260}, {590, 110}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
     
+    // variable pour tester la fonction -> A retirer 
     std::string message = "Vous vous apprêtez à retirer des ouvriers";
     
     sdl2::texte titre(message, fonte_titre, fenêtre, {0xFF, 0, 0, 0xFF});
@@ -40,13 +42,14 @@ void message_confirmation(sdl2::window& fenêtre){
     Y.at(570, 320);
     sdl2::texte N("(N)"s, fonte_titre, fenêtre, {0xFF, 0, 0, 0xFF});
     N.at(690, 320);
-
     fenêtre << titre << Y << N;
+
+    fenêtre << sdl2::flush; 
 
     // // Commande pour tester la fonction 
     // sdl2::event_queue queue;
     // auto events = queue.pull_events();
 
-    // fenêtre << sdl2::flush; 
+
     // SDL_Delay(3000); 
 }
