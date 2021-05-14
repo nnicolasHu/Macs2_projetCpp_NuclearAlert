@@ -42,8 +42,12 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
     pompe1.stretch({55, 60});
 
     sdl2::image pompe2("./Graphic/data/Pompe2.png", fenetre);
-    pompe2.at(526, 430);
+    pompe2.at(482, 390);
     pompe2.stretch({73, 50});
+
+    sdl2::image enceinte("./Graphic/data/Enceinte.png", fenetre);
+    enceinte.at(187, 187);
+    enceinte.stretch({241, 300});
 
     sdl2::texte circuit_prim("Circuit primaire"s, fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
     circuit_prim.at(130, 550);
@@ -101,6 +105,9 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
 
         //Echangeur
         fenetre << echan;
+
+        //Enceinte 
+        fenetre << enceinte;
 
         fenetre << press<< sdl2::flush;
     }
