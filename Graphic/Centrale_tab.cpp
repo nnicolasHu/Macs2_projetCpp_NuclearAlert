@@ -25,10 +25,6 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
     circ_prim.at(170, 335);
     circ_prim.stretch({260, 162});
 
-    sdl2::image circ_sec("./Graphic/data/circ_sec.png", fenetre);
-    circ_sec.at(516, 377);
-    circ_sec.stretch({168, 73});
-
     sdl2::image gene_vap("./Graphic/data/Gene_vap.png", fenetre);
     gene_vap.at(316, 260);
     gene_vap.stretch({124, 130});
@@ -73,7 +69,7 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
         //Circuit secondaire en rouge
         sdl2::texte circuit_secR("Circuit secondaire"s, fonte_texte, fenetre, {0xFF, 0, 0, 0xFF});
         circuit_secR.at(390, 550);
-        fenetre << circuit_secR << circ_sec;
+        fenetre << circuit_secR;
 
         //Pompe circuit secondaire
         fenetre << pompe2;
