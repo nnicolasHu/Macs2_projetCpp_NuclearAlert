@@ -24,6 +24,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C);
 void Radioprotection_win(sdl2::window& fenêtre, centrale& C);
 void InterventionO(sdl2::window& fenêtre, centrale& C);
 void Bilanactiviteouvriere(sdl2::window& fenêtre,centrale& C);
+void BilanJeu(sdl2::window& fenetre, centrale&C, int nb_point);
 
 #endif
 
