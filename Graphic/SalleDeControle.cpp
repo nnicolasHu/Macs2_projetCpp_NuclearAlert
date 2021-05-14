@@ -162,7 +162,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     fenêtre << sdl2::rectangle({400, 170}, {430, 70}, {0xAD, 0xFF, 0x2F, 0}, false);
 
-    sdl2::texte press_subit_c("Pression subit par l'EC"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte press_subit_c("Pression subit par l'enceinte"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     press_subit_c.at(500, 180);
     
     sdl2::texte bar3(arrondi(C.get_P_enceinte(), 0) + " bar"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
@@ -208,7 +208,5 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     Sys_secur.at(940, 50);
     fenêtre << Sys_secur << sdl2::rectangle({840, 40},{390, 600}, {0xAD, 0xFF, 0x2F, 0}, false );
 
-    fenêtre << sdl2::flush;
-
-    
+    fenêtre << sdl2::flush; 
 }
