@@ -33,13 +33,13 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     pourcentage.at(340, 130);
     fenêtre << rendement << pourcentage; //affichage 
 
-    sdl2::texte temperature_press_C1("T_press : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte temperature_press_C1("Température préssuriseur : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     temperature_press_C1.at(20, 150);
     sdl2::texte degre_press_C1(arrondi(C.get_Circuit_Primaire().get_T_pressuriseur(), 0) + " °C"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     degre_press_C1.at(340, 150);
     fenêtre << temperature_press_C1 << degre_press_C1; //affichage 
 
-    sdl2::texte temperature_eff_C1("TP_eff : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte temperature_eff_C1("Température préssuriseur effective : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     temperature_eff_C1.at(20, 170);
     sdl2::texte degre_eff_C1(arrondi(C.get_Circuit_Primaire().get_T_pressuriseur_eff(), 0) + " °C"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     degre_eff_C1.at(340, 170);
@@ -63,7 +63,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     val_inertieC1.at(340, 230);
     fenêtre << inertieC1 << val_inertieC1; //affichage 
 
-    sdl2::texte temperature_eau_C1("T_eau : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte temperature_eau_C1("Température eau : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     temperature_eau_C1.at(20, 250);
     sdl2::texte deg_temp_eau_C1(arrondi(C.get_Circuit_Primaire().get_Temperature(),0) + " °C"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     deg_temp_eau_C1.at(340, 250);
@@ -144,10 +144,6 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     val_diff_chal_C2.at(330, 600);
     fenêtre << diff_chaleur_C2 << val_diff_chal_C2;
 
-
-
-
-
     //////////////////////////////////////////////////////////////////////////////////////////////////
     // Cadre production electrique
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -211,12 +207,5 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     sdl2::texte Sys_secur("Système de sécutité "s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     Sys_secur.at(940, 50);
     fenêtre << Sys_secur << sdl2::rectangle({840, 40},{390, 600}, {0xAD, 0xFF, 0x2F, 0}, false );
-
-
-    sdl2::event_queue queue;
-    fenêtre << sdl2::flush;
-    auto events = queue.pull_events();
-    
-    SDL_Delay(30000); 
     
 }
