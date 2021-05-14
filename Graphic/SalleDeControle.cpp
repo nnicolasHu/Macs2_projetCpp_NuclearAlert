@@ -21,7 +21,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Cadre circuit primaire 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    fenêtre << sdl2::rectangle({10, 90}, {380, 210}, {0xAD, 0xFF, 0x2F, 0}, false); //Affichage rectangle
+    fenêtre << sdl2::rectangle({10, 90}, {380, 210}, {0xFF, 0xFF, 0xFF, 0xFF}, false); //Affichage rectangle
 
     sdl2::texte circuit_primaire("Circuit Primaire"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     circuit_primaire.at(90, 100);
@@ -78,7 +78,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Cadre Circuit secondaire
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    fenêtre << sdl2::rectangle({10, 310}, {380, 330}, {0xAD, 0xFF, 0x2F, 0}, false); //Affichage du rectangle
+    fenêtre << sdl2::rectangle({10, 310}, {380, 330}, {0xFF, 0xFF, 0xFF, 0xFF}, false); //Affichage du rectangle
 
     sdl2::texte circuit_secondaire("Circuit Secondaire"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     circuit_secondaire.at(90, 320);
@@ -160,7 +160,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Cadre qui affiche la pression subit par l'enceinte de confinement
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    fenêtre << sdl2::rectangle({400, 170}, {430, 70}, {0xAD, 0xFF, 0x2F, 0}, false);
+    fenêtre << sdl2::rectangle({400, 170}, {430, 70}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
 
     sdl2::texte press_subit_c("Pression subit par l'enceinte"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     press_subit_c.at(500, 180);
@@ -172,7 +172,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Cadre barre de graphite
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    fenêtre << sdl2::rectangle({400, 250}, {430, 70}, {0xAD, 0xFF, 0x2F, 0}, false);
+    fenêtre << sdl2::rectangle({400, 250}, {430, 70}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
 
     sdl2::texte barre_graphite("Etat des barres de Graphite"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     barre_graphite.at(490, 260);
@@ -183,7 +183,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Cadre affichant le taux de bore dans la piscine
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    fenêtre << sdl2::rectangle({400, 330}, {430, 70}, {0xAD, 0xFF, 0x2F, 0}, false);
+    fenêtre << sdl2::rectangle({400, 330}, {430, 70}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
 
     sdl2::texte TxBorePiscine("Taux Bore"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     TxBorePiscine.at(550, 340);
@@ -195,7 +195,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //cadre ordre
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    fenêtre << sdl2::rectangle({400, 410}, {430, 230}, {0xAD, 0xFF, 0x2F, 0}, false);
+    fenêtre << sdl2::rectangle({400, 410}, {430, 230}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
 
     sdl2::texte ordre("Ordres "s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     ordre.at(580, 420);
@@ -204,9 +204,13 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Cadre systeme de sécurité
     ////////////////////////////////////////////////////////////////////////////////////////////////////
+    fenêtre << sdl2::rectangle({840, 40},{390, 600}, {0xFF, 0xFF, 0xFF, 0xFF}, false ); //Affichage rectangle
+
     sdl2::texte Sys_secur("Système de sécutité "s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     Sys_secur.at(940, 50);
-    fenêtre << Sys_secur << sdl2::rectangle({840, 40},{390, 600}, {0xAD, 0xFF, 0x2F, 0}, false );
+    fenêtre << Sys_secur;
 
+
+    //Affichage complet 
     fenêtre << sdl2::flush; 
 }
