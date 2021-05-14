@@ -186,7 +186,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     fenêtre << sdl2::rectangle({400, 330}, {430, 70}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
 
     sdl2::texte TxBorePiscine("Taux Bore"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
-    TxBorePiscine.at(550, 340);
+    TxBorePiscine.at(570, 340);
 
     sdl2::texte val_tx_bore_react(arrondi(C.get_Reacteur().get_TBore_eff(), 0) + " %"s,fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     val_tx_bore_react.at(600, 370);
@@ -209,7 +209,6 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     sdl2::texte Sys_secur("Système de sécutité "s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     Sys_secur.at(940, 50);
     fenêtre << Sys_secur;
-
 
     //Affichage complet 
     fenêtre << sdl2::flush; 
