@@ -147,7 +147,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){//centrale* C
     //////////////////////////////////////////////////////////////////////////////////////////////////
     // Cadre production electrique
     //////////////////////////////////////////////////////////////////////////////////////////////////
-    fenêtre << sdl2::rectangle({400, 90}, {430, 70}, {0xAD, 0xFF, 0x2F, 0}, false);
+    fenêtre << sdl2::rectangle({400, 90}, {430, 70}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
 
     sdl2::texte production("Production électrique"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     production.at(500, 100);
