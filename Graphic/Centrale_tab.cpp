@@ -13,8 +13,38 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
     centrale.at(120, 100);
     centrale.stretch({1100, 500});
 
-    // sdl2::image cuve("./Graphic/data/Cuve.png", fenetre);
-    // cuve.at(200, 100);
+    sdl2::image cuve("./Graphic/data/Cuve.png", fenetre);
+    cuve.at(207, 343);
+    cuve.stretch({105, 105});
+
+    sdl2::image press("./Graphic/data/Pressuriseur.png", fenetre);
+    press.at(278, 292);
+    press.stretch({100, 100});
+
+    sdl2::image circ_prim("./Graphic/data/circ_prim.png", fenetre);
+    circ_prim.at(170, 335);
+    circ_prim.stretch({260, 162});
+
+    sdl2::image gene_vap("./Graphic/data/Gene_vap.png", fenetre);
+    gene_vap.at(316, 260);
+    gene_vap.stretch({124, 130});
+
+    sdl2::image condens("./Graphic/data/Condenseur.png", fenetre);
+    condens.at(495, 354);
+    condens.stretch({217, 93});
+    
+    sdl2::image echan("./Graphic/data/Echangeur.png", fenetre);
+    echan.at(838, 358);
+    echan.stretch({253, 100});
+
+    sdl2::image pompe1("./Graphic/data/Pompe1.png", fenetre);
+    pompe1.at(326, 428);
+    pompe1.stretch({55, 60});
+
+    sdl2::image pompe2("./Graphic/data/Pompe2.png", fenetre);
+    pompe2.at(526, 430);
+    pompe2.stretch({73, 50});
+
     sdl2::texte circuit_prim("Circuit primaire"s, fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
     circuit_prim.at(130, 550);
     sdl2::texte circuit_sec("Circuit secondaire"s, fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
@@ -24,28 +54,31 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
     sdl2::texte vapeur("Vapeur d'eau"s, fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
     vapeur.at(910, 180);
 
-    fenetre <<  centrale  << circuit_prim << circuit_sec << circuit_refroid << vapeur ;
+    fenetre <<  centrale << circuit_prim << circuit_sec << circuit_refroid << vapeur ;
     if(clignotement == 0) fenetre << sdl2::flush;
     else{
         //Condenseur en rouge
         sdl2::texte condenseurR("Condenseur", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
         condenseurR.at(672, 384);
-        fenetre << condenseurR;
+        fenetre << condenseurR << condens;
 
         //Circuit secondaire en rouge
         sdl2::texte circuit_secR("Circuit secondaire"s, fonte_texte, fenetre, {0xFF, 0, 0, 0xFF});
         circuit_secR.at(390, 550);
         fenetre << circuit_secR;
 
+        //Pompe circuit secondaire
+        fenetre << pompe2;
+
         //Circuit primaire en rouge
         sdl2::texte circuit_primR("Circuit primaire"s, fonte_texte, fenetre, {0xFF, 0, 0, 0xFF});
         circuit_primR.at(130, 550);
-        fenetre << circuit_primR;
+        fenetre << circuit_primR << circ_prim;
 
-        //Pompe en rouge 
+        //Pompe circuit primaire en rouge 
         sdl2::texte pompe("Pompe", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
         pompe.at(320, 428);
-        fenetre << pompe;
+        fenetre << pompe << pompe1;
 
         //Pressuriseur rouge 
         sdl2::texte pressuriseur("Pressuriseur", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
@@ -53,20 +86,23 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
         fenetre << pressuriseur;
 
         //Cuve rouge
-        sdl2::texte cuve("Cuve  du", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
-        cuve.at(223, 317);
-        sdl2::texte cuve1("reacteur", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
-        cuve1.at(224, 334);
-        fenetre << cuve << cuve1;
+        sdl2::texte cuve1("Cuve  du", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
+        cuve1.at(223, 317);
+        sdl2::texte cuve2("reacteur", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
+        cuve2.at(224, 334);
+        fenetre << cuve << cuve1 << cuve2;
 
         //Générateur de vapeur
         sdl2::texte gen("Générateur", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
         gen.at(322, 228);
         sdl2::texte gen1("de  vapeur", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
         gen1.at(326, 243);
-        fenetre << gen << gen1;
+        fenetre << gen << gen1 << gene_vap;
 
-        fenetre << sdl2::flush;
+        //Echangeur
+        fenetre << echan;
+
+        fenetre << press<< sdl2::flush;
     }
     
     
