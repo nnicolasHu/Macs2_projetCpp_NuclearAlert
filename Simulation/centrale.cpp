@@ -424,9 +424,9 @@ void centrale::maj_Reparation() {
     }
 }
 
-std::array<bool,11> centrale::get_clignotements(){
-    std::array<bool,11> etat = {0};
-
+std::array<bool,10> centrale::get_clignotements(){
+    std::array<bool,10> etat = {0};
+    
     if(ptrCircuit_Primaire->get_E_pompe()<0.5){
         etat[0] = 1;
     }
@@ -466,7 +466,7 @@ std::array<bool,11> centrale::get_clignotements(){
     if(get_E_enceinte()<0.5){
         etat[9] = 1;
     }
-
+    
     return(etat);
 
 }
