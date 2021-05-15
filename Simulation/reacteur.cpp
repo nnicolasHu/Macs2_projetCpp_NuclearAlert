@@ -36,21 +36,25 @@ reacteur::reacteur(){
 }*/
 
 void reacteur::incr_bore() {
-    if ((TBore_eff<=0.5) && (Tx_bore<TBore_eff)){
+    if (Tx_bore<0.5 ){
         Tx_bore += 0.01;
     }
 }
 
 void reacteur::decr_bore() {
-    if ((TBore_eff>=0.) && (Tx_bore>TBore_eff)){
+    if (Tx_bore>0.0){  //erreur arrondi à 0?
         Tx_bore -= 0.01;
     }
+    if (Tx_bore>0) Tx_bore = 0.;
 }
 
 void reacteur::maj_bore(){
-    TBore_eff += 0.01*(Tx_bore<TBore_eff) - 0.01*(Tx_bore>TBore_eff);
+    TBore_eff += 0.01*(TBore_eff<Tx_bore) - 0.01*(TBore_eff>Tx_bore);
 }
 
+double reacteur::get_Tx_bore() const {
+    return Tx_bore;
+}
 
 double reacteur::get_TBore_eff() const{
     return TBore_eff;
@@ -77,19 +81,27 @@ double reacteur::get_E_bore() const{
 }*/
 
 void reacteur::incr_graphite() {
-    if ((TGraphite_eff<=0.5) && (Tx_graphite<TGraphite_eff)){
+    if ( Tx_graphite<1.){
         Tx_graphite += 0.01;
     }
 }
 
 void reacteur::decr_graphite() {
-    if ((TGraphite_eff>=0.) && (Tx_graphite>TGraphite_eff)){
+    if (Tx_graphite>1-E_barre+0.01){
         Tx_graphite -= 0.01;
     }
 }
 
-void reacteur::maj_graphite(){
-    TGraphite_eff += 0.01*(Tx_graphite<TGraphite_eff) - 0.01*(Tx_graphite>TGraphite_eff);
+void reacteur::maj_graphite(){ 
+    TGraphite_eff += 0.01*(TGraphite_eff<Tx_graphite) - 0.01*(TGraphite_eff>Tx_graphite);
+    // la valeur demandée ne peut être plus petite que 1-E_barre
+    if (Tx_graphite<1-E_barre) {
+        Tx_graphite = 1-E_barre;
+    }
+}
+
+double reacteur::get_Tx_graphite() const {
+    return Tx_graphite;
 }
 
 double reacteur::get_TGraphite_eff() const{

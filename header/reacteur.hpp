@@ -47,36 +47,34 @@ public:
       *
      */
      ~reacteur() = default;
+ 
+     /**
+     * @brief Permet d'obtenir la proportion des barres de graphite
+     * hors de l'eau demandée
+     *
+     * @return Tx_graphite
+     */
+     double get_Tx_graphite() const;  
+
+     /**
+     * @brief Permet d'obtenir la proportion des barres de graphite
+     * hors de l'eau effective
+     *
+     * @return TGraphite_eff
+     */
+     double get_TGraphite_eff() const;
      
      /**
-     * @brief Permet d'ajuster le taux de bore 
-     * dans l'eau du circuit
+     * @brief Permet d'obtenir le taux de bore demandée
+     * dans l'eau du circuit 
      *
-     * @param[in] valeur_demandee La valeur demandée, comprise entre 0 et 0.5.
+     * @return Tx_bore
      */
-     /*void set_bore(double valeur_demandee);*/
+     double get_Tx_bore() const;
 
      /**
-     * @brief Permet d'incrémenter le Tx_bore
-     *
-     */
-     void incr_bore();
-
-     /**
-     * @brief Permet de décrémenter le Tx_bore
-     *
-     */
-     void decr_bore();
-
-     /**
-     * @brief Permet de mettre à jour le TBore_eff en fonction du Tx_bore
-     *
-     */
-     void maj_bore();
-
-     /**
-     * @brief Permet d'obtenir le taux de bore
-     * dans l'eau du circuit
+     * @brief Permet d'obtenir le taux de bore effective
+     * dans l'eau du circuit 
      *
      * @return TBore_eff
      */
@@ -89,40 +87,7 @@ public:
      * @return E_bore
      */
      double get_E_bore() const;
-    
-     /**
-     * @brief Permet d'ajuster la proportion des barres de graphite
-     * hors de l'eau
-     *
-     * @param[in] valeur_demandee La proportion des barres de graphite à laisser hors de l'eau,
-     * qui doit être comprise entre 1 - etat_barre et 1.
-     */
-     /*void set_graphite(double valeur_demandee);*/
 
-     /**
-     * @brief Permet d'incrémenter le Tx_bore
-     *
-     */
-     void incr_graphite();
-
-     /**
-     * @brief Permet de décrémenter le Tx_bore
-     *
-     */
-     void decr_graphite();
-
-     /**
-     * @brief Permet de mettre à jour le TBore_eff en fonction du Tx_bore
-     *
-     */
-     void maj_graphite();
-     /**
-     * @brief Permet d'obtenir la proportion des barres de graphite
-     * hors de l'eau
-     *
-     * @return TGraphite_eff
-     */
-     double get_TGraphite_eff() const;
 
      /**
      * @brief Permet d'obtenir l'état des barres de graphite
@@ -158,6 +123,60 @@ public:
      * @return R_piscine
      */
      double get_R_piscine() const;
+     
+     /**
+     * @brief Permet d'ajuster le taux de bore 
+     * dans l'eau du circuit
+     *
+     * @param[in] valeur_demandee La valeur demandée, comprise entre 0 et 0.5.
+     */
+     /*void set_bore(double valeur_demandee);*/
+
+     /**
+     * @brief Permet d'incrémenter le Tx_bore
+     *
+     */
+     void incr_bore();
+
+     /**
+     * @brief Permet de décrémenter le Tx_bore
+     *
+     */
+     void decr_bore();
+
+     /**
+     * @brief Permet de mettre à jour le TBore_eff en fonction du Tx_bore
+     *
+     */
+     void maj_bore();
+    
+     /**
+     * @brief Permet d'ajuster la proportion des barres de graphite
+     * hors de l'eau
+     *
+     * @param[in] valeur_demandee La proportion des barres de graphite à laisser hors de l'eau,
+     * qui doit être comprise entre 1 - etat_barre et 1.
+     */
+     /*void set_graphite(double valeur_demandee);*/
+
+     /**
+     * @brief Permet d'incrémenter le Tx_bore
+     *
+     */
+     void incr_graphite();
+
+     /**
+     * @brief Permet de décrémenter le Tx_bore
+     *
+     */
+     void decr_graphite();
+
+     /**
+     * @brief Permet de mettre à jour le TBore_eff en fonction du Tx_bore
+     *
+     */
+     void maj_graphite();
+
 
      /** Test **/
      void set_E_cuve(double val);
