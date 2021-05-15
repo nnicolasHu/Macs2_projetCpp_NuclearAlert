@@ -56,7 +56,7 @@ void Niveau1(sdl2::window& fenêtre){
     bool demande_evacuation = false;
     bool demande_quitter = false;
 
-    int clignotement=1;
+    bool clignotement=0;
     
     
     int loopBegin,loopEnd,stopBegin,stopEnd;
@@ -420,6 +420,7 @@ void Niveau1(sdl2::window& fenêtre){
             
             loopEnd = SDL_GetTicks();
         }
+        clignotement = 1 - clignotement;
     }
 
 

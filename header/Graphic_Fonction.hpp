@@ -17,7 +17,7 @@ std::string arrondi(double x, int i);
 
 std::string Fenetre_acceuil(sdl2::window& fenêtre);
 int Choix_Niveau(sdl2::window& fenêtre);
-void Centrale_tab(sdl2::window& fenêtre, centrale& C, int clignotement);
+void Centrale_tab(sdl2::window& fenêtre, centrale& C, bool clignotement);
 void Commande1(sdl2::window& fenêtre);
 void Commande2(sdl2::window& fenêtre);
 void SalleDeControle(sdl2::window& fenêtre, centrale& C);

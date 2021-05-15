@@ -2,7 +2,7 @@
 #include<iostream>
 #include<array>
 
-void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
+void Centrale_tab(sdl2::window& fenetre, centrale& C, bool clignotement){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 24);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
     sdl2::font fonte_test("./Graphic/data/Lato-Black.ttf", 17);
@@ -116,7 +116,7 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
             fenetre << pressuriseur << press;
         }
         
-        if((tab[4] == 1)){
+        if(tab[4] == 1){
             fenetre << cuve << cuve1 << cuve2;
         }
         
