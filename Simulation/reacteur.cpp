@@ -45,7 +45,7 @@ void reacteur::decr_bore() {
     if (Tx_bore>0.0){  //erreur arrondi à 0?
         Tx_bore -= 0.01;
     }
-    if (Tx_bore>0) Tx_bore = 0.;
+    if (Tx_bore<0) Tx_bore = 0.;
 }
 
 void reacteur::maj_bore(){
@@ -90,6 +90,7 @@ void reacteur::decr_graphite() {
     if (Tx_graphite>1-E_barre+0.01){
         Tx_graphite -= 0.01;
     }
+    if (Tx_graphite<0.01) Tx_graphite=0.; //refuse de descende à 0 de manière aléatoire?
 }
 
 void reacteur::maj_graphite(){ 
