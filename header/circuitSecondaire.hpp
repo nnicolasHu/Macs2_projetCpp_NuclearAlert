@@ -182,6 +182,30 @@ public:
      * @return booléen, 1 si le circuit secondaire est complètement réparé, 0 s'il est encore endommagé
      */
     bool reparation_circuitSecondaire();
+
+    /**
+      * @brief Incrémente le régime pompe du circuit
+      *
+      */
+     void incr_F_pompe();
+
+     /**
+      * @brief Décrémente le régime pompe du circuit
+      *
+      */
+     void decr_F_pompe();
+
+     /**
+      * @brief Incrémente le régime pompe condenseur
+      *
+      */
+     void incr_F_condenseur();
+
+     /**
+      * @brief Décrémente le régime pompe condenseur
+      *
+      */
+     void decr_F_condenseur();
     
 
 private:

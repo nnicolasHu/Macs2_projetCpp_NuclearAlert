@@ -255,3 +255,27 @@ bool circuitSecondaire::reparation_circuitSecondaire(){
 
     return reparation_reussie;
 }
+
+void circuitSecondaire::incr_F_pompe(){
+    if(this->get_F_pompe() < this->get_E_pompe() ){ // forcément inférieur à l'état de la pompe du circuit secondaire
+        this->F_pompe += 1;
+    }
+}
+
+void circuitSecondaire::decr_F_pompe(){
+    if(this->get_F_pompe() > 0 ){  // forcément supérieur à 0;
+        this->F_pompe += -1;
+    }
+}
+
+void circuitSecondaire::incr_F_condenseur(){
+    if( this->get_F_condenseur() < this->get_E_condenseur() ){ // forcément inférieur à l'état du condenseur
+        this->F_condenseur += 1;
+    }
+}
+
+void circuitSecondaire::decr_F_condenseur(){
+    if(this->get_F_condenseur() > 0 ){ // forcément supérieur à 0
+        this->F_condenseur += -1;
+    }
+}
