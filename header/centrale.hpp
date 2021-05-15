@@ -287,7 +287,7 @@ public:
      * 1 : l'organe est endommagé
      * 
      */
-    std::array<double,8> get_clignotements();
+    std::array<bool,11> get_clignotements();
 
     /**
      * @brief Permet d'effectuer la tentative d'arrêt d'urgence

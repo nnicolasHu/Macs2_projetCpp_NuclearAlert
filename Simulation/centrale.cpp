@@ -424,39 +424,47 @@ void centrale::maj_Reparation() {
     }
 }
 
-std::array<double,8> centrale::get_clignotements(){
-    std::array<double,8> etat = {0., 0., 0., 0., 0., 0., 0., 0.};
+std::array<bool,11> centrale::get_clignotements(){
+    std::array<bool,11> etat = {0};
 
     if(ptrCircuit_Primaire->get_E_pompe()<0.5){
-        etat[0] = 1.;
+        etat[0] = 1;
     }
 
     if(ptrCircuit_Secondaire->get_E_pompe()<0.5){
-        etat[1] = 1.;
+        etat[1] = 1;
     }
 
     if(ptrCircuit_Secondaire->get_E_condenseur()<0.5){
-        etat[2] = 1.;
+        etat[2] = 1;
     }
 
     if(ptrCircuit_Secondaire->get_E_vapeur()<0.5){
-        etat[3] = 1.;
+        etat[3] = 1;
     }
 
-    if(ptrReacteur->get_E_bore()<1.){
-        etat[4] = 1.;
+    if((ptrReacteur->get_E_bore()<1.) || (ptrReacteur->get_E_barre()<0.5)){
+        etat[4] = 1;
     }
 
     if(ptrCircuit_Primaire->get_E_circuit()<0.5){
-        etat[5] = 1.;
+        etat[5] = 1;
     }
 
     if(ptrCircuit_Secondaire->get_E_circuit()<0.5){
-        etat[6] = 1.;
+        etat[6] = 1;
     }
 
     if(ptrCircuit_Primaire->get_E_pressuriseur()<0.5){
-        etat[6] = 1.;
+        etat[7] = 1;
+    }
+
+    if(ptrCircuit_Primaire->get_E_echangeur()<0.5){
+        etat[8] = 1;
+    }
+
+    if(get_E_enceinte()<0.5){
+        etat[9] = 1;
     }
 
     return(etat);
