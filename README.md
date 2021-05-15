@@ -1,6 +1,7 @@
 # Projet MACS2 - Centrale
 
 ![language](https://img.shields.io/badge/language-C%2B%2B-0052cf)
+![library](https://img.shields.io/badge/library-SDL-00cf2c)
 
 <br/>
 
