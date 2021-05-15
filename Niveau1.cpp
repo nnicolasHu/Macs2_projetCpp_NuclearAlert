@@ -54,8 +54,9 @@ void Niveau1(sdl2::window& fenêtre){
     bool demande_ArretUrgence = false;
     bool evacuation = false;
     bool demande_evacuation = false;
+    bool demande_quitter = false;
 
-    int clignotement;
+    int clignotement=1;
     
     
     int loopBegin,loopEnd,stopBegin,stopEnd;
@@ -95,6 +96,16 @@ void Niveau1(sdl2::window& fenêtre){
                 Commande2(fenêtre);
                 break;
             }
+
+            if (demande_ArretUrgence) {
+                message_confirmation(fenêtre);
+            }
+            if (demande_evacuation) {
+                message_confirmation(fenêtre);
+            }
+            if (demande_quitter) {
+                message_confirmation(fenêtre);
+            }
             
             //gestion des touches
             auto events = queue.pull_events();
@@ -109,274 +120,282 @@ void Niveau1(sdl2::window& fenêtre){
                     //quand on appuie sur une touche
                     if ( (key_ev.type_of_event() == sdl2::event::key_down) &&  (iskey_down == false) ) {
                         char keychar = key_ev.ascci_code();
-                        //touche espace
-                        if ((keychar==32) && (iskey_down==0) ) {
-                            espace = 1 - espace;
-                            affichage = espace;
-                            selected_controle = 0;
-                            O_selected = 1;
-                            commande1_selected = 0;
-                            commande2_selected = 1;
-                        }
-
-                        //touche tab
-                        if ((keychar==9) && (iskey_down==0) ) {
-                            tab_selected = 1 - tab_selected;
-                            if (tab_selected) affichage=2;
-                            else affichage = espace;
-                            selected_controle = 0;
-                            O_selected = 1;
-                            commande1_selected = 0;
-                            commande2_selected = 1;
-                        }
-                        //touche S
-                        if ((keychar==115)  && (iskey_down==0) ) {
-                            stopBegin = SDL_GetTicks();
-                            S_pressed = 1;
-                            selected_controle = 0;
-                            O_selected = 1;
-                            commande1_selected = 0;
-                            commande2_selected = 1;
-                        }
-
-                        //commande depuis la salle de contrôle
-                        if (espace == 0) {
-                            //touche h
-                            if ((keychar==104) && (iskey_down==0) ) {
-                                commande1_selected = 5 - commande1_selected;
-                                affichage = commande1_selected;
-                                tab_selected = 0;
-                            }                             
-
-                            //touche 1
-                            if ((keychar==49) && (iskey_down==0) ) {
-                                affichage = 0;
-                                commande1_selected = 0;
-                                if (selected_controle==1) selected_controle=0;
-                                else selected_controle=1;
+                        
+                        if (demande_quitter) {
+                            if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
+                                //l'utilisateur veut quitter
+                                quitting = true;
+                                break;
+                            }
+                            if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
+                                //l'utilisateur annule la tentative de quitter
+                                demande_quitter = 0;
+                            }
+                        } 
+                        else if (demande_ArretUrgence) {
+                            std::cout << "arrêt d'urgence?" << std::endl;
+                            if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
+                                //tentative d'arrêt d'urgence
+                                std::cout << "tentative d'arrêt d'urgence" << std::endl;
+                                demande_ArretUrgence = 0;
+                            }
+                            if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
+                                std::cout << "annulation tentative arrêt d'urgence" << std::endl;
+                                demande_ArretUrgence = 0;
+                            }
+                        } 
+                        else if (demande_evacuation) {
+                            std::cout << "evacuation?" << std::endl;
+                            if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
+                                //évacuation de la population
+                                evacuation = 1;
+                                demande_evacuation = 0;
+                                std::cout << "on évacue" << std::endl;                                   
+                            }
                                 
+                            if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
+                                demande_evacuation = 0;
+                                std::cout << "annulation de l'évacuation" << std::endl;
                             }
-
-                            //touche 2
-                            if ((keychar==50) && (iskey_down==0) ) {
-                                affichage = 0;
-                                commande1_selected = 0;
-                                if (selected_controle==2) selected_controle=0;
-                                else selected_controle=2;
-                                
-                            }
-
-                            //touche B
-                            if ((keychar==98) && (iskey_down==0) ) {
-                                affichage = 0;
-                                commande1_selected = 0;
-                                if (selected_controle==3) selected_controle=0;
-                                else selected_controle=3;
-                                
-                            }
-
-                            //touche T
-                            if ((keychar==116) && (iskey_down==0) ) {
-                                affichage = 0;
-                                commande1_selected = 0;
-                                if (selected_controle==4) selected_controle=0;
-                                else selected_controle=4;
-                                
-                            }
-
-                            //touche P
-                            if ((keychar==112) && (iskey_down==0) ) {
-                                affichage = 0;
-                                commande1_selected = 0;
-                                if (selected_controle==5) selected_controle=0;
-                                else selected_controle=5;
-                                
-                            }
-
-                            //touche R
-                            if ((keychar==114) && (iskey_down==0) ) {
-                                affichage = 0;
-                                commande1_selected = 0;
-                                if (selected_controle==6) selected_controle=0;
-                                else selected_controle=6;
-                                
-                            }
-
-                            if (key_ev.code() == sdl2::event_keyboard::up) {
-                                switch (selected_controle) {
-                                case 1:
-                                    // on augmente le rendement de la pompe circuit primaire
-                                    C.get_Circuit_Primaire().incr_F_pompe();
-                                    std::cout << "on augmente le rendement de la pompe circuit primaire" << std::endl;
-                                    break;
-                                case 2:
-                                    // on augmente le rendement de la pompe circuit secondaire
-                                    C.get_Circuit_Secondaire().incr_F_pompe(); //problème?
-                                    std::cout << C.get_Circuit_Secondaire().get_F_pompe() << std::endl;
-                                    std::cout << "on augmente le rendement de la pompe circuit secondaire" << std::endl;
-                                    break;
-                                case 3:
-                                    // on sort les barres de graphite hors de l'eau
-                                    std::cout << "on augmente TxGraphite" << std::endl;
-                                    break;
-                                case 4:
-                                    // on augmente le taux de bore dans l'eau
-                                    std::cout << "on augmente TxBore" << std::endl;
-                                    break;
-                                case 5:
-                                    // on augmente la température du pressuriseur
-                                    C.get_Circuit_Primaire().incr_T_pressuriseur();
-                                    std::cout << C.get_Circuit_Primaire().get_T_pressuriseur() << std::endl;
-                                    std::cout << "on augmente rendement pressuriseur" << std::endl;
-                                    break;
-                                case 6:
-                                    // on augmente le rendement de la pompe condenseur
-                                    std::cout << "on augmente rendement pompe condenseur" << std::endl;
-                                    break;
-                                }
-                            }
-
-                            if (key_ev.code() == sdl2::event_keyboard::down) {
-                                switch (selected_controle) {
-                                case 1:
-                                    // on augmente le rendement de la pompe circuit primaire
-                                    C.get_Circuit_Primaire().decr_F_pompe();
-                                    break;
-                                case 2:
-                                    // on baisse le rendement de la pompe circuit secondaire
-                                    C.get_Circuit_Secondaire().decr_F_pompe();
-                                    std::cout << "on baisse le rendement de la pompe circuit secondaire" << std::endl;
-                                    break;
-                                case 3:
-                                    // on plonge les barres de graphite dans l'eau
-                                    std::cout << "on baisse TxGraphite" << std::endl;
-                                    break;
-                                case 4:
-                                    // on baisse le taux de bore dans l'eau
-                                    std::cout << "on baisse TxBore" << std::endl;
-                                    break;
-                                case 5:
-                                    // on baisse la température du pressuriseur
-                                    C.get_Circuit_Primaire().decr_T_pressuriseur();
-                                    std::cout << "on baisse rendement pressuriseur" << std::endl;
-                                    break;
-                                case 6:
-                                    // on baisse le rendement de la pompe condenseur
-                                    std::cout << "on baisse rendement pompe condenseur" << std::endl;
-                                    break;
-                                }
-                            }
-
-                            //touche U
-                            if ((keychar==117) && (iskey_down==0) ) {
-                                demande_ArretUrgence = 1;
-                                affichage = 0;
+                        } 
+                        else {
+                            std::cout << "je suis là" << std::endl;
+                            //touche espace
+                            if ((keychar==32) && (iskey_down==0) ) {
+                                espace = 1 - espace;
+                                affichage = espace;
                                 selected_controle = 0;
+                                O_selected = 1;
                                 commande1_selected = 0;
+                                commande2_selected = 1;
                             }
 
-                            if (demande_ArretUrgence) {
-                                std::cout << "arrêt d'urgence?" << std::endl;
-                                if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
-                                    //tentative d'arrêt d'urgence
-                                    std::cout << "tentative d'arrêt d'urgence" << std::endl;
-                                    demande_ArretUrgence = 0;
-                                }
-                                if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
-                                    std::cout << "annulation tentative arrêt d'urgence" << std::endl;
-                                    demande_ArretUrgence = 0;
+                            //touche tab
+                            if ((keychar==9) && (iskey_down==0) ) {
+                                tab_selected = 1 - tab_selected;
+                                if (tab_selected) affichage=2;
+                                else affichage = espace;
+                                selected_controle = 0;
+                                O_selected = 1;
+                                commande1_selected = 0;
+                                commande2_selected = 1;
+                            }
+                            //touche S
+                            if ((keychar==115)  && (iskey_down==0) ) {
+                                stopBegin = SDL_GetTicks();
+                                S_pressed = 1;
+                                selected_controle = 0;
+                                O_selected = 1;
+                                commande1_selected = 0;
+                                commande2_selected = 1;
+                            }
+
+                            //commande depuis la salle de contrôle
+                            if (espace == 0) {
+                                //touche h
+                                if ((keychar==104) && (iskey_down==0) ) {
+                                    commande1_selected = 5 - commande1_selected;
+                                    affichage = commande1_selected;
+                                    tab_selected = 0;
+                                }                             
+
+                                //touche 1
+                                if ((keychar==49) && (iskey_down==0) ) {
+                                    affichage = 0;
+                                    commande1_selected = 0;
+                                    if (selected_controle==1) selected_controle=0;
+                                    else selected_controle=1;
+                                
                                 }
 
-                            }
+                                //touche 2
+                                if ((keychar==50) && (iskey_down==0) ) {
+                                    affichage = 0;
+                                    commande1_selected = 0;
+                                    if (selected_controle==2) selected_controle=0;
+                                    else selected_controle=2;
+                                
+                                }
+
+                                //touche B
+                                if ((keychar==98) && (iskey_down==0) ) {
+                                    affichage = 0;
+                                    commande1_selected = 0;
+                                    if (selected_controle==3) selected_controle=0;
+                                    else selected_controle=3;
+                                
+                                }
+
+                                //touche T
+                                if ((keychar==116) && (iskey_down==0) ) {
+                                    affichage = 0;
+                                    commande1_selected = 0;
+                                    if (selected_controle==4) selected_controle=0;
+                                    else selected_controle=4;
+                                
+                                }
+
+                                //touche P
+                                if ((keychar==112) && (iskey_down==0) ) {
+                                    affichage = 0;
+                                    commande1_selected = 0;
+                                    if (selected_controle==5) selected_controle=0;
+                                    else selected_controle=5;
+                                
+                                }
+
+                                //touche R
+                                if ((keychar==114) && (iskey_down==0) ) {
+                                    affichage = 0;
+                                    commande1_selected = 0;
+                                    if (selected_controle==6) selected_controle=0;
+                                    else selected_controle=6;
+                                
+                                }
+
+                                if (key_ev.code() == sdl2::event_keyboard::up) {
+                                    switch (selected_controle) {
+                                    case 1:
+                                        // on augmente le rendement de la pompe circuit primaire
+                                        C.get_Circuit_Primaire().incr_F_pompe();
+                                        break;
+                                    case 2:
+                                        // on augmente le rendement de la pompe circuit secondaire
+                                        C.get_Circuit_Secondaire().incr_F_pompe();
+                                        break;
+                                    case 3:
+                                        // on sort les barres de graphite hors de l'eau
+                                        C.get_Reacteur().incr_graphite();
+                                        break;
+                                    case 4:
+                                        // on augmente le taux de bore dans l'eau
+                                        C.get_Reacteur().incr_bore();
+                                        break;
+                                    case 5:
+                                        // on augmente la température du pressuriseur
+                                        C.get_Circuit_Primaire().incr_T_pressuriseur();
+                                        break;
+                                    case 6:
+                                        // on augmente le rendement de la pompe condenseur
+                                        std::cout << "on augmente rendement pompe condenseur" << std::endl;
+                                        break;
+                                    }
+                                }
+
+                                if (key_ev.code() == sdl2::event_keyboard::down) {
+                                    switch (selected_controle) {
+                                    case 1:
+                                        // on augmente le rendement de la pompe circuit primaire
+                                        C.get_Circuit_Primaire().decr_F_pompe();
+                                        break;
+                                    case 2:
+                                        // on baisse le rendement de la pompe circuit secondaire
+                                        C.get_Circuit_Secondaire().decr_F_pompe();                                    break;
+                                    case 3:
+                                        // on plonge les barres de graphite dans l'eau
+                                        C.get_Reacteur().decr_graphite();
+                                        break;
+                                    case 4:
+                                        // on baisse le taux de bore dans l'eau
+                                        C.get_Reacteur().decr_bore();
+                                        break;
+                                    case 5:
+                                        // on baisse la température du pressuriseur
+                                        C.get_Circuit_Primaire().decr_T_pressuriseur();
+                                        break;
+                                    case 6:
+                                        // on baisse le rendement de la pompe condenseur
+                                        std::cout << "on baisse rendement pompe condenseur" << std::endl;
+                                        break;
+                                    }
+                                }
+
+                                //touche U
+                                if ((keychar==117) && (iskey_down==0) ) {
+                                    demande_ArretUrgence = 1;
+                                    affichage = 0;
+                                    selected_controle = 0;
+                                    commande1_selected = 0;
+                                }
+
+                            
 
 
 
 
 
                             
-                        }
-
-                        //commande depuis le poste de sécurité
-                        if (espace == 1) { 
-                            //touche h
-                            if ((keychar==104) && (iskey_down==0) ) {
-                                commande2_selected = 6 - commande2_selected + 1; //varie entre 1 et 6
-                                affichage = commande2_selected;
-                                tab_selected = 0;
-                                O_selected = 1;
                             }
 
-                            //touche P
-                            if ((keychar==112) && (iskey_down==0) && (evacuation==0) && (O_selected!=4)) {
-                                demande_evacuation = 1;
-                                std::cout << "demande évacuation" << std::endl;
-                            }
-
-                            if (demande_evacuation) {
-                                std::cout << "evacuation?" << std::endl;
-                                if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
-                                    //évacuation de la population
-                                    evacuation = 1;
-                                    demande_evacuation = 0;
-                                    std::cout << "on évacue" << std::endl;                                   
+                            //commande depuis le poste de sécurité
+                            if (espace == 1) { 
+                                //touche h
+                                if ((keychar==104) && (iskey_down==0) ) {
+                                    commande2_selected = 6 - commande2_selected + 1; //varie entre 1 et 6
+                                    affichage = commande2_selected;
+                                    tab_selected = 0;
+                                    O_selected = 1;
                                 }
+
+                                //touche P
+                                if ((keychar==112) && (iskey_down==0) && (evacuation==0) && (O_selected!=4)) {
+                                    demande_evacuation = 1;
+                                    std::cout << "demande évacuation" << std::endl;
+                                }
+
                                 
-                                if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
-                                    demande_evacuation = 0;
-                                    std::cout << "annulation de l'évacuation" << std::endl;
-                                }
-                            }
 
-                            //touche B
-                            if ((keychar==98) && (iskey_down==0)) {
-                                B_pressed = 1;
-                                B_memoire = affichage;
-                                affichage = 3;
-                            }
-
-                            //touche O
-                            if ((keychar==111) && (iskey_down==0)) {
-                                O_selected = 4 - O_selected +1; //varie entre 1 et 4 
-                                commande2_selected = 1;
-                                affichage = O_selected;
-                            }
-
-                            if (O_selected==4) {
-                                if ((keychar==49) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers 1" << std::endl;
-                                }
-                                if ((keychar==50) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers 2" << std::endl;
-                                }
-                                if ((keychar==99) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers C" << std::endl;
-                                }  
-                                if ((keychar==103) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers G" << std::endl;
-                                } 
+                                //touche B
                                 if ((keychar==98) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers B" << std::endl;
+                                    B_pressed = 1;
+                                    B_memoire = affichage;
+                                    affichage = 3;
                                 }
-                                if ((keychar==105) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers I" << std::endl;
+
+                                //touche O
+                                if ((keychar==111) && (iskey_down==0)) {
+                                    O_selected = 4 - O_selected +1; //varie entre 1 et 4 
+                                    commande2_selected = 1;
+                                    affichage = O_selected;
                                 }
-                                if ((keychar==114) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers R" << std::endl;
+
+                                if (O_selected==4) {
+                                    if ((keychar==49) && (iskey_down==0)) {
+                                        std::cout << "on envoie vers 1" << std::endl;
+                                    }
+                                    if ((keychar==50) && (iskey_down==0)) {
+                                        std::cout << "on envoie vers 2" << std::endl;
+                                    }
+                                    if ((keychar==99) && (iskey_down==0)) {
+                                        std::cout << "on envoie vers C" << std::endl;
+                                    }  
+                                    if ((keychar==103) && (iskey_down==0)) {
+                                        std::cout << "on envoie vers G" << std::endl;
+                                    } 
+                                    if ((keychar==98) && (iskey_down==0)) {
+                                        std::cout << "on envoie vers B" << std::endl;
+                                    }
+                                    if ((keychar==105) && (iskey_down==0)) {
+                                        std::cout << "on envoie vers I" << std::endl;
+                                    }
+                                    if ((keychar==114) && (iskey_down==0)) {
+                                        std::cout << "on envoie vers R" << std::endl;
+                                    }
+                                    if ((keychar==112) && (iskey_down==0)) {
+                                        std::cout << "on envoie vers P" << std::endl;
+                                    }
                                 }
-                                if ((keychar==112) && (iskey_down==0)) {
-                                    std::cout << "on envoie vers P" << std::endl;
-                                }
+
+
+
                             }
 
 
 
+
+
+                            iskey_down = true;
                         }
-
-
-
-
-
-                        iskey_down = true;
                     }
 
                     //quand on soulève une touche
@@ -385,15 +404,15 @@ void Niveau1(sdl2::window& fenêtre){
                             B_pressed = 0;
                             commande2_selected = 1;
                             affichage = B_memoire; //on revient à ce qu'il y avait avant
-                            //std::cout << "on affiche 1" << std::endl; 
                         }
                         S_pressed = 0;                        
                         iskey_down = false;
                     }
+                    
                 }
                 if (S_pressed) {
                     stopEnd = SDL_GetTicks();
-                    if (stopEnd-stopBegin>3000) quitting = true;
+                    if (stopEnd-stopBegin>3000) demande_quitter = true;
                 }
             }
             
