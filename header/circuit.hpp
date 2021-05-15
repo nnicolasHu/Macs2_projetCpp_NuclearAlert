@@ -127,6 +127,13 @@ public :
      */
     bool reparation_pompe();
 
+    /**
+     * @brief met à jour le débit d'eau (méthode virtuel)
+     * 
+     * 
+     */
+    virtual void maj_Debit_eau();
+
 
 protected : 
     /** Etat du circuit **/

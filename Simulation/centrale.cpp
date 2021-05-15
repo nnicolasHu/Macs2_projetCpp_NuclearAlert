@@ -264,12 +264,12 @@ void centrale::maj_Circuit_Secondaire(){
     double R1 = ptrCircuit_Primaire->get_Radioactivite();
     
     ptrCircuit_Secondaire->degrad_all(E_chaleur,E_enceinte);
-    ptrCircuit_Secondaire->update_T_vapeur(E_chaleur,T1);
-    ptrCircuit_Secondaire->update_P_vapeur();
-    ptrCircuit_Secondaire->update_Debit_eau();
-    ptrCircuit_Secondaire->update_D_condenseur();
-    ptrCircuit_Secondaire->update_Inertie(T1);
-    ptrCircuit_Secondaire->update_Radioactivite(E_chaleur,R1);
+    ptrCircuit_Secondaire->maj_T_vapeur(E_chaleur,T1);
+    ptrCircuit_Secondaire->maj_P_vapeur();
+    ptrCircuit_Secondaire->maj_Debit_eau();
+    ptrCircuit_Secondaire->maj_D_condenseur();
+    ptrCircuit_Secondaire->maj_Inertie(T1);
+    ptrCircuit_Secondaire->maj_Radioactivite(E_chaleur,R1);
 
 } 
 
