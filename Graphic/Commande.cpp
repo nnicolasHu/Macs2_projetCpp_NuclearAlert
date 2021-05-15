@@ -20,7 +20,7 @@ void Commande1(sdl2::window& fenêtre){
     
     sdl2::texte commandT("T : Action sur le taux d'acide borique"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandT.at(100, 270);
-    sdl2::texte commandP("P : Rendement pressuriseur"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte commandP("P : Temperature pressuriseur"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandP.at(100, 330);
     sdl2::texte commandR("R : Rendement pompe condenseur"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandR.at(100, 390);
