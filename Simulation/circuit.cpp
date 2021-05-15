@@ -66,7 +66,7 @@ void circuit::set_F_pompe(double regime) {
 
 // les incréments et décréments
 void circuit::incr_F_pompe() {
-    if (F_pompe <= (E_pompe - 0.05)) F_pompe += 0.05;
+    if (F_pompe < E_pompe) F_pompe += 0.05;
 }
 
 void circuit::decr_F_pompe() {
