@@ -18,7 +18,7 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     help.at(30, 10);
 
     sdl2::rectangle GD({30,40}, {1190,50}, {0xFF,0xFF,0xFF,0xFF}, false);
-    fenêtre << GD << gdtitre; 
+    fenêtre << GD << help << gdtitre; 
 
     /////////       Cadre Activité       /////////
     sdl2::texte titre("Activité"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
