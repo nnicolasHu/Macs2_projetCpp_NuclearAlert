@@ -178,6 +178,5 @@ void Bilanactiviteouvriere(sdl2::window& fenêtre,centrale& C){
     sdl2::rectangle en_cours_cadre({1000,95}, {220,540}, {0xFF,0xFF,0xFF,0xFF}, false);
     fenêtre << en_cours_cadre << en_cours << cours_pcp << cours_pcs << cours_cond << cours_gen_vap << cours_inject << cours_cp << cours_cs << cours_press;
 
-    fenêtre << sdl2::flush;
 
 }

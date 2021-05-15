@@ -265,7 +265,6 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     sdl2::rectangle ord({790,440}, {430,195}, {0xFF,0xFF,0xFF,0xFF}, false);
     fenêtre << ord << titreord << e_centrale << af_ecentrale << alerte << af_alerte << popevac << af_evac << popcont << af_cont;
 
-    fenêtre << help << sdl2::flush;
   
 }
 

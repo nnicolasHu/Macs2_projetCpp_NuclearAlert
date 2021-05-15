@@ -37,7 +37,7 @@ void Commande1(sdl2::window& fenêtre){
     //sdl2::event_queue queue;
 
     
-    fenêtre  << titre << command1 << command2 << commandB << commandT << commandP << commandR << commandU1 << commandU2 << commandTab << commandE << sdl2::flush;
+    fenêtre  << titre << command1 << command2 << commandB << commandT << commandP << commandR << commandU1 << commandU2 << commandTab << commandE;
 /*     auto events = queue.pull_events();
     for(const auto& e : events){
         if(e->kind_of_event() == sdl2::event::quit) quitting = true;
@@ -81,7 +81,7 @@ void Commande2(sdl2::window& fenêtre){
 
     //bool quitting = false;
     //sdl2::event_queue queue;
-    fenêtre  << titre << commandTab << commandE << commandP << commandB << commandP << commandO << sdl2::flush;
+    fenêtre  << titre << commandTab << commandE << commandP << commandB << commandP << commandO;
 /*     auto events = queue.pull_events();
     for(const auto& e : events){
         if(e->kind_of_event() == sdl2::event::quit) quitting = true;

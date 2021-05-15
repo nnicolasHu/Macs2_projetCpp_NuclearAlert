@@ -210,6 +210,4 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){
     Sys_secur.at(940, 50);
     fenêtre << Sys_secur;
 
-    //Affichage complet 
-    fenêtre << sdl2::flush; 
 }

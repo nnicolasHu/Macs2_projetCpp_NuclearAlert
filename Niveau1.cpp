@@ -107,6 +107,8 @@ void Niveau1(sdl2::window& fenêtre){
                 message_confirmation(fenêtre);
             }
             
+            fenêtre << sdl2::flush; 
+            
             //gestion des touches
             auto events = queue.pull_events();
             for ( const auto& e : events) {
@@ -159,7 +161,7 @@ void Niveau1(sdl2::window& fenêtre){
                             }
                         } 
                         else {
-                            std::cout << "je suis là" << std::endl;
+                            
                             //touche espace
                             if ((keychar==32) && (iskey_down==0) ) {
                                 espace = 1 - espace;

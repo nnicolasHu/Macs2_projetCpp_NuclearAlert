@@ -109,7 +109,7 @@ void InterventionO(sdl2::window& fenêtre, centrale& C){
 
     //bool quitting = false;
     //sdl2::event_queue queue;
-    fenêtre  << titre << command1 << command2 << commandC << commandG << commandB << commandI << commandR << commandP << sdl2::flush;
+    fenêtre  << titre << command1 << command2 << commandC << commandG << commandB << commandI << commandR << commandP;
     /* auto events = queue.pull_events();
     for(const auto& e : events){
         if(e->kind_of_event() == sdl2::event::quit) quitting = true;

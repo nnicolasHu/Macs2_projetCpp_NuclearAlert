@@ -45,7 +45,7 @@ void message_confirmation(sdl2::window& fenêtre){
     N.at(690, 320);
     fenêtre << titre << Y << N;
 
-    fenêtre << sdl2::flush; 
+    
 
     // // Commande pour tester la fonction 
     // sdl2::event_queue queue;

@@ -109,7 +109,6 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, int clignotement){
         //Enceinte 
         fenetre << enceinte;
 
-        fenetre << press<< sdl2::flush;
     }
     
     
