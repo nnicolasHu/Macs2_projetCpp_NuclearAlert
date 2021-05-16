@@ -152,15 +152,15 @@ std::string reacteur::degr_E_cuve(double T1, double E_circuit_primaire, double E
     if (E_cuve>0.){
         if ((T1>=50) && (E_circuit_primaire<0.6)){
             E_cuve -=  (RND(0.02))*(RND(1.)>=0.6);
-            message += "Risque de dégradation de la cuve"s;
+            message += "Risque de dégradation de la cuve\n"s;
         }
         if ((T1>=50) && (E_circuit_primaire<0.3)){
             E_cuve -=  (RND(0.03))*(RND(1.)>=0.7);
-            message += "Risque de forte dégradation de la cuve"s;
+            message += "Risque de forte dégradation de la cuve\n"s;
         }
         if ((T1>=50) && (E_circuit_primaire<0.2)){
             E_cuve -=  (RND(0.06))*(RND(1.)>=0.2);
-            message += "Risque très important de très forte dégradation de la cuve"s;
+            message += "Risque très important de très forte dégradation de la cuve\n"s;
         }
         if (E_enceinte == 0.){
             E_cuve -= (0.5 + RND(0.1))*(RND(1.)>=0.35);
@@ -182,7 +182,7 @@ std::string reacteur::degr_E_piscine(double T1, double E_circuit_primaire,double
     if(E_piscine >0.){
         if ((T1>=50) && (E_circuit_primaire<0.2)){
             E_piscine -= (RND(0.06))*(RND(1.)>=0.2);
-            message += "Risque très important de dégradation de la piscine"s;
+            message += "Risque très important de dégradation de la piscine\n"s;
         }
         if (E_enceinte == 0.){
             E_piscine -= (0.6 + RND(0.16))*(RND(1.)>=0.35);
@@ -201,15 +201,15 @@ std::string reacteur::degr_E_barre(double T1){
     if(E_barre>0.){
         if ((T1>=50) && (E_canaux<0.6) && (TGraphite_eff>0.4) ){
             E_barre -= (RND(0.02))*(RND(1.)>=0.7);
-            message += "Risque de dégradation des barres de graphite"s;
+            message += "Risque de dégradation des barres de graphite\n"s;
         }
         if ((T1>=50) && (E_cuve<0.7) && (TGraphite_eff>0.4) ){
             E_barre -= (RND(0.03))*(RND(1.)>=0.6);
-            message += "Risque important de dégradation des barres de graphite"s;
+            message += "Risque important de dégradation des barres de graphite\n"s;
         }
         if ((T1>=420) && (TGraphite_eff>0.2) ){
             E_barre -= RND(0.03);
-            message += "Dégradation possible des barres"s;
+            message += "Dégradation possible des barres\n"s;
         }
         if (urg == true){
             E_barre -= (0.02 + RND(0.08))*(RND(1.)>=0.7);
@@ -228,7 +228,7 @@ std::string reacteur::degr_E_canaux(double T1){
     if(E_canaux>0.){
         if ((T1>=50) && (E_cuve<0.5)){
             E_canaux -= (RND(0.05))*(RND(1.)>=0.5);
-            message += "Risque important de dégradation importante des canaux"s;
+            message += "Risque important de dégradation importante des canaux\n"s;
         }
         if (urg == true){
             E_canaux -= ((0.05) + RND(0.1))*(RND(1.)>=0.2);
@@ -248,7 +248,7 @@ std::string reacteur::degr_E_bore(double T1, double E_circuit_primaire){
     if(E_bore>0.){
         if ((T1>=50) && (E_cuve<0.5) && (E_circuit_primaire<0.5)){
             E_bore -= (RND(0.02))*(RND(1.)>=0.5);
-            message += "Risque important de dégradation de l'injecteur d'acide borique"s;
+            message += "Risque important de dégradation de l'injecteur d'acide borique\n"s;
         }
     }
     if (E_bore <= 0.){
