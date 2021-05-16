@@ -134,9 +134,11 @@ std::string circuitPrimaire::degr_E_circuit(double E_enceinte) {
     return alerte;
 }
 
-void circuitPrimaire::degr_E_pompe() {
+std::string circuitPrimaire::degr_E_pompe() {
+    std::string messageErreur = "";
     if (E_pompe>0.){
         if (Temperature>=50 && E_circuit<0.58) {
+            messageErreur += "Risque important de dégradation de la pompe du circuit primaire \n"s;
             E_pompe += -RND(0.03)*(RND(1.)<0.5);
         }
     }
@@ -144,16 +146,18 @@ void circuitPrimaire::degr_E_pompe() {
     if (E_pompe <=0.){
         E_pompe = 0.;
     }
-
+    return messageErreur;
 }
 
-void circuitPrimaire::degr_E_pressuriseur(double E_enceinte){
-
+std::string circuitPrimaire::degr_E_pressuriseur(double E_enceinte){
+    std::string messageErreur = "";
     if (E_pressuriseur>0.){
         if(Temperature>=420){
+            messageErreur += "Dégradation possible du pressuriseur \n"s;
             E_pressuriseur -= (RND(0.02))*(RND(1.)<0.3);
         }
         if (Temperature>=40*Pression) {
+            messageErreur += "Risque important de dégradation du pressuriseur dû à la formation de vapeur dans le circuit primaire \n"s;
             E_pressuriseur -= RND(0.02);
         }
         if (E_enceinte == 0.){
@@ -164,21 +168,26 @@ void circuitPrimaire::degr_E_pressuriseur(double E_enceinte){
     if(E_pressuriseur<=0.){
         E_pressuriseur = 0.;
     }
+    return messageErreur;
 }
 
-void circuitPrimaire::degr_E_resistance(double E_enceinte){
-
+std::string circuitPrimaire::degr_E_resistance(double E_enceinte){
+    std::string messageErreur = "";
     if (E_resistance>0.){
         if(Temperature>=420){
+            messageErreur += "Dégradation possible du pressuriseur \n"s;
             E_resistance -= (RND(0.02))*(RND(1.)<0.3);
         }
         if (Temperature>=40*Pression) {
+            messageErreur += "Risque important de dégradation du circuit primaire dû à la formation de vapeur dans le circuit primaire \n"s;
             E_resistance -= RND(0.02)*(RND(1.)<0.3);
         }
         if ((Temperature>=50) && (E_pressuriseur<0.5)) {
+            messageErreur += "Risque très important de dégradation de la résistance du pressuriseur \n"s;
             E_resistance -= RND(0.03)*(RND(1.)<0.8);
         }
         if ((E_enceinte == 0.) && (E_pressuriseur<0.9)){
+            messageErreur += "Affiche détérioration importante du circuit primaire et du pressuriseur \n"s;
             E_resistance -= (RND(0.1))*(RND(1.)>=0.2);
         }
     }
@@ -186,11 +195,14 @@ void circuitPrimaire::degr_E_resistance(double E_enceinte){
     if(E_resistance<=0.){
         E_resistance = 0.;
     }
+    return messageErreur;
 }
 
-void circuitPrimaire::degr_E_echangeur(){
+std::string circuitPrimaire::degr_E_echangeur(){
+    std::string messageErreur = "";
     if (E_echangeur>0.){
         if((Temperature>=50) && (E_circuit<0.5)){
+            messageErreur += "Risque important de dégradation de l’échangeur de chaleur \n"s;
             E_echangeur -= RND(0.04)*(RND(1.)<0.4);
         }
     }

@@ -147,25 +147,25 @@ public:
       * @brief Permet de simuler les dégradations de l'état de la pompe
       *
       */
-     void degr_E_pompe();
+     std::string degr_E_pompe();
 
      /**
       * @brief Permet de simuler les dégradations de l'état du pressuriseur
       *
       */
-     void degr_E_pressuriseur(double E_enceinte);
+     std::string degr_E_pressuriseur(double E_enceinte);
 
      /**
       * @brief Permet de simuler les dégradations de l'état de la resistance du pressuriseur
       *
       */
-     void degr_E_resistance(double E_enceinte);
+     std::string degr_E_resistance(double E_enceinte);
 
      /**
       * @brief Permet de simuler les dégradations de l'état de l'échangeur de chaleur
       *
       */
-     void degr_E_echangeur();
+     std::string degr_E_echangeur();
 
      /**
      * @brief Permet de réparer le circuit primaire
