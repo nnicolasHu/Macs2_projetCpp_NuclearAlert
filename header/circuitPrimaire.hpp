@@ -105,7 +105,7 @@ public:
       *
       * @param[in] E_cuve etat cuve reacteur
       */
-     void maj_Debit_eau(double E_cuve);
+     void maj_Debit_eau_1(double E_cuve);
 
      /**
       * @brief Permet de mettre à jour l'inertie du circuit Primaire
