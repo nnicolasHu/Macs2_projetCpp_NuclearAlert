@@ -270,6 +270,18 @@ public:
     void maj_Reparation();
 
     /**
+     * @brief Permet de TOUT mettre à jour
+     * 
+     */
+    void maj_General();
+
+    /**
+     * @brief Permet d'effectuer TOUTES les dégradations
+     * 
+     */
+    std::string degr_General();
+
+    /**
      * @brief Permet d'obtenir les organes qui se dégradent pour permettre de les faire clignoter
      * 
      * Convention : 

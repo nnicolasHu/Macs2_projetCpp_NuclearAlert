@@ -2,6 +2,8 @@
 #define _REACTEUR_HPP
 
 #include <memory>
+#include <string>
+using namespace std::string_literals; 
 
 
 /**
@@ -200,7 +202,7 @@ public:
      * @param[in] E_enceinte Etat enceinte
      * @param[in] urg Booléen lié à la tentative d'arrêt d'urgence
      */
-     void degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte, bool urg);
+     std::string degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte, bool urg);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état de la piscine
@@ -209,7 +211,7 @@ public:
      * @param[in] E_circuit_primaire Etat circuit primaire
      * @param[in] E_enceinte Etat enceinte
      */
-     void degr_E_piscine(double T1, double E_circuit_primaire,double E_enceinte);
+     std::string degr_E_piscine(double T1, double E_circuit_primaire,double E_enceinte);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
@@ -218,7 +220,7 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] urg Booléen lié à la tentative d'arrêt d'urgence
      */
-     void degr_E_barre(double T1, bool urg);
+     std::string degr_E_barre(double T1, bool urg);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
@@ -227,7 +229,7 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] urg Booléen lié à la tentative d'arrêt d'urgence
      */
-     void degr_E_canaux(double T1, bool urg);
+     std::string degr_E_canaux(double T1, bool urg);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
@@ -236,7 +238,7 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] E_circuit_primaire Etat circuit primaire
      */
-     void degr_E_bore(double T1, double E_circuit_primaire);
+     std::string degr_E_bore(double T1, double E_circuit_primaire);
 
      /**
       * @brief Permet d'effectuer les réparations sur l'injecteur borique
