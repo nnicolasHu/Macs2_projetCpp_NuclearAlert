@@ -109,7 +109,7 @@ std::string circuitPrimaire::degr_E_circuit(double E_enceinte) {
         alerte += "Risque important de dégradation du circuit primaire dû à la température\n"s;
     }
     else if (Temperature>400) {
-        alerte += "Température trop élevée dans le circuit primaire"s;
+        alerte += "Température trop élevée dans le circuit primaire\n"s;
     }
     if (Temperature>=40*Pression) {
         E_circuit += -RND(0.03);

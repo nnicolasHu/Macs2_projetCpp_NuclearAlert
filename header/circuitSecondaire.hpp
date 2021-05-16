@@ -96,13 +96,13 @@ public:
      * @param[in] E_chaleur l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
      * @return std::array des messages dû à la dégradation de l'état de la vapeur 
      */
-    std::array<std::string,2> degrad_E_vapeur(double E_chaleur, double E_enceinte);
+    std::string degrad_E_vapeur(double E_chaleur, double E_enceinte);
 
     /**
      * @brief met a jour les dégradations de l'état du circuit secondaire
      * @return std::array des messages dû à la dégradation de l'état du circuit
      */
-    std::array<std::string,3> degrad_E_circuit();
+    std::string degrad_E_circuit();
 
     /**
      * @brief met a jour les dégradations de l'état de la pompe
