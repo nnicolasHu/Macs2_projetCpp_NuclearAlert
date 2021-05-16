@@ -166,7 +166,7 @@ void circuitSecondaire::maj_T_vapeur(double E_ec,double T1){
 }
 
 void circuitSecondaire::maj_P_vapeur(){
-    if (this->get_P_vapeur() < 120){
+    if (this->get_T_vapeur() < 120){
         this->P_vapeur = 1.0 ;
     }
     else {
