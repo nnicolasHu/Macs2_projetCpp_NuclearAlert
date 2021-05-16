@@ -94,18 +94,21 @@ public:
     /**
      * @brief met a jour les dégradations de l'état du générateur de vapeur
      * @param[in] E_chaleur l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
+     * @return std::array des messages dû à la dégradation de l'état de la vapeur 
      */
-    void degrad_E_vapeur(double E_chaleur, double E_enceinte);
+    std::array<std::string,2> degrad_E_vapeur(double E_chaleur, double E_enceinte);
 
     /**
      * @brief met a jour les dégradations de l'état du circuit secondaire
+     * @return std::array des messages dû à la dégradation de l'état du circuit
      */
-    void degrad_E_circuit();
+    std::array<std::string,3> degrad_E_circuit();
 
     /**
      * @brief met a jour les dégradations de l'état de la pompe
+     * @return message d'erreur dû à la dégradation de l'état de la pompe
      */
-    void degrad_E_pompe();
+    std::string degrad_E_pompe();
 
     /**
      * @brief met a jour TOUTES les dégradations du circuit secondaire
@@ -118,8 +121,9 @@ public:
     /**
      * @brief met a jour les dégradations de l'état de l'échangeur de chaleur (communique avec circuitPrimaire)
      * @param[in] E_chaleur l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
+     * @return message d'erreur dû à la dégradation de l'état de l'échangeur de chaleur
      */
-    void degrad_E_chaleur(double E_chaleur);
+    std::string degrad_E_chaleur(double E_chaleur);
 
     /**
      * @brief met a jour la témpérature de la vapeur
