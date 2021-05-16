@@ -1,6 +1,7 @@
 #include <iostream>
 #include "sdl2.hpp"
 #include <SDL2/SDL_ttf.h>
+#include "centrale.hpp"
 
 int main(int argc, char* args[]){
     sdl2::init(argc, args);
@@ -8,6 +9,7 @@ int main(int argc, char* args[]){
     
     //sdl2::flush;
 
+    centrale C;
     bool quitting = false;
     bool espace = false;
     //Vaut 0 si on est sur la salle de contrôle et 1 si on est sur le poste de sécurité
@@ -58,12 +60,13 @@ int main(int argc, char* args[]){
     bool evacuation = false;
     bool demande_evacuation = false;
     bool demande_quitter = false;
+    int demande_retrait = -1;
     
     
     int loopBegin,loopEnd,stopBegin,stopEnd;
     sdl2::event_queue queue;
 
-    while (not quitting) {
+    while (!quitting) {
         loopBegin = SDL_GetTicks();
         // maj de la centrale
 
@@ -71,7 +74,7 @@ int main(int argc, char* args[]){
 
         
         loopEnd = SDL_GetTicks();
-        while ((not quitting) && (loopEnd-loopBegin < 1000)) {
+        while ((!quitting) && (loopEnd-loopBegin < 1000)) {
             //Affichage
             /* switch (affichage) {
             case 0:
@@ -355,29 +358,69 @@ int main(int argc, char* args[]){
                                 }
 
                                 if (O_selected==4) {
-                                    if ((keychar==49) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers 1" << std::endl;
+                                    if ((keychar==49) && (iskey_down==0)) {                                        
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(0)==0) {
+                                            std::cout << "on envoie vers 1" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 0;
+                                        }
                                     }
                                     if ((keychar==50) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers 2" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(1)==0) {
+                                            std::cout << "on envoie vers 2" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 1;
+                                        }
                                     }
                                     if ((keychar==99) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers C" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(2)==0) {
+                                            std::cout << "on envoie vers C" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 2;
+                                        }
                                     }  
                                     if ((keychar==103) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers G" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(3)==0) {
+                                            std::cout << "on envoie vers G" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 3;
+                                        }
                                     } 
                                     if ((keychar==98) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers B" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(4)==0) {
+                                            std::cout << "on envoie vers B" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 4;
+                                        }
                                     }
                                     if ((keychar==105) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers I" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(5)==0) {
+                                            std::cout << "on envoie vers I" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 5;
+                                        }
                                     }
                                     if ((keychar==114) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers R" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(6)==0) {
+                                            std::cout << "on envoie vers R" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 6;
+                                        }
                                     }
                                     if ((keychar==112) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers P" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(7)==0) {
+                                            std::cout << "on envoie vers P" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 7;
+                                        }
                                     }
                                 }
 

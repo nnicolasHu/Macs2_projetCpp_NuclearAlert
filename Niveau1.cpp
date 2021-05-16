@@ -55,6 +55,18 @@ void Niveau1(sdl2::window& fenêtre){
     bool evacuation = false;
     bool demande_evacuation = false;
     bool demande_quitter = false;
+    int demande_retrait = -1;
+    /*
+    demande_retrait vaut : -1 par défaut. Rien est demandé
+                            0 quand on veut retirer les ouvriers de la pompe du circuit primaire
+                            1 quand on veut retirer les ouvriers de la pompe du circuit secondaire
+                            2 quand on veut retirer les ouvriers de du condenseur
+                            3 quand on veut retirer les ouvriers de du générateur de vapeur
+                            4 quand on veut retirer les ouvriers de de l'injecteur d'acide borique
+                            5 quand on veut retirer les ouvriers du circuit primaire
+                            6 quand on veut retirer les ouvriers du circuit secondaire
+                            7 quand on veut retirer les ouvriers du pressuriseur
+    */
 
     bool clignotement=0;
     
@@ -62,7 +74,7 @@ void Niveau1(sdl2::window& fenêtre){
     int loopBegin,loopEnd,stopBegin,stopEnd;
     sdl2::event_queue queue;
 
-    while (not quitting) {
+    while (!quitting) {
         loopBegin = SDL_GetTicks();
         // maj de la centrale
 
@@ -70,31 +82,31 @@ void Niveau1(sdl2::window& fenêtre){
 
         
         loopEnd = SDL_GetTicks();
-        while ((not quitting) && (loopEnd-loopBegin < 1000)) {
+        while ((!quitting) && (loopEnd-loopBegin < 1000)) {
             //Affichage
             
             switch (affichage) {
-            case 0:
-                SalleDeControle(fenêtre,C);
-                break;
-            case 1:
-                Radioprotection_win(fenêtre,C);
-                break;
-            case 2:
-                Centrale_tab(fenêtre,C,clignotement);
-                break;
-            case 3:
-                Bilanactiviteouvriere(fenêtre,C);
-                break;
-            case 4:
-                InterventionO(fenêtre,C);
-                break;
-            case 5:
-                Commande1(fenêtre);
-                break;
-            case 6:
-                Commande2(fenêtre);
-                break;
+                case 0:
+                    SalleDeControle(fenêtre,C);
+                    break;
+                case 1:
+                    Radioprotection_win(fenêtre,C);
+                    break;
+                case 2:
+                    Centrale_tab(fenêtre,C,clignotement);
+                    break;
+                case 3:
+                    Bilanactiviteouvriere(fenêtre,C);
+                    break;
+                case 4:
+                    InterventionO(fenêtre,C);
+                    break;
+                case 5:
+                    Commande1(fenêtre);
+                    break;
+                case 6:
+                    Commande2(fenêtre);
+                    break;
             }
 
             if (demande_ArretUrgence) {
@@ -105,6 +117,35 @@ void Niveau1(sdl2::window& fenêtre){
             }
             if (demande_quitter) {
                 message_confirmation(fenêtre);
+            }
+            if (demande_retrait != -1) {
+                switch (demande_retrait) {
+                    case 0:
+                        message_confirmation(fenêtre);
+                        break;
+                    case 1:
+                        message_confirmation(fenêtre);
+                        break;
+                    case 2:
+                        message_confirmation(fenêtre);
+                        break;
+                    case 3:
+                        message_confirmation(fenêtre);
+                        break;
+                    case 4:
+                        message_confirmation(fenêtre);
+                        break;
+                    case 5:
+                        message_confirmation(fenêtre);
+                        break;
+                    case 6:
+                        message_confirmation(fenêtre);
+                        break;
+                    case 7:
+                        message_confirmation(fenêtre);
+                        break;
+                }
+
             }
             
             fenêtre << sdl2::flush; 
@@ -159,7 +200,41 @@ void Niveau1(sdl2::window& fenêtre){
                                 demande_evacuation = 0;
                                 std::cout << "annulation de l'évacuation" << std::endl;
                             }
-                        } 
+                        } else if (demande_retrait!=-1) {
+                            if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
+                                demande_retrait = -1;
+                            }
+
+                            if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
+                                switch (demande_retrait) {
+                                    case 0:
+                                        std::cout << "on retire de pompe C1" << std::endl;
+                                        break;
+                                    case 1:
+                                        std::cout << "on retire de pome C2" << std::endl;
+                                        break;
+                                    case 2:
+                                        std::cout << "on retire de condensateur" << std::endl;
+                                        break;
+                                    case 3:
+                                        std::cout << "on retire de générateur de vapeur" << std::endl;
+                                        break;
+                                    case 4:
+                                        std::cout << "on retire de injecteur borique" << std::endl;
+                                        break;
+                                    case 5:
+                                        std::cout << "on retire de C1" << std::endl;
+                                        break;
+                                    case 6:
+                                        std::cout << "on retire de C2" << std::endl;
+                                        break;
+                                    case 7:
+                                        std::cout << "on retire de pressuriseur" << std::endl;
+                                        break;
+                                }
+                                demande_retrait = -1;                              
+                            }                            
+                        }
                         else {
                             
                             //touche espace
@@ -286,29 +361,30 @@ void Niveau1(sdl2::window& fenêtre){
 
                                 if (key_ev.code() == sdl2::event_keyboard::down) {
                                     switch (selected_controle) {
-                                    case 1:
-                                        // on augmente le rendement de la pompe circuit primaire
-                                        C.get_Circuit_Primaire().decr_F_pompe();
-                                        break;
-                                    case 2:
-                                        // on baisse le rendement de la pompe circuit secondaire
-                                        C.get_Circuit_Secondaire().decr_F_pompe();                                    break;
-                                    case 3:
-                                        // on plonge les barres de graphite dans l'eau
-                                        C.get_Reacteur().decr_graphite();
-                                        break;
-                                    case 4:
-                                        // on baisse le taux de bore dans l'eau
-                                        C.get_Reacteur().decr_bore();
-                                        break;
-                                    case 5:
-                                        // on baisse la température du pressuriseur
-                                        C.get_Circuit_Primaire().decr_T_pressuriseur();
-                                        break;
-                                    case 6:
-                                        // on baisse le rendement de la pompe condenseur
-                                        std::cout << "on baisse rendement pompe condenseur" << std::endl;
-                                        break;
+                                        case 1:
+                                            // on augmente le rendement de la pompe circuit primaire
+                                            C.get_Circuit_Primaire().decr_F_pompe();
+                                            break;
+                                        case 2:
+                                            // on baisse le rendement de la pompe circuit secondaire
+                                            C.get_Circuit_Secondaire().decr_F_pompe();                                    
+                                            break;
+                                        case 3:
+                                            // on plonge les barres de graphite dans l'eau
+                                            C.get_Reacteur().decr_graphite();
+                                            break;
+                                        case 4:
+                                            // on baisse le taux de bore dans l'eau
+                                            C.get_Reacteur().decr_bore();
+                                            break;
+                                        case 5:
+                                            // on baisse la température du pressuriseur
+                                            C.get_Circuit_Primaire().decr_T_pressuriseur();
+                                            break;
+                                        case 6:
+                                            // on baisse le rendement de la pompe condenseur
+                                            std::cout << "on baisse rendement pompe condenseur" << std::endl;
+                                            break;
                                     }
                                 }
 
@@ -348,7 +424,7 @@ void Niveau1(sdl2::window& fenêtre){
                                 
 
                                 //touche B
-                                if ((keychar==98) && (iskey_down==0)) {
+                                if ((keychar==98) && (iskey_down==0) && (O_selected!=4)) {
                                     B_pressed = 1;
                                     B_memoire = affichage;
                                     affichage = 3;
@@ -363,28 +439,68 @@ void Niveau1(sdl2::window& fenêtre){
 
                                 if (O_selected==4) {
                                     if ((keychar==49) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers 1" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(0)==0) {
+                                            std::cout << "on envoie vers 1" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 0;
+                                        }
                                     }
                                     if ((keychar==50) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers 2" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(1)==0) {
+                                            std::cout << "on envoie vers 2" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 1;
+                                        }
                                     }
                                     if ((keychar==99) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers C" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(2)==0) {
+                                            std::cout << "on envoie vers C" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 2;
+                                        }
                                     }  
                                     if ((keychar==103) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers G" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(3)==0) {
+                                            std::cout << "on envoie vers G" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 3;
+                                        }
                                     } 
                                     if ((keychar==98) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers B" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(4)==0) {
+                                            std::cout << "on envoie vers B" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 4;
+                                        }
                                     }
                                     if ((keychar==105) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers I" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(5)==0) {
+                                            std::cout << "on envoie vers I" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 5;
+                                        }
                                     }
                                     if ((keychar==114) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers R" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(6)==0) {
+                                            std::cout << "on envoie vers R" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 6;
+                                        }
                                     }
                                     if ((keychar==112) && (iskey_down==0)) {
-                                        std::cout << "on envoie vers P" << std::endl;
+                                        if (C.get_Ouvriers().get_nb_ouvriersEnIntervention(7)==0) {
+                                            std::cout << "on envoie vers P" << std::endl;
+                                        }
+                                        else {
+                                            demande_retrait = 7;
+                                        }
                                     }
                                 }
 
