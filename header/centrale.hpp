@@ -283,6 +283,8 @@ public:
      * 5 = circuit primaire
      * 6 = circuit secondaire
      * 7 = pressuriseur
+     * 8 = echangeur de chaleur
+     * 9 = enceinte de confinement
      * 
      * état :
      * O = tout se passe bien pour cette organe
