@@ -62,7 +62,7 @@ void circuitPrimaire::maj_Pression() {
     Pression = std::max((T_pressuriseur_eff - 25.)/3.24 + (Temperature - 100.)/83.3 * (E_circuit + 0.1)*(E_echangeur + 0.1), 1.);
 }
 
-void circuitPrimaire::maj_Debit_eau(double E_cuve) {
+void circuitPrimaire::maj_Debit_eau_1(double E_cuve){
     Debit_eau = E_circuit * E_cuve * F_pompe * 90;
 }
 

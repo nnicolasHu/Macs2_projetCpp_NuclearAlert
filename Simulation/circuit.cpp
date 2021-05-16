@@ -90,6 +90,3 @@ bool ::circuit::reparation_pompe(){
     return (reparation_reussi);  // soit c'est réparé, soit non 
 }
 
-void circuit::maj_Debit_eau(){
-    std::cout << "méthode virtuel" << std::endl;
-}

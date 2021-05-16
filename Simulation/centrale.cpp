@@ -257,7 +257,7 @@ void centrale::maj_Circuit_Primaire(){
     double TGraphite_eff = ptrReacteur->get_TGraphite_eff();
     double T_vapeur = ptrCircuit_Secondaire->get_T_vapeur();
 
-    ptrCircuit_Primaire->maj_Debit_eau(E_cuve);
+    ptrCircuit_Primaire->maj_Debit_eau_1(E_cuve);
     ptrCircuit_Primaire->maj_Inertie(TBore_eff, TGraphite_eff, T_vapeur);
     ptrCircuit_Primaire->maj_Pression();
     ptrCircuit_Primaire->maj_Radioactivite(TBore_eff, MW);
@@ -278,7 +278,7 @@ void centrale::maj_Circuit_Secondaire(){
     ptrCircuit_Secondaire->degrad_all(E_chaleur,E_enceinte);
     ptrCircuit_Secondaire->maj_T_vapeur(E_chaleur,T1);
     ptrCircuit_Secondaire->maj_P_vapeur();
-    ptrCircuit_Secondaire->maj_Debit_eau();
+    ptrCircuit_Secondaire->maj_Debit_eau_2();
     ptrCircuit_Secondaire->maj_D_condenseur();
     ptrCircuit_Secondaire->maj_Inertie(T1);
     ptrCircuit_Secondaire->maj_Radioactivite(E_chaleur,R1);

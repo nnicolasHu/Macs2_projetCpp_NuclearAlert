@@ -175,7 +175,7 @@ void circuitSecondaire::maj_P_vapeur(){
     }
 }
 
-void circuitSecondaire::maj_Debit_eau(){
+void circuitSecondaire::maj_Debit_eau_2(){
     double Z = this->get_E_circuit() * (this->get_E_condenseur() + 0.1)*this->get_E_vapeur()*this->get_F_pompe()*0.85;
     if (this->get_T_vapeur() > 3 && Z < 3){
         this->Debit_eau = this->get_E_circuit()*(this->get_E_condenseur() + 0.1)*this->get_E_vapeur()*1.3;
