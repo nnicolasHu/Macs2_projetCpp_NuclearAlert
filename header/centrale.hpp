@@ -152,7 +152,7 @@ public:
      * confinement
      *
      */
-    void degr_E_enceinte();
+    std::string degr_E_enceinte();
 
     /**
      * @brief Maj de toutes les maj et degradations du reacteur
@@ -283,6 +283,8 @@ public:
      * 5 = circuit primaire
      * 6 = circuit secondaire
      * 7 = pressuriseur
+     * 8 = echangeur de chaleur
+     * 9 = enceinte de confinement 
      * 
      * état :
      * O = tout se passe bien pour cette organe

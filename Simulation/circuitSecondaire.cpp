@@ -70,14 +70,14 @@ std::string circuitSecondaire::degrad_E_circuit(){
     if (this->get_E_circuit() > 0) {
         if (this->get_T_vapeur() > 130 && this->get_E_circuit() < 0.5){ // cas T_vap > 130 && E_ec < 0.5
             double degrad = (RND(1.) <= 0.3) * RND(0.015);
-            messageErreur += "Risque important de degradation du circuit secondaire"s;
+            messageErreur += "Risque important de degradation du circuit secondaire \n"s;
             if (degrad > 0){
                 this->set_E_circuit(this->get_E_circuit() - degrad);
             }
         }
         if (this->get_T_vapeur() >= 310){ // cas T_vap >= 310 °C
             double degrad = (RND(1.) <= 0.25) * RND(0.04);
-            messageErreur += "Risque important de degradation du circuit secondaire a cause de la temperature"s;
+            messageErreur += "Risque important de degradation du circuit secondaire a cause de la temperature \n"s;
             if (this->get_E_circuit() - degrad > 0){
                 this->set_E_circuit(this->get_E_circuit() - degrad);
             }
@@ -86,7 +86,7 @@ std::string circuitSecondaire::degrad_E_circuit(){
             }
         }
         if (this->get_Delta_ES() < 11 && this->get_T_vapeur() >= 130){
-            messageErreur += "Risque possible de degradation du circuit secondaire du au refroidissement"s;
+            messageErreur += "Risque possible de degradation du circuit secondaire du au refroidissement \n"s;
         }
     }
     return messageErreur;
@@ -98,7 +98,7 @@ std::string circuitSecondaire::degrad_E_pompe(){
 
         if (this->get_E_circuit() < 0.6) {
             double degrad = (RND(1.) <= 0.3) * RND(0.02);
-            messageErreur = "Risque important de degradation de la pompe du circuit secondaire"s;
+            messageErreur = "Risque important de degradation de la pompe du circuit secondaire \n"s;
             if ( this->get_E_pompe() - degrad > 0 ){
                 this->set_E_pompe(this->get_E_pompe() - degrad);
             }
@@ -110,12 +110,22 @@ std::string circuitSecondaire::degrad_E_pompe(){
     return messageErreur;
 }
 
+std::string circuitSecondaire::degrad_E_condenseur(){
+    std::string messageErreur = "";
+    if (this->get_Delta_ES() > 19){
+        messageErreur = "Dégradation potentielle du condenseur à cause de la différence de température \n"s;
+        double degrad = (RND(1.0) <= 0.4) * RND(0.03);
+        this->E_condenseur -= degrad;
+    }
+    return messageErreur;
+}
+
 std::string circuitSecondaire::degrad_E_vapeur(double E_chaleur, double E_enceinte){
     std::string messageErreur = "";
     if (this->get_E_vapeur() > 0 ){
         if (this->get_E_circuit() < 0.4){ // cas E_c2 < 0.6
             double degrad = (RND(1.0) <= 0.3) * RND(0.02);
-            messageErreur += "Risque important de degradation du générateur de vapeur"s;
+            messageErreur += "Risque important de degradation du générateur de vapeur \n"s;
             if (this->E_vapeur - degrad > 0){
                 this->E_vapeur = this->get_E_vapeur() - degrad; 
             }
@@ -125,7 +135,7 @@ std::string circuitSecondaire::degrad_E_vapeur(double E_chaleur, double E_encein
         }
         if (E_chaleur < 0.4){
             double degrad = (RND(1.0) <= 0.25) * RND(0.03);
-            messageErreur += "Risque important de dégradation de l’echangeur de chaleur"s;
+            messageErreur += "Risque important de dégradation de l’echangeur de chaleur \n"s;
             if (this->E_vapeur - degrad > 0){
                 this->E_vapeur = this->get_E_vapeur() - degrad; 
             }
@@ -144,7 +154,7 @@ std::string circuitSecondaire::degrad_E_vapeur(double E_chaleur, double E_encein
 std::string circuitSecondaire::degrad_E_chaleur(double E_chaleur){
     std::string messageErreur = "";
     if (E_chaleur < 0.7){
-        messageErreur =  "Probleme d’echange entre le circuit primaire et le circuit secondaire"s;
+        messageErreur =  "Probleme d’echange entre le circuit primaire et le circuit secondaire \n"s;
     }
     return messageErreur;
 }

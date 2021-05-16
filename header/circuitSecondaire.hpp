@@ -111,6 +111,12 @@ public:
     std::string degrad_E_pompe();
 
     /**
+     * @brief met a jour les dégradations de l'état du condenseur
+     * @return message d'erreur dû à la de l'état du condenseur
+     */
+    std::string degrad_E_condenseur();
+
+    /**
      * @brief met a jour TOUTES les dégradations du circuit secondaire
      * 
      * @param[in] E_chaleur l'état de l'échangeur de vapeur (attribut de circuitPrimaire)
