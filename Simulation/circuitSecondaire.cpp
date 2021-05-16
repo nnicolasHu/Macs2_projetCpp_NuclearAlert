@@ -9,7 +9,7 @@ circuitSecondaire::circuitSecondaire()
      E_vapeur{1.0},
      E_condenseur{1.0},
      F_condenseur{0.0},
-     T_vapeur{25.0},
+     T_vapeur{99.0},
      P_vapeur{1.0},
      D_condenseur{0.0},
      Delta_ES{0.0}
@@ -162,7 +162,7 @@ std::string circuitSecondaire::degrad_E_chaleur(double E_chaleur){
 void circuitSecondaire::maj_T_vapeur(double E_ec,double T1){
     double It2 = this->get_Inertie() ;
     double new_T = std::max(99.0 , E_ec*(T1/1.51) + 26 + It2*(It2 > 3) );
-    this->Temperature = new_T;
+    this->T_vapeur = new_T;
 }
 
 void circuitSecondaire::maj_P_vapeur(){

@@ -293,7 +293,7 @@ void centrale::maj_Centrale(){
     maj_R_enceinte();
     maj_E_centrale();
     maj_MW();
-    degr_E_enceinte();
+    //degr_E_enceinte();
 }
 
 double centrale::get_Evac() const{
