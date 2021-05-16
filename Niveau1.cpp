@@ -185,7 +185,7 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
                         else if (demande_ArretUrgence) {
                             if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
                                 //tentative d'arrêt d'urgence
-                                C.arret_urgence();
+                                C.get_Reacteur().arret_urgence();
                                 demande_ArretUrgence = 0;
                             }
                             if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
