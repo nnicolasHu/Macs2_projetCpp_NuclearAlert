@@ -20,22 +20,6 @@ reacteur::reacteur(){
 
 /** Méthodes **/
 
-/*void reacteur::set_bore(double valeur_demandee){
-    if ((valeur_demandee <= 0.5) && (valeur_demandee >= 0.0)){
-       Tx_bore = valeur_demandee; 
-       if (TBore_eff < Tx_bore){
-            TBore_eff += 0.01;
-        }
-        if (TBore_eff > Tx_bore){
-            TBore_eff -= 0.01;
-        }
-    }
-    else {
-        std::cout << " Erreur sur le taux de bore demandé ! " <<
-        std::endl; 
-    }
-}*/
-
 void reacteur::incr_bore() {
     if (Tx_bore<0.5 ){
         Tx_bore += 0.01;
@@ -117,30 +101,6 @@ double reacteur::get_E_canaux() const{
 
 double reacteur::get_R_piscine() const{
     return R_piscine;
-}
-
-void reacteur::set_E_cuve(double val){
-    E_cuve = val;
-}
-
-void reacteur::set_E_piscine(double val){
-    E_piscine = val;
-}
-
-void reacteur::set_R_piscine(double val){
-    R_piscine = val;
-}
-
-void reacteur::set_E_barre(double val){
-    E_barre = val;
-}
-
-void reacteur::set_E_canaux(double val){
-    E_canaux = val;
-}
-
-void reacteur::set_E_bore(double val){
-    E_bore = val;
 }
 
 void reacteur::maj_R_piscine(double R1){
