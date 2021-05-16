@@ -78,47 +78,47 @@ void message_confirmation(sdl2::window& fenêtre, int choix){
     switch (choix) {
     case 0:
         titre.at(200,250);
-        fenêtre << titre << sdl2::rectangle({180, 240}, {900, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({180, 240}, {900, 130}, {0, 0, 0, 0})<< sdl2::rectangle({180, 240}, {900, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 1:
         titre.at(200,250);
-        fenêtre << titre << sdl2::rectangle({180, 240}, {960, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({180, 240}, {960, 130}, {0, 0, 0, 0}) << sdl2::rectangle({180, 240}, {960, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 2:
         titre.at(310,250);
-        fenêtre << titre << sdl2::rectangle({260, 240}, {780, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({260, 240}, {780, 130}, {0, 0, 0, 0}) << sdl2::rectangle({260, 240}, {780, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 3:
         titre.at(250,250);
-        fenêtre << titre << sdl2::rectangle({232, 240}, {840, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({232, 240}, {840, 130}, {0, 0, 0, 0})<< sdl2::rectangle({232, 240}, {840, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 4:
         titre.at(220,250);
-        fenêtre << titre << sdl2::rectangle({200, 240}, {900, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({200, 240}, {900, 130}, {0, 0, 0, 0})<< sdl2::rectangle({200, 240}, {900, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 5:
         titre.at(280,250);
-        fenêtre << titre << sdl2::rectangle({260, 240}, {770, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({260, 240}, {770, 130}, {0, 0, 0, 0}) << sdl2::rectangle({260, 240}, {770, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 6:
         titre.at(280,250);
-        fenêtre << titre << sdl2::rectangle({260, 240}, {800, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({260, 240}, {800, 130}, {0, 0, 0, 0}) << sdl2::rectangle({260, 240}, {800, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 7:
         titre.at(310,250);
-        fenêtre << titre << sdl2::rectangle({260, 240}, {780, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({260, 240}, {780, 130}, {0, 0, 0, 0}) << sdl2::rectangle({260, 240}, {780, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 8:
         titre.at(280,250);
-        fenêtre << titre << sdl2::rectangle({260, 200}, {780, 170}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({260, 200}, {780, 170}, {0, 0, 0, 0}) << sdl2::rectangle({260, 200}, {780, 170}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 9:
         titre.at(260,250);
-        fenêtre << titre << sdl2::rectangle({240, 240}, {850, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({240, 240}, {850, 130}, {0, 0, 0, 0})<< sdl2::rectangle({240, 240}, {850, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 10:
         titre.at(550,250);
-        fenêtre << titre << sdl2::rectangle({520, 240}, {260, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
+        fenêtre << titre << sdl2::rectangle({520, 240}, {260, 130}, {0, 0, 0, 0})<< sdl2::rectangle({520, 240}, {260, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     }
     
