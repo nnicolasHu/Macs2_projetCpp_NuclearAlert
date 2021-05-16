@@ -33,11 +33,11 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){
     pourcentage.at(340, 130);
     fenêtre << rendement << pourcentage; //affichage 
 
-    sdl2::texte temperature_press_C1("Température préssuriseur : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte temperature_press_C1("Température pressuriseur : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     temperature_press_C1.at(20, 155);
-    sdl2::texte degre_eff_C1(arrondi(C.get_Circuit_Primaire().get_T_pressuriseur_eff(), 0) + " °C"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte degre_eff_C1(arrondi(C.get_Circuit_Primaire().get_T_pressuriseur(), 0) + " °C"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     degre_eff_C1.at(250, 155);
-    sdl2::texte degre_press_C1(arrondi(C.get_Circuit_Primaire().get_T_pressuriseur(), 0) + " °C"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte degre_press_C1(arrondi(C.get_Circuit_Primaire().get_T_pressuriseur_eff(), 0) + " °C"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     degre_press_C1.at(340, 155);
     fenêtre << temperature_press_C1 << degre_eff_C1 << degre_press_C1; //affichage 
 
@@ -192,9 +192,9 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){
     sdl2::texte TxBorePiscine("Taux Bore"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     TxBorePiscine.at(570, 340);
 
-    sdl2::texte val_tx_bore_react_eff("valeur effective : "s + arrondi((C.get_Reacteur().get_TBore_eff())*100, 0) + " %"s,fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte val_tx_bore_react_eff("valeur entrée : "s + arrondi((C.get_Reacteur().get_Tx_bore())*100, 0) + " %"s,fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     val_tx_bore_react_eff.at(430, 370);
-    sdl2::texte val_tx_bore_react("valeur entrée : "s + arrondi((C.get_Reacteur().get_Tx_bore())*100, 0) + " %"s,fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte val_tx_bore_react("valeur effective : "s + arrondi((C.get_Reacteur().get_TBore_eff())*100, 0) + " %"s,fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     val_tx_bore_react.at(650, 370);
     fenêtre << TxBorePiscine << val_tx_bore_react_eff << val_tx_bore_react;
 
