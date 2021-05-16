@@ -178,9 +178,9 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C){
 
     sdl2::texte barre_graphite("Taux de graphite émmergé"s, fonte_titre, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     barre_graphite.at(490, 260);
-    sdl2::texte val_barre_react_eff("valeur effective : "s + arrondi((C.get_Reacteur().get_TGraphite_eff())*100, 0) + " %"s,fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte val_barre_react_eff("valeur entrée : "s + arrondi((C.get_Reacteur().get_Tx_graphite())*100, 0) + " %"s,fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     val_barre_react_eff.at(430, 290);
-    sdl2::texte val_barre_reacteur("valeur entrée : "s + arrondi((C.get_Reacteur().get_Tx_graphite())*100, 0) + " %"s,fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte val_barre_reacteur("valeur effective : "s + arrondi((C.get_Reacteur().get_TGraphite_eff())*100, 0) + " %"s,fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     val_barre_reacteur.at(650, 290);
     fenêtre << barre_graphite << val_barre_react_eff << val_barre_reacteur;
 
