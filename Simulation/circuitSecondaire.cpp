@@ -278,4 +278,7 @@ void circuitSecondaire::decr_F_condenseur(){
     if(this->get_F_condenseur() > 0.02 ){ // forcément supérieur à 0
         this->F_condenseur += -0.05;
     }
+    else if ( (this->get_F_condenseur() <= 0.02)  && (this->get_F_condenseur() > 0) ){
+        this->F_condenseur = 0;
+    }
 }
