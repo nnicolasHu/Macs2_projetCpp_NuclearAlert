@@ -1,7 +1,7 @@
 #include"niveaux.hpp"
 #include<iostream>
 
-void BilanJeu(sdl2::window& fenetre, centrale&C, int nb_point){
+void BilanJeu(sdl2::window& fenetre, centrale&C){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 20);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 24);
 
@@ -10,9 +10,6 @@ void BilanJeu(sdl2::window& fenetre, centrale&C, int nb_point){
 
     sdl2::texte Etat_centrale("Etat de la centrale", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
     Etat_centrale.at(100, 100);
-
-    sdl2::texte nbpoint("Performance du dispatching", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
-    nbpoint.at(100, 150);
 
     //// Etat de la centrale ////
     double central_ok = C.get_E_centrale();
@@ -35,23 +32,6 @@ void BilanJeu(sdl2::window& fenetre, centrale&C, int nb_point){
         sdl2::texte Centrale_bon("La centrale est en bon état", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
         Centrale_bon.at(800, 100);
         fenetre << Centrale_bon;
-    }
-
-    //// Nombre de points
-    if(nb_point>8){
-        sdl2::texte perf("Performances correctes, en route pour une augmentation", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
-        perf.at(700, 150);
-        fenetre << perf;
-    }
-    else if((nb_point>5) & (nb_point<=8)){
-        sdl2::texte perf("Performances moyennes, tu peux faire mieux ...", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
-        perf.at(800, 150);
-        fenetre << perf;
-    }
-    else{
-        sdl2::texte perf("Performances décevantes, le boss veut te voir !", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
-        perf.at(800, 150);
-        fenetre << perf;
     }
 
     //Production électrique
@@ -85,9 +65,23 @@ void BilanJeu(sdl2::window& fenetre, centrale&C, int nb_point){
         fenetre << conso;
     }
 
+    double moy_prim = C.get_Circuit_Primaire().get_E_pressuriseur()+C.get_Circuit_Primaire().get_E_resistance()+C.get_Circuit_Primaire().get_E_echangeur()+C.get_Circuit_Primaire().get_E_pompe();
+    moy_prim/=4;
+    double moy_sec = C.get_Circuit_Secondaire().get_E_pompe()+C.get_Circuit_Secondaire().get_E_condenseur()+C.get_Circuit_Secondaire().get_E_vapeur();
+    moy_sec/=3;
+    sdl2::texte moy_circprim(std::to_string(moy_prim), fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
+    moy_circprim.at(800, 300);
+    sdl2::texte moy_circsec(std::to_string(moy_sec), fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
+    moy_circsec.at(800, 400);
+    sdl2::texte texte_prim("Etat moyen du circuit primaire : ", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte texte_sec("Etat moyen du circuit secondaire : ", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
+    texte_prim.at(100, 300);
+    texte_sec.at(100, 400);
 
+    sdl2::texte remerciements("Merci d'avoir joué ;) Appuyez sur 'Escape' pour quitter le jeu", fonte_titre, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
+    remerciements.at(300, 550);
+    fenetre << remerciements << Bilan << texte_prim << texte_sec<< Etat_centrale << titre_MW << moy_circprim << moy_circsec<< sdl2::flush;
     sdl2::event_queue queue;
-    fenetre << Bilan << Etat_centrale << nbpoint << titre_MW<< sdl2::flush;
     auto events = queue.pull_events();
 
     SDL_Delay(3000);
