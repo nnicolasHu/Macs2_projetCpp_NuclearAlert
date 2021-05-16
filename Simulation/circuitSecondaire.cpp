@@ -144,7 +144,7 @@ std::string circuitSecondaire::degrad_E_vapeur(double E_chaleur, double E_encein
 std::string circuitSecondaire::degrad_E_chaleur(double E_chaleur){
     std::string messageErreur = "";
     if (E_chaleur < 0.7){
-        messageErreur =  "Probleme d’echange entre le circuit primaire et le circuit secondaire";
+        messageErreur =  "Probleme d’echange entre le circuit primaire et le circuit secondaire"s;
     }
     return messageErreur;
 }
