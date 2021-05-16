@@ -1,7 +1,7 @@
 #include"niveaux.hpp"
 #include<iostream>
 
-void BilanJeu(sdl2::window& fenetre, centrale&C){
+void BilanJeu(sdl2::window& fenetre, centrale&C, double prod){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 20);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 24);
 
@@ -35,7 +35,6 @@ void BilanJeu(sdl2::window& fenetre, centrale&C){
     }
 
     //Production électrique
-    double prod = C.get_MW();
     sdl2::texte titre_MW("Production électrique", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
     titre_MW.at(100, 200);
 
