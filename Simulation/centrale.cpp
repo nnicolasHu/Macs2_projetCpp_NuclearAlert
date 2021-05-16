@@ -436,6 +436,55 @@ void centrale::maj_Reparation() {
     }
 }
 
+void centrale::maj_General(){
+    maj_Centrale();
+    maj_Circuit_Primaire();
+    maj_Circuit_Secondaire();
+    maj_Reacteur();
+    maj_Reparation();
+}
+
+std::string centrale::degr_General(){
+
+    std::string message;
+
+    // Variables nécessaires aux dégradations du réacteur
+    double T1 = ptrCircuit_Primaire->get_Temperature();
+    double E_C1 = ptrCircuit_Primaire->get_E_circuit();
+    bool urg = arret_urgence();
+
+    // Variables nécessaires aux dégradations du circuit Secondaire
+    double E_chaleur = ptrCircuit_Primaire->get_E_echangeur();
+
+    // Dégradations centrale
+    message += degr_E_enceinte();
+
+    // Dégradations reacteur
+    message += ptrReacteur->degr_E_barre(T1, urg);
+    message += ptrReacteur->degr_E_bore(T1, E_C1);
+    message += ptrReacteur->degr_E_canaux(T1, urg);
+    message += ptrReacteur->degr_E_cuve(T1, E_C1, E_enceinte, urg);
+    message += ptrReacteur->degr_E_piscine(T1, E_C1, E_enceinte);
+
+    // Dégradations circuit primaire
+    message += ptrCircuit_Primaire->degr_E_circuit(E_enceinte);
+    message += ptrCircuit_Primaire->degr_E_pompe();
+    message += ptrCircuit_Primaire->degr_E_pressuriseur(E_enceinte);
+    message += ptrCircuit_Primaire->degr_E_resistance(E_enceinte);
+    message += ptrCircuit_Primaire->degr_E_echangeur();
+
+    // Dégradations circuit primaire
+    message += ptrCircuit_Secondaire->degrad_E_vapeur(E_chaleur, E_enceinte);
+    message += ptrCircuit_Secondaire->degrad_E_circuit();
+    message += ptrCircuit_Secondaire->degrad_E_chaleur(E_chaleur);
+    message += ptrCircuit_Secondaire->degrad_E_condenseur();
+    message += ptrCircuit_Secondaire->degrad_E_pompe();
+
+    return(message);
+}
+
+
+
 std::array<bool,10> centrale::get_clignotements(){
     std::array<bool,10> etat = {0};
     
