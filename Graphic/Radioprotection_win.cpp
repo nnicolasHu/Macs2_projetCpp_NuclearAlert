@@ -96,35 +96,35 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     int E_canaux = (C.get_Reacteur().get_E_canaux())*100;
     sdl2::texte canaux("Etat canaux : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     canaux.at(45, 340);
-    sdl2::texte af_canaux(to_string(E_canaux),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_canaux(to_string(E_canaux)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_canaux.at(360, 340);
 
     //Etat graphite
     int E_graphite = (C.get_Reacteur().get_E_barre())*100;
     sdl2::texte graph("Etat barre graphite : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     graph.at(45, 375);
-    sdl2::texte af_graph(to_string(E_graphite),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_graph(to_string(E_graphite)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_graph.at(360, 375);
 
     //Etat piscine
     int E_piscine = (C.get_Reacteur().get_E_piscine())*100;
     sdl2::texte e_piscine("Etat piscine : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     e_piscine.at(45, 410);
-    sdl2::texte af_pisc(to_string(E_piscine),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_pisc(to_string(E_piscine)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_pisc.at(360, 410);
 
     //Etat cuve
      int E_cuve = (C.get_Reacteur().get_E_cuve())*100;
     sdl2::texte cuve("Etat cuve : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     cuve.at(45, 445);
-    sdl2::texte af_cuve(to_string(E_cuve),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_cuve(to_string(E_cuve)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_cuve.at(360, 445);
 
     //Etat injecteur borique 
     int E_bore = (C.get_Reacteur().get_E_bore())*100;
     sdl2::texte bor("Etat injecteur borique : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     bor.at(45, 480);
-    sdl2::texte af_bore(to_string(E_bore),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_bore(to_string(E_bore)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_bore.at(360, 480);
 
     sdl2::rectangle Reacteur({30,285}, {375,220}, {0xFF,0xFF,0xFF,0xFF}, false);
@@ -137,28 +137,28 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     int E_cp = (C.get_Circuit_Primaire().get_E_circuit())*100;
     sdl2::texte e_cp("Etat circuit primaire : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     e_cp.at(430, 340);
-    sdl2::texte af_ecp(to_string(E_cp),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_ecp(to_string(E_cp)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_ecp.at(730, 340);
 
     //Etat pompe
     int E_pmp = (C.get_Circuit_Primaire().get_E_pompe())*100;
     sdl2::texte pompe("Etat pompe : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     pompe.at(430, 375);
-    sdl2::texte af_epmp(to_string(E_pmp),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_epmp(to_string(E_pmp)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_epmp.at(730, 375);
 
     //Etat pressuriseur
     int E_press = (C.get_Circuit_Primaire().get_E_pressuriseur())*100;
     sdl2::texte pres("Etat pressuriseur : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     pres.at(430, 410);
-    sdl2::texte af_epress(to_string(E_press),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_epress(to_string(E_press)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_epress.at(730, 410);
 
     //Etat res
     int E_res = (C.get_Circuit_Primaire().get_E_resistance())*100;
     sdl2::texte res("Etat resistance press. : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     res.at(430, 445);
-    sdl2::texte af_eres(to_string(E_res),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_eres(to_string(E_res)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_eres.at(730, 445);
 
     sdl2::rectangle CircuitP({415,285}, {365,220}, {0xFF,0xFF,0xFF,0xFF}, false);
@@ -171,28 +171,28 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     int E_cs = (C.get_Circuit_Secondaire().get_E_circuit())*100;
     sdl2::texte e_cs("Etat circuit secondaire : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     e_cs.at(805, 280);
-    sdl2::texte af_ecs(to_string(E_cs),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_ecs(to_string(E_cs)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_ecs.at(1170, 280);
 
     //Etat pompe
     int E_pmp2 = (C.get_Circuit_Secondaire().get_E_pompe())*100;
     sdl2::texte pompe2("Etat pompe : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     pompe2.at(805, 315);
-    sdl2::texte af_pmp2(to_string(E_pmp2),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_pmp2(to_string(E_pmp2)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_pmp2.at(1170, 315);
 
     //Etat pressuriseur
     int E_gen = (C.get_Circuit_Secondaire().get_E_vapeur())*100;
     sdl2::texte gen("Etat générateur de vapeur : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     gen.at(805, 350);
-    sdl2::texte af_egen(to_string(E_gen),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_egen(to_string(E_gen)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_egen.at(1170, 350);
 
     //Etat ech
     int E_ech = (C.get_Circuit_Primaire().get_E_echangeur())*100;
     sdl2::texte ech("Etat échangeur de chaleur : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     ech.at(805, 385);
-    sdl2::texte af_ech(to_string(E_ech),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_ech(to_string(E_ech)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_ech.at(1170, 385);
 
     sdl2::rectangle CircuitS({790,225}, {430,205}, {0xFF,0xFF,0xFF,0xFF}, false);
@@ -205,7 +205,7 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     int E_enceinte = (C.get_E_enceinte())*100;
     sdl2::texte econf("Etat enceinte confinement : "s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     econf.at(45, 575);
-    sdl2::texte af_eenc(to_string(E_enceinte),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_eenc(to_string(E_enceinte)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_eenc.at(360, 575);
 
     sdl2::rectangle Conf({30,515}, {375,120}, {0xFF,0xFF,0xFF,0xFF}, false);
@@ -218,7 +218,7 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     int E_cond = (C.get_Circuit_Secondaire().get_E_condenseur())*100;
     sdl2::texte econd("Etat condensateur :"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     econd.at(430, 575);
-    sdl2::texte af_econd(to_string(E_cond),fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_econd(to_string(E_cond)+"%",fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_econd.at(730, 575);
     
 
@@ -232,7 +232,7 @@ void Radioprotection_win(sdl2::window& fenêtre,centrale& C){
     int E_centrale = (C.get_E_centrale())*100;
     sdl2::texte e_centrale("Etat général centrale :"s, fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     e_centrale.at(805, 500);
-    sdl2::texte af_ecentrale(to_string(E_centrale), fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
+    sdl2::texte af_ecentrale(to_string(E_centrale)+"%", fonte_texte, fenêtre, {0xAD, 0xFF, 0x2F, 0});
     af_ecentrale.at(1170, 500);
     //Niveau d'alerte
     string NA = "Nul";
