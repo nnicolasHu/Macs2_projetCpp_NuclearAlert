@@ -491,7 +491,9 @@ bool centrale::arret_urgence(){
     double E_barre = ptrReacteur->get_E_barre();
 
     if(RND(1.)<=0.7*E_cuve*E_canaux*E_barre+0.15){
-        ptrReacteur->decr_graphite();
+        while(ptrReacteur->get_TGraphite_eff()>0){
+            ptrReacteur->decr_graphite();
+        }
     }
 
     else{
