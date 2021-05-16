@@ -9,20 +9,20 @@ void Commande1(sdl2::window& fenêtre){
     sdl2::texte titre("COMMANDES"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     titre.at(550, 20);
     
-    sdl2::texte command1("1 : Rendement de la pompe du circuit primaire"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte command1("1 : Modifie le rendement de la pompe du circuit primaire : utiliser les flèches du clavier"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     command1.at(100, 90);
     
-    sdl2::texte command2("2 : Rendement de la pompe du circuit secondaire"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte command2("2 : Modifie le rendement de la pompe du circuit secondaire : utiliser les flèches du clavier"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     command2.at(100, 150);
     
-    sdl2::texte commandB("B : Action sur les barres de contrôle (100% = totalement levées, 0%=totalement baissées)"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte commandB("B : Modife l'action sur les barres de contrôle (100% = totalement levées, 0%=totalement baissées) : use arrows"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandB.at(100, 210);
     
-    sdl2::texte commandT("T : Action sur le taux d'acide borique"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte commandT("T : Modifie l'action sur le taux d'acide borique : utiliser les flèches du clavier"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandT.at(100, 270);
-    sdl2::texte commandP("P : Temperature pressuriseur"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte commandP("P : Modifie la temperature pressuriseur : utiliser les flèches du clavier"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandP.at(100, 330);
-    sdl2::texte commandR("R : Rendement pompe condenseur"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
+    sdl2::texte commandR("R : Modifie le rendement pompe condenseur : utiliser les flèches du clavier"s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandR.at(100, 390);
     sdl2::texte commandU1("U : Autorise en cas d'urgence l'enfoncement rapide des barres dans le réacteur."s, fonte_texte, fenêtre, {0xFF, 0xFF, 0xFF, 0xFF});
     commandU1.at(100, 450);
