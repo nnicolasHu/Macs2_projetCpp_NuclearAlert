@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centrale Nucléaire MACS2:  Fichier source de circuitSecondaire.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Centrale Nucléaire MACS2
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">circuitSecondaire.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CIRCUIT_SECONDAIRE_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CIRCUIT_SECONDAIRE_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;circuit.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcircuit_secondaire.html">circuitSecondaire</a> : <span class="keyword">public</span> <a class="code" href="classcircuit.html">circuit</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#ade12c55f7f1677f2b22fce3f92b26f54">   27</a></span>&#160;    <a class="code" href="classcircuit_secondaire.html#ade12c55f7f1677f2b22fce3f92b26f54">circuitSecondaire</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#ae41f4ec0042a08ff3ab95fc4006fb3ce">   33</a></span>&#160;    <a class="code" href="classcircuit_secondaire.html#ae41f4ec0042a08ff3ab95fc4006fb3ce">~circuitSecondaire</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a8619b5e7e694c2a7eeabcb7c7c98b203">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#a8619b5e7e694c2a7eeabcb7c7c98b203">set_F_condenseur</a>(<span class="keywordtype">double</span> valeur_demandee);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> set_E_vapeur(<span class="keywordtype">double</span> valeur_demandee);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a5c176602a4ab5b7b66c023af1173f406">   50</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit_secondaire.html#a5c176602a4ab5b7b66c023af1173f406">get_F_condenseur</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#aede277fe8ed894b32f89e1c5d09e0e00">   57</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit_secondaire.html#aede277fe8ed894b32f89e1c5d09e0e00">get_E_vapeur</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a99072b312c97d3efa7ff05642042509e">   64</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit_secondaire.html#a99072b312c97d3efa7ff05642042509e">get_E_condenseur</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a9cadce4d7264d060fabba1e433026b61">   71</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit_secondaire.html#a9cadce4d7264d060fabba1e433026b61">get_T_vapeur</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#adf62bddedccb6fa6b68085e1946afd1e">   78</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit_secondaire.html#adf62bddedccb6fa6b68085e1946afd1e">get_P_vapeur</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#af1e0427772d6efac76fb0b92d7eed0e8">   85</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit_secondaire.html#af1e0427772d6efac76fb0b92d7eed0e8">get_D_condenseur</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a047c87bb96958368c896785c918ce287">   92</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit_secondaire.html#a047c87bb96958368c896785c918ce287">get_Delta_ES</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a849b5f7aab05daf63d131d6bc620e135">   99</a></span>&#160;    std::string <a class="code" href="classcircuit_secondaire.html#a849b5f7aab05daf63d131d6bc620e135">degrad_E_vapeur</a>(<span class="keywordtype">double</span> E_chaleur, <span class="keywordtype">double</span> E_enceinte);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a2ae8db24e12b65c0af00f511ed48c0ac">  105</a></span>&#160;    std::string <a class="code" href="classcircuit_secondaire.html#a2ae8db24e12b65c0af00f511ed48c0ac">degrad_E_circuit</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a9b88121edc0ad1c99d33af9f0850ca84">  111</a></span>&#160;    std::string <a class="code" href="classcircuit_secondaire.html#a9b88121edc0ad1c99d33af9f0850ca84">degrad_E_pompe</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#ab76b9d898a620ab04c2589ea0d640938">  117</a></span>&#160;    std::string <a class="code" href="classcircuit_secondaire.html#ab76b9d898a620ab04c2589ea0d640938">degrad_E_condenseur</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a59acf8685804eefe937f01e60dd7ade2">  125</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#a59acf8685804eefe937f01e60dd7ade2">degrad_all</a>(<span class="keywordtype">double</span> E_chaleur, <span class="keywordtype">double</span> E_enceinte);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#ad9bec1042b979948be69a4a6e88c9cf7">  132</a></span>&#160;    std::string <a class="code" href="classcircuit_secondaire.html#ad9bec1042b979948be69a4a6e88c9cf7">degrad_E_chaleur</a>(<span class="keywordtype">double</span> E_chaleur);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a7c8dbd30a80f887e7f6235b4cd27d691">  139</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#a7c8dbd30a80f887e7f6235b4cd27d691">maj_T_vapeur</a>(<span class="keywordtype">double</span> E_ec,<span class="keywordtype">double</span> T1);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#accb4147f5b08a8b19f48859fbc94990a">  144</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#accb4147f5b08a8b19f48859fbc94990a">maj_P_vapeur</a>();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#aaf4ed8019f488ce25ab518201dfa15f8">  149</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#aaf4ed8019f488ce25ab518201dfa15f8">maj_Debit_eau_2</a>();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#ad77e51353a171cb23c0953706b9e4ffe">  154</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#ad77e51353a171cb23c0953706b9e4ffe">maj_D_condenseur</a>();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a4d31a97fd97d3e1f7f284a9333affec3">  159</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#a4d31a97fd97d3e1f7f284a9333affec3">maj_Delta_ES</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#af0bab0696227d7e4d13aaf4fe3a409ed">  165</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#af0bab0696227d7e4d13aaf4fe3a409ed">maj_Inertie</a>(<span class="keywordtype">double</span> T_circuit_primaire);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a5c0481f94fb820f896032a3943d2f60d">  172</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#a5c0481f94fb820f896032a3943d2f60d">maj_Radioactivite</a>(<span class="keywordtype">double</span> E_ec, <span class="keywordtype">double</span> Radioactivite_circuit_primaire);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a8378916413e2785aa0ff5f60e141f6ec">  179</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcircuit_secondaire.html#a8378916413e2785aa0ff5f60e141f6ec">reparation_condenseur</a>();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#ab77a3dad21754c62be1c08a16e86f2e3">  186</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcircuit_secondaire.html#ab77a3dad21754c62be1c08a16e86f2e3">reparation_vapeur</a>(<span class="keywordtype">int</span> nbOuvrier);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#af01ed8111e93502e78aca3a24a643679">  193</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcircuit_secondaire.html#af01ed8111e93502e78aca3a24a643679">reparation_circuitSecondaire</a>();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a6dd90b125fe97532ec5ebb6ba5f8298b">  199</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#a6dd90b125fe97532ec5ebb6ba5f8298b">incr_F_condenseur</a>();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classcircuit_secondaire.html#a113f30e2a9afbf7d783285c28485cb57">  205</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classcircuit_secondaire.html#a113f30e2a9afbf7d783285c28485cb57">decr_F_condenseur</a>();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">      les attributs suivants sont hérités de circuit :</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">      - E_circuit | etat circuit</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">      - E_pompe | etat pompe</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">      - F_pompe | regime pompe </span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">      - Debit_eau </span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">      - Inertiertie | Inertie chaleur de l&#39;eau du circuit</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">      - Radioactivite | radioactivité du circuit secondaire</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;     <span class="keywordtype">double</span> E_vapeur;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;     <span class="keywordtype">double</span> E_condenseur;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;     <span class="keywordtype">double</span> F_condenseur;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;     <span class="keywordtype">double</span> T_vapeur;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;     <span class="keywordtype">double</span> P_vapeur;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;     <span class="keywordtype">double</span> D_condenseur;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;     <span class="keywordtype">double</span> Delta_ES;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;};</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclasscircuit_html"><div class="ttname"><a href="classcircuit.html">circuit</a></div><div class="ttdoc">Cette classe décrit le fonctionnement d'un circuit.</div><div class="ttdef"><b>Definition:</b> circuit.hpp:15</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html"><div class="ttname"><a href="classcircuit_secondaire.html">circuitSecondaire</a></div><div class="ttdoc">Cette classe décrit le circuit secondaire.</div><div class="ttdef"><b>Definition:</b> circuitSecondaire.hpp:17</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a047c87bb96958368c896785c918ce287"><div class="ttname"><a href="classcircuit_secondaire.html#a047c87bb96958368c896785c918ce287">circuitSecondaire::get_Delta_ES</a></div><div class="ttdeci">double get_Delta_ES() const</div><div class="ttdoc">Permet d'obtenir la différence de chaleur entre l'entrée et la sortie du condensateur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a113f30e2a9afbf7d783285c28485cb57"><div class="ttname"><a href="classcircuit_secondaire.html#a113f30e2a9afbf7d783285c28485cb57">circuitSecondaire::decr_F_condenseur</a></div><div class="ttdeci">void decr_F_condenseur()</div><div class="ttdoc">Décrémente le régime pompe condenseur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a2ae8db24e12b65c0af00f511ed48c0ac"><div class="ttname"><a href="classcircuit_secondaire.html#a2ae8db24e12b65c0af00f511ed48c0ac">circuitSecondaire::degrad_E_circuit</a></div><div class="ttdeci">std::string degrad_E_circuit()</div><div class="ttdoc">met a jour les dégradations de l'état du circuit secondaire</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a4d31a97fd97d3e1f7f284a9333affec3"><div class="ttname"><a href="classcircuit_secondaire.html#a4d31a97fd97d3e1f7f284a9333affec3">circuitSecondaire::maj_Delta_ES</a></div><div class="ttdeci">void maj_Delta_ES()</div><div class="ttdoc">met a jour la différence de chaleur entre l'entrée et la sortie du condensateur. Attention on met à j...</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a59acf8685804eefe937f01e60dd7ade2"><div class="ttname"><a href="classcircuit_secondaire.html#a59acf8685804eefe937f01e60dd7ade2">circuitSecondaire::degrad_all</a></div><div class="ttdeci">void degrad_all(double E_chaleur, double E_enceinte)</div><div class="ttdoc">met a jour TOUTES les dégradations du circuit secondaire</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a5c0481f94fb820f896032a3943d2f60d"><div class="ttname"><a href="classcircuit_secondaire.html#a5c0481f94fb820f896032a3943d2f60d">circuitSecondaire::maj_Radioactivite</a></div><div class="ttdeci">void maj_Radioactivite(double E_ec, double Radioactivite_circuit_primaire)</div><div class="ttdoc">met a jour la radioactivité du circuit secondaire</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a5c176602a4ab5b7b66c023af1173f406"><div class="ttname"><a href="classcircuit_secondaire.html#a5c176602a4ab5b7b66c023af1173f406">circuitSecondaire::get_F_condenseur</a></div><div class="ttdeci">double get_F_condenseur() const</div><div class="ttdoc">Permet d'obtenir le régime de la pompe du condensateur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a6dd90b125fe97532ec5ebb6ba5f8298b"><div class="ttname"><a href="classcircuit_secondaire.html#a6dd90b125fe97532ec5ebb6ba5f8298b">circuitSecondaire::incr_F_condenseur</a></div><div class="ttdeci">void incr_F_condenseur()</div><div class="ttdoc">Incrémente le régime pompe condenseur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a7c8dbd30a80f887e7f6235b4cd27d691"><div class="ttname"><a href="classcircuit_secondaire.html#a7c8dbd30a80f887e7f6235b4cd27d691">circuitSecondaire::maj_T_vapeur</a></div><div class="ttdeci">void maj_T_vapeur(double E_ec, double T1)</div><div class="ttdoc">met a jour la témpérature de la vapeur</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a8378916413e2785aa0ff5f60e141f6ec"><div class="ttname"><a href="classcircuit_secondaire.html#a8378916413e2785aa0ff5f60e141f6ec">circuitSecondaire::reparation_condenseur</a></div><div class="ttdeci">bool reparation_condenseur()</div><div class="ttdoc">Permet de réparer le condenseur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a849b5f7aab05daf63d131d6bc620e135"><div class="ttname"><a href="classcircuit_secondaire.html#a849b5f7aab05daf63d131d6bc620e135">circuitSecondaire::degrad_E_vapeur</a></div><div class="ttdeci">std::string degrad_E_vapeur(double E_chaleur, double E_enceinte)</div><div class="ttdoc">met a jour les dégradations de l'état du générateur de vapeur</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a8619b5e7e694c2a7eeabcb7c7c98b203"><div class="ttname"><a href="classcircuit_secondaire.html#a8619b5e7e694c2a7eeabcb7c7c98b203">circuitSecondaire::set_F_condenseur</a></div><div class="ttdeci">void set_F_condenseur(double valeur_demandee)</div><div class="ttdoc">Permet d'ajuster le régime de la pompe du condensateur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a99072b312c97d3efa7ff05642042509e"><div class="ttname"><a href="classcircuit_secondaire.html#a99072b312c97d3efa7ff05642042509e">circuitSecondaire::get_E_condenseur</a></div><div class="ttdeci">double get_E_condenseur() const</div><div class="ttdoc">Permet d'obtenir l'état du condensateur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a9b88121edc0ad1c99d33af9f0850ca84"><div class="ttname"><a href="classcircuit_secondaire.html#a9b88121edc0ad1c99d33af9f0850ca84">circuitSecondaire::degrad_E_pompe</a></div><div class="ttdeci">std::string degrad_E_pompe()</div><div class="ttdoc">met a jour les dégradations de l'état de la pompe</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_a9cadce4d7264d060fabba1e433026b61"><div class="ttname"><a href="classcircuit_secondaire.html#a9cadce4d7264d060fabba1e433026b61">circuitSecondaire::get_T_vapeur</a></div><div class="ttdeci">double get_T_vapeur() const</div><div class="ttdoc">Permet d'obtenir la temperature de la vapeur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_aaf4ed8019f488ce25ab518201dfa15f8"><div class="ttname"><a href="classcircuit_secondaire.html#aaf4ed8019f488ce25ab518201dfa15f8">circuitSecondaire::maj_Debit_eau_2</a></div><div class="ttdeci">void maj_Debit_eau_2()</div><div class="ttdoc">met a jour le débit d'eau</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_ab76b9d898a620ab04c2589ea0d640938"><div class="ttname"><a href="classcircuit_secondaire.html#ab76b9d898a620ab04c2589ea0d640938">circuitSecondaire::degrad_E_condenseur</a></div><div class="ttdeci">std::string degrad_E_condenseur()</div><div class="ttdoc">met a jour les dégradations de l'état du condenseur</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_ab77a3dad21754c62be1c08a16e86f2e3"><div class="ttname"><a href="classcircuit_secondaire.html#ab77a3dad21754c62be1c08a16e86f2e3">circuitSecondaire::reparation_vapeur</a></div><div class="ttdeci">bool reparation_vapeur(int nbOuvrier)</div><div class="ttdoc">Permet de réparer le générateur de vapeur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_accb4147f5b08a8b19f48859fbc94990a"><div class="ttname"><a href="classcircuit_secondaire.html#accb4147f5b08a8b19f48859fbc94990a">circuitSecondaire::maj_P_vapeur</a></div><div class="ttdeci">void maj_P_vapeur()</div><div class="ttdoc">met a jour la pression exercé par la vapeur</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_ad77e51353a171cb23c0953706b9e4ffe"><div class="ttname"><a href="classcircuit_secondaire.html#ad77e51353a171cb23c0953706b9e4ffe">circuitSecondaire::maj_D_condenseur</a></div><div class="ttdeci">void maj_D_condenseur()</div><div class="ttdoc">met a jour le débit au niveau du condenseur</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_ad9bec1042b979948be69a4a6e88c9cf7"><div class="ttname"><a href="classcircuit_secondaire.html#ad9bec1042b979948be69a4a6e88c9cf7">circuitSecondaire::degrad_E_chaleur</a></div><div class="ttdeci">std::string degrad_E_chaleur(double E_chaleur)</div><div class="ttdoc">met a jour les dégradations de l'état de l'échangeur de chaleur (communique avec circuitPrimaire)</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_ade12c55f7f1677f2b22fce3f92b26f54"><div class="ttname"><a href="classcircuit_secondaire.html#ade12c55f7f1677f2b22fce3f92b26f54">circuitSecondaire::circuitSecondaire</a></div><div class="ttdeci">circuitSecondaire()</div><div class="ttdoc">Constructeur par défaut.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_adf62bddedccb6fa6b68085e1946afd1e"><div class="ttname"><a href="classcircuit_secondaire.html#adf62bddedccb6fa6b68085e1946afd1e">circuitSecondaire::get_P_vapeur</a></div><div class="ttdeci">double get_P_vapeur() const</div><div class="ttdoc">Permet d'obtenir la pression vapeur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_ae41f4ec0042a08ff3ab95fc4006fb3ce"><div class="ttname"><a href="classcircuit_secondaire.html#ae41f4ec0042a08ff3ab95fc4006fb3ce">circuitSecondaire::~circuitSecondaire</a></div><div class="ttdeci">~circuitSecondaire()=default</div><div class="ttdoc">Destructeur par défaut.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_aede277fe8ed894b32f89e1c5d09e0e00"><div class="ttname"><a href="classcircuit_secondaire.html#aede277fe8ed894b32f89e1c5d09e0e00">circuitSecondaire::get_E_vapeur</a></div><div class="ttdeci">double get_E_vapeur() const</div><div class="ttdoc">Permet d'obtenir l'état du générateur de vapeur.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_af01ed8111e93502e78aca3a24a643679"><div class="ttname"><a href="classcircuit_secondaire.html#af01ed8111e93502e78aca3a24a643679">circuitSecondaire::reparation_circuitSecondaire</a></div><div class="ttdeci">bool reparation_circuitSecondaire()</div><div class="ttdoc">Permet de réparer le circuit secondaire.</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_af0bab0696227d7e4d13aaf4fe3a409ed"><div class="ttname"><a href="classcircuit_secondaire.html#af0bab0696227d7e4d13aaf4fe3a409ed">circuitSecondaire::maj_Inertie</a></div><div class="ttdeci">void maj_Inertie(double T_circuit_primaire)</div><div class="ttdoc">met a jour l'inertie chaleur de l'eau du circuit</div></div>
+<div class="ttc" id="aclasscircuit_secondaire_html_af1e0427772d6efac76fb0b92d7eed0e8"><div class="ttname"><a href="classcircuit_secondaire.html#af1e0427772d6efac76fb0b92d7eed0e8">circuitSecondaire::get_D_condenseur</a></div><div class="ttdeci">double get_D_condenseur() const</div><div class="ttdoc">Permet d'obtenir le débit d'eau au niveau du condensateur.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

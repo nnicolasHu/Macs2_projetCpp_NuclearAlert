@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centrale Nucléaire MACS2:  Fichier source de ouvriers.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Centrale Nucléaire MACS2
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ouvriers.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _OUVRIERS_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _OUVRIERS_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;RND.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classouvriers.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classouvriers.html">ouvriers</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    public :</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classouvriers.html#a7416e299f6e3f8c54e6d3f734cc67656">   33</a></span>&#160;        <a class="code" href="classouvriers.html#a7416e299f6e3f8c54e6d3f734cc67656">ouvriers</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classouvriers.html#a3e890b7fb4c3fdf6f101184ef6c34321">   39</a></span>&#160;        <a class="code" href="classouvriers.html#a3e890b7fb4c3fdf6f101184ef6c34321">~ouvriers</a>()=<span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classouvriers.html#a52dd5f198dbe5a8539b7489e39cdbdf2">   48</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classouvriers.html#a52dd5f198dbe5a8539b7489e39cdbdf2">get_intervention</a>(<span class="keywordtype">int</span> i) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classouvriers.html#a8c6ce6013f61bb97871f455f01f97952">   57</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classouvriers.html#a8c6ce6013f61bb97871f455f01f97952">get_blesses</a>(<span class="keywordtype">int</span> i) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classouvriers.html#a70ffcce463cdf739f62a267229afa01a">   66</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classouvriers.html#a70ffcce463cdf739f62a267229afa01a">get_compteur_jour</a>(<span class="keywordtype">int</span> i) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classouvriers.html#a27632ac099ce350e6a2fe4511575aa38">   75</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classouvriers.html#a27632ac099ce350e6a2fe4511575aa38">get_nb_ouvriersEnIntervention</a>(<span class="keywordtype">int</span> organe) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classouvriers.html#aa3ef6c9037d8a7a452d882cff30df747">   82</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classouvriers.html#aa3ef6c9037d8a7a452d882cff30df747">get_nb_ouvriersEnIntervention_tot</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classouvriers.html#a75b2ebdc3d048ea49038d2ad9b109469">   89</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classouvriers.html#a75b2ebdc3d048ea49038d2ad9b109469">get_nb_blesses</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classouvriers.html#a1c49330ceb945de0d3ed938477c93e98">   96</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classouvriers.html#a1c49330ceb945de0d3ed938477c93e98">get_nb_disponible</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">//test</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> set_intervention(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> organe);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> set_blesses(<span class="keywordtype">int</span> i, <span class="keywordtype">bool</span> isHurt);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> set_compteur_jour(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> jour);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> set_nb_ouvriersEnIntervention(<span class="keywordtype">int</span> organe, <span class="keywordtype">int</span> nbOuvrier);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> set_nb_blesses(<span class="keywordtype">int</span> nb);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> set_nb_disponible(<span class="keywordtype">int</span> nb);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classouvriers.html#a7efc0d14c5a0c81f34dfe22fb0db4ec3">  112</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classouvriers.html#a7efc0d14c5a0c81f34dfe22fb0db4ec3">envoie_intervention</a>(<span class="keywordtype">int</span> organe, <span class="keywordtype">int</span> nbOuvrier);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classouvriers.html#aca843afa39c978578305db41e449d490">  119</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classouvriers.html#aca843afa39c978578305db41e449d490">retrait_intervention</a>(<span class="keywordtype">int</span> organe);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classouvriers.html#a01a8fd31ffcfdc6935e4523a4616330c">  127</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classouvriers.html#a01a8fd31ffcfdc6935e4523a4616330c">maj_ouvriers</a>(<span class="keywordtype">bool</span> dangereux, <span class="keywordtype">bool</span> dangereux_circuitPrimaire);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    private :</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        std::array&lt;int,145&gt; intervention;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        std::array&lt;bool,145&gt; blesses;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        std::array&lt;int, 145&gt; compteur_jour;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        std::array&lt;int,8&gt; nb_ouvriersEnIntervention;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">int</span> nb_blesses;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordtype">int</span> nb_disponible;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;};</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassouvriers_html"><div class="ttname"><a href="classouvriers.html">ouvriers</a></div><div class="ttdoc">Cette classe décrit les ouvriers.</div><div class="ttdef"><b>Definition:</b> ouvriers.hpp:25</div></div>
+<div class="ttc" id="aclassouvriers_html_a01a8fd31ffcfdc6935e4523a4616330c"><div class="ttname"><a href="classouvriers.html#a01a8fd31ffcfdc6935e4523a4616330c">ouvriers::maj_ouvriers</a></div><div class="ttdeci">void maj_ouvriers(bool dangereux, bool dangereux_circuitPrimaire)</div><div class="ttdoc">Permet de mettre à jour les données de la classe ouvriers.</div></div>
+<div class="ttc" id="aclassouvriers_html_a1c49330ceb945de0d3ed938477c93e98"><div class="ttname"><a href="classouvriers.html#a1c49330ceb945de0d3ed938477c93e98">ouvriers::get_nb_disponible</a></div><div class="ttdeci">int get_nb_disponible() const</div><div class="ttdoc">Renvoie le nombre d'ouvriers disponible.</div></div>
+<div class="ttc" id="aclassouvriers_html_a27632ac099ce350e6a2fe4511575aa38"><div class="ttname"><a href="classouvriers.html#a27632ac099ce350e6a2fe4511575aa38">ouvriers::get_nb_ouvriersEnIntervention</a></div><div class="ttdeci">int get_nb_ouvriersEnIntervention(int organe) const</div><div class="ttdoc">Renvoie le nombre d'ouvriers en intervention sur un organe précis.</div></div>
+<div class="ttc" id="aclassouvriers_html_a3e890b7fb4c3fdf6f101184ef6c34321"><div class="ttname"><a href="classouvriers.html#a3e890b7fb4c3fdf6f101184ef6c34321">ouvriers::~ouvriers</a></div><div class="ttdeci">~ouvriers()=default</div><div class="ttdoc">Destructeur par défaut.</div></div>
+<div class="ttc" id="aclassouvriers_html_a52dd5f198dbe5a8539b7489e39cdbdf2"><div class="ttname"><a href="classouvriers.html#a52dd5f198dbe5a8539b7489e39cdbdf2">ouvriers::get_intervention</a></div><div class="ttdeci">int get_intervention(int i) const</div><div class="ttdoc">Renvoie la tâche actuelle de l'ouvrier i.</div></div>
+<div class="ttc" id="aclassouvriers_html_a70ffcce463cdf739f62a267229afa01a"><div class="ttname"><a href="classouvriers.html#a70ffcce463cdf739f62a267229afa01a">ouvriers::get_compteur_jour</a></div><div class="ttdeci">int get_compteur_jour(int i) const</div><div class="ttdoc">Renvoie le nombre de jours de travail de l'ouvrier i.</div></div>
+<div class="ttc" id="aclassouvriers_html_a7416e299f6e3f8c54e6d3f734cc67656"><div class="ttname"><a href="classouvriers.html#a7416e299f6e3f8c54e6d3f734cc67656">ouvriers::ouvriers</a></div><div class="ttdeci">ouvriers()</div><div class="ttdoc">Constructeur par défaut.</div></div>
+<div class="ttc" id="aclassouvriers_html_a75b2ebdc3d048ea49038d2ad9b109469"><div class="ttname"><a href="classouvriers.html#a75b2ebdc3d048ea49038d2ad9b109469">ouvriers::get_nb_blesses</a></div><div class="ttdeci">int get_nb_blesses() const</div><div class="ttdoc">Renvoie le nombre d'ouvriers blessés.</div></div>
+<div class="ttc" id="aclassouvriers_html_a7efc0d14c5a0c81f34dfe22fb0db4ec3"><div class="ttname"><a href="classouvriers.html#a7efc0d14c5a0c81f34dfe22fb0db4ec3">ouvriers::envoie_intervention</a></div><div class="ttdeci">void envoie_intervention(int organe, int nbOuvrier)</div><div class="ttdoc">Permet d'effectuer des réparations sur un organe.</div></div>
+<div class="ttc" id="aclassouvriers_html_a8c6ce6013f61bb97871f455f01f97952"><div class="ttname"><a href="classouvriers.html#a8c6ce6013f61bb97871f455f01f97952">ouvriers::get_blesses</a></div><div class="ttdeci">bool get_blesses(int i) const</div><div class="ttdoc">Renvoie le statut de l'ouvrier i.</div></div>
+<div class="ttc" id="aclassouvriers_html_aa3ef6c9037d8a7a452d882cff30df747"><div class="ttname"><a href="classouvriers.html#aa3ef6c9037d8a7a452d882cff30df747">ouvriers::get_nb_ouvriersEnIntervention_tot</a></div><div class="ttdeci">int get_nb_ouvriersEnIntervention_tot() const</div><div class="ttdoc">Renvoie le nombre d'ouvriers en intervention.</div></div>
+<div class="ttc" id="aclassouvriers_html_aca843afa39c978578305db41e449d490"><div class="ttname"><a href="classouvriers.html#aca843afa39c978578305db41e449d490">ouvriers::retrait_intervention</a></div><div class="ttdeci">void retrait_intervention(int organe)</div><div class="ttdoc">Permet d'arrêter les réparations sur un organe.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

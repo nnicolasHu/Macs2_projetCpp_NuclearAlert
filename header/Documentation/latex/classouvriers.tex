@@ -1,0 +1,243 @@
+\hypertarget{classouvriers}{}\doxysection{Référence de la classe ouvriers}
+\label{classouvriers}\index{ouvriers@{ouvriers}}
+
+
+Cette classe décrit les ouvriers.  
+
+
+
+
+{\ttfamily \#include $<$ouvriers.\+hpp$>$}
+
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classouvriers_a7416e299f6e3f8c54e6d3f734cc67656}{ouvriers}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classouvriers_a3e890b7fb4c3fdf6f101184ef6c34321}\label{classouvriers_a3e890b7fb4c3fdf6f101184ef6c34321}} 
+\mbox{\hyperlink{classouvriers_a3e890b7fb4c3fdf6f101184ef6c34321}{$\sim$ouvriers}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur par défaut. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classouvriers_a52dd5f198dbe5a8539b7489e39cdbdf2}{get\+\_\+intervention}} (int i) const
+\begin{DoxyCompactList}\small\item\em Renvoie la tâche actuelle de l\textquotesingle{}ouvrier i. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classouvriers_a8c6ce6013f61bb97871f455f01f97952}{get\+\_\+blesses}} (int i) const
+\begin{DoxyCompactList}\small\item\em Renvoie le statut de l\textquotesingle{}ouvrier i. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classouvriers_a70ffcce463cdf739f62a267229afa01a}{get\+\_\+compteur\+\_\+jour}} (int i) const
+\begin{DoxyCompactList}\small\item\em Renvoie le nombre de jours de travail de l\textquotesingle{}ouvrier i. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classouvriers_a27632ac099ce350e6a2fe4511575aa38}{get\+\_\+nb\+\_\+ouvriers\+En\+Intervention}} (int organe) const
+\begin{DoxyCompactList}\small\item\em Renvoie le nombre d\textquotesingle{}ouvriers en intervention sur un organe précis. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classouvriers_aa3ef6c9037d8a7a452d882cff30df747}{get\+\_\+nb\+\_\+ouvriers\+En\+Intervention\+\_\+tot}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le nombre d\textquotesingle{}ouvriers en intervention. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classouvriers_a75b2ebdc3d048ea49038d2ad9b109469}{get\+\_\+nb\+\_\+blesses}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le nombre d\textquotesingle{}ouvriers blessés. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classouvriers_a1c49330ceb945de0d3ed938477c93e98}{get\+\_\+nb\+\_\+disponible}} () const
+\begin{DoxyCompactList}\small\item\em Renvoie le nombre d\textquotesingle{}ouvriers disponible. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classouvriers_a5d6a4dd85670582e67348de4025ad558}\label{classouvriers_a5d6a4dd85670582e67348de4025ad558}} 
+void {\bfseries set\+\_\+intervention} (int i, int organe)
+\item 
+\mbox{\Hypertarget{classouvriers_a1432b45e34ef2aa88ac4f7c153bb0e60}\label{classouvriers_a1432b45e34ef2aa88ac4f7c153bb0e60}} 
+void {\bfseries set\+\_\+blesses} (int i, bool is\+Hurt)
+\item 
+\mbox{\Hypertarget{classouvriers_a0351d191e1fb7a69b3820c592e023391}\label{classouvriers_a0351d191e1fb7a69b3820c592e023391}} 
+void {\bfseries set\+\_\+compteur\+\_\+jour} (int i, int jour)
+\item 
+\mbox{\Hypertarget{classouvriers_a354fafe4efd85ebd1337d23d13faf811}\label{classouvriers_a354fafe4efd85ebd1337d23d13faf811}} 
+void {\bfseries set\+\_\+nb\+\_\+ouvriers\+En\+Intervention} (int organe, int nb\+Ouvrier)
+\item 
+\mbox{\Hypertarget{classouvriers_a67294c68c5102af6c2ecda7a0c1f3c29}\label{classouvriers_a67294c68c5102af6c2ecda7a0c1f3c29}} 
+void {\bfseries set\+\_\+nb\+\_\+blesses} (int nb)
+\item 
+\mbox{\Hypertarget{classouvriers_a5f53dc7a595a54f72f5d7712fe9a1d86}\label{classouvriers_a5f53dc7a595a54f72f5d7712fe9a1d86}} 
+void {\bfseries set\+\_\+nb\+\_\+disponible} (int nb)
+\item 
+void \mbox{\hyperlink{classouvriers_a7efc0d14c5a0c81f34dfe22fb0db4ec3}{envoie\+\_\+intervention}} (int organe, int nb\+Ouvrier)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}effectuer des réparations sur un organe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classouvriers_aca843afa39c978578305db41e449d490}{retrait\+\_\+intervention}} (int organe)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}arrêter les réparations sur un organe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classouvriers_a01a8fd31ffcfdc6935e4523a4616330c}{maj\+\_\+ouvriers}} (bool dangereux, bool dangereux\+\_\+circuit\+Primaire)
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour les données de la classe ouvriers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Cette classe décrit les ouvriers. 
+
+Initialement, on dispose de 145 ouvriers. Aucun n\textquotesingle{}est blessés et ils peuvent être envoyé sur 8 organes\+: 0 = pompe circuit primaire 1 = pompe circuit secondaire 2 = condenseur 3 = générateur de vapeur 4 = injecteur borique 5 = circuit primaire 6 = circuit secondaire 7 = pressuriseur 8 = echangeur de chaleur 9 = enceinte de confinement 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classouvriers_a7416e299f6e3f8c54e6d3f734cc67656}\label{classouvriers_a7416e299f6e3f8c54e6d3f734cc67656}} 
+\index{ouvriers@{ouvriers}!ouvriers@{ouvriers}}
+\index{ouvriers@{ouvriers}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{ouvriers()}{ouvriers()}}
+{\footnotesize\ttfamily ouvriers\+::ouvriers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut. 
+
+Par défaut le nombre d\textquotesingle{}ouvriers disponble est de 145 et aucune réparation n\textquotesingle{}est effectuée. 
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classouvriers_a7efc0d14c5a0c81f34dfe22fb0db4ec3}\label{classouvriers_a7efc0d14c5a0c81f34dfe22fb0db4ec3}} 
+\index{ouvriers@{ouvriers}!envoie\_intervention@{envoie\_intervention}}
+\index{envoie\_intervention@{envoie\_intervention}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{envoie\_intervention()}{envoie\_intervention()}}
+{\footnotesize\ttfamily void ouvriers\+::envoie\+\_\+intervention (\begin{DoxyParamCaption}\item[{int}]{organe,  }\item[{int}]{nb\+Ouvrier }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}effectuer des réparations sur un organe. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em organe} & L\textquotesingle{}organe sur lequel on veut effectuer une réparation. \\
+\hline
+\mbox{\texttt{ in}}  & {\em nb\+Ouvrier} & Le nombre d\textquotesingle{}ouvriers que l\textquotesingle{}on veut envoyer pour la réparation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classouvriers_a8c6ce6013f61bb97871f455f01f97952}\label{classouvriers_a8c6ce6013f61bb97871f455f01f97952}} 
+\index{ouvriers@{ouvriers}!get\_blesses@{get\_blesses}}
+\index{get\_blesses@{get\_blesses}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{get\_blesses()}{get\_blesses()}}
+{\footnotesize\ttfamily bool ouvriers\+::get\+\_\+blesses (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie le statut de l\textquotesingle{}ouvrier i. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em i} & Le i-\/ème ouvrier de la Centrale\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Booléen permettant de savoir si oui ou non l\textquotesingle{}ouvrier i est apte à intervenir. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classouvriers_a70ffcce463cdf739f62a267229afa01a}\label{classouvriers_a70ffcce463cdf739f62a267229afa01a}} 
+\index{ouvriers@{ouvriers}!get\_compteur\_jour@{get\_compteur\_jour}}
+\index{get\_compteur\_jour@{get\_compteur\_jour}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{get\_compteur\_jour()}{get\_compteur\_jour()}}
+{\footnotesize\ttfamily int ouvriers\+::get\+\_\+compteur\+\_\+jour (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie le nombre de jours de travail de l\textquotesingle{}ouvrier i. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em i} & Le i-\/ème ouvrier de la Centrale\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le nombre de jours de travail de l\textquotesingle{}ouvrier i. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classouvriers_a52dd5f198dbe5a8539b7489e39cdbdf2}\label{classouvriers_a52dd5f198dbe5a8539b7489e39cdbdf2}} 
+\index{ouvriers@{ouvriers}!get\_intervention@{get\_intervention}}
+\index{get\_intervention@{get\_intervention}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{get\_intervention()}{get\_intervention()}}
+{\footnotesize\ttfamily int ouvriers\+::get\+\_\+intervention (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie la tâche actuelle de l\textquotesingle{}ouvrier i. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em i} & Le i-\/ème ouvrier de la Centrale\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Entier entre 1 et 7 permettant de connaître l\textquotesingle{}affectation de l\textquotesingle{}ouvrier. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classouvriers_a75b2ebdc3d048ea49038d2ad9b109469}\label{classouvriers_a75b2ebdc3d048ea49038d2ad9b109469}} 
+\index{ouvriers@{ouvriers}!get\_nb\_blesses@{get\_nb\_blesses}}
+\index{get\_nb\_blesses@{get\_nb\_blesses}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{get\_nb\_blesses()}{get\_nb\_blesses()}}
+{\footnotesize\ttfamily int ouvriers\+::get\+\_\+nb\+\_\+blesses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie le nombre d\textquotesingle{}ouvriers blessés. 
+
+\begin{DoxyReturn}{Renvoie}
+Le nombre d\textquotesingle{}ouvriers blessés. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classouvriers_a1c49330ceb945de0d3ed938477c93e98}\label{classouvriers_a1c49330ceb945de0d3ed938477c93e98}} 
+\index{ouvriers@{ouvriers}!get\_nb\_disponible@{get\_nb\_disponible}}
+\index{get\_nb\_disponible@{get\_nb\_disponible}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{get\_nb\_disponible()}{get\_nb\_disponible()}}
+{\footnotesize\ttfamily int ouvriers\+::get\+\_\+nb\+\_\+disponible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie le nombre d\textquotesingle{}ouvriers disponible. 
+
+\begin{DoxyReturn}{Renvoie}
+Le nombre d\textquotesingle{}ouvriers disponible. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classouvriers_a27632ac099ce350e6a2fe4511575aa38}\label{classouvriers_a27632ac099ce350e6a2fe4511575aa38}} 
+\index{ouvriers@{ouvriers}!get\_nb\_ouvriersEnIntervention@{get\_nb\_ouvriersEnIntervention}}
+\index{get\_nb\_ouvriersEnIntervention@{get\_nb\_ouvriersEnIntervention}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{get\_nb\_ouvriersEnIntervention()}{get\_nb\_ouvriersEnIntervention()}}
+{\footnotesize\ttfamily int ouvriers\+::get\+\_\+nb\+\_\+ouvriers\+En\+Intervention (\begin{DoxyParamCaption}\item[{int}]{organe }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie le nombre d\textquotesingle{}ouvriers en intervention sur un organe précis. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em organe} & L\textquotesingle{}organe sur lequel la réparation a lieu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le nombre d\textquotesingle{}ouvriers occupés à réparer l\textquotesingle{}organe. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classouvriers_aa3ef6c9037d8a7a452d882cff30df747}\label{classouvriers_aa3ef6c9037d8a7a452d882cff30df747}} 
+\index{ouvriers@{ouvriers}!get\_nb\_ouvriersEnIntervention\_tot@{get\_nb\_ouvriersEnIntervention\_tot}}
+\index{get\_nb\_ouvriersEnIntervention\_tot@{get\_nb\_ouvriersEnIntervention\_tot}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{get\_nb\_ouvriersEnIntervention\_tot()}{get\_nb\_ouvriersEnIntervention\_tot()}}
+{\footnotesize\ttfamily int ouvriers\+::get\+\_\+nb\+\_\+ouvriers\+En\+Intervention\+\_\+tot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Renvoie le nombre d\textquotesingle{}ouvriers en intervention. 
+
+\begin{DoxyReturn}{Renvoie}
+Le nombre d\textquotesingle{}ouvriers occupés à réparer divers organes de la Centrale. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classouvriers_a01a8fd31ffcfdc6935e4523a4616330c}\label{classouvriers_a01a8fd31ffcfdc6935e4523a4616330c}} 
+\index{ouvriers@{ouvriers}!maj\_ouvriers@{maj\_ouvriers}}
+\index{maj\_ouvriers@{maj\_ouvriers}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{maj\_ouvriers()}{maj\_ouvriers()}}
+{\footnotesize\ttfamily void ouvriers\+::maj\+\_\+ouvriers (\begin{DoxyParamCaption}\item[{bool}]{dangereux,  }\item[{bool}]{dangereux\+\_\+circuit\+Primaire }\end{DoxyParamCaption})}
+
+
+
+Permet de mettre à jour les données de la classe ouvriers. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em dangereux} & Booléen permettant de savoir s\textquotesingle{}il y a danger ou non. \\
+\hline
+\mbox{\texttt{ in}}  & {\em dangereux\+\_\+circuit\+Primaire} & Booléen permettant de savoir s\textquotesingle{}il y a danger ou non dans le circuit primaire. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classouvriers_aca843afa39c978578305db41e449d490}\label{classouvriers_aca843afa39c978578305db41e449d490}} 
+\index{ouvriers@{ouvriers}!retrait\_intervention@{retrait\_intervention}}
+\index{retrait\_intervention@{retrait\_intervention}!ouvriers@{ouvriers}}
+\doxysubsubsection{\texorpdfstring{retrait\_intervention()}{retrait\_intervention()}}
+{\footnotesize\ttfamily void ouvriers\+::retrait\+\_\+intervention (\begin{DoxyParamCaption}\item[{int}]{organe }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}arrêter les réparations sur un organe. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em organe} & L\textquotesingle{}organe sur lequel on veut arrêter la réparation. \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+ouvriers.\+hpp\end{DoxyCompactItemize}

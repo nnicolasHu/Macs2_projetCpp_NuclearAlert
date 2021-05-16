@@ -1,0 +1,380 @@
+\hypertarget{classreacteur}{}\doxysection{Référence de la classe reacteur}
+\label{classreacteur}\index{reacteur@{reacteur}}
+
+
+Cette classe décrit le réacteur.  
+
+
+
+
+{\ttfamily \#include $<$reacteur.\+hpp$>$}
+
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classreacteur_a4999ad77ac8f1e3cdfcc6889edb3ca56}{reacteur}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreacteur_a8f332b598cf844507e226118ee1af53e}\label{classreacteur_a8f332b598cf844507e226118ee1af53e}} 
+\mbox{\hyperlink{classreacteur_a8f332b598cf844507e226118ee1af53e}{reacteur}} (const \mbox{\hyperlink{classreacteur}{reacteur}} \&R)=delete
+\begin{DoxyCompactList}\small\item\em Constructeur de copie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreacteur_aa7d83f56004daa863d83707bbb729b7d}\label{classreacteur_aa7d83f56004daa863d83707bbb729b7d}} 
+\mbox{\hyperlink{classreacteur_aa7d83f56004daa863d83707bbb729b7d}{reacteur}} (\mbox{\hyperlink{classreacteur}{reacteur}} \&\&R)=delete
+\begin{DoxyCompactList}\small\item\em Constructeur de déplacement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreacteur_a476b0337d51c737da87450704a027300}\label{classreacteur_a476b0337d51c737da87450704a027300}} 
+\mbox{\hyperlink{classreacteur_a476b0337d51c737da87450704a027300}{$\sim$reacteur}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur par défaut. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_a767c1ee3cf4004e4449323c71ec4f3ca}{get\+\_\+\+Tx\+\_\+graphite}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la proportion des barres de graphite hors de l\textquotesingle{}eau demandée. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_a439713b0054420dedd5db1adbd729e92}{get\+\_\+\+TGraphite\+\_\+eff}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la proportion des barres de graphite hors de l\textquotesingle{}eau effective. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_a686627a6717761b72341dca02ae41505}{get\+\_\+\+Tx\+\_\+bore}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le taux de bore demandée dans l\textquotesingle{}eau du circuit. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_ac633f0fad32382721a2df5a6baa65378}{get\+\_\+\+TBore\+\_\+eff}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le taux de bore effective dans l\textquotesingle{}eau du circuit. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_a05b039fa71b8730dc15d30e78c7f98f9}{get\+\_\+\+E\+\_\+bore}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état des injecteurs d\textquotesingle{}acide borique. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_a53c970fc33975bb17b8d773d31397fe1}{get\+\_\+\+E\+\_\+barre}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état des barres de graphite. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_ae67f5a21846b954de765dd09cb5e7b54}{get\+\_\+\+E\+\_\+cuve}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état de la cuve. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_ae819b894191aee032f4d54bb784a6017}{get\+\_\+\+E\+\_\+piscine}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état de la piscine. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_ab4f67739cf58653b248ed1ebdfb5cbe3}{get\+\_\+\+E\+\_\+canaux}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état des canaux. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classreacteur_a74482756860832ceedfa07a4c85e86c8}{get\+\_\+\+R\+\_\+piscine}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir les radiations de la piscine. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreacteur_a3139aa77d23170f9c1990c002b291919}\label{classreacteur_a3139aa77d23170f9c1990c002b291919}} 
+void \mbox{\hyperlink{classreacteur_a3139aa77d23170f9c1990c002b291919}{incr\+\_\+bore}} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}incrémenter le Tx\+\_\+bore. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreacteur_a9f569217ee1b8c0949dbf1803dce82ff}\label{classreacteur_a9f569217ee1b8c0949dbf1803dce82ff}} 
+void \mbox{\hyperlink{classreacteur_a9f569217ee1b8c0949dbf1803dce82ff}{decr\+\_\+bore}} ()
+\begin{DoxyCompactList}\small\item\em Permet de décrémenter le Tx\+\_\+bore. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreacteur_a67d2dd64a1ce20441729779cd34b86a5}\label{classreacteur_a67d2dd64a1ce20441729779cd34b86a5}} 
+void \mbox{\hyperlink{classreacteur_a67d2dd64a1ce20441729779cd34b86a5}{maj\+\_\+bore}} ()
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour le TBore\+\_\+eff en fonction du Tx\+\_\+bore. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classreacteur_aab3c0ab2d7d83cccc33308448de71c59}{set\+\_\+graphite}} (double valeur\+\_\+demandee)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajuster la proportion des barres de graphite hors de l\textquotesingle{}eau (ne sert que pour la tentative d\textquotesingle{}arrêt d\textquotesingle{}urgence) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreacteur_aa8dd4f15c56011c8bfac9c883bc76985}\label{classreacteur_aa8dd4f15c56011c8bfac9c883bc76985}} 
+void \mbox{\hyperlink{classreacteur_aa8dd4f15c56011c8bfac9c883bc76985}{incr\+\_\+graphite}} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}incrémenter le Tx\+\_\+bore. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreacteur_a731af6e2ec3e405b2052e06c4515f426}\label{classreacteur_a731af6e2ec3e405b2052e06c4515f426}} 
+void \mbox{\hyperlink{classreacteur_a731af6e2ec3e405b2052e06c4515f426}{decr\+\_\+graphite}} ()
+\begin{DoxyCompactList}\small\item\em Permet de décrémenter le Tx\+\_\+bore. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classreacteur_aa306d4d2f153a667e59b1e5d9f4a1b00}\label{classreacteur_aa306d4d2f153a667e59b1e5d9f4a1b00}} 
+void \mbox{\hyperlink{classreacteur_aa306d4d2f153a667e59b1e5d9f4a1b00}{maj\+\_\+graphite}} ()
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour le TBore\+\_\+eff en fonction du Tx\+\_\+bore. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classreacteur_a24f6451f2e6bb3660d46b51eb052a1be}{maj\+\_\+\+R\+\_\+piscine}} (double R1)
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour les radiations de la piscine. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classreacteur_ad1c1a79459184b1ffec1a36836d07ed5}{degr\+\_\+\+E\+\_\+cuve}} (double T1, double E\+\_\+circuit\+\_\+primaire, double E\+\_\+enceinte)
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations sur l\textquotesingle{}état de la cuve. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classreacteur_ab501f8f43f080b34ed3733fde129a2e7}{degr\+\_\+\+E\+\_\+piscine}} (double T1, double E\+\_\+circuit\+\_\+primaire, double E\+\_\+enceinte)
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations sur l\textquotesingle{}état de la piscine. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classreacteur_aa582f2b9d98b0e3b45324391bf1b92a3}{degr\+\_\+\+E\+\_\+barre}} (double T1)
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations sur l\textquotesingle{}état des barres de graphite. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classreacteur_a60e37746d22fca9694b791a8db1e79bb}{degr\+\_\+\+E\+\_\+canaux}} (double T1)
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations sur l\textquotesingle{}état des canaux. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classreacteur_a66d4f0b24d76d604865a09dea2e1f856}{degr\+\_\+\+E\+\_\+bore}} (double T1, double E\+\_\+circuit\+\_\+primaire)
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations sur l\textquotesingle{}état des injecteurs boriques. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classreacteur_a07c17f0b51897114c423e4da642860b8}{repa\+\_\+\+E\+\_\+bore}} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}effectuer les réparations sur l\textquotesingle{}injecteur borique. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classreacteur_a60e3072fee5ca81cd3883ec0510b3c87}{arret\+\_\+urgence}} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}effectuer la tentative d\textquotesingle{}arrêt d\textquotesingle{}urgence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Cette classe décrit le réacteur. 
+
+Le réacteur est composé de barres de graphites (contrôle de la proportion de barres immergées et comparaison avec la proportion demandée, indicateur d\textquotesingle{}état des barres), d\textquotesingle{}une piscine (indicateur radiation et état), d\textquotesingle{}une cuve (indicateur d\textquotesingle{}état) et de canaux guidant les barres de graphite (indicateur d\textquotesingle{}état des canaux). Il faut aussi pouvoir contrôler le taux de bord dans l\textquotesingle{}eau du circuit (indicateur proportion actuelle/demandée, indicateur de l\textquotesingle{}état des injecteurs d\textquotesingle{}acide borique).
+
+À chaque pas de temps, si le taux de Bore demandé est différent du taux actuel, l\textquotesingle{}incrémentation se fait de 0.\+01 en 0.\+01. Le fonctionnement est le même pour la proportion de graphite non-\/immergée. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classreacteur_a4999ad77ac8f1e3cdfcc6889edb3ca56}\label{classreacteur_a4999ad77ac8f1e3cdfcc6889edb3ca56}} 
+\index{reacteur@{reacteur}!reacteur@{reacteur}}
+\index{reacteur@{reacteur}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{reacteur()}{reacteur()}}
+{\footnotesize\ttfamily reacteur\+::reacteur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut. 
+
+Les paramètres d\textquotesingle{}etats sont initialisés à 1. Le taux de bore initial est de 0.\+47 (il varie entre 0 et 0.\+5 \%). Les barres de graphites sont initialement immergées. 
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classreacteur_a60e3072fee5ca81cd3883ec0510b3c87}\label{classreacteur_a60e3072fee5ca81cd3883ec0510b3c87}} 
+\index{reacteur@{reacteur}!arret\_urgence@{arret\_urgence}}
+\index{arret\_urgence@{arret\_urgence}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{arret\_urgence()}{arret\_urgence()}}
+{\footnotesize\ttfamily bool reacteur\+::arret\+\_\+urgence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}effectuer la tentative d\textquotesingle{}arrêt d\textquotesingle{}urgence. 
+
+\begin{DoxyReturn}{Renvoie}
+booléen permettant de savoir si la tenatative d\textquotesingle{}arrêt d\textquotesingle{}urgence doit dégrader des éléments du réacteur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_aa582f2b9d98b0e3b45324391bf1b92a3}\label{classreacteur_aa582f2b9d98b0e3b45324391bf1b92a3}} 
+\index{reacteur@{reacteur}!degr\_E\_barre@{degr\_E\_barre}}
+\index{degr\_E\_barre@{degr\_E\_barre}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{degr\_E\_barre()}{degr\_E\_barre()}}
+{\footnotesize\ttfamily std\+::string reacteur\+::degr\+\_\+\+E\+\_\+barre (\begin{DoxyParamCaption}\item[{double}]{T1 }\end{DoxyParamCaption})}
+
+
+
+Permet de simuler les dégradations sur l\textquotesingle{}état des barres de graphite. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em T1} & Temperature circuit primaire \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classreacteur_a66d4f0b24d76d604865a09dea2e1f856}\label{classreacteur_a66d4f0b24d76d604865a09dea2e1f856}} 
+\index{reacteur@{reacteur}!degr\_E\_bore@{degr\_E\_bore}}
+\index{degr\_E\_bore@{degr\_E\_bore}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{degr\_E\_bore()}{degr\_E\_bore()}}
+{\footnotesize\ttfamily std\+::string reacteur\+::degr\+\_\+\+E\+\_\+bore (\begin{DoxyParamCaption}\item[{double}]{T1,  }\item[{double}]{E\+\_\+circuit\+\_\+primaire }\end{DoxyParamCaption})}
+
+
+
+Permet de simuler les dégradations sur l\textquotesingle{}état des injecteurs boriques. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em T1} & Temperature circuit primaire \\
+\hline
+\mbox{\texttt{ in}}  & {\em E\+\_\+circuit\+\_\+primaire} & Etat circuit primaire \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classreacteur_a60e37746d22fca9694b791a8db1e79bb}\label{classreacteur_a60e37746d22fca9694b791a8db1e79bb}} 
+\index{reacteur@{reacteur}!degr\_E\_canaux@{degr\_E\_canaux}}
+\index{degr\_E\_canaux@{degr\_E\_canaux}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{degr\_E\_canaux()}{degr\_E\_canaux()}}
+{\footnotesize\ttfamily std\+::string reacteur\+::degr\+\_\+\+E\+\_\+canaux (\begin{DoxyParamCaption}\item[{double}]{T1 }\end{DoxyParamCaption})}
+
+
+
+Permet de simuler les dégradations sur l\textquotesingle{}état des canaux. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em T1} & Temperature circuit primaire \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classreacteur_ad1c1a79459184b1ffec1a36836d07ed5}\label{classreacteur_ad1c1a79459184b1ffec1a36836d07ed5}} 
+\index{reacteur@{reacteur}!degr\_E\_cuve@{degr\_E\_cuve}}
+\index{degr\_E\_cuve@{degr\_E\_cuve}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{degr\_E\_cuve()}{degr\_E\_cuve()}}
+{\footnotesize\ttfamily std\+::string reacteur\+::degr\+\_\+\+E\+\_\+cuve (\begin{DoxyParamCaption}\item[{double}]{T1,  }\item[{double}]{E\+\_\+circuit\+\_\+primaire,  }\item[{double}]{E\+\_\+enceinte }\end{DoxyParamCaption})}
+
+
+
+Permet de simuler les dégradations sur l\textquotesingle{}état de la cuve. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em T1} & Temperature circuit primaire \\
+\hline
+\mbox{\texttt{ in}}  & {\em E\+\_\+circuit\+\_\+primaire} & Etat circuit primaire \\
+\hline
+\mbox{\texttt{ in}}  & {\em E\+\_\+enceinte} & Etat enceinte \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classreacteur_ab501f8f43f080b34ed3733fde129a2e7}\label{classreacteur_ab501f8f43f080b34ed3733fde129a2e7}} 
+\index{reacteur@{reacteur}!degr\_E\_piscine@{degr\_E\_piscine}}
+\index{degr\_E\_piscine@{degr\_E\_piscine}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{degr\_E\_piscine()}{degr\_E\_piscine()}}
+{\footnotesize\ttfamily std\+::string reacteur\+::degr\+\_\+\+E\+\_\+piscine (\begin{DoxyParamCaption}\item[{double}]{T1,  }\item[{double}]{E\+\_\+circuit\+\_\+primaire,  }\item[{double}]{E\+\_\+enceinte }\end{DoxyParamCaption})}
+
+
+
+Permet de simuler les dégradations sur l\textquotesingle{}état de la piscine. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em T1} & Temperature circuit primaire \\
+\hline
+\mbox{\texttt{ in}}  & {\em E\+\_\+circuit\+\_\+primaire} & Etat circuit primaire \\
+\hline
+\mbox{\texttt{ in}}  & {\em E\+\_\+enceinte} & Etat enceinte \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classreacteur_a53c970fc33975bb17b8d773d31397fe1}\label{classreacteur_a53c970fc33975bb17b8d773d31397fe1}} 
+\index{reacteur@{reacteur}!get\_E\_barre@{get\_E\_barre}}
+\index{get\_E\_barre@{get\_E\_barre}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_E\_barre()}{get\_E\_barre()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+E\+\_\+barre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état des barres de graphite. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+barre 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_a05b039fa71b8730dc15d30e78c7f98f9}\label{classreacteur_a05b039fa71b8730dc15d30e78c7f98f9}} 
+\index{reacteur@{reacteur}!get\_E\_bore@{get\_E\_bore}}
+\index{get\_E\_bore@{get\_E\_bore}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_E\_bore()}{get\_E\_bore()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+E\+\_\+bore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état des injecteurs d\textquotesingle{}acide borique. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+bore 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_ab4f67739cf58653b248ed1ebdfb5cbe3}\label{classreacteur_ab4f67739cf58653b248ed1ebdfb5cbe3}} 
+\index{reacteur@{reacteur}!get\_E\_canaux@{get\_E\_canaux}}
+\index{get\_E\_canaux@{get\_E\_canaux}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_E\_canaux()}{get\_E\_canaux()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+E\+\_\+canaux (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état des canaux. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+canaux 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_ae67f5a21846b954de765dd09cb5e7b54}\label{classreacteur_ae67f5a21846b954de765dd09cb5e7b54}} 
+\index{reacteur@{reacteur}!get\_E\_cuve@{get\_E\_cuve}}
+\index{get\_E\_cuve@{get\_E\_cuve}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_E\_cuve()}{get\_E\_cuve()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+E\+\_\+cuve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état de la cuve. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+cuve 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_ae819b894191aee032f4d54bb784a6017}\label{classreacteur_ae819b894191aee032f4d54bb784a6017}} 
+\index{reacteur@{reacteur}!get\_E\_piscine@{get\_E\_piscine}}
+\index{get\_E\_piscine@{get\_E\_piscine}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_E\_piscine()}{get\_E\_piscine()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+E\+\_\+piscine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état de la piscine. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+piscine 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_a74482756860832ceedfa07a4c85e86c8}\label{classreacteur_a74482756860832ceedfa07a4c85e86c8}} 
+\index{reacteur@{reacteur}!get\_R\_piscine@{get\_R\_piscine}}
+\index{get\_R\_piscine@{get\_R\_piscine}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_R\_piscine()}{get\_R\_piscine()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+R\+\_\+piscine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir les radiations de la piscine. 
+
+\begin{DoxyReturn}{Renvoie}
+R\+\_\+piscine 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_ac633f0fad32382721a2df5a6baa65378}\label{classreacteur_ac633f0fad32382721a2df5a6baa65378}} 
+\index{reacteur@{reacteur}!get\_TBore\_eff@{get\_TBore\_eff}}
+\index{get\_TBore\_eff@{get\_TBore\_eff}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_TBore\_eff()}{get\_TBore\_eff()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+TBore\+\_\+eff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir le taux de bore effective dans l\textquotesingle{}eau du circuit. 
+
+\begin{DoxyReturn}{Renvoie}
+TBore\+\_\+eff 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_a439713b0054420dedd5db1adbd729e92}\label{classreacteur_a439713b0054420dedd5db1adbd729e92}} 
+\index{reacteur@{reacteur}!get\_TGraphite\_eff@{get\_TGraphite\_eff}}
+\index{get\_TGraphite\_eff@{get\_TGraphite\_eff}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_TGraphite\_eff()}{get\_TGraphite\_eff()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+TGraphite\+\_\+eff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir la proportion des barres de graphite hors de l\textquotesingle{}eau effective. 
+
+\begin{DoxyReturn}{Renvoie}
+TGraphite\+\_\+eff 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_a686627a6717761b72341dca02ae41505}\label{classreacteur_a686627a6717761b72341dca02ae41505}} 
+\index{reacteur@{reacteur}!get\_Tx\_bore@{get\_Tx\_bore}}
+\index{get\_Tx\_bore@{get\_Tx\_bore}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_Tx\_bore()}{get\_Tx\_bore()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+Tx\+\_\+bore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir le taux de bore demandée dans l\textquotesingle{}eau du circuit. 
+
+\begin{DoxyReturn}{Renvoie}
+Tx\+\_\+bore 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_a767c1ee3cf4004e4449323c71ec4f3ca}\label{classreacteur_a767c1ee3cf4004e4449323c71ec4f3ca}} 
+\index{reacteur@{reacteur}!get\_Tx\_graphite@{get\_Tx\_graphite}}
+\index{get\_Tx\_graphite@{get\_Tx\_graphite}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{get\_Tx\_graphite()}{get\_Tx\_graphite()}}
+{\footnotesize\ttfamily double reacteur\+::get\+\_\+\+Tx\+\_\+graphite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir la proportion des barres de graphite hors de l\textquotesingle{}eau demandée. 
+
+\begin{DoxyReturn}{Renvoie}
+Tx\+\_\+graphite 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_a24f6451f2e6bb3660d46b51eb052a1be}\label{classreacteur_a24f6451f2e6bb3660d46b51eb052a1be}} 
+\index{reacteur@{reacteur}!maj\_R\_piscine@{maj\_R\_piscine}}
+\index{maj\_R\_piscine@{maj\_R\_piscine}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{maj\_R\_piscine()}{maj\_R\_piscine()}}
+{\footnotesize\ttfamily void reacteur\+::maj\+\_\+\+R\+\_\+piscine (\begin{DoxyParamCaption}\item[{double}]{R1 }\end{DoxyParamCaption})}
+
+
+
+Permet de mettre à jour les radiations de la piscine. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em R1} & Radiation circuit primaire \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classreacteur_a07c17f0b51897114c423e4da642860b8}\label{classreacteur_a07c17f0b51897114c423e4da642860b8}} 
+\index{reacteur@{reacteur}!repa\_E\_bore@{repa\_E\_bore}}
+\index{repa\_E\_bore@{repa\_E\_bore}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{repa\_E\_bore()}{repa\_E\_bore()}}
+{\footnotesize\ttfamily bool reacteur\+::repa\+\_\+\+E\+\_\+bore (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}effectuer les réparations sur l\textquotesingle{}injecteur borique. 
+
+\begin{DoxyReturn}{Renvoie}
+booléen, 1 si l\textquotesingle{}injecteur est complètement réparé, 0 s\textquotesingle{}il est encore endommagé 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classreacteur_aab3c0ab2d7d83cccc33308448de71c59}\label{classreacteur_aab3c0ab2d7d83cccc33308448de71c59}} 
+\index{reacteur@{reacteur}!set\_graphite@{set\_graphite}}
+\index{set\_graphite@{set\_graphite}!reacteur@{reacteur}}
+\doxysubsubsection{\texorpdfstring{set\_graphite()}{set\_graphite()}}
+{\footnotesize\ttfamily void reacteur\+::set\+\_\+graphite (\begin{DoxyParamCaption}\item[{double}]{valeur\+\_\+demandee }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}ajuster la proportion des barres de graphite hors de l\textquotesingle{}eau (ne sert que pour la tentative d\textquotesingle{}arrêt d\textquotesingle{}urgence) 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em valeur\+\_\+demandee} & La proportion des barres de graphite à laisser hors de l\textquotesingle{}eau, qui doit être comprise entre 1 -\/ etat\+\_\+barre et 1. \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+reacteur.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,292 @@
+\hypertarget{classcircuit_primaire}{}\doxysection{Référence de la classe circuit\+Primaire}
+\label{classcircuit_primaire}\index{circuitPrimaire@{circuitPrimaire}}
+
+
+Cette classe décrit le circuit primaire.  
+
+
+
+
+{\ttfamily \#include $<$circuit\+Primaire.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de circuit\+Primaire\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcircuit_primaire}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcircuit_primaire_a878a95e61a7618875aa456b33220481c}{circuit\+Primaire}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_a512aabf80c59bae99e8b646080c595d6}\label{classcircuit_primaire_a512aabf80c59bae99e8b646080c595d6}} 
+\mbox{\hyperlink{classcircuit_primaire_a512aabf80c59bae99e8b646080c595d6}{circuit\+Primaire}} (const \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}} \&C)=delete
+\begin{DoxyCompactList}\small\item\em Constructeur de copie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_aee38ca8cd1d4e9348f7a4c359409c246}\label{classcircuit_primaire_aee38ca8cd1d4e9348f7a4c359409c246}} 
+\mbox{\hyperlink{classcircuit_primaire_aee38ca8cd1d4e9348f7a4c359409c246}{circuit\+Primaire}} (\mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}} \&\&C)=delete
+\begin{DoxyCompactList}\small\item\em Constructeur de déplacement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_a86885d795cbe1d4c9e2e44e706223d05}\label{classcircuit_primaire_a86885d795cbe1d4c9e2e44e706223d05}} 
+\mbox{\hyperlink{classcircuit_primaire_a86885d795cbe1d4c9e2e44e706223d05}{$\sim$circuit\+Primaire}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur par défaut. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_primaire_a4d6c7e65244d718947dfdcd5d47a6eb0}{get\+\_\+\+E\+\_\+pressuriseur}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état du pressuriseur. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_primaire_ad4345c2b6af6832880ab0ea27873681e}{get\+\_\+\+E\+\_\+resistance}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état de la resistance du pressuriseur. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_primaire_a99267d7adc7c419b30c1a862cd2ae991}{get\+\_\+\+E\+\_\+echangeur}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état de l\textquotesingle{}échangeur de chaleur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcircuit_primaire_a1bb4cb0b249cbf2998ce02933affc537}{get\+\_\+\+T\+\_\+pressuriseur}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la température du pressuriseur demandée. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcircuit_primaire_a2e5e7b5acc1f0f23174ef76274b1d5e7}{get\+\_\+\+T\+\_\+pressuriseur\+\_\+eff}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la température du pressuriseur actuel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_a5eb3e1e93f03fd1ed485b4a23ab17eb3}\label{classcircuit_primaire_a5eb3e1e93f03fd1ed485b4a23ab17eb3}} 
+void {\bfseries set\+\_\+\+E\+\_\+pressuriseur} (double etat)
+\item 
+\mbox{\Hypertarget{classcircuit_primaire_abbcbd8b3b32f0e3fe1b16fed23958b83}\label{classcircuit_primaire_abbcbd8b3b32f0e3fe1b16fed23958b83}} 
+void {\bfseries set\+\_\+\+E\+\_\+resistance} (double etat)
+\item 
+\mbox{\Hypertarget{classcircuit_primaire_a89edabba583684df37161841a308bd07}\label{classcircuit_primaire_a89edabba583684df37161841a308bd07}} 
+void {\bfseries set\+\_\+\+E\+\_\+echangeur} (double etat)
+\item 
+void \mbox{\hyperlink{classcircuit_primaire_a65bc54e75cbca8a9c2509506526bd23f}{set\+\_\+\+T\+\_\+pressuriseur}} (int temperature)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajuster la température du pressuriseur demandée. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_a57750945019dfc109e9c7495b8c406ea}\label{classcircuit_primaire_a57750945019dfc109e9c7495b8c406ea}} 
+void \mbox{\hyperlink{classcircuit_primaire_a57750945019dfc109e9c7495b8c406ea}{maj\+\_\+\+Pression}} ()
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la pression du circuit Primaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_primaire_ab17deb057042b609c87a6e01e1bfa9ba}{maj\+\_\+\+Debit\+\_\+eau\+\_\+1}} (double E\+\_\+cuve)
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour le débit d\textquotesingle{}eau du circuit Primaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_primaire_ab72ddee1987d6fbeb184bf370fdf1570}{maj\+\_\+\+Inertie}} (double TBore\+\_\+eff, double TGraphite\+\_\+eff, double T\+\_\+vapeur)
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour l\textquotesingle{}inertie du circuit Primaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_primaire_a7da1dba2514000be43c98a535d77f965}{maj\+\_\+\+Temperature}} (double TBore\+\_\+eff, double TGraphite\+\_\+eff)
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la température du circuit Primaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_primaire_a2d2faae2cc6f3966b87e9d78d0765c23}{maj\+\_\+\+Radioactivite}} (double TBore\+\_\+eff, unsigned int MW)
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la radioactivité du circuit Primaire. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_a7d932509cf7107d8ec88cacda1f350a5}\label{classcircuit_primaire_a7d932509cf7107d8ec88cacda1f350a5}} 
+void {\bfseries maj\+\_\+\+T\+\_\+pressuriseur\+\_\+eff} ()
+\item 
+\mbox{\Hypertarget{classcircuit_primaire_a57c4ed8730bfb1309a9d0be0718588e6}\label{classcircuit_primaire_a57c4ed8730bfb1309a9d0be0718588e6}} 
+void {\bfseries incr\+\_\+\+T\+\_\+pressuriseur} ()
+\item 
+\mbox{\Hypertarget{classcircuit_primaire_a12880ce11891b77e3c0f0381780794bf}\label{classcircuit_primaire_a12880ce11891b77e3c0f0381780794bf}} 
+void {\bfseries decr\+\_\+\+T\+\_\+pressuriseur} ()
+\item 
+\mbox{\Hypertarget{classcircuit_primaire_a8d5b1619bda716fe8dc5233953693fa7}\label{classcircuit_primaire_a8d5b1619bda716fe8dc5233953693fa7}} 
+std\+::string \mbox{\hyperlink{classcircuit_primaire_a8d5b1619bda716fe8dc5233953693fa7}{degr\+\_\+\+E\+\_\+circuit}} (double E\+\_\+enceinte)
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations de l\textquotesingle{}état du circuit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_a86b76e9d2e004001b03e3510cfd2c420}\label{classcircuit_primaire_a86b76e9d2e004001b03e3510cfd2c420}} 
+std\+::string \mbox{\hyperlink{classcircuit_primaire_a86b76e9d2e004001b03e3510cfd2c420}{degr\+\_\+\+E\+\_\+pompe}} ()
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations de l\textquotesingle{}état de la pompe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_a8dfb700e63c7fff29a0d06a7858ec1a3}\label{classcircuit_primaire_a8dfb700e63c7fff29a0d06a7858ec1a3}} 
+std\+::string \mbox{\hyperlink{classcircuit_primaire_a8dfb700e63c7fff29a0d06a7858ec1a3}{degr\+\_\+\+E\+\_\+pressuriseur}} (double E\+\_\+enceinte)
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations de l\textquotesingle{}état du pressuriseur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_a647b2690bd8ba46547cba50fcea3a4fb}\label{classcircuit_primaire_a647b2690bd8ba46547cba50fcea3a4fb}} 
+std\+::string \mbox{\hyperlink{classcircuit_primaire_a647b2690bd8ba46547cba50fcea3a4fb}{degr\+\_\+\+E\+\_\+resistance}} (double E\+\_\+enceinte)
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations de l\textquotesingle{}état de la resistance du pressuriseur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_primaire_a9dfac491664fac5d77f6612f048e7b27}\label{classcircuit_primaire_a9dfac491664fac5d77f6612f048e7b27}} 
+std\+::string \mbox{\hyperlink{classcircuit_primaire_a9dfac491664fac5d77f6612f048e7b27}{degr\+\_\+\+E\+\_\+echangeur}} ()
+\begin{DoxyCompactList}\small\item\em Permet de simuler les dégradations de l\textquotesingle{}état de l\textquotesingle{}échangeur de chaleur. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcircuit_primaire_a22e86b1655479d4473ec67ebce15fe7c}{reparation\+\_\+circuit\+Primaire}} ()
+\begin{DoxyCompactList}\small\item\em Permet de réparer le circuit primaire. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcircuit_primaire_a1de67cc37d707d3db805e222f3348173}{reparation\+\_\+pressuriseur\+ANDresistance}} ()
+\begin{DoxyCompactList}\small\item\em Permet de réparer le pressuriseur et la resistance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membres hérités additionnels}
+
+
+\doxysubsection{Description détaillée}
+Cette classe décrit le circuit primaire. 
+
+Le circuit primaire est composé d\textquotesingle{}un indicateur de l\textquotesingle{}état global du circuit, d\textquotesingle{}une pompe (composée d\textquotesingle{}un indicateur de régime, d\textquotesingle{}un indicateur de pression, d\textquotesingle{}un indicateur du débit), d\textquotesingle{}un préssuriseur (composé d\textquotesingle{}un indicateur de l\textquotesingle{}état de sa résistance, d\textquotesingle{}un indicateur de température réelle et de température demandée), d\textquotesingle{}un échangeur de chaleur, d\textquotesingle{}un indicateur de l\textquotesingle{}inertie de la température de l\textquotesingle{}eau dans le circuit, d\textquotesingle{}un indicateur de température de l\textquotesingle{}eau dans le circuit, d\textquotesingle{}un indicateur de la radioactivité dans le circuit. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classcircuit_primaire_a878a95e61a7618875aa456b33220481c}\label{classcircuit_primaire_a878a95e61a7618875aa456b33220481c}} 
+\index{circuitPrimaire@{circuitPrimaire}!circuitPrimaire@{circuitPrimaire}}
+\index{circuitPrimaire@{circuitPrimaire}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{circuitPrimaire()}{circuitPrimaire()}}
+{\footnotesize\ttfamily circuit\+Primaire\+::circuit\+Primaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut. 
+
+Les paramètres d\textquotesingle{}etats sont initialisés à 1. La température du pressuriseur et la température de l\textquotesingle{}eau du circuit sont initialisées à 25°C. La pression est initialisée à 1 bar. Le reste est initialisé à 0. 
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classcircuit_primaire_a99267d7adc7c419b30c1a862cd2ae991}\label{classcircuit_primaire_a99267d7adc7c419b30c1a862cd2ae991}} 
+\index{circuitPrimaire@{circuitPrimaire}!get\_E\_echangeur@{get\_E\_echangeur}}
+\index{get\_E\_echangeur@{get\_E\_echangeur}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{get\_E\_echangeur()}{get\_E\_echangeur()}}
+{\footnotesize\ttfamily double circuit\+Primaire\+::get\+\_\+\+E\+\_\+echangeur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état de l\textquotesingle{}échangeur de chaleur. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+echangeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_primaire_a4d6c7e65244d718947dfdcd5d47a6eb0}\label{classcircuit_primaire_a4d6c7e65244d718947dfdcd5d47a6eb0}} 
+\index{circuitPrimaire@{circuitPrimaire}!get\_E\_pressuriseur@{get\_E\_pressuriseur}}
+\index{get\_E\_pressuriseur@{get\_E\_pressuriseur}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{get\_E\_pressuriseur()}{get\_E\_pressuriseur()}}
+{\footnotesize\ttfamily double circuit\+Primaire\+::get\+\_\+\+E\+\_\+pressuriseur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état du pressuriseur. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+pressuriseur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_primaire_ad4345c2b6af6832880ab0ea27873681e}\label{classcircuit_primaire_ad4345c2b6af6832880ab0ea27873681e}} 
+\index{circuitPrimaire@{circuitPrimaire}!get\_E\_resistance@{get\_E\_resistance}}
+\index{get\_E\_resistance@{get\_E\_resistance}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{get\_E\_resistance()}{get\_E\_resistance()}}
+{\footnotesize\ttfamily double circuit\+Primaire\+::get\+\_\+\+E\+\_\+resistance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état de la resistance du pressuriseur. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+resistance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_primaire_a1bb4cb0b249cbf2998ce02933affc537}\label{classcircuit_primaire_a1bb4cb0b249cbf2998ce02933affc537}} 
+\index{circuitPrimaire@{circuitPrimaire}!get\_T\_pressuriseur@{get\_T\_pressuriseur}}
+\index{get\_T\_pressuriseur@{get\_T\_pressuriseur}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{get\_T\_pressuriseur()}{get\_T\_pressuriseur()}}
+{\footnotesize\ttfamily int circuit\+Primaire\+::get\+\_\+\+T\+\_\+pressuriseur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir la température du pressuriseur demandée. 
+
+\begin{DoxyReturn}{Renvoie}
+T\+\_\+pressuriseur() 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_primaire_a2e5e7b5acc1f0f23174ef76274b1d5e7}\label{classcircuit_primaire_a2e5e7b5acc1f0f23174ef76274b1d5e7}} 
+\index{circuitPrimaire@{circuitPrimaire}!get\_T\_pressuriseur\_eff@{get\_T\_pressuriseur\_eff}}
+\index{get\_T\_pressuriseur\_eff@{get\_T\_pressuriseur\_eff}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{get\_T\_pressuriseur\_eff()}{get\_T\_pressuriseur\_eff()}}
+{\footnotesize\ttfamily int circuit\+Primaire\+::get\+\_\+\+T\+\_\+pressuriseur\+\_\+eff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir la température du pressuriseur actuel. 
+
+\begin{DoxyReturn}{Renvoie}
+T\+\_\+pressuriseur\+\_\+eff 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_primaire_ab17deb057042b609c87a6e01e1bfa9ba}\label{classcircuit_primaire_ab17deb057042b609c87a6e01e1bfa9ba}} 
+\index{circuitPrimaire@{circuitPrimaire}!maj\_Debit\_eau\_1@{maj\_Debit\_eau\_1}}
+\index{maj\_Debit\_eau\_1@{maj\_Debit\_eau\_1}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{maj\_Debit\_eau\_1()}{maj\_Debit\_eau\_1()}}
+{\footnotesize\ttfamily void circuit\+Primaire\+::maj\+\_\+\+Debit\+\_\+eau\+\_\+1 (\begin{DoxyParamCaption}\item[{double}]{E\+\_\+cuve }\end{DoxyParamCaption})}
+
+
+
+Permet de mettre à jour le débit d\textquotesingle{}eau du circuit Primaire. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em E\+\_\+cuve} & etat cuve reacteur \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_primaire_ab72ddee1987d6fbeb184bf370fdf1570}\label{classcircuit_primaire_ab72ddee1987d6fbeb184bf370fdf1570}} 
+\index{circuitPrimaire@{circuitPrimaire}!maj\_Inertie@{maj\_Inertie}}
+\index{maj\_Inertie@{maj\_Inertie}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{maj\_Inertie()}{maj\_Inertie()}}
+{\footnotesize\ttfamily void circuit\+Primaire\+::maj\+\_\+\+Inertie (\begin{DoxyParamCaption}\item[{double}]{TBore\+\_\+eff,  }\item[{double}]{TGraphite\+\_\+eff,  }\item[{double}]{T\+\_\+vapeur }\end{DoxyParamCaption})}
+
+
+
+Permet de mettre à jour l\textquotesingle{}inertie du circuit Primaire. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em TBore\+\_\+eff} & taux de bore réel \\
+\hline
+\mbox{\texttt{ in}}  & {\em TGraphite\+\_\+eff} & taux de graphite réel \\
+\hline
+\mbox{\texttt{ in}}  & {\em T\+\_\+vapeur} & température vapeur (circuit secondaire) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_primaire_a2d2faae2cc6f3966b87e9d78d0765c23}\label{classcircuit_primaire_a2d2faae2cc6f3966b87e9d78d0765c23}} 
+\index{circuitPrimaire@{circuitPrimaire}!maj\_Radioactivite@{maj\_Radioactivite}}
+\index{maj\_Radioactivite@{maj\_Radioactivite}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{maj\_Radioactivite()}{maj\_Radioactivite()}}
+{\footnotesize\ttfamily void circuit\+Primaire\+::maj\+\_\+\+Radioactivite (\begin{DoxyParamCaption}\item[{double}]{TBore\+\_\+eff,  }\item[{unsigned int}]{MW }\end{DoxyParamCaption})}
+
+
+
+Permet de mettre à jour la radioactivité du circuit Primaire. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em TBore\+\_\+eff} & taux de bore réel \\
+\hline
+\mbox{\texttt{ in}}  & {\em MW} & production \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_primaire_a7da1dba2514000be43c98a535d77f965}\label{classcircuit_primaire_a7da1dba2514000be43c98a535d77f965}} 
+\index{circuitPrimaire@{circuitPrimaire}!maj\_Temperature@{maj\_Temperature}}
+\index{maj\_Temperature@{maj\_Temperature}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{maj\_Temperature()}{maj\_Temperature()}}
+{\footnotesize\ttfamily void circuit\+Primaire\+::maj\+\_\+\+Temperature (\begin{DoxyParamCaption}\item[{double}]{TBore\+\_\+eff,  }\item[{double}]{TGraphite\+\_\+eff }\end{DoxyParamCaption})}
+
+
+
+Permet de mettre à jour la température du circuit Primaire. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em TBore\+\_\+eff} & taux de bore réel \\
+\hline
+\mbox{\texttt{ in}}  & {\em TGraphite\+\_\+eff} & taux de graphite réel \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_primaire_a22e86b1655479d4473ec67ebce15fe7c}\label{classcircuit_primaire_a22e86b1655479d4473ec67ebce15fe7c}} 
+\index{circuitPrimaire@{circuitPrimaire}!reparation\_circuitPrimaire@{reparation\_circuitPrimaire}}
+\index{reparation\_circuitPrimaire@{reparation\_circuitPrimaire}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{reparation\_circuitPrimaire()}{reparation\_circuitPrimaire()}}
+{\footnotesize\ttfamily bool circuit\+Primaire\+::reparation\+\_\+circuit\+Primaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet de réparer le circuit primaire. 
+
+\begin{DoxyReturn}{Renvoie}
+booléen, 1 si le circuit primaire est complètement réparé, 0 s\textquotesingle{}il est encore endommagé 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_primaire_a1de67cc37d707d3db805e222f3348173}\label{classcircuit_primaire_a1de67cc37d707d3db805e222f3348173}} 
+\index{circuitPrimaire@{circuitPrimaire}!reparation\_pressuriseurANDresistance@{reparation\_pressuriseurANDresistance}}
+\index{reparation\_pressuriseurANDresistance@{reparation\_pressuriseurANDresistance}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{reparation\_pressuriseurANDresistance()}{reparation\_pressuriseurANDresistance()}}
+{\footnotesize\ttfamily bool circuit\+Primaire\+::reparation\+\_\+pressuriseur\+ANDresistance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet de réparer le pressuriseur et la resistance. 
+
+\begin{DoxyReturn}{Renvoie}
+booléen, 1 si le pressuriseur et la resistance sont complètement réparés, 0 s\textquotesingle{}ils sont encore endommagés 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_primaire_a65bc54e75cbca8a9c2509506526bd23f}\label{classcircuit_primaire_a65bc54e75cbca8a9c2509506526bd23f}} 
+\index{circuitPrimaire@{circuitPrimaire}!set\_T\_pressuriseur@{set\_T\_pressuriseur}}
+\index{set\_T\_pressuriseur@{set\_T\_pressuriseur}!circuitPrimaire@{circuitPrimaire}}
+\doxysubsubsection{\texorpdfstring{set\_T\_pressuriseur()}{set\_T\_pressuriseur()}}
+{\footnotesize\ttfamily void circuit\+Primaire\+::set\+\_\+\+T\+\_\+pressuriseur (\begin{DoxyParamCaption}\item[{int}]{temperature }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}ajuster la température du pressuriseur demandée. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em valeur\+\_\+demandee} & La valeur demandée, comprise entre 25 et 100$\ast$(etat\+\_\+pressuriseur + etat\+\_\+resistance) \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+circuit\+Primaire.\+hpp\end{DoxyCompactItemize}

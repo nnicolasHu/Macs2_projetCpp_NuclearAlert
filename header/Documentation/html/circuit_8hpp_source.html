@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centrale Nucléaire MACS2:  Fichier source de circuit.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Centrale Nucléaire MACS2
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">circuit.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _CIRCUIT_HPP_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _CIRCUIT_HPP_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std::string_literals; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classcircuit.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcircuit.html">circuit</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;public : </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classcircuit.html#a1109c8534ef8cccc455c9b6beba91f53">   24</a></span>&#160;    <a class="code" href="classcircuit.html#a1109c8534ef8cccc455c9b6beba91f53">circuit</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classcircuit.html#a70522d5b66b3b767b08151ac36280499">   30</a></span>&#160;    <a class="code" href="classcircuit.html#a70522d5b66b3b767b08151ac36280499">circuit</a>( <span class="keyword">const</span> <a class="code" href="classcircuit.html">circuit</a>&amp; C ) = <span class="keyword">delete</span>; <span class="comment">// Interdiction de copier</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classcircuit.html#a04cf6c8869d2047e49e2c62a86340178">   36</a></span>&#160;    <a class="code" href="classcircuit.html#a04cf6c8869d2047e49e2c62a86340178">circuit</a>( <a class="code" href="classcircuit.html">circuit</a>&amp;&amp; C ) = <span class="keyword">delete</span>; <span class="comment">// Interdiction de déplacer</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classcircuit.html#a3334909beda8c250d187ac7e376a872c">   42</a></span>&#160;    <a class="code" href="classcircuit.html#a3334909beda8c250d187ac7e376a872c">~circuit</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classcircuit.html#a094e54334ade4f1fc3b3556c6646d7ca">   51</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a094e54334ade4f1fc3b3556c6646d7ca">get_E_circuit</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classcircuit.html#a8c8598e124560dc44d1527ceb4505039">   58</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a8c8598e124560dc44d1527ceb4505039">get_Pression</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classcircuit.html#ac04082983f69902f56bac952bcf17ff9">   65</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#ac04082983f69902f56bac952bcf17ff9">get_Debit_eau</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classcircuit.html#ac18d4b9075b551e5edf0cc305e121633">   72</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#ac18d4b9075b551e5edf0cc305e121633">get_Inertie</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classcircuit.html#acb161f305eaa3fe958f07f9539e7b39a">   79</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#acb161f305eaa3fe958f07f9539e7b39a">get_Temperature</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classcircuit.html#a3705dbd23be9b28d97892233a6f0a9c2">   86</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a3705dbd23be9b28d97892233a6f0a9c2">get_Radioactivite</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classcircuit.html#a5d02da33effde6611d87a4478ec53bb9">   92</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a5d02da33effde6611d87a4478ec53bb9">get_E_pompe</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classcircuit.html#a57539571888edcd568256f6429f04766">   99</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a57539571888edcd568256f6429f04766">get_F_pompe</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classcircuit.html#ab6176dc2c7a4e221f08468f5f5872dc3">  106</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit.html#ab6176dc2c7a4e221f08468f5f5872dc3">set_E_circuit</a>(<span class="keywordtype">double</span> etat);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classcircuit.html#a57e2337f3d3d1c1d32bb1ecdd5324fe8">  113</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit.html#a57e2337f3d3d1c1d32bb1ecdd5324fe8">set_E_pompe</a>(<span class="keywordtype">double</span> etat);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classcircuit.html#a96b026ab65d270d6306f08a27c5463a2">  120</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit.html#a96b026ab65d270d6306f08a27c5463a2">set_F_pompe</a>(<span class="keywordtype">double</span> regime);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classcircuit.html#a5053cc2860a016ed11dd971189b6cad2">  126</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit.html#a5053cc2860a016ed11dd971189b6cad2">incr_F_pompe</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classcircuit.html#a59d9b864ab78d835a89fd4120965e8d5">  132</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcircuit.html#a59d9b864ab78d835a89fd4120965e8d5">decr_F_pompe</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classcircuit.html#a8ade4b6c6148fdde205889a7a8c96a29">  139</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcircuit.html#a8ade4b6c6148fdde205889a7a8c96a29">reparation_pompe</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;protected : </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classcircuit.html#a6d69948b9a9056e9c012f8a187610dc2">  144</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a6d69948b9a9056e9c012f8a187610dc2">E_circuit</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classcircuit.html#aeae44bc293340f66fdcfa3bc3db8ea45">  147</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#aeae44bc293340f66fdcfa3bc3db8ea45">Pression</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classcircuit.html#aad0cc1e97e5f58ae27d567cd4851d54d">  150</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#aad0cc1e97e5f58ae27d567cd4851d54d">Debit_eau</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classcircuit.html#a707932bfcaa34327f9991815511af93e">  153</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a707932bfcaa34327f9991815511af93e">Inertie</a>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="classcircuit.html#a1a179729ec6f9eee75c7ac000864b30a">  156</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a1a179729ec6f9eee75c7ac000864b30a">Temperature</a>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classcircuit.html#aebc990b4161a23b61c1f050b3dc39d80">  159</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#aebc990b4161a23b61c1f050b3dc39d80">Radioactivite</a>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classcircuit.html#a7cab1987423425c3d329b777f28c8e85">  162</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a7cab1987423425c3d329b777f28c8e85">E_pompe</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classcircuit.html#a0eb00418dc2866bdadaa31e6d4caf999">  165</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcircuit.html#a0eb00418dc2866bdadaa31e6d4caf999">F_pompe</a>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclasscircuit_html"><div class="ttname"><a href="classcircuit.html">circuit</a></div><div class="ttdoc">Cette classe décrit le fonctionnement d'un circuit.</div><div class="ttdef"><b>Definition:</b> circuit.hpp:15</div></div>
+<div class="ttc" id="aclasscircuit_html_a04cf6c8869d2047e49e2c62a86340178"><div class="ttname"><a href="classcircuit.html#a04cf6c8869d2047e49e2c62a86340178">circuit::circuit</a></div><div class="ttdeci">circuit(circuit &amp;&amp;C)=delete</div><div class="ttdoc">Constructeur de déplacement.</div></div>
+<div class="ttc" id="aclasscircuit_html_a094e54334ade4f1fc3b3556c6646d7ca"><div class="ttname"><a href="classcircuit.html#a094e54334ade4f1fc3b3556c6646d7ca">circuit::get_E_circuit</a></div><div class="ttdeci">double get_E_circuit() const</div><div class="ttdoc">Permet d'obtenir l'état du circuit.</div></div>
+<div class="ttc" id="aclasscircuit_html_a0eb00418dc2866bdadaa31e6d4caf999"><div class="ttname"><a href="classcircuit.html#a0eb00418dc2866bdadaa31e6d4caf999">circuit::F_pompe</a></div><div class="ttdeci">double F_pompe</div><div class="ttdef"><b>Definition:</b> circuit.hpp:165</div></div>
+<div class="ttc" id="aclasscircuit_html_a1109c8534ef8cccc455c9b6beba91f53"><div class="ttname"><a href="classcircuit.html#a1109c8534ef8cccc455c9b6beba91f53">circuit::circuit</a></div><div class="ttdeci">circuit()</div><div class="ttdoc">Constructeur par défaut du circuit.</div></div>
+<div class="ttc" id="aclasscircuit_html_a1a179729ec6f9eee75c7ac000864b30a"><div class="ttname"><a href="classcircuit.html#a1a179729ec6f9eee75c7ac000864b30a">circuit::Temperature</a></div><div class="ttdeci">double Temperature</div><div class="ttdef"><b>Definition:</b> circuit.hpp:156</div></div>
+<div class="ttc" id="aclasscircuit_html_a3334909beda8c250d187ac7e376a872c"><div class="ttname"><a href="classcircuit.html#a3334909beda8c250d187ac7e376a872c">circuit::~circuit</a></div><div class="ttdeci">~circuit()=default</div><div class="ttdoc">Destructeur par défaut.</div></div>
+<div class="ttc" id="aclasscircuit_html_a3705dbd23be9b28d97892233a6f0a9c2"><div class="ttname"><a href="classcircuit.html#a3705dbd23be9b28d97892233a6f0a9c2">circuit::get_Radioactivite</a></div><div class="ttdeci">double get_Radioactivite() const</div><div class="ttdoc">Permet d'obtenir la radioactivité</div></div>
+<div class="ttc" id="aclasscircuit_html_a5053cc2860a016ed11dd971189b6cad2"><div class="ttname"><a href="classcircuit.html#a5053cc2860a016ed11dd971189b6cad2">circuit::incr_F_pompe</a></div><div class="ttdeci">void incr_F_pompe()</div><div class="ttdoc">Permet d'incrémenter le régime de la pompe. Incrémentation de 0.05 en 0.05.</div></div>
+<div class="ttc" id="aclasscircuit_html_a57539571888edcd568256f6429f04766"><div class="ttname"><a href="classcircuit.html#a57539571888edcd568256f6429f04766">circuit::get_F_pompe</a></div><div class="ttdeci">double get_F_pompe() const</div><div class="ttdoc">Permet d'obtenir le régime de la pompe.</div></div>
+<div class="ttc" id="aclasscircuit_html_a57e2337f3d3d1c1d32bb1ecdd5324fe8"><div class="ttname"><a href="classcircuit.html#a57e2337f3d3d1c1d32bb1ecdd5324fe8">circuit::set_E_pompe</a></div><div class="ttdeci">void set_E_pompe(double etat)</div><div class="ttdoc">Permet de modifier l'état de la pompe.</div></div>
+<div class="ttc" id="aclasscircuit_html_a59d9b864ab78d835a89fd4120965e8d5"><div class="ttname"><a href="classcircuit.html#a59d9b864ab78d835a89fd4120965e8d5">circuit::decr_F_pompe</a></div><div class="ttdeci">void decr_F_pompe()</div><div class="ttdoc">Permet de décrémenter le régime de la pompe. Décrémentation de 0.05 en 0.05.</div></div>
+<div class="ttc" id="aclasscircuit_html_a5d02da33effde6611d87a4478ec53bb9"><div class="ttname"><a href="classcircuit.html#a5d02da33effde6611d87a4478ec53bb9">circuit::get_E_pompe</a></div><div class="ttdeci">double get_E_pompe() const</div><div class="ttdoc">Permet d'obtenir l'état de la pompe.</div></div>
+<div class="ttc" id="aclasscircuit_html_a6d69948b9a9056e9c012f8a187610dc2"><div class="ttname"><a href="classcircuit.html#a6d69948b9a9056e9c012f8a187610dc2">circuit::E_circuit</a></div><div class="ttdeci">double E_circuit</div><div class="ttdef"><b>Definition:</b> circuit.hpp:144</div></div>
+<div class="ttc" id="aclasscircuit_html_a70522d5b66b3b767b08151ac36280499"><div class="ttname"><a href="classcircuit.html#a70522d5b66b3b767b08151ac36280499">circuit::circuit</a></div><div class="ttdeci">circuit(const circuit &amp;C)=delete</div><div class="ttdoc">Constructeur de copie.</div></div>
+<div class="ttc" id="aclasscircuit_html_a707932bfcaa34327f9991815511af93e"><div class="ttname"><a href="classcircuit.html#a707932bfcaa34327f9991815511af93e">circuit::Inertie</a></div><div class="ttdeci">double Inertie</div><div class="ttdef"><b>Definition:</b> circuit.hpp:153</div></div>
+<div class="ttc" id="aclasscircuit_html_a7cab1987423425c3d329b777f28c8e85"><div class="ttname"><a href="classcircuit.html#a7cab1987423425c3d329b777f28c8e85">circuit::E_pompe</a></div><div class="ttdeci">double E_pompe</div><div class="ttdef"><b>Definition:</b> circuit.hpp:162</div></div>
+<div class="ttc" id="aclasscircuit_html_a8ade4b6c6148fdde205889a7a8c96a29"><div class="ttname"><a href="classcircuit.html#a8ade4b6c6148fdde205889a7a8c96a29">circuit::reparation_pompe</a></div><div class="ttdeci">bool reparation_pompe()</div><div class="ttdoc">Permet de réparer la pompe.</div></div>
+<div class="ttc" id="aclasscircuit_html_a8c8598e124560dc44d1527ceb4505039"><div class="ttname"><a href="classcircuit.html#a8c8598e124560dc44d1527ceb4505039">circuit::get_Pression</a></div><div class="ttdeci">double get_Pression() const</div><div class="ttdoc">Permet d'obbtenir la pression exercée par l'eau ou la vapeur.</div></div>
+<div class="ttc" id="aclasscircuit_html_a96b026ab65d270d6306f08a27c5463a2"><div class="ttname"><a href="classcircuit.html#a96b026ab65d270d6306f08a27c5463a2">circuit::set_F_pompe</a></div><div class="ttdeci">void set_F_pompe(double regime)</div><div class="ttdoc">Permet de modifier le régime de la pompe.</div></div>
+<div class="ttc" id="aclasscircuit_html_aad0cc1e97e5f58ae27d567cd4851d54d"><div class="ttname"><a href="classcircuit.html#aad0cc1e97e5f58ae27d567cd4851d54d">circuit::Debit_eau</a></div><div class="ttdeci">double Debit_eau</div><div class="ttdef"><b>Definition:</b> circuit.hpp:150</div></div>
+<div class="ttc" id="aclasscircuit_html_ab6176dc2c7a4e221f08468f5f5872dc3"><div class="ttname"><a href="classcircuit.html#ab6176dc2c7a4e221f08468f5f5872dc3">circuit::set_E_circuit</a></div><div class="ttdeci">void set_E_circuit(double etat)</div><div class="ttdoc">Permet de modifier l'état du circuit.</div></div>
+<div class="ttc" id="aclasscircuit_html_ac04082983f69902f56bac952bcf17ff9"><div class="ttname"><a href="classcircuit.html#ac04082983f69902f56bac952bcf17ff9">circuit::get_Debit_eau</a></div><div class="ttdeci">double get_Debit_eau() const</div><div class="ttdoc">Permet d'obtenir le débit.</div></div>
+<div class="ttc" id="aclasscircuit_html_ac18d4b9075b551e5edf0cc305e121633"><div class="ttname"><a href="classcircuit.html#ac18d4b9075b551e5edf0cc305e121633">circuit::get_Inertie</a></div><div class="ttdeci">double get_Inertie() const</div><div class="ttdoc">Permet d'obtenir l'inertie chaleur de l'eau circuit.</div></div>
+<div class="ttc" id="aclasscircuit_html_acb161f305eaa3fe958f07f9539e7b39a"><div class="ttname"><a href="classcircuit.html#acb161f305eaa3fe958f07f9539e7b39a">circuit::get_Temperature</a></div><div class="ttdeci">double get_Temperature() const</div><div class="ttdoc">Permet d'obtenir la température de l'eau dans le circuit.</div></div>
+<div class="ttc" id="aclasscircuit_html_aeae44bc293340f66fdcfa3bc3db8ea45"><div class="ttname"><a href="classcircuit.html#aeae44bc293340f66fdcfa3bc3db8ea45">circuit::Pression</a></div><div class="ttdeci">double Pression</div><div class="ttdef"><b>Definition:</b> circuit.hpp:147</div></div>
+<div class="ttc" id="aclasscircuit_html_aebc990b4161a23b61c1f050b3dc39d80"><div class="ttname"><a href="classcircuit.html#aebc990b4161a23b61c1f050b3dc39d80">circuit::Radioactivite</a></div><div class="ttdeci">double Radioactivite</div><div class="ttdef"><b>Definition:</b> circuit.hpp:159</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

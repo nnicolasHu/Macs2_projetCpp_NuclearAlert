@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centrale Nucléaire MACS2:  Fichier source de reacteur.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Centrale Nucléaire MACS2
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">reacteur.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _REACTEUR_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _REACTEUR_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std::string_literals; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classreacteur.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classreacteur.html">reacteur</a>{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classreacteur.html#a4999ad77ac8f1e3cdfcc6889edb3ca56">   32</a></span>&#160;     <a class="code" href="classreacteur.html#a4999ad77ac8f1e3cdfcc6889edb3ca56">reacteur</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classreacteur.html#a8f332b598cf844507e226118ee1af53e">   38</a></span>&#160;     <a class="code" href="classreacteur.html#a8f332b598cf844507e226118ee1af53e">reacteur</a>( <span class="keyword">const</span> <a class="code" href="classreacteur.html">reacteur</a>&amp; R ) = <span class="keyword">delete</span>; <span class="comment">// Interdiction de copier</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classreacteur.html#aa7d83f56004daa863d83707bbb729b7d">   44</a></span>&#160;     <a class="code" href="classreacteur.html#aa7d83f56004daa863d83707bbb729b7d">reacteur</a>( <a class="code" href="classreacteur.html">reacteur</a>&amp;&amp; R ) = <span class="keyword">delete</span>; <span class="comment">// Interdiction de déplacer</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classreacteur.html#a476b0337d51c737da87450704a027300">   50</a></span>&#160;     <a class="code" href="classreacteur.html#a476b0337d51c737da87450704a027300">~reacteur</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classreacteur.html#a767c1ee3cf4004e4449323c71ec4f3ca">   58</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#a767c1ee3cf4004e4449323c71ec4f3ca">get_Tx_graphite</a>() <span class="keyword">const</span>;  </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classreacteur.html#a439713b0054420dedd5db1adbd729e92">   66</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#a439713b0054420dedd5db1adbd729e92">get_TGraphite_eff</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;     </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classreacteur.html#a686627a6717761b72341dca02ae41505">   74</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#a686627a6717761b72341dca02ae41505">get_Tx_bore</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classreacteur.html#ac633f0fad32382721a2df5a6baa65378">   82</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#ac633f0fad32382721a2df5a6baa65378">get_TBore_eff</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classreacteur.html#a05b039fa71b8730dc15d30e78c7f98f9">   90</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#a05b039fa71b8730dc15d30e78c7f98f9">get_E_bore</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classreacteur.html#a53c970fc33975bb17b8d773d31397fe1">   98</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#a53c970fc33975bb17b8d773d31397fe1">get_E_barre</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classreacteur.html#ae67f5a21846b954de765dd09cb5e7b54">  105</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#ae67f5a21846b954de765dd09cb5e7b54">get_E_cuve</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classreacteur.html#ae819b894191aee032f4d54bb784a6017">  112</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#ae819b894191aee032f4d54bb784a6017">get_E_piscine</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classreacteur.html#ab4f67739cf58653b248ed1ebdfb5cbe3">  119</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#ab4f67739cf58653b248ed1ebdfb5cbe3">get_E_canaux</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classreacteur.html#a74482756860832ceedfa07a4c85e86c8">  126</a></span>&#160;     <span class="keywordtype">double</span> <a class="code" href="classreacteur.html#a74482756860832ceedfa07a4c85e86c8">get_R_piscine</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classreacteur.html#a3139aa77d23170f9c1990c002b291919">  132</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classreacteur.html#a3139aa77d23170f9c1990c002b291919">incr_bore</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classreacteur.html#a9f569217ee1b8c0949dbf1803dce82ff">  138</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classreacteur.html#a9f569217ee1b8c0949dbf1803dce82ff">decr_bore</a>();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classreacteur.html#a67d2dd64a1ce20441729779cd34b86a5">  144</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classreacteur.html#a67d2dd64a1ce20441729779cd34b86a5">maj_bore</a>();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classreacteur.html#aab3c0ab2d7d83cccc33308448de71c59">  153</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classreacteur.html#aab3c0ab2d7d83cccc33308448de71c59">set_graphite</a>(<span class="keywordtype">double</span> valeur_demandee);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classreacteur.html#aa8dd4f15c56011c8bfac9c883bc76985">  159</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classreacteur.html#aa8dd4f15c56011c8bfac9c883bc76985">incr_graphite</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classreacteur.html#a731af6e2ec3e405b2052e06c4515f426">  165</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classreacteur.html#a731af6e2ec3e405b2052e06c4515f426">decr_graphite</a>();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="classreacteur.html#aa306d4d2f153a667e59b1e5d9f4a1b00">  171</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classreacteur.html#aa306d4d2f153a667e59b1e5d9f4a1b00">maj_graphite</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="classreacteur.html#a24f6451f2e6bb3660d46b51eb052a1be">  178</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="classreacteur.html#a24f6451f2e6bb3660d46b51eb052a1be">maj_R_piscine</a>(<span class="keywordtype">double</span> R1);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="classreacteur.html#ad1c1a79459184b1ffec1a36836d07ed5">  187</a></span>&#160;     std::string <a class="code" href="classreacteur.html#ad1c1a79459184b1ffec1a36836d07ed5">degr_E_cuve</a>(<span class="keywordtype">double</span> T1, <span class="keywordtype">double</span> E_circuit_primaire, <span class="keywordtype">double</span> E_enceinte);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="classreacteur.html#ab501f8f43f080b34ed3733fde129a2e7">  196</a></span>&#160;     std::string <a class="code" href="classreacteur.html#ab501f8f43f080b34ed3733fde129a2e7">degr_E_piscine</a>(<span class="keywordtype">double</span> T1, <span class="keywordtype">double</span> E_circuit_primaire,<span class="keywordtype">double</span> E_enceinte);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="classreacteur.html#aa582f2b9d98b0e3b45324391bf1b92a3">  204</a></span>&#160;     std::string <a class="code" href="classreacteur.html#aa582f2b9d98b0e3b45324391bf1b92a3">degr_E_barre</a>(<span class="keywordtype">double</span> T1);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="classreacteur.html#a60e37746d22fca9694b791a8db1e79bb">  212</a></span>&#160;     std::string <a class="code" href="classreacteur.html#a60e37746d22fca9694b791a8db1e79bb">degr_E_canaux</a>(<span class="keywordtype">double</span> T1);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="classreacteur.html#a66d4f0b24d76d604865a09dea2e1f856">  221</a></span>&#160;     std::string <a class="code" href="classreacteur.html#a66d4f0b24d76d604865a09dea2e1f856">degr_E_bore</a>(<span class="keywordtype">double</span> T1, <span class="keywordtype">double</span> E_circuit_primaire);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="classreacteur.html#a07c17f0b51897114c423e4da642860b8">  228</a></span>&#160;     <span class="keywordtype">bool</span> <a class="code" href="classreacteur.html#a07c17f0b51897114c423e4da642860b8">repa_E_bore</a>();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="classreacteur.html#a60e3072fee5ca81cd3883ec0510b3c87">  235</a></span>&#160;     <span class="keywordtype">bool</span> <a class="code" href="classreacteur.html#a60e3072fee5ca81cd3883ec0510b3c87">arret_urgence</a>();</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;     <span class="keywordtype">double</span> Tx_graphite;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;     <span class="keywordtype">double</span> TGraphite_eff;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;     <span class="keywordtype">double</span> Tx_bore;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;     <span class="keywordtype">double</span> TBore_eff;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;     <span class="keywordtype">double</span> E_cuve;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;     <span class="keywordtype">double</span> R_piscine;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;     <span class="keywordtype">double</span> E_piscine;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;     <span class="keywordtype">double</span> E_barre;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;     <span class="keywordtype">double</span> E_canaux;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;     <span class="keywordtype">double</span> E_bore;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;     <span class="keywordtype">bool</span> urg;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;     </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;};</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassreacteur_html"><div class="ttname"><a href="classreacteur.html">reacteur</a></div><div class="ttdoc">Cette classe décrit le réacteur.</div><div class="ttdef"><b>Definition:</b> reacteur.hpp:21</div></div>
+<div class="ttc" id="aclassreacteur_html_a05b039fa71b8730dc15d30e78c7f98f9"><div class="ttname"><a href="classreacteur.html#a05b039fa71b8730dc15d30e78c7f98f9">reacteur::get_E_bore</a></div><div class="ttdeci">double get_E_bore() const</div><div class="ttdoc">Permet d'obtenir l'état des injecteurs d'acide borique.</div></div>
+<div class="ttc" id="aclassreacteur_html_a07c17f0b51897114c423e4da642860b8"><div class="ttname"><a href="classreacteur.html#a07c17f0b51897114c423e4da642860b8">reacteur::repa_E_bore</a></div><div class="ttdeci">bool repa_E_bore()</div><div class="ttdoc">Permet d'effectuer les réparations sur l'injecteur borique.</div></div>
+<div class="ttc" id="aclassreacteur_html_a24f6451f2e6bb3660d46b51eb052a1be"><div class="ttname"><a href="classreacteur.html#a24f6451f2e6bb3660d46b51eb052a1be">reacteur::maj_R_piscine</a></div><div class="ttdeci">void maj_R_piscine(double R1)</div><div class="ttdoc">Permet de mettre à jour les radiations de la piscine.</div></div>
+<div class="ttc" id="aclassreacteur_html_a3139aa77d23170f9c1990c002b291919"><div class="ttname"><a href="classreacteur.html#a3139aa77d23170f9c1990c002b291919">reacteur::incr_bore</a></div><div class="ttdeci">void incr_bore()</div><div class="ttdoc">Permet d'incrémenter le Tx_bore.</div></div>
+<div class="ttc" id="aclassreacteur_html_a439713b0054420dedd5db1adbd729e92"><div class="ttname"><a href="classreacteur.html#a439713b0054420dedd5db1adbd729e92">reacteur::get_TGraphite_eff</a></div><div class="ttdeci">double get_TGraphite_eff() const</div><div class="ttdoc">Permet d'obtenir la proportion des barres de graphite hors de l'eau effective.</div></div>
+<div class="ttc" id="aclassreacteur_html_a476b0337d51c737da87450704a027300"><div class="ttname"><a href="classreacteur.html#a476b0337d51c737da87450704a027300">reacteur::~reacteur</a></div><div class="ttdeci">~reacteur()=default</div><div class="ttdoc">Destructeur par défaut.</div></div>
+<div class="ttc" id="aclassreacteur_html_a4999ad77ac8f1e3cdfcc6889edb3ca56"><div class="ttname"><a href="classreacteur.html#a4999ad77ac8f1e3cdfcc6889edb3ca56">reacteur::reacteur</a></div><div class="ttdeci">reacteur()</div><div class="ttdoc">Constructeur par défaut.</div></div>
+<div class="ttc" id="aclassreacteur_html_a53c970fc33975bb17b8d773d31397fe1"><div class="ttname"><a href="classreacteur.html#a53c970fc33975bb17b8d773d31397fe1">reacteur::get_E_barre</a></div><div class="ttdeci">double get_E_barre() const</div><div class="ttdoc">Permet d'obtenir l'état des barres de graphite.</div></div>
+<div class="ttc" id="aclassreacteur_html_a60e3072fee5ca81cd3883ec0510b3c87"><div class="ttname"><a href="classreacteur.html#a60e3072fee5ca81cd3883ec0510b3c87">reacteur::arret_urgence</a></div><div class="ttdeci">bool arret_urgence()</div><div class="ttdoc">Permet d'effectuer la tentative d'arrêt d'urgence.</div></div>
+<div class="ttc" id="aclassreacteur_html_a60e37746d22fca9694b791a8db1e79bb"><div class="ttname"><a href="classreacteur.html#a60e37746d22fca9694b791a8db1e79bb">reacteur::degr_E_canaux</a></div><div class="ttdeci">std::string degr_E_canaux(double T1)</div><div class="ttdoc">Permet de simuler les dégradations sur l'état des canaux.</div></div>
+<div class="ttc" id="aclassreacteur_html_a66d4f0b24d76d604865a09dea2e1f856"><div class="ttname"><a href="classreacteur.html#a66d4f0b24d76d604865a09dea2e1f856">reacteur::degr_E_bore</a></div><div class="ttdeci">std::string degr_E_bore(double T1, double E_circuit_primaire)</div><div class="ttdoc">Permet de simuler les dégradations sur l'état des injecteurs boriques.</div></div>
+<div class="ttc" id="aclassreacteur_html_a67d2dd64a1ce20441729779cd34b86a5"><div class="ttname"><a href="classreacteur.html#a67d2dd64a1ce20441729779cd34b86a5">reacteur::maj_bore</a></div><div class="ttdeci">void maj_bore()</div><div class="ttdoc">Permet de mettre à jour le TBore_eff en fonction du Tx_bore.</div></div>
+<div class="ttc" id="aclassreacteur_html_a686627a6717761b72341dca02ae41505"><div class="ttname"><a href="classreacteur.html#a686627a6717761b72341dca02ae41505">reacteur::get_Tx_bore</a></div><div class="ttdeci">double get_Tx_bore() const</div><div class="ttdoc">Permet d'obtenir le taux de bore demandée dans l'eau du circuit.</div></div>
+<div class="ttc" id="aclassreacteur_html_a731af6e2ec3e405b2052e06c4515f426"><div class="ttname"><a href="classreacteur.html#a731af6e2ec3e405b2052e06c4515f426">reacteur::decr_graphite</a></div><div class="ttdeci">void decr_graphite()</div><div class="ttdoc">Permet de décrémenter le Tx_bore.</div></div>
+<div class="ttc" id="aclassreacteur_html_a74482756860832ceedfa07a4c85e86c8"><div class="ttname"><a href="classreacteur.html#a74482756860832ceedfa07a4c85e86c8">reacteur::get_R_piscine</a></div><div class="ttdeci">double get_R_piscine() const</div><div class="ttdoc">Permet d'obtenir les radiations de la piscine.</div></div>
+<div class="ttc" id="aclassreacteur_html_a767c1ee3cf4004e4449323c71ec4f3ca"><div class="ttname"><a href="classreacteur.html#a767c1ee3cf4004e4449323c71ec4f3ca">reacteur::get_Tx_graphite</a></div><div class="ttdeci">double get_Tx_graphite() const</div><div class="ttdoc">Permet d'obtenir la proportion des barres de graphite hors de l'eau demandée.</div></div>
+<div class="ttc" id="aclassreacteur_html_a8f332b598cf844507e226118ee1af53e"><div class="ttname"><a href="classreacteur.html#a8f332b598cf844507e226118ee1af53e">reacteur::reacteur</a></div><div class="ttdeci">reacteur(const reacteur &amp;R)=delete</div><div class="ttdoc">Constructeur de copie.</div></div>
+<div class="ttc" id="aclassreacteur_html_a9f569217ee1b8c0949dbf1803dce82ff"><div class="ttname"><a href="classreacteur.html#a9f569217ee1b8c0949dbf1803dce82ff">reacteur::decr_bore</a></div><div class="ttdeci">void decr_bore()</div><div class="ttdoc">Permet de décrémenter le Tx_bore.</div></div>
+<div class="ttc" id="aclassreacteur_html_aa306d4d2f153a667e59b1e5d9f4a1b00"><div class="ttname"><a href="classreacteur.html#aa306d4d2f153a667e59b1e5d9f4a1b00">reacteur::maj_graphite</a></div><div class="ttdeci">void maj_graphite()</div><div class="ttdoc">Permet de mettre à jour le TBore_eff en fonction du Tx_bore.</div></div>
+<div class="ttc" id="aclassreacteur_html_aa582f2b9d98b0e3b45324391bf1b92a3"><div class="ttname"><a href="classreacteur.html#aa582f2b9d98b0e3b45324391bf1b92a3">reacteur::degr_E_barre</a></div><div class="ttdeci">std::string degr_E_barre(double T1)</div><div class="ttdoc">Permet de simuler les dégradations sur l'état des barres de graphite.</div></div>
+<div class="ttc" id="aclassreacteur_html_aa7d83f56004daa863d83707bbb729b7d"><div class="ttname"><a href="classreacteur.html#aa7d83f56004daa863d83707bbb729b7d">reacteur::reacteur</a></div><div class="ttdeci">reacteur(reacteur &amp;&amp;R)=delete</div><div class="ttdoc">Constructeur de déplacement.</div></div>
+<div class="ttc" id="aclassreacteur_html_aa8dd4f15c56011c8bfac9c883bc76985"><div class="ttname"><a href="classreacteur.html#aa8dd4f15c56011c8bfac9c883bc76985">reacteur::incr_graphite</a></div><div class="ttdeci">void incr_graphite()</div><div class="ttdoc">Permet d'incrémenter le Tx_bore.</div></div>
+<div class="ttc" id="aclassreacteur_html_aab3c0ab2d7d83cccc33308448de71c59"><div class="ttname"><a href="classreacteur.html#aab3c0ab2d7d83cccc33308448de71c59">reacteur::set_graphite</a></div><div class="ttdeci">void set_graphite(double valeur_demandee)</div><div class="ttdoc">Permet d'ajuster la proportion des barres de graphite hors de l'eau (ne sert que pour la tentative d'...</div></div>
+<div class="ttc" id="aclassreacteur_html_ab4f67739cf58653b248ed1ebdfb5cbe3"><div class="ttname"><a href="classreacteur.html#ab4f67739cf58653b248ed1ebdfb5cbe3">reacteur::get_E_canaux</a></div><div class="ttdeci">double get_E_canaux() const</div><div class="ttdoc">Permet d'obtenir l'état des canaux.</div></div>
+<div class="ttc" id="aclassreacteur_html_ab501f8f43f080b34ed3733fde129a2e7"><div class="ttname"><a href="classreacteur.html#ab501f8f43f080b34ed3733fde129a2e7">reacteur::degr_E_piscine</a></div><div class="ttdeci">std::string degr_E_piscine(double T1, double E_circuit_primaire, double E_enceinte)</div><div class="ttdoc">Permet de simuler les dégradations sur l'état de la piscine.</div></div>
+<div class="ttc" id="aclassreacteur_html_ac633f0fad32382721a2df5a6baa65378"><div class="ttname"><a href="classreacteur.html#ac633f0fad32382721a2df5a6baa65378">reacteur::get_TBore_eff</a></div><div class="ttdeci">double get_TBore_eff() const</div><div class="ttdoc">Permet d'obtenir le taux de bore effective dans l'eau du circuit.</div></div>
+<div class="ttc" id="aclassreacteur_html_ad1c1a79459184b1ffec1a36836d07ed5"><div class="ttname"><a href="classreacteur.html#ad1c1a79459184b1ffec1a36836d07ed5">reacteur::degr_E_cuve</a></div><div class="ttdeci">std::string degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte)</div><div class="ttdoc">Permet de simuler les dégradations sur l'état de la cuve.</div></div>
+<div class="ttc" id="aclassreacteur_html_ae67f5a21846b954de765dd09cb5e7b54"><div class="ttname"><a href="classreacteur.html#ae67f5a21846b954de765dd09cb5e7b54">reacteur::get_E_cuve</a></div><div class="ttdeci">double get_E_cuve() const</div><div class="ttdoc">Permet d'obtenir l'état de la cuve.</div></div>
+<div class="ttc" id="aclassreacteur_html_ae819b894191aee032f4d54bb784a6017"><div class="ttname"><a href="classreacteur.html#ae819b894191aee032f4d54bb784a6017">reacteur::get_E_piscine</a></div><div class="ttdeci">double get_E_piscine() const</div><div class="ttdoc">Permet d'obtenir l'état de la piscine.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

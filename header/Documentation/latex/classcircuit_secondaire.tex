@@ -1,0 +1,399 @@
+\hypertarget{classcircuit_secondaire}{}\doxysection{Référence de la classe circuit\+Secondaire}
+\label{classcircuit_secondaire}\index{circuitSecondaire@{circuitSecondaire}}
+
+
+Cette classe décrit le circuit secondaire.  
+
+
+
+
+{\ttfamily \#include $<$circuit\+Secondaire.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de circuit\+Secondaire\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcircuit_secondaire}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcircuit_secondaire_ade12c55f7f1677f2b22fce3f92b26f54}{circuit\+Secondaire}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_secondaire_ae41f4ec0042a08ff3ab95fc4006fb3ce}\label{classcircuit_secondaire_ae41f4ec0042a08ff3ab95fc4006fb3ce}} 
+\mbox{\hyperlink{classcircuit_secondaire_ae41f4ec0042a08ff3ab95fc4006fb3ce}{$\sim$circuit\+Secondaire}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur par défaut. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_secondaire_a8619b5e7e694c2a7eeabcb7c7c98b203}{set\+\_\+\+F\+\_\+condenseur}} (double valeur\+\_\+demandee)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}ajuster le régime de la pompe du condensateur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_secondaire_a0de566930bde921821254198a766ab8f}\label{classcircuit_secondaire_a0de566930bde921821254198a766ab8f}} 
+void {\bfseries set\+\_\+\+E\+\_\+vapeur} (double valeur\+\_\+demandee)
+\item 
+double \mbox{\hyperlink{classcircuit_secondaire_a5c176602a4ab5b7b66c023af1173f406}{get\+\_\+\+F\+\_\+condenseur}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le régime de la pompe du condensateur. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_secondaire_aede277fe8ed894b32f89e1c5d09e0e00}{get\+\_\+\+E\+\_\+vapeur}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état du générateur de vapeur. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_secondaire_a99072b312c97d3efa7ff05642042509e}{get\+\_\+\+E\+\_\+condenseur}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état du condensateur. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_secondaire_a9cadce4d7264d060fabba1e433026b61}{get\+\_\+\+T\+\_\+vapeur}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la temperature de la vapeur. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_secondaire_adf62bddedccb6fa6b68085e1946afd1e}{get\+\_\+\+P\+\_\+vapeur}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la pression vapeur. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_secondaire_af1e0427772d6efac76fb0b92d7eed0e8}{get\+\_\+\+D\+\_\+condenseur}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le débit d\textquotesingle{}eau au niveau du condensateur. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_secondaire_a047c87bb96958368c896785c918ce287}{get\+\_\+\+Delta\+\_\+\+ES}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la différence de chaleur entre l\textquotesingle{}entrée et la sortie du condensateur. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcircuit_secondaire_a849b5f7aab05daf63d131d6bc620e135}{degrad\+\_\+\+E\+\_\+vapeur}} (double E\+\_\+chaleur, double E\+\_\+enceinte)
+\begin{DoxyCompactList}\small\item\em met a jour les dégradations de l\textquotesingle{}état du générateur de vapeur \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcircuit_secondaire_a2ae8db24e12b65c0af00f511ed48c0ac}{degrad\+\_\+\+E\+\_\+circuit}} ()
+\begin{DoxyCompactList}\small\item\em met a jour les dégradations de l\textquotesingle{}état du circuit secondaire \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcircuit_secondaire_a9b88121edc0ad1c99d33af9f0850ca84}{degrad\+\_\+\+E\+\_\+pompe}} ()
+\begin{DoxyCompactList}\small\item\em met a jour les dégradations de l\textquotesingle{}état de la pompe \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcircuit_secondaire_ab76b9d898a620ab04c2589ea0d640938}{degrad\+\_\+\+E\+\_\+condenseur}} ()
+\begin{DoxyCompactList}\small\item\em met a jour les dégradations de l\textquotesingle{}état du condenseur \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_secondaire_a59acf8685804eefe937f01e60dd7ade2}{degrad\+\_\+all}} (double E\+\_\+chaleur, double E\+\_\+enceinte)
+\begin{DoxyCompactList}\small\item\em met a jour TOUTES les dégradations du circuit secondaire \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcircuit_secondaire_ad9bec1042b979948be69a4a6e88c9cf7}{degrad\+\_\+\+E\+\_\+chaleur}} (double E\+\_\+chaleur)
+\begin{DoxyCompactList}\small\item\em met a jour les dégradations de l\textquotesingle{}état de l\textquotesingle{}échangeur de chaleur (communique avec \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_secondaire_a7c8dbd30a80f887e7f6235b4cd27d691}{maj\+\_\+\+T\+\_\+vapeur}} (double E\+\_\+ec, double T1)
+\begin{DoxyCompactList}\small\item\em met a jour la témpérature de la vapeur \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_secondaire_accb4147f5b08a8b19f48859fbc94990a}\label{classcircuit_secondaire_accb4147f5b08a8b19f48859fbc94990a}} 
+void \mbox{\hyperlink{classcircuit_secondaire_accb4147f5b08a8b19f48859fbc94990a}{maj\+\_\+\+P\+\_\+vapeur}} ()
+\begin{DoxyCompactList}\small\item\em met a jour la pression exercé par la vapeur \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_secondaire_aaf4ed8019f488ce25ab518201dfa15f8}\label{classcircuit_secondaire_aaf4ed8019f488ce25ab518201dfa15f8}} 
+void \mbox{\hyperlink{classcircuit_secondaire_aaf4ed8019f488ce25ab518201dfa15f8}{maj\+\_\+\+Debit\+\_\+eau\+\_\+2}} ()
+\begin{DoxyCompactList}\small\item\em met a jour le débit d\textquotesingle{}eau \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_secondaire_ad77e51353a171cb23c0953706b9e4ffe}\label{classcircuit_secondaire_ad77e51353a171cb23c0953706b9e4ffe}} 
+void \mbox{\hyperlink{classcircuit_secondaire_ad77e51353a171cb23c0953706b9e4ffe}{maj\+\_\+\+D\+\_\+condenseur}} ()
+\begin{DoxyCompactList}\small\item\em met a jour le débit au niveau du condenseur \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_secondaire_a4d31a97fd97d3e1f7f284a9333affec3}\label{classcircuit_secondaire_a4d31a97fd97d3e1f7f284a9333affec3}} 
+void \mbox{\hyperlink{classcircuit_secondaire_a4d31a97fd97d3e1f7f284a9333affec3}{maj\+\_\+\+Delta\+\_\+\+ES}} ()
+\begin{DoxyCompactList}\small\item\em met a jour la différence de chaleur entre l\textquotesingle{}entrée et la sortie du condensateur. Attention on met à jour Delta\+\_\+\+ES APRES D\+\_\+condenseur \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_secondaire_af0bab0696227d7e4d13aaf4fe3a409ed}{maj\+\_\+\+Inertie}} (double T\+\_\+circuit\+\_\+primaire)
+\begin{DoxyCompactList}\small\item\em met a jour l\textquotesingle{}inertie chaleur de l\textquotesingle{}eau du circuit \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_secondaire_a5c0481f94fb820f896032a3943d2f60d}{maj\+\_\+\+Radioactivite}} (double E\+\_\+ec, double Radioactivite\+\_\+circuit\+\_\+primaire)
+\begin{DoxyCompactList}\small\item\em met a jour la radioactivité du circuit secondaire \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcircuit_secondaire_a8378916413e2785aa0ff5f60e141f6ec}{reparation\+\_\+condenseur}} ()
+\begin{DoxyCompactList}\small\item\em Permet de réparer le condenseur. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcircuit_secondaire_ab77a3dad21754c62be1c08a16e86f2e3}{reparation\+\_\+vapeur}} (int nb\+Ouvrier)
+\begin{DoxyCompactList}\small\item\em Permet de réparer le générateur de vapeur. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcircuit_secondaire_af01ed8111e93502e78aca3a24a643679}{reparation\+\_\+circuit\+Secondaire}} ()
+\begin{DoxyCompactList}\small\item\em Permet de réparer le circuit secondaire. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_secondaire_a6dd90b125fe97532ec5ebb6ba5f8298b}\label{classcircuit_secondaire_a6dd90b125fe97532ec5ebb6ba5f8298b}} 
+void \mbox{\hyperlink{classcircuit_secondaire_a6dd90b125fe97532ec5ebb6ba5f8298b}{incr\+\_\+\+F\+\_\+condenseur}} ()
+\begin{DoxyCompactList}\small\item\em Incrémente le régime pompe condenseur. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_secondaire_a113f30e2a9afbf7d783285c28485cb57}\label{classcircuit_secondaire_a113f30e2a9afbf7d783285c28485cb57}} 
+void \mbox{\hyperlink{classcircuit_secondaire_a113f30e2a9afbf7d783285c28485cb57}{decr\+\_\+\+F\+\_\+condenseur}} ()
+\begin{DoxyCompactList}\small\item\em Décrémente le régime pompe condenseur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membres hérités additionnels}
+
+
+\doxysubsection{Description détaillée}
+Cette classe décrit le circuit secondaire. 
+
+Le circuit secondaire est composé d\textquotesingle{}un indicateur de l\textquotesingle{}état global du circuit, d\textquotesingle{}une pompe (composée d\textquotesingle{}un indicateur de régime, d\textquotesingle{}un indicateur du débit), d\textquotesingle{}un générateur de vapeur (composé d\textquotesingle{}un indicateur de température, d\textquotesingle{}un indicateur de pression exercée par la vapeur), d\textquotesingle{}un condensateur (composé d\textquotesingle{}un indcateur de l\textquotesingle{}état, d\textquotesingle{}un indicateur du régime de la pompe condensateur, d\textquotesingle{}un indicateur du différentiel de température entrée/sortie), d\textquotesingle{}un indicateur de l\textquotesingle{}inertie de la température de l\textquotesingle{}eau dans le circuit, d\textquotesingle{}un indicateur de la radioactivité dans le circuit. 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classcircuit_secondaire_ade12c55f7f1677f2b22fce3f92b26f54}\label{classcircuit_secondaire_ade12c55f7f1677f2b22fce3f92b26f54}} 
+\index{circuitSecondaire@{circuitSecondaire}!circuitSecondaire@{circuitSecondaire}}
+\index{circuitSecondaire@{circuitSecondaire}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{circuitSecondaire()}{circuitSecondaire()}}
+{\footnotesize\ttfamily circuit\+Secondaire\+::circuit\+Secondaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut. 
+
+Les paramètres d\textquotesingle{}etats sont initialisés à 1. La température vapeur est initialisée à 25°C. La pression est initialisée à 1 bar. Le reste est initialisé à 0. 
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classcircuit_secondaire_a59acf8685804eefe937f01e60dd7ade2}\label{classcircuit_secondaire_a59acf8685804eefe937f01e60dd7ade2}} 
+\index{circuitSecondaire@{circuitSecondaire}!degrad\_all@{degrad\_all}}
+\index{degrad\_all@{degrad\_all}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{degrad\_all()}{degrad\_all()}}
+{\footnotesize\ttfamily void circuit\+Secondaire\+::degrad\+\_\+all (\begin{DoxyParamCaption}\item[{double}]{E\+\_\+chaleur,  }\item[{double}]{E\+\_\+enceinte }\end{DoxyParamCaption})}
+
+
+
+met a jour TOUTES les dégradations du circuit secondaire 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em E\+\_\+chaleur} & l\textquotesingle{}état de l\textquotesingle{}échangeur de vapeur (attribut de \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) \\
+\hline
+\mbox{\texttt{ in}}  & {\em E\+\_\+enceinte} & l\textquotesingle{}état de l\textquotesingle{}enceinte de confinement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_secondaire_ad9bec1042b979948be69a4a6e88c9cf7}\label{classcircuit_secondaire_ad9bec1042b979948be69a4a6e88c9cf7}} 
+\index{circuitSecondaire@{circuitSecondaire}!degrad\_E\_chaleur@{degrad\_E\_chaleur}}
+\index{degrad\_E\_chaleur@{degrad\_E\_chaleur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{degrad\_E\_chaleur()}{degrad\_E\_chaleur()}}
+{\footnotesize\ttfamily std\+::string circuit\+Secondaire\+::degrad\+\_\+\+E\+\_\+chaleur (\begin{DoxyParamCaption}\item[{double}]{E\+\_\+chaleur }\end{DoxyParamCaption})}
+
+
+
+met a jour les dégradations de l\textquotesingle{}état de l\textquotesingle{}échangeur de chaleur (communique avec \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em E\+\_\+chaleur} & l\textquotesingle{}état de l\textquotesingle{}échangeur de vapeur (attribut de \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+message d\textquotesingle{}erreur dû à la dégradation de l\textquotesingle{}état de l\textquotesingle{}échangeur de chaleur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_a2ae8db24e12b65c0af00f511ed48c0ac}\label{classcircuit_secondaire_a2ae8db24e12b65c0af00f511ed48c0ac}} 
+\index{circuitSecondaire@{circuitSecondaire}!degrad\_E\_circuit@{degrad\_E\_circuit}}
+\index{degrad\_E\_circuit@{degrad\_E\_circuit}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{degrad\_E\_circuit()}{degrad\_E\_circuit()}}
+{\footnotesize\ttfamily std\+::string circuit\+Secondaire\+::degrad\+\_\+\+E\+\_\+circuit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+met a jour les dégradations de l\textquotesingle{}état du circuit secondaire 
+
+\begin{DoxyReturn}{Renvoie}
+std\+::array des messages dû à la dégradation de l\textquotesingle{}état du circuit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_ab76b9d898a620ab04c2589ea0d640938}\label{classcircuit_secondaire_ab76b9d898a620ab04c2589ea0d640938}} 
+\index{circuitSecondaire@{circuitSecondaire}!degrad\_E\_condenseur@{degrad\_E\_condenseur}}
+\index{degrad\_E\_condenseur@{degrad\_E\_condenseur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{degrad\_E\_condenseur()}{degrad\_E\_condenseur()}}
+{\footnotesize\ttfamily std\+::string circuit\+Secondaire\+::degrad\+\_\+\+E\+\_\+condenseur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+met a jour les dégradations de l\textquotesingle{}état du condenseur 
+
+\begin{DoxyReturn}{Renvoie}
+message d\textquotesingle{}erreur dû à la de l\textquotesingle{}état du condenseur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_a9b88121edc0ad1c99d33af9f0850ca84}\label{classcircuit_secondaire_a9b88121edc0ad1c99d33af9f0850ca84}} 
+\index{circuitSecondaire@{circuitSecondaire}!degrad\_E\_pompe@{degrad\_E\_pompe}}
+\index{degrad\_E\_pompe@{degrad\_E\_pompe}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{degrad\_E\_pompe()}{degrad\_E\_pompe()}}
+{\footnotesize\ttfamily std\+::string circuit\+Secondaire\+::degrad\+\_\+\+E\+\_\+pompe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+met a jour les dégradations de l\textquotesingle{}état de la pompe 
+
+\begin{DoxyReturn}{Renvoie}
+message d\textquotesingle{}erreur dû à la dégradation de l\textquotesingle{}état de la pompe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_a849b5f7aab05daf63d131d6bc620e135}\label{classcircuit_secondaire_a849b5f7aab05daf63d131d6bc620e135}} 
+\index{circuitSecondaire@{circuitSecondaire}!degrad\_E\_vapeur@{degrad\_E\_vapeur}}
+\index{degrad\_E\_vapeur@{degrad\_E\_vapeur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{degrad\_E\_vapeur()}{degrad\_E\_vapeur()}}
+{\footnotesize\ttfamily std\+::string circuit\+Secondaire\+::degrad\+\_\+\+E\+\_\+vapeur (\begin{DoxyParamCaption}\item[{double}]{E\+\_\+chaleur,  }\item[{double}]{E\+\_\+enceinte }\end{DoxyParamCaption})}
+
+
+
+met a jour les dégradations de l\textquotesingle{}état du générateur de vapeur 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em E\+\_\+chaleur} & l\textquotesingle{}état de l\textquotesingle{}échangeur de vapeur (attribut de \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+std\+::array des messages dû à la dégradation de l\textquotesingle{}état de la vapeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_af1e0427772d6efac76fb0b92d7eed0e8}\label{classcircuit_secondaire_af1e0427772d6efac76fb0b92d7eed0e8}} 
+\index{circuitSecondaire@{circuitSecondaire}!get\_D\_condenseur@{get\_D\_condenseur}}
+\index{get\_D\_condenseur@{get\_D\_condenseur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{get\_D\_condenseur()}{get\_D\_condenseur()}}
+{\footnotesize\ttfamily double circuit\+Secondaire\+::get\+\_\+\+D\+\_\+condenseur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir le débit d\textquotesingle{}eau au niveau du condensateur. 
+
+\begin{DoxyReturn}{Renvoie}
+debit\+\_\+cond 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_a047c87bb96958368c896785c918ce287}\label{classcircuit_secondaire_a047c87bb96958368c896785c918ce287}} 
+\index{circuitSecondaire@{circuitSecondaire}!get\_Delta\_ES@{get\_Delta\_ES}}
+\index{get\_Delta\_ES@{get\_Delta\_ES}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{get\_Delta\_ES()}{get\_Delta\_ES()}}
+{\footnotesize\ttfamily double circuit\+Secondaire\+::get\+\_\+\+Delta\+\_\+\+ES (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir la différence de chaleur entre l\textquotesingle{}entrée et la sortie du condensateur. 
+
+\begin{DoxyReturn}{Renvoie}
+delta\+\_\+cond 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_a99072b312c97d3efa7ff05642042509e}\label{classcircuit_secondaire_a99072b312c97d3efa7ff05642042509e}} 
+\index{circuitSecondaire@{circuitSecondaire}!get\_E\_condenseur@{get\_E\_condenseur}}
+\index{get\_E\_condenseur@{get\_E\_condenseur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{get\_E\_condenseur()}{get\_E\_condenseur()}}
+{\footnotesize\ttfamily double circuit\+Secondaire\+::get\+\_\+\+E\+\_\+condenseur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état du condensateur. 
+
+\begin{DoxyReturn}{Renvoie}
+etat\+\_\+condensateur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_aede277fe8ed894b32f89e1c5d09e0e00}\label{classcircuit_secondaire_aede277fe8ed894b32f89e1c5d09e0e00}} 
+\index{circuitSecondaire@{circuitSecondaire}!get\_E\_vapeur@{get\_E\_vapeur}}
+\index{get\_E\_vapeur@{get\_E\_vapeur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{get\_E\_vapeur()}{get\_E\_vapeur()}}
+{\footnotesize\ttfamily double circuit\+Secondaire\+::get\+\_\+\+E\+\_\+vapeur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état du générateur de vapeur. 
+
+\begin{DoxyReturn}{Renvoie}
+etat\+\_\+gen\+\_\+vapeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_a5c176602a4ab5b7b66c023af1173f406}\label{classcircuit_secondaire_a5c176602a4ab5b7b66c023af1173f406}} 
+\index{circuitSecondaire@{circuitSecondaire}!get\_F\_condenseur@{get\_F\_condenseur}}
+\index{get\_F\_condenseur@{get\_F\_condenseur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{get\_F\_condenseur()}{get\_F\_condenseur()}}
+{\footnotesize\ttfamily double circuit\+Secondaire\+::get\+\_\+\+F\+\_\+condenseur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir le régime de la pompe du condensateur. 
+
+\begin{DoxyReturn}{Renvoie}
+regime\+\_\+pompe\+\_\+condensateur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_adf62bddedccb6fa6b68085e1946afd1e}\label{classcircuit_secondaire_adf62bddedccb6fa6b68085e1946afd1e}} 
+\index{circuitSecondaire@{circuitSecondaire}!get\_P\_vapeur@{get\_P\_vapeur}}
+\index{get\_P\_vapeur@{get\_P\_vapeur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{get\_P\_vapeur()}{get\_P\_vapeur()}}
+{\footnotesize\ttfamily double circuit\+Secondaire\+::get\+\_\+\+P\+\_\+vapeur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir la pression vapeur. 
+
+\begin{DoxyReturn}{Renvoie}
+pression\+\_\+vapeur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_a9cadce4d7264d060fabba1e433026b61}\label{classcircuit_secondaire_a9cadce4d7264d060fabba1e433026b61}} 
+\index{circuitSecondaire@{circuitSecondaire}!get\_T\_vapeur@{get\_T\_vapeur}}
+\index{get\_T\_vapeur@{get\_T\_vapeur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{get\_T\_vapeur()}{get\_T\_vapeur()}}
+{\footnotesize\ttfamily double circuit\+Secondaire\+::get\+\_\+\+T\+\_\+vapeur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir la temperature de la vapeur. 
+
+\begin{DoxyReturn}{Renvoie}
+temperature\+\_\+vap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_af0bab0696227d7e4d13aaf4fe3a409ed}\label{classcircuit_secondaire_af0bab0696227d7e4d13aaf4fe3a409ed}} 
+\index{circuitSecondaire@{circuitSecondaire}!maj\_Inertie@{maj\_Inertie}}
+\index{maj\_Inertie@{maj\_Inertie}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{maj\_Inertie()}{maj\_Inertie()}}
+{\footnotesize\ttfamily void circuit\+Secondaire\+::maj\+\_\+\+Inertie (\begin{DoxyParamCaption}\item[{double}]{T\+\_\+circuit\+\_\+primaire }\end{DoxyParamCaption})}
+
+
+
+met a jour l\textquotesingle{}inertie chaleur de l\textquotesingle{}eau du circuit 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em T\+\_\+circuit\+\_\+primaire} & température eau dans le circuit primaire (attribut de \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_secondaire_a5c0481f94fb820f896032a3943d2f60d}\label{classcircuit_secondaire_a5c0481f94fb820f896032a3943d2f60d}} 
+\index{circuitSecondaire@{circuitSecondaire}!maj\_Radioactivite@{maj\_Radioactivite}}
+\index{maj\_Radioactivite@{maj\_Radioactivite}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{maj\_Radioactivite()}{maj\_Radioactivite()}}
+{\footnotesize\ttfamily void circuit\+Secondaire\+::maj\+\_\+\+Radioactivite (\begin{DoxyParamCaption}\item[{double}]{E\+\_\+ec,  }\item[{double}]{Radioactivite\+\_\+circuit\+\_\+primaire }\end{DoxyParamCaption})}
+
+
+
+met a jour la radioactivité du circuit secondaire 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em E\+\_\+ec} & état de l\textquotesingle{}échangeur de chaleur (attribut de \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) \\
+\hline
+\mbox{\texttt{ in}}  & {\em Radioactivite\+\_\+circuit\+\_\+primaire} & radioactivité le circuit primaire (attribut de \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_secondaire_a7c8dbd30a80f887e7f6235b4cd27d691}\label{classcircuit_secondaire_a7c8dbd30a80f887e7f6235b4cd27d691}} 
+\index{circuitSecondaire@{circuitSecondaire}!maj\_T\_vapeur@{maj\_T\_vapeur}}
+\index{maj\_T\_vapeur@{maj\_T\_vapeur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{maj\_T\_vapeur()}{maj\_T\_vapeur()}}
+{\footnotesize\ttfamily void circuit\+Secondaire\+::maj\+\_\+\+T\+\_\+vapeur (\begin{DoxyParamCaption}\item[{double}]{E\+\_\+ec,  }\item[{double}]{T1 }\end{DoxyParamCaption})}
+
+
+
+met a jour la témpérature de la vapeur 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em E\+\_\+ec} & l\textquotesingle{}état de l\textquotesingle{}échangeur de vapeur (attribut de \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) \\
+\hline
+\mbox{\texttt{ in}}  & {\em T1} & température eau dans le circuit primaire (attribut de \mbox{\hyperlink{classcircuit_primaire}{circuit\+Primaire}}) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_secondaire_af01ed8111e93502e78aca3a24a643679}\label{classcircuit_secondaire_af01ed8111e93502e78aca3a24a643679}} 
+\index{circuitSecondaire@{circuitSecondaire}!reparation\_circuitSecondaire@{reparation\_circuitSecondaire}}
+\index{reparation\_circuitSecondaire@{reparation\_circuitSecondaire}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{reparation\_circuitSecondaire()}{reparation\_circuitSecondaire()}}
+{\footnotesize\ttfamily bool circuit\+Secondaire\+::reparation\+\_\+circuit\+Secondaire (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet de réparer le circuit secondaire. 
+
+\begin{DoxyReturn}{Renvoie}
+booléen, 1 si le circuit secondaire est complètement réparé, 0 s\textquotesingle{}il est encore endommagé 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_a8378916413e2785aa0ff5f60e141f6ec}\label{classcircuit_secondaire_a8378916413e2785aa0ff5f60e141f6ec}} 
+\index{circuitSecondaire@{circuitSecondaire}!reparation\_condenseur@{reparation\_condenseur}}
+\index{reparation\_condenseur@{reparation\_condenseur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{reparation\_condenseur()}{reparation\_condenseur()}}
+{\footnotesize\ttfamily bool circuit\+Secondaire\+::reparation\+\_\+condenseur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet de réparer le condenseur. 
+
+\begin{DoxyReturn}{Renvoie}
+booléen, 1 si le condenseur est complètement réparé, 0 s\textquotesingle{}il est encore endommagé 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_ab77a3dad21754c62be1c08a16e86f2e3}\label{classcircuit_secondaire_ab77a3dad21754c62be1c08a16e86f2e3}} 
+\index{circuitSecondaire@{circuitSecondaire}!reparation\_vapeur@{reparation\_vapeur}}
+\index{reparation\_vapeur@{reparation\_vapeur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{reparation\_vapeur()}{reparation\_vapeur()}}
+{\footnotesize\ttfamily bool circuit\+Secondaire\+::reparation\+\_\+vapeur (\begin{DoxyParamCaption}\item[{int}]{nb\+Ouvrier }\end{DoxyParamCaption})}
+
+
+
+Permet de réparer le générateur de vapeur. 
+
+\begin{DoxyReturn}{Renvoie}
+booléen, 1 si le générateur de vapeur est complètement réparé, 0 s\textquotesingle{}il est encore endommagé 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_secondaire_a8619b5e7e694c2a7eeabcb7c7c98b203}\label{classcircuit_secondaire_a8619b5e7e694c2a7eeabcb7c7c98b203}} 
+\index{circuitSecondaire@{circuitSecondaire}!set\_F\_condenseur@{set\_F\_condenseur}}
+\index{set\_F\_condenseur@{set\_F\_condenseur}!circuitSecondaire@{circuitSecondaire}}
+\doxysubsubsection{\texorpdfstring{set\_F\_condenseur()}{set\_F\_condenseur()}}
+{\footnotesize\ttfamily void circuit\+Secondaire\+::set\+\_\+\+F\+\_\+condenseur (\begin{DoxyParamCaption}\item[{double}]{valeur\+\_\+demandee }\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}ajuster le régime de la pompe du condensateur. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em valeur\+\_\+demandee} & La valeur demandée, comprise entre 0. et l\textquotesingle{}état du condensateur \\
+\hline
+\end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+circuit\+Secondaire.\+hpp\end{DoxyCompactItemize}

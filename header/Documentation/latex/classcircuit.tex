@@ -1,0 +1,319 @@
+\hypertarget{classcircuit}{}\doxysection{Référence de la classe circuit}
+\label{classcircuit}\index{circuit@{circuit}}
+
+
+Cette classe décrit le fonctionnement d\textquotesingle{}un circuit.  
+
+
+
+
+{\ttfamily \#include $<$circuit.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de circuit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcircuit}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcircuit_a1109c8534ef8cccc455c9b6beba91f53}{circuit}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut du circuit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_a70522d5b66b3b767b08151ac36280499}\label{classcircuit_a70522d5b66b3b767b08151ac36280499}} 
+\mbox{\hyperlink{classcircuit_a70522d5b66b3b767b08151ac36280499}{circuit}} (const \mbox{\hyperlink{classcircuit}{circuit}} \&C)=delete
+\begin{DoxyCompactList}\small\item\em Constructeur de copie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_a04cf6c8869d2047e49e2c62a86340178}\label{classcircuit_a04cf6c8869d2047e49e2c62a86340178}} 
+\mbox{\hyperlink{classcircuit_a04cf6c8869d2047e49e2c62a86340178}{circuit}} (\mbox{\hyperlink{classcircuit}{circuit}} \&\&C)=delete
+\begin{DoxyCompactList}\small\item\em Constructeur de déplacement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_a3334909beda8c250d187ac7e376a872c}\label{classcircuit_a3334909beda8c250d187ac7e376a872c}} 
+\mbox{\hyperlink{classcircuit_a3334909beda8c250d187ac7e376a872c}{$\sim$circuit}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructeur par défaut. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_a094e54334ade4f1fc3b3556c6646d7ca}{get\+\_\+\+E\+\_\+circuit}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état du circuit. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_a8c8598e124560dc44d1527ceb4505039}{get\+\_\+\+Pression}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obbtenir la pression exercée par l\textquotesingle{}eau ou la vapeur. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_ac04082983f69902f56bac952bcf17ff9}{get\+\_\+\+Debit\+\_\+eau}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le débit. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_ac18d4b9075b551e5edf0cc305e121633}{get\+\_\+\+Inertie}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}inertie chaleur de l\textquotesingle{}eau circuit. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_acb161f305eaa3fe958f07f9539e7b39a}{get\+\_\+\+Temperature}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la température de l\textquotesingle{}eau dans le circuit. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_a3705dbd23be9b28d97892233a6f0a9c2}{get\+\_\+\+Radioactivite}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir la radioactivité \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_a5d02da33effde6611d87a4478ec53bb9}{get\+\_\+\+E\+\_\+pompe}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir l\textquotesingle{}état de la pompe. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcircuit_a57539571888edcd568256f6429f04766}{get\+\_\+\+F\+\_\+pompe}} () const
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}obtenir le régime de la pompe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_ab6176dc2c7a4e221f08468f5f5872dc3}{set\+\_\+\+E\+\_\+circuit}} (double etat)
+\begin{DoxyCompactList}\small\item\em Permet de modifier l\textquotesingle{}état du circuit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_a57e2337f3d3d1c1d32bb1ecdd5324fe8}{set\+\_\+\+E\+\_\+pompe}} (double etat)
+\begin{DoxyCompactList}\small\item\em Permet de modifier l\textquotesingle{}état de la pompe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircuit_a96b026ab65d270d6306f08a27c5463a2}{set\+\_\+\+F\+\_\+pompe}} (double regime)
+\begin{DoxyCompactList}\small\item\em Permet de modifier le régime de la pompe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_a5053cc2860a016ed11dd971189b6cad2}\label{classcircuit_a5053cc2860a016ed11dd971189b6cad2}} 
+void \mbox{\hyperlink{classcircuit_a5053cc2860a016ed11dd971189b6cad2}{incr\+\_\+\+F\+\_\+pompe}} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}incrémenter le régime de la pompe. Incrémentation de 0.\+05 en 0.\+05. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircuit_a59d9b864ab78d835a89fd4120965e8d5}\label{classcircuit_a59d9b864ab78d835a89fd4120965e8d5}} 
+void \mbox{\hyperlink{classcircuit_a59d9b864ab78d835a89fd4120965e8d5}{decr\+\_\+\+F\+\_\+pompe}} ()
+\begin{DoxyCompactList}\small\item\em Permet de décrémenter le régime de la pompe. Décrémentation de 0.\+05 en 0.\+05. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcircuit_a8ade4b6c6148fdde205889a7a8c96a29}{reparation\+\_\+pompe}} ()
+\begin{DoxyCompactList}\small\item\em Permet de réparer la pompe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classcircuit_a6d69948b9a9056e9c012f8a187610dc2}{E\+\_\+circuit}}
+\item 
+double \mbox{\hyperlink{classcircuit_aeae44bc293340f66fdcfa3bc3db8ea45}{Pression}}
+\item 
+double \mbox{\hyperlink{classcircuit_aad0cc1e97e5f58ae27d567cd4851d54d}{Debit\+\_\+eau}}
+\item 
+double \mbox{\hyperlink{classcircuit_a707932bfcaa34327f9991815511af93e}{Inertie}}
+\item 
+double \mbox{\hyperlink{classcircuit_a1a179729ec6f9eee75c7ac000864b30a}{Temperature}}
+\item 
+double \mbox{\hyperlink{classcircuit_aebc990b4161a23b61c1f050b3dc39d80}{Radioactivite}}
+\item 
+double \mbox{\hyperlink{classcircuit_a7cab1987423425c3d329b777f28c8e85}{E\+\_\+pompe}}
+\item 
+double \mbox{\hyperlink{classcircuit_a0eb00418dc2866bdadaa31e6d4caf999}{F\+\_\+pompe}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Cette classe décrit le fonctionnement d\textquotesingle{}un circuit. 
+
+Classe mère des classes circuit primaire et circuit secondaire 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classcircuit_a1109c8534ef8cccc455c9b6beba91f53}\label{classcircuit_a1109c8534ef8cccc455c9b6beba91f53}} 
+\index{circuit@{circuit}!circuit@{circuit}}
+\index{circuit@{circuit}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{circuit()}{circuit()}}
+{\footnotesize\ttfamily circuit\+::circuit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut du circuit. 
+
+L\textquotesingle{}état est initialement fixé à 1. La radioactivité, le débit, et l\textquotesingle{}inertie sont fixés à 0. 
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classcircuit_ac04082983f69902f56bac952bcf17ff9}\label{classcircuit_ac04082983f69902f56bac952bcf17ff9}} 
+\index{circuit@{circuit}!get\_Debit\_eau@{get\_Debit\_eau}}
+\index{get\_Debit\_eau@{get\_Debit\_eau}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{get\_Debit\_eau()}{get\_Debit\_eau()}}
+{\footnotesize\ttfamily double circuit\+::get\+\_\+\+Debit\+\_\+eau (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir le débit. 
+
+\begin{DoxyReturn}{Renvoie}
+Debit\+\_\+eau 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_a094e54334ade4f1fc3b3556c6646d7ca}\label{classcircuit_a094e54334ade4f1fc3b3556c6646d7ca}} 
+\index{circuit@{circuit}!get\_E\_circuit@{get\_E\_circuit}}
+\index{get\_E\_circuit@{get\_E\_circuit}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{get\_E\_circuit()}{get\_E\_circuit()}}
+{\footnotesize\ttfamily double circuit\+::get\+\_\+\+E\+\_\+circuit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état du circuit. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+circuit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_a5d02da33effde6611d87a4478ec53bb9}\label{classcircuit_a5d02da33effde6611d87a4478ec53bb9}} 
+\index{circuit@{circuit}!get\_E\_pompe@{get\_E\_pompe}}
+\index{get\_E\_pompe@{get\_E\_pompe}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{get\_E\_pompe()}{get\_E\_pompe()}}
+{\footnotesize\ttfamily double circuit\+::get\+\_\+\+E\+\_\+pompe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}état de la pompe. 
+
+\begin{DoxyReturn}{Renvoie}
+E\+\_\+pompe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_a57539571888edcd568256f6429f04766}\label{classcircuit_a57539571888edcd568256f6429f04766}} 
+\index{circuit@{circuit}!get\_F\_pompe@{get\_F\_pompe}}
+\index{get\_F\_pompe@{get\_F\_pompe}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{get\_F\_pompe()}{get\_F\_pompe()}}
+{\footnotesize\ttfamily double circuit\+::get\+\_\+\+F\+\_\+pompe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir le régime de la pompe. 
+
+\begin{DoxyReturn}{Renvoie}
+F\+\_\+pompe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_ac18d4b9075b551e5edf0cc305e121633}\label{classcircuit_ac18d4b9075b551e5edf0cc305e121633}} 
+\index{circuit@{circuit}!get\_Inertie@{get\_Inertie}}
+\index{get\_Inertie@{get\_Inertie}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{get\_Inertie()}{get\_Inertie()}}
+{\footnotesize\ttfamily double circuit\+::get\+\_\+\+Inertie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir l\textquotesingle{}inertie chaleur de l\textquotesingle{}eau circuit. 
+
+\begin{DoxyReturn}{Renvoie}
+Inertie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_a8c8598e124560dc44d1527ceb4505039}\label{classcircuit_a8c8598e124560dc44d1527ceb4505039}} 
+\index{circuit@{circuit}!get\_Pression@{get\_Pression}}
+\index{get\_Pression@{get\_Pression}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{get\_Pression()}{get\_Pression()}}
+{\footnotesize\ttfamily double circuit\+::get\+\_\+\+Pression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obbtenir la pression exercée par l\textquotesingle{}eau ou la vapeur. 
+
+\begin{DoxyReturn}{Renvoie}
+Pression 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_a3705dbd23be9b28d97892233a6f0a9c2}\label{classcircuit_a3705dbd23be9b28d97892233a6f0a9c2}} 
+\index{circuit@{circuit}!get\_Radioactivite@{get\_Radioactivite}}
+\index{get\_Radioactivite@{get\_Radioactivite}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{get\_Radioactivite()}{get\_Radioactivite()}}
+{\footnotesize\ttfamily double circuit\+::get\+\_\+\+Radioactivite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir la radioactivité 
+
+\begin{DoxyReturn}{Renvoie}
+Radioactivité 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_acb161f305eaa3fe958f07f9539e7b39a}\label{classcircuit_acb161f305eaa3fe958f07f9539e7b39a}} 
+\index{circuit@{circuit}!get\_Temperature@{get\_Temperature}}
+\index{get\_Temperature@{get\_Temperature}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{get\_Temperature()}{get\_Temperature()}}
+{\footnotesize\ttfamily double circuit\+::get\+\_\+\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Permet d\textquotesingle{}obtenir la température de l\textquotesingle{}eau dans le circuit. 
+
+\begin{DoxyReturn}{Renvoie}
+Temperature 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_a8ade4b6c6148fdde205889a7a8c96a29}\label{classcircuit_a8ade4b6c6148fdde205889a7a8c96a29}} 
+\index{circuit@{circuit}!reparation\_pompe@{reparation\_pompe}}
+\index{reparation\_pompe@{reparation\_pompe}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{reparation\_pompe()}{reparation\_pompe()}}
+{\footnotesize\ttfamily bool circuit\+::reparation\+\_\+pompe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Permet de réparer la pompe. 
+
+\begin{DoxyReturn}{Renvoie}
+booléen, 1 si la pompe est complètement réparée, 0 si elle est encore endommagée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcircuit_ab6176dc2c7a4e221f08468f5f5872dc3}\label{classcircuit_ab6176dc2c7a4e221f08468f5f5872dc3}} 
+\index{circuit@{circuit}!set\_E\_circuit@{set\_E\_circuit}}
+\index{set\_E\_circuit@{set\_E\_circuit}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{set\_E\_circuit()}{set\_E\_circuit()}}
+{\footnotesize\ttfamily void circuit\+::set\+\_\+\+E\+\_\+circuit (\begin{DoxyParamCaption}\item[{double}]{etat }\end{DoxyParamCaption})}
+
+
+
+Permet de modifier l\textquotesingle{}état du circuit. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em valeur} & La valeur doit être comprise entre 0 et 1 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_a57e2337f3d3d1c1d32bb1ecdd5324fe8}\label{classcircuit_a57e2337f3d3d1c1d32bb1ecdd5324fe8}} 
+\index{circuit@{circuit}!set\_E\_pompe@{set\_E\_pompe}}
+\index{set\_E\_pompe@{set\_E\_pompe}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{set\_E\_pompe()}{set\_E\_pompe()}}
+{\footnotesize\ttfamily void circuit\+::set\+\_\+\+E\+\_\+pompe (\begin{DoxyParamCaption}\item[{double}]{etat }\end{DoxyParamCaption})}
+
+
+
+Permet de modifier l\textquotesingle{}état de la pompe. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em valeur} & La valeur doit être comprise entre 0 et 1 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircuit_a96b026ab65d270d6306f08a27c5463a2}\label{classcircuit_a96b026ab65d270d6306f08a27c5463a2}} 
+\index{circuit@{circuit}!set\_F\_pompe@{set\_F\_pompe}}
+\index{set\_F\_pompe@{set\_F\_pompe}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{set\_F\_pompe()}{set\_F\_pompe()}}
+{\footnotesize\ttfamily void circuit\+::set\+\_\+\+F\+\_\+pompe (\begin{DoxyParamCaption}\item[{double}]{regime }\end{DoxyParamCaption})}
+
+
+
+Permet de modifier le régime de la pompe. 
+
+
+\begin{DoxyParams}[1]{Paramètres}
+\mbox{\texttt{ in}}  & {\em valeur} & La valeur doit être comprise entre 0 et l\textquotesingle{}état de la pompe \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{classcircuit_aad0cc1e97e5f58ae27d567cd4851d54d}\label{classcircuit_aad0cc1e97e5f58ae27d567cd4851d54d}} 
+\index{circuit@{circuit}!Debit\_eau@{Debit\_eau}}
+\index{Debit\_eau@{Debit\_eau}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{Debit\_eau}{Debit\_eau}}
+{\footnotesize\ttfamily double circuit\+::\+Debit\+\_\+eau\hspace{0.3cm}{\ttfamily [protected]}}
+
+Débit \mbox{\Hypertarget{classcircuit_a6d69948b9a9056e9c012f8a187610dc2}\label{classcircuit_a6d69948b9a9056e9c012f8a187610dc2}} 
+\index{circuit@{circuit}!E\_circuit@{E\_circuit}}
+\index{E\_circuit@{E\_circuit}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{E\_circuit}{E\_circuit}}
+{\footnotesize\ttfamily double circuit\+::\+E\+\_\+circuit\hspace{0.3cm}{\ttfamily [protected]}}
+
+Etat du circuit \mbox{\Hypertarget{classcircuit_a7cab1987423425c3d329b777f28c8e85}\label{classcircuit_a7cab1987423425c3d329b777f28c8e85}} 
+\index{circuit@{circuit}!E\_pompe@{E\_pompe}}
+\index{E\_pompe@{E\_pompe}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{E\_pompe}{E\_pompe}}
+{\footnotesize\ttfamily double circuit\+::\+E\+\_\+pompe\hspace{0.3cm}{\ttfamily [protected]}}
+
+Etat de la pompe \mbox{\Hypertarget{classcircuit_a0eb00418dc2866bdadaa31e6d4caf999}\label{classcircuit_a0eb00418dc2866bdadaa31e6d4caf999}} 
+\index{circuit@{circuit}!F\_pompe@{F\_pompe}}
+\index{F\_pompe@{F\_pompe}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{F\_pompe}{F\_pompe}}
+{\footnotesize\ttfamily double circuit\+::\+F\+\_\+pompe\hspace{0.3cm}{\ttfamily [protected]}}
+
+Régime de fonctionnement \mbox{\Hypertarget{classcircuit_a707932bfcaa34327f9991815511af93e}\label{classcircuit_a707932bfcaa34327f9991815511af93e}} 
+\index{circuit@{circuit}!Inertie@{Inertie}}
+\index{Inertie@{Inertie}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{Inertie}{Inertie}}
+{\footnotesize\ttfamily double circuit\+::\+Inertie\hspace{0.3cm}{\ttfamily [protected]}}
+
+Inertie température eau circuit \mbox{\Hypertarget{classcircuit_aeae44bc293340f66fdcfa3bc3db8ea45}\label{classcircuit_aeae44bc293340f66fdcfa3bc3db8ea45}} 
+\index{circuit@{circuit}!Pression@{Pression}}
+\index{Pression@{Pression}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{Pression}{Pression}}
+{\footnotesize\ttfamily double circuit\+::\+Pression\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pression \mbox{\Hypertarget{classcircuit_aebc990b4161a23b61c1f050b3dc39d80}\label{classcircuit_aebc990b4161a23b61c1f050b3dc39d80}} 
+\index{circuit@{circuit}!Radioactivite@{Radioactivite}}
+\index{Radioactivite@{Radioactivite}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{Radioactivite}{Radioactivite}}
+{\footnotesize\ttfamily double circuit\+::\+Radioactivite\hspace{0.3cm}{\ttfamily [protected]}}
+
+Radioactivité \mbox{\Hypertarget{classcircuit_a1a179729ec6f9eee75c7ac000864b30a}\label{classcircuit_a1a179729ec6f9eee75c7ac000864b30a}} 
+\index{circuit@{circuit}!Temperature@{Temperature}}
+\index{Temperature@{Temperature}!circuit@{circuit}}
+\doxysubsubsection{\texorpdfstring{Temperature}{Temperature}}
+{\footnotesize\ttfamily double circuit\+::\+Temperature\hspace{0.3cm}{\ttfamily [protected]}}
+
+Température de l\textquotesingle{}eau/vapeur 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+circuit.\+hpp\end{DoxyCompactItemize}
