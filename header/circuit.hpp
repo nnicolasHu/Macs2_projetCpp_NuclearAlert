@@ -98,8 +98,6 @@ public :
      */
     double get_F_pompe() const;
 
-
-
     /**
      * @brief Permet de modifier l'état du circuit
      * 
@@ -121,7 +119,16 @@ public :
      */
     void set_F_pompe(double regime);
 
+    /**
+     * @brief Permet d'incrémenter le régime de la pompe.
+     * Incrémentation de 0.05 en 0.05
+     */
     void incr_F_pompe();
+
+    /**
+     * @brief Permet de décrémenter le régime de la pompe.
+     * Décrémentation de 0.05 en 0.05
+     */
     void decr_F_pompe();
 
     /**

@@ -5,6 +5,23 @@
 #include <algorithm>
 #include "RND.hpp"
 
+/**
+ * @brief    Cette classe décrit les ouvriers.
+ * 
+ * Initialement, on dispose de 145 ouvriers. Aucun n'est blessés et ils peuvent être envoyé sur 8 organes: 
+ * 0 = pompe circuit primaire
+ * 1 = pompe circuit secondaire
+ * 2 = condenseur
+ * 3 = générateur de vapeur
+ * 4 = injecteur borique
+ * 5 = circuit primaire
+ * 6 = circuit secondaire
+ * 7 = pressuriseur
+ * 8 = echangeur de chaleur
+ * 9 = enceinte de confinement
+ * 
+*/
+
 class ouvriers {
     public :
 

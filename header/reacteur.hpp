@@ -124,14 +124,6 @@ public:
      * @return R_piscine
      */
      double get_R_piscine() const;
-     
-     /**
-     * @brief Permet d'ajuster le taux de bore 
-     * dans l'eau du circuit
-     *
-     * @param[in] valeur_demandee La valeur demandée, comprise entre 0 et 0.5.
-     */
-     /*void set_bore(double valeur_demandee);*/
 
      /**
      * @brief Permet d'incrémenter le Tx_bore
@@ -177,15 +169,6 @@ public:
      *
      */
      void maj_graphite();
-
-
-     /** Test **/
-     void set_E_cuve(double val);
-     void set_E_piscine(double val);
-     void set_R_piscine(double val);
-     void set_E_barre(double val);
-     void set_E_canaux(double val);
-     void set_E_bore(double val);
 
      /**
      * @brief Permet de mettre à jour les radiations de la piscine
@@ -284,11 +267,8 @@ private:
      /** Etat bore **/
      double E_bore;
 
+     /** Variable booléenne tentative d'arrêt urgence **/
      bool urg;
-
-
-
-
      
 
 };
