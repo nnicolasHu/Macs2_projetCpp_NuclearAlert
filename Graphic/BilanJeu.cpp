@@ -7,6 +7,7 @@ void BilanJeu(sdl2::window& fenetre, centrale&C, double prod){
 
     sdl2::texte Bilan("Bilan", fonte_titre, fenetre, {0xFF, 0, 0, 0xFF});
     Bilan.at(600, 10);
+    fenetre << sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
 
     sdl2::texte Etat_centrale("Etat de la centrale", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
     Etat_centrale.at(100, 100);
