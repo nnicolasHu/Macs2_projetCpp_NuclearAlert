@@ -274,17 +274,19 @@ public:
      * 
      * Convention : 
      * 
-     * 0 : pompe circuit primaire
-     * 1 : pompe circuit secondaire
-     * 2 : condenseur
-     * 3 : générateur de vapeur
-     * 4 : injecteur borique
-     * 5 : circuit primaire
-     * 6 : circuit secondaire
-     * 7 : pressuriseur
+     * case :
+     * 0 = pompe circuit primaire
+     * 1 = pompe circuit secondaire
+     * 2 = condenseur
+     * 3 = générateur de vapeur
+     * 4 = injecteur borique
+     * 5 = circuit primaire
+     * 6 = circuit secondaire
+     * 7 = pressuriseur
      * 
-     * O : tout se passe bien pour cette organe
-     * 1 : l'organe est endommagé
+     * état :
+     * O = tout se passe bien pour cette organe
+     * 1 = l'organe est endommagé
      * 
      */
     std::array<bool,10> get_clignotements();
@@ -296,6 +298,15 @@ public:
      */
     bool arret_urgence();
 
+    void envoie_pompeCircuitPrimaire();
+    void envoie_pompeCircuitSecondaire();
+    void envoie_condenseur();
+    void envoie_generateurVapeur();
+    void envoie_injecteurBore();
+    void envoie_circuitPrimaire();
+    void envoie_circuitSecondaire();
+    void envoie_pressuriseur();
+    
 private:
     static centrale* la_centrale;
     

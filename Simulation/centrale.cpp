@@ -488,3 +488,35 @@ bool centrale::arret_urgence(){
 
     return urg;
 }
+
+void centrale::envoie_pompeCircuitPrimaire() {
+    ptrOuvriers->envoie_intervention(0,8);
+}
+
+void centrale::envoie_pompeCircuitSecondaire() {
+    ptrOuvriers->envoie_intervention(1,8);
+}
+
+void centrale::envoie_condenseur() {
+    ptrOuvriers->envoie_intervention(2,20);
+}
+
+void centrale::envoie_generateurVapeur() {
+    ptrOuvriers->envoie_intervention(3,60);
+}
+
+void centrale::envoie_injecteurBore() {
+    ptrOuvriers->envoie_intervention(4,5);
+}
+
+void centrale::envoie_circuitPrimaire() {
+    ptrOuvriers->envoie_intervention(5,45);
+}
+
+void centrale::envoie_circuitSecondaire() {
+    ptrOuvriers->envoie_intervention(6,20);
+}
+
+void centrale::envoie_pressuriseur() {
+    ptrOuvriers->envoie_intervention(7,10);
+}
