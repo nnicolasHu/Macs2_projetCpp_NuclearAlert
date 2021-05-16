@@ -19,7 +19,7 @@
  * 
 */
 
-class centrale : public centrale_abstract
+class centrale 
 {
 
 public:
@@ -58,35 +58,35 @@ public:
      *
      * @return E_enceinte
      */
-    double get_E_enceinte() const override;
+    double get_E_enceinte() const;
 
     /** 
      * @brief Permet d'obtenir l'état de la centrale
      *
      * @return E_centrale
      */
-    double get_E_centrale() const override;
+    double get_E_centrale() const;
 
     /**
      * @brief Permet d'obtenir la pression subit par l'enceinte
      *
      * @return P_enceinte
      */
-    double get_P_enceinte() const override;
+    double get_P_enceinte() const;
 
     /**
      * @brief Permet d'obtenir la production de la centrale
      *
      * @return MW
      */
-    double get_MW() const override;
+    double get_MW() const;
 
     /**
      * @brief Permet d'obtenir la radioactivité à l'intérieur de l'enceinte
      *
      * @return R_enceinte
      */
-    double get_R_enceinte() const override;
+    double get_R_enceinte() const;
 
     /** 
      * @brief Permet d'accéder aux méthodes du reacteur
