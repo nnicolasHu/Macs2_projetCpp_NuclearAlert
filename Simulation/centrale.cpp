@@ -206,7 +206,7 @@ void centrale::maj_MW(){
 }
 
 std::string centrale::degr_E_enceinte(){
-    std::string messageErreur = "\n"s;
+    std::string messageErreur = "";
     if(E_enceinte>0.){
         if ((P_enceinte>2.) && (P_enceinte<3.4)){ // cas général (pas forcément de dégradation)
             messageErreur += "Dégradation potentielle de l’enceinte de confinement dû à la pression \n"s;
@@ -225,7 +225,7 @@ std::string centrale::degr_E_enceinte(){
         if(E_enceinte < 0){
             E_enceinte = 0;
         }
-        
+
         if ((P_enceinte>=4.5) || (E_enceinte == 0.)){
             E_enceinte = 0.; //Gérer les risques pollution
             messageErreur += "Destruction totale de l’enceinte de confinement \n"s;
