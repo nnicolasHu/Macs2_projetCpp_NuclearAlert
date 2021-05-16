@@ -300,13 +300,60 @@ public:
      */
     bool arret_urgence();
 
+    /**
+     * @brief Permet d'effectuer des réparations sur la pompe du circuit primaire (méthode uniquement utilisée dans
+     * envoie_intervention(int organe))
+     * 
+     */
     void envoie_pompeCircuitPrimaire();
+
+    /**
+     * @brief Permet d'effectuer des réparations sur la pompe du circuit secondaire (méthode uniquement utilisée dans
+     * envoie_intervention(int organe))
+     * 
+     */
     void envoie_pompeCircuitSecondaire();
+
+    /**
+     * @brief Permet d'effectuer des réparations sur le condenseur (méthode uniquement utilisée dans
+     * envoie_intervention(int organe))
+     * 
+     */
     void envoie_condenseur();
+
+    /**
+     * @brief Permet d'effectuer des réparations sur le générateur de vapeur (méthode uniquement utilisée dans
+     * envoie_intervention(int organe))
+     * 
+     */
     void envoie_generateurVapeur();
+
+    /**
+     * @brief Permet d'effectuer des réparations sur l'injecteur de bore (méthode uniquement utilisée dans
+     * envoie_intervention(int organe))
+     * 
+     */
     void envoie_injecteurBore();
+
+    /**
+     * @brief Permet d'effectuer des réparations sur le circuit primaire (méthode uniquement utilisée dans
+     * envoie_intervention(int organe))
+     * 
+     */
     void envoie_circuitPrimaire();
+
+    /**
+     * @brief Permet d'effectuer des réparations sur le circuit secondaire (méthode uniquement utilisée dans
+     * envoie_intervention(int organe))
+     * 
+     */
     void envoie_circuitSecondaire();
+
+    /**
+     * @brief Permet d'effectuer des réparations sur le pressuriseur (méthode uniquement utilisée dans
+     * envoie_intervention(int organe))
+     * 
+     */
     void envoie_pressuriseur();
     
 private:
