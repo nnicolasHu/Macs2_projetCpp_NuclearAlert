@@ -200,9 +200,8 @@ public:
      * @param[in] T1 Temperature circuit primaire
      * @param[in] E_circuit_primaire Etat circuit primaire
      * @param[in] E_enceinte Etat enceinte
-     * @param[in] urg Booléen lié à la tentative d'arrêt d'urgence
      */
-     std::string degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte, bool urg);
+     std::string degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état de la piscine
@@ -218,18 +217,16 @@ public:
      * barres de graphite
      *
      * @param[in] T1 Temperature circuit primaire
-     * @param[in] urg Booléen lié à la tentative d'arrêt d'urgence
      */
-     std::string degr_E_barre(double T1, bool urg);
+     std::string degr_E_barre(double T1);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
      * canaux
      *
      * @param[in] T1 Temperature circuit primaire
-     * @param[in] urg Booléen lié à la tentative d'arrêt d'urgence
      */
-     std::string degr_E_canaux(double T1, bool urg);
+     std::string degr_E_canaux(double T1);
 
      /**
      * @brief Permet de simuler les dégradations sur l'état des
@@ -247,6 +244,12 @@ public:
       */
      bool repa_E_bore();
 
+     /**
+     * @brief Permet d'effectuer la tentative d'arrêt d'urgence
+     * 
+     * @return booléen permettant de savoir si la tenatative d'arrêt d'urgence doit dégrader des éléments du réacteur
+     */
+     bool arret_urgence();
 
 
 private:
@@ -280,6 +283,8 @@ private:
 
      /** Etat bore **/
      double E_bore;
+
+     bool urg;
 
 
 

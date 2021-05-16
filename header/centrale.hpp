@@ -306,13 +306,6 @@ public:
     std::array<bool,10> get_clignotements();
 
     /**
-     * @brief Permet d'effectuer la tentative d'arrêt d'urgence
-     * 
-     * @return booléen permettant de savoir si la tenatative d'arrêt d'urgence doit dégrader des éléments du réacteur
-     */
-    bool arret_urgence();
-
-    /**
      * @brief Permet d'effectuer des réparations sur la pompe du circuit primaire (méthode uniquement utilisée dans
      * envoie_intervention(int organe))
      * 
