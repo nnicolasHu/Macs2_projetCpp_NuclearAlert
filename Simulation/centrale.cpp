@@ -506,7 +506,7 @@ std::array<bool,10> centrale::get_clignotements(){
         etat[3] = 1;
     }
 
-    if((ptrReacteur->get_E_bore()<1.) || (ptrReacteur->get_E_barre()<0.5)){
+    if((ptrReacteur->get_E_bore()<1.) || (ptrReacteur->get_E_barre()<0.5) || (ptrReacteur->get_E_canaux()<0.5)){
         etat[4] = 1;
     }
 
