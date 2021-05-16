@@ -110,39 +110,39 @@ void Niveau1(sdl2::window& fenêtre){
             }
 
             if (demande_ArretUrgence) {
-                message_confirmation(fenêtre);
+                message_confirmation(fenêtre,8);
             }
             if (demande_evacuation) {
-                message_confirmation(fenêtre);
+                message_confirmation(fenêtre,9);
             }
             if (demande_quitter) {
-                message_confirmation(fenêtre);
+                message_confirmation(fenêtre,10);
             }
             if (demande_retrait != -1) {
                 switch (demande_retrait) {
                     case 0:
-                        message_confirmation(fenêtre);
+                        message_confirmation(fenêtre,0);
                         break;
                     case 1:
-                        message_confirmation(fenêtre);
+                        message_confirmation(fenêtre,1);
                         break;
                     case 2:
-                        message_confirmation(fenêtre);
+                        message_confirmation(fenêtre,2);
                         break;
                     case 3:
-                        message_confirmation(fenêtre);
+                        message_confirmation(fenêtre,3);
                         break;
                     case 4:
-                        message_confirmation(fenêtre);
+                        message_confirmation(fenêtre,4);
                         break;
                     case 5:
-                        message_confirmation(fenêtre);
+                        message_confirmation(fenêtre,5);
                         break;
                     case 6:
-                        message_confirmation(fenêtre);
+                        message_confirmation(fenêtre,6);
                         break;
                     case 7:
-                        message_confirmation(fenêtre);
+                        message_confirmation(fenêtre,7);
                         break;
                 }
 
