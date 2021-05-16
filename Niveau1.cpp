@@ -178,7 +178,7 @@ void Niveau1(sdl2::window& fenêtre){
                         else if (demande_ArretUrgence) {
                             if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
                                 //tentative d'arrêt d'urgence
-                                std::cout << "tentative d'arrêt d'urgence" << std::endl;
+                                C.arret_urgence();
                                 demande_ArretUrgence = 0;
                             }
                             if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
@@ -190,7 +190,7 @@ void Niveau1(sdl2::window& fenêtre){
                                 //évacuation de la population
                                 evacuation = 1;
                                 demande_evacuation = 0;
-                                std::cout << "on évacue" << std::endl;                                   
+                                C.set_Order();                                   
                             }
                                 
                             if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
