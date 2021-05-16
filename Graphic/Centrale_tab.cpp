@@ -88,7 +88,8 @@ void Centrale_tab(sdl2::window& fenetre, centrale& C, bool clignotement){
 
     fenetre << centrale << circuit_prim << circuit_sec << circuit_refroid << vapeur ;
     if(clignotement == 1){
-        std::array<bool,10> tab = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+        std::array<bool,10> tab = C.get_clignotements();
+        tab[1] = 1; tab[8] = 1;
         if(tab[2] == 1){
             //Condenseur en rouge
             sdl2::texte condenseurR("Condenseur", fonte_test, fenetre, {0xFF, 0, 0, 0xFF});
