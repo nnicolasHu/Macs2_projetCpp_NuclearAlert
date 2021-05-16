@@ -15,6 +15,7 @@ reacteur::reacteur(){
     Tx_graphite = 0.;
     TGraphite_eff =  0.;
     R_piscine = 0.; 
+    urg = false;
 }
 
 /** Méthodes **/
@@ -146,7 +147,7 @@ void reacteur::maj_R_piscine(double R1){
     R_piscine = (1.- E_cuve)*R1 + 100 + RND(45);
 }
 
-std::string reacteur::degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte, bool urg){
+std::string reacteur::degr_E_cuve(double T1, double E_circuit_primaire, double E_enceinte){
     std::string message;
     if (E_cuve>0.){
         if ((T1>=50) && (E_circuit_primaire<0.6)){
@@ -193,7 +194,7 @@ std::string reacteur::degr_E_piscine(double T1, double E_circuit_primaire,double
     return(message);
 }
 
-std::string reacteur::degr_E_barre(double T1, bool urg){
+std::string reacteur::degr_E_barre(double T1){
 
     std::string message;
 
@@ -220,7 +221,7 @@ std::string reacteur::degr_E_barre(double T1, bool urg){
     return(message);
 }
 
-std::string reacteur::degr_E_canaux(double T1, bool urg){
+std::string reacteur::degr_E_canaux(double T1){
     
     std::string message;
 
@@ -274,4 +275,17 @@ bool reacteur::repa_E_bore(){
     }
 
     return reparation;
+}
+
+bool reacteur::arret_urgence(){
+
+    if(RND(1.)<=0.7*E_cuve*E_canaux*E_barre+0.15){
+        Tx_graphite = 0.;
+    }
+
+    else{
+        urg = true;
+    }
+
+    return urg;
 }

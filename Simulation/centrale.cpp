@@ -453,7 +453,6 @@ std::string centrale::degr_General(){
     // Variables nécessaires aux dégradations du réacteur
     double T1 = ptrCircuit_Primaire->get_Temperature();
     double E_C1 = ptrCircuit_Primaire->get_E_circuit();
-    bool urg = arret_urgence();
 
     // Variables nécessaires aux dégradations du circuit Secondaire
     double E_chaleur = ptrCircuit_Primaire->get_E_echangeur();
@@ -462,10 +461,10 @@ std::string centrale::degr_General(){
     message += degr_E_enceinte();
 
     // Dégradations reacteur
-    message += ptrReacteur->degr_E_barre(T1, urg);
+    message += ptrReacteur->degr_E_barre(T1);
     message += ptrReacteur->degr_E_bore(T1, E_C1);
-    message += ptrReacteur->degr_E_canaux(T1, urg);
-    message += ptrReacteur->degr_E_cuve(T1, E_C1, E_enceinte, urg);
+    message += ptrReacteur->degr_E_canaux(T1);
+    message += ptrReacteur->degr_E_cuve(T1, E_C1, E_enceinte);
     message += ptrReacteur->degr_E_piscine(T1, E_C1, E_enceinte);
 
     // Dégradations circuit primaire
@@ -532,24 +531,6 @@ std::array<bool,10> centrale::get_clignotements(){
     
     return(etat);
 
-}
-
-bool centrale::arret_urgence(){
-    bool urg = false;
-
-    double E_cuve = ptrReacteur->get_E_cuve();
-    double E_canaux = ptrReacteur->get_E_canaux();
-    double E_barre = ptrReacteur->get_E_barre();
-
-    if(RND(1.)<=0.7*E_cuve*E_canaux*E_barre+0.15){
-        ptrReacteur->set_graphite(0.);
-    }
-
-    else{
-        urg = true;
-    }
-
-    return urg;
 }
 
 void centrale::envoie_pompeCircuitPrimaire() {
