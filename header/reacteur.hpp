@@ -151,12 +151,12 @@ public:
     
      /**
      * @brief Permet d'ajuster la proportion des barres de graphite
-     * hors de l'eau
+     * hors de l'eau (ne sert que pour la tentative d'arrêt d'urgence)
      *
      * @param[in] valeur_demandee La proportion des barres de graphite à laisser hors de l'eau,
      * qui doit être comprise entre 1 - etat_barre et 1.
      */
-     /*void set_graphite(double valeur_demandee);*/
+     void set_graphite(double valeur_demandee);
 
      /**
      * @brief Permet d'incrémenter le Tx_bore
