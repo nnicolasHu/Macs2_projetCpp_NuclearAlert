@@ -25,6 +25,12 @@ default : testGraphic.exe
 clean :
 	@rm -fr *.o *.exe Simulation/*.o Simulation/*~ Graphic/SDL2/*.o Graphic/SDL2/*~ Graphic/*.o Graphic/*~
 
+NuclearAlert.exe : NuclearAlert.o $(OBJ_SDL) $(OBJ_GRAPH) $(OBJ_SIM)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o NuclearAlert.exe NuclearAlert.o $(OBJ_SDL) $(OBJ_GRAPH) $(OBJ_SIM) $(LIBS)
+
+NuclearAlert.o : NuclearAlert.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c NuclearAlert.cpp -o NuclearAlert.o
+
 testSquelette.exe : testSquelette.o $(OBJ_SDL)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o testSquelette.exe testSquelette.o $(OBJ_SDL) $(LIBS)
 

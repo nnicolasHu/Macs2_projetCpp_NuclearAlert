@@ -7,8 +7,9 @@ int main(int argc, char* args[]){
 
     sdl2::window fenêtre("Nuclear Alert", {1250, 650});
     centrale C;
+    std::string pseudo = "ok"s;
 
-    Niveau1(fenêtre); 
+    Niveau1(fenêtre,pseudo); 
     //Radioprotection_win(1);
     // std::cout << pseudo << std::endl;
     // int level = Choix_Niveau(fenêtre);

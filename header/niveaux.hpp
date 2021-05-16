@@ -3,5 +3,5 @@
 
 #include "Graphic_Fonction.hpp"
 
-void Niveau1(sdl2::window& fenêtre);
+void Niveau1(sdl2::window& fenêtre, std::string& pseudo);
 #endif

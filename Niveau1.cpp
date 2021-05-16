@@ -1,6 +1,6 @@
 #include"niveaux.hpp"
 
-void Niveau1(sdl2::window& fenêtre){
+void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
 
