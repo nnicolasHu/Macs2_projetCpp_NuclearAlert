@@ -101,29 +101,37 @@ void circuitPrimaire::decr_T_pressuriseur() {
 }
 
 //les dégradations
-void circuitPrimaire::degr_E_circuit(double E_enceinte) {
+std::string circuitPrimaire::degr_E_circuit(double E_enceinte) {
+    std::string alerte;
 
-    if (E_circuit>0.){
-
-        if (Temperature>=420) {
-            E_circuit += -RND(0.02);
-        }
-        if (Temperature>=40*Pression) {
-            E_circuit += -RND(0.03);
-        }
-        if (Temperature>=50 && Pression>10) {
-            E_circuit += -RND(0.02)*(RND(1.)<0.2);
-        }
-        if (Temperature>=50 && E_echangeur<0.6) {
-            E_circuit += -RND(0.015)*(RND(1.)<0.3);
-        }
-        if (E_enceinte == 0.){
-            E_circuit -= (0.1 + RND(0.1))*(RND(1.)>=0.2);
-        }
+    if (Temperature>=420) {
+        E_circuit += -RND(0.02);
+        alerte += "Risque important de dégradation du circuit primaire dû à la température\n"s;
     }
+    else if (Temperature>400) {
+        alerte += "Température trop élevée dans le circuit primaire"s;
+    }
+    if (Temperature>=40*Pression) {
+        E_circuit += -RND(0.03);
+        alerte += "Risque important de dégradation du circuit primaire dû à la formation de vapeur\n"s;
+    }
+    if (Temperature>=50 && Pression>10) {
+        E_circuit += -RND(0.02)*(RND(1.)<0.2);
+        alerte += "Risque faible de dégradation du circuit primaire dû à une pression trop forte\n"s;
+    }
+    if (Temperature>=50 && E_echangeur<0.6) {
+        E_circuit += -RND(0.015)*(RND(1.)<0.3);
+        alerte += "Risque faible de dégradation faible du circuit primaire\n"s;
+    }
+    if (E_enceinte == 0.){ //faire une méthode pour la déstruction totale?
+        E_circuit -= (0.1 + RND(0.1))*(RND(1.)>=0.2);
+    }
+    
     if (E_circuit <=0.){
         E_circuit = 0.;
     }
+
+    return alerte;
 }
 
 void circuitPrimaire::degr_E_pompe() {

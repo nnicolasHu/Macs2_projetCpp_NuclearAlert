@@ -2,7 +2,6 @@
 #define _CIRCUIT_SECONDAIRE_HPP
 
 #include "circuit.hpp"
-#include <memory>
 
 /**
  *  @brief   Cette classe décrit le circuit secondaire.

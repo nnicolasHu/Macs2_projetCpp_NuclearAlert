@@ -1,6 +1,10 @@
 #ifndef _CIRCUIT_HPP_
 #define _CIRCUIT_HPP_
 
+#include <memory>
+#include <string>
+using namespace std::string_literals; 
+
 
 /**
  * @brief Cette classe décrit le fonctionnement d'un circuit. 

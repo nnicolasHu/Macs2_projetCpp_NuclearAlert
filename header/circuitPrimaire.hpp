@@ -2,7 +2,6 @@
 #define _CIRCUIT_PRIMAIRE_HPP_
 
 #include <iostream>
-#include <memory>
 #include "circuit.hpp"
 
 /**
@@ -142,7 +141,7 @@ public:
       * @brief Permet de simuler les dégradations de l'état du circuit
       *
       */
-     void degr_E_circuit(double E_enceinte);
+     std::string degr_E_circuit(double E_enceinte);
 
      /**
       * @brief Permet de simuler les dégradations de l'état de la pompe
