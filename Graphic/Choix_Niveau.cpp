@@ -48,7 +48,7 @@ int Choix_Niveau(sdl2::window& fenêtre){
                             level = 2;
                             quitting = true;
                         }
-                        else if((px>=610 && px<=540) & (py>=390 && py<=640)){
+                        else if((px>=610 && px<=810) & (py>=390 && py<=640)){
                             //std::cout << "Niveau 3" << std::endl;
                             level = 3;
                             quitting = true;
