@@ -4,7 +4,6 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 18);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
 
-    centrale C;
     bool quitting = false;
     bool espace = false;
     //Vaut 0 si on est sur la salle de contrôle et 1 si on est sur le poste de sécurité
@@ -72,18 +71,25 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
     
     
     int loopBegin,loopEnd,stopBegin,stopEnd;
+
+    centrale C;
+    std::string alerte;
+    double compteur_MW = 0.;
+    unsigned int compteur_tic =0;
+
     sdl2::event_queue queue;
 
     while (!quitting) {
         loopBegin = SDL_GetTicks();
         // maj de la centrale
         C.maj_General();
+        alerte = C.degr_General();
 
 
 
         
         loopEnd = SDL_GetTicks();
-        while ((!quitting) && (loopEnd-loopBegin < 1000)) {
+        while ((!quitting) && (loopEnd-loopBegin < 2000)) {
             //Affichage
             
             switch (affichage) {
@@ -510,8 +516,11 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
             if (loopEnd-loopBegin < 500) clignotement=0;
             else clignotement =1;
         }
+        compteur_MW += C.get_MW();
+        compteur_tic++;
         
     }
+    std::cout << compteur_MW/compteur_tic << std::endl;
 
 
 
