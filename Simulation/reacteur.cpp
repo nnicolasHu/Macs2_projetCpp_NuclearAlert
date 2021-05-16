@@ -64,21 +64,10 @@ double reacteur::get_E_bore() const{
     return E_bore;
 }
 
-/*void reacteur::set_graphite(double valeur_demandee){
-    if ((valeur_demandee>=(1. - E_barre)) && (valeur_demandee<=1.)){
-        Tx_graphite = valeur_demandee;
-        if (TGraphite_eff < Tx_graphite){
-            TGraphite_eff += 0.01;
-        }
-        if (TGraphite_eff > Tx_graphite){
-            TGraphite_eff += -0.01;
-        }
-    }
-    else {
-        std::cout << " Erreur sur la proportion de graphite demandée ! " <<
-        std::endl; 
-    }
-}*/
+void reacteur::set_graphite(double valeur_demandee){
+    Tx_graphite = valeur_demandee;
+    
+}
 
 void reacteur::incr_graphite() {
     if ( Tx_graphite<1.){
