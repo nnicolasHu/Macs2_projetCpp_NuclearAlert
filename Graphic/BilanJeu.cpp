@@ -44,7 +44,7 @@ void BilanJeu(sdl2::window& fenetre, centrale&C, double prod){
         fenetre << conso;
     }
     else if((prod>=300) & (prod<900)){
-        sdl2::texte conso("Production électrqiue peu rentable", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
+        sdl2::texte conso("Production électrique peu rentable", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
         conso.at(800, 200);
         fenetre << conso;
     }
