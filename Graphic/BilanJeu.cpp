@@ -1,13 +1,15 @@
 #include"niveaux.hpp"
 #include<iostream>
 
-void BilanJeu(sdl2::window& fenetre, centrale&C, double prod){
+void BilanJeu(sdl2::window& fenetre, centrale&C, double prod, std::string& pseudo){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 20);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 24);
 
     sdl2::texte Bilan("Bilan", fonte_titre, fenetre, {0xFF, 0, 0, 0xFF});
     Bilan.at(600, 10);
-    fenetre << sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
+    sdl2::texte ps(pseudo, fonte_titre, fenetre, {0xFF, 0, 0, 0xFF});
+    ps.at(580, 50);
+    fenetre << ps << sdl2::rectangle({0, 0}, {1250, 650}, {0, 0, 0, 0}, true);
 
     sdl2::texte Etat_centrale("Etat de la centrale", fonte_texte, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
     Etat_centrale.at(100, 100);
@@ -80,10 +82,10 @@ void BilanJeu(sdl2::window& fenetre, centrale&C, double prod){
 
     sdl2::texte remerciements("Merci d'avoir joué ;) Appuyez sur 'Escape' pour quitter le jeu", fonte_titre, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
     remerciements.at(300, 550);
-    fenetre << remerciements << Bilan << texte_prim << texte_sec<< Etat_centrale << titre_MW << moy_circprim << moy_circsec<< sdl2::flush;
-    sdl2::event_queue queue;
-    auto events = queue.pull_events();
+    fenetre << ps << remerciements << Bilan << texte_prim << texte_sec<< Etat_centrale << titre_MW << moy_circprim << moy_circsec<< sdl2::flush;
+    // sdl2::event_queue queue;
+    // auto events = queue.pull_events();
 
-    SDL_Delay(3000);
+    // SDL_Delay(3000);
 }
 

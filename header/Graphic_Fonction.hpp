@@ -24,7 +24,7 @@ void SalleDeControle(sdl2::window& fenêtre, centrale& C, std::string& securite)
 void Radioprotection_win(sdl2::window& fenêtre, centrale& C);
 void InterventionO(sdl2::window& fenêtre, centrale& C);
 void Bilanactiviteouvriere(sdl2::window& fenêtre,centrale& C);
-void BilanJeu(sdl2::window& fenetre, centrale&C, double prod);
+void BilanJeu(sdl2::window& fenetre, centrale&C, double prod, std::string& pseudo);
 void message_confirmation(sdl2::window& fenêtre, int choix);
 
 #endif
