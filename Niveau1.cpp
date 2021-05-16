@@ -77,6 +77,7 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
     while (!quitting) {
         loopBegin = SDL_GetTicks();
         // maj de la centrale
+        C.maj_General();
 
 
 
@@ -506,8 +507,10 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
             }
             
             loopEnd = SDL_GetTicks();
+            if (loopEnd-loopBegin < 500) clignotement=0;
+            else clignotement =1;
         }
-        clignotement = 1 - clignotement;
+        
     }
 
 

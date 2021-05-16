@@ -211,6 +211,7 @@ std::string circuitPrimaire::degr_E_echangeur(){
     if(E_echangeur<=0.){
         E_echangeur = 0.;
     }
+    return messageErreur;
 }
 
 /*
