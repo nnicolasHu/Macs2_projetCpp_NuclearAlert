@@ -70,7 +70,7 @@ void circuit::incr_F_pompe() {
 }
 
 void circuit::decr_F_pompe() {
-    if (F_pompe >= 0.05) F_pompe += -0.05;
+    if (F_pompe > 0.02) F_pompe += -0.05;
 }
 
 bool ::circuit::reparation_pompe(){

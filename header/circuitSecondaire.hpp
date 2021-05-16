@@ -183,18 +183,6 @@ public:
      */
     bool reparation_circuitSecondaire();
 
-    /**
-      * @brief Incrémente le régime pompe du circuit
-      *
-      */
-     void incr_F_pompe();
-
-     /**
-      * @brief Décrémente le régime pompe du circuit
-      *
-      */
-     void decr_F_pompe();
-
      /**
       * @brief Incrémente le régime pompe condenseur
       *

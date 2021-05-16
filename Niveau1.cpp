@@ -176,19 +176,16 @@ void Niveau1(sdl2::window& fenêtre){
                             }
                         } 
                         else if (demande_ArretUrgence) {
-                            std::cout << "arrêt d'urgence?" << std::endl;
                             if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
                                 //tentative d'arrêt d'urgence
                                 std::cout << "tentative d'arrêt d'urgence" << std::endl;
                                 demande_ArretUrgence = 0;
                             }
                             if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
-                                std::cout << "annulation tentative arrêt d'urgence" << std::endl;
                                 demande_ArretUrgence = 0;
                             }
                         } 
                         else if (demande_evacuation) {
-                            std::cout << "evacuation?" << std::endl;
                             if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
                                 //évacuation de la population
                                 evacuation = 1;
@@ -198,7 +195,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 
                             if ((keychar==110) && (iskey_down==0) ) { //appuie sur N
                                 demande_evacuation = 0;
-                                std::cout << "annulation de l'évacuation" << std::endl;
                             }
                         } else if (demande_retrait!=-1) {
                             if ((keychar==121) && (iskey_down==0) ) { //appuie sur Y
@@ -330,7 +326,7 @@ void Niveau1(sdl2::window& fenêtre){
                                         break;
                                     case 6:
                                         // on augmente le rendement de la pompe condenseur
-                                        std::cout << "on augmente rendement pompe condenseur" << std::endl;
+                                        C.get_Circuit_Secondaire().incr_F_condenseur();
                                         break;
                                     }
                                 }
@@ -359,7 +355,7 @@ void Niveau1(sdl2::window& fenêtre){
                                             break;
                                         case 6:
                                             // on baisse le rendement de la pompe condenseur
-                                            std::cout << "on baisse rendement pompe condenseur" << std::endl;
+                                            C.get_Circuit_Secondaire().decr_F_condenseur();
                                             break;
                                     }
                                 }
@@ -394,7 +390,6 @@ void Niveau1(sdl2::window& fenêtre){
                                 //touche P
                                 if ((keychar==112) && (iskey_down==0) && (evacuation==0) && (O_selected!=4)) {
                                     demande_evacuation = 1;
-                                    std::cout << "demande évacuation" << std::endl;
                                 }
 
                                 
