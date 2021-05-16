@@ -239,16 +239,18 @@ std::string centrale::degr_E_enceinte(){
 
 void centrale::maj_Reacteur(){
     double R1 = ptrCircuit_Primaire->get_Radioactivite();
-    double T1 = ptrCircuit_Primaire->get_Temperature();
-    double E_C1 = ptrCircuit_Primaire->get_E_circuit();
-    bool urg = arret_urgence();
+    //double T1 = ptrCircuit_Primaire->get_Temperature();
+    //double E_C1 = ptrCircuit_Primaire->get_E_circuit();
+    //bool urg = arret_urgence();
 
     ptrReacteur->maj_R_piscine(R1);
-    ptrReacteur->degr_E_barre(T1, urg);
-    ptrReacteur->degr_E_bore(T1, E_C1);
-    ptrReacteur->degr_E_canaux(T1, urg);
-    ptrReacteur->degr_E_cuve(T1, E_C1, E_enceinte, urg);
-    ptrReacteur->degr_E_piscine(T1, E_C1, E_enceinte);
+    ptrReacteur->maj_bore();
+    ptrReacteur->maj_graphite();
+    //ptrReacteur->degr_E_barre(T1, urg);
+    //ptrReacteur->degr_E_bore(T1, E_C1);
+    //ptrReacteur->degr_E_canaux(T1, urg);
+    //ptrReacteur->degr_E_cuve(T1, E_C1, E_enceinte, urg);
+    //ptrReacteur->degr_E_piscine(T1, E_C1, E_enceinte);
 } 
 
 void centrale::maj_Circuit_Primaire(){
@@ -263,11 +265,11 @@ void centrale::maj_Circuit_Primaire(){
     ptrCircuit_Primaire->maj_Radioactivite(TBore_eff, MW);
     ptrCircuit_Primaire->maj_T_pressuriseur_eff();
     ptrCircuit_Primaire->maj_Temperature(TBore_eff, TGraphite_eff);
-    ptrCircuit_Primaire->degr_E_circuit(E_enceinte);
-    ptrCircuit_Primaire->degr_E_pompe();
-    ptrCircuit_Primaire->degr_E_pressuriseur(E_enceinte);
-    ptrCircuit_Primaire->degr_E_resistance(E_enceinte);
-    ptrCircuit_Primaire->degr_E_echangeur();
+    //ptrCircuit_Primaire->degr_E_circuit(E_enceinte);
+    //ptrCircuit_Primaire->degr_E_pompe();
+    //ptrCircuit_Primaire->degr_E_pressuriseur(E_enceinte);
+    //ptrCircuit_Primaire->degr_E_resistance(E_enceinte);
+    //ptrCircuit_Primaire->degr_E_echangeur();
 }
 
 void centrale::maj_Circuit_Secondaire(){
@@ -275,7 +277,7 @@ void centrale::maj_Circuit_Secondaire(){
     double T1 = ptrCircuit_Primaire->get_Temperature();
     double R1 = ptrCircuit_Primaire->get_Radioactivite();
     
-    ptrCircuit_Secondaire->degrad_all(E_chaleur,E_enceinte);
+    //ptrCircuit_Secondaire->degrad_all(E_chaleur,E_enceinte);
     ptrCircuit_Secondaire->maj_T_vapeur(E_chaleur,T1);
     ptrCircuit_Secondaire->maj_P_vapeur();
     ptrCircuit_Secondaire->maj_Debit_eau_2();
