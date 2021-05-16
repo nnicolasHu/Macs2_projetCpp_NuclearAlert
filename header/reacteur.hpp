@@ -2,7 +2,6 @@
 #define _REACTEUR_HPP
 
 #include <memory>
-#include "centrale_abstract.hpp"
 
 
 /**
