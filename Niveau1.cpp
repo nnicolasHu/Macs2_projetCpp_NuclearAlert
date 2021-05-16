@@ -7,6 +7,7 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
     bool quitting = false;
     bool espace = false;
     //Vaut 0 si on est sur la salle de contrôle et 1 si on est sur le poste de sécurité
+    bool end = false;
 
     int affichage = 0;
     /*
@@ -89,7 +90,7 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
 
         
         loopEnd = SDL_GetTicks();
-        while ((!quitting) && (loopEnd-loopBegin < 2000)) {
+        while ((!quitting) && (loopEnd-loopBegin < 1000)) {
             //Affichage
             
             switch (affichage) {
@@ -161,7 +162,7 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
             auto events = queue.pull_events();
             for ( const auto& e : events) {
                 if (e->kind_of_event() == sdl2::event::quit) {
-                    quitting = true;
+                    demande_quitter = true;
                 }
                 if ( (e->kind_of_event() == sdl2::event::key_down) || 
                 (e->kind_of_event() == sdl2::event::key_up) ) {
@@ -520,7 +521,37 @@ void Niveau1(sdl2::window& fenêtre, std::string& pseudo){
         compteur_tic++;
         
     }
-    std::cout << compteur_MW/compteur_tic << std::endl;
+    iskey_down = false;
+    pseudo.pop_back();
+    while (!end) {
+        BilanJeu(fenêtre,C,compteur_MW/compteur_tic,pseudo);
+        //gestion des touches
+        auto events = queue.pull_events();
+        for ( const auto& e : events) {
+            if (e->kind_of_event() == sdl2::event::quit) {
+                end = true;
+            }
+            if ( (e->kind_of_event() == sdl2::event::key_down) || 
+            (e->kind_of_event() == sdl2::event::key_up) ) {
+                auto& key_ev = dynamic_cast<sdl2::event_keyboard&>(*e);
+
+                //quand on appuie sur une touche
+                if ( (key_ev.type_of_event() == sdl2::event::key_down) &&  (iskey_down == false) ) {
+                    char keychar = key_ev.ascci_code();
+                    if ((keychar==27) && (iskey_down==0) ) {
+                        end = 1;
+                        iskey_down = true;
+                    }
+                }
+                //quand on soulève une touche
+                if (key_ev.type_of_event() == sdl2::event::key_up) {
+                    iskey_down = false;
+                }
+            }                
+        }
+    
+
+    }
 
 
 

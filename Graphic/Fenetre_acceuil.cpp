@@ -62,7 +62,6 @@ std::string Fenetre_acceuil(sdl2::window& fenêtre){
             }
         }
     }
-    std::cout << pseudo << std::endl;
     return pseudo;
 }
 

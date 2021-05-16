@@ -83,9 +83,5 @@ void BilanJeu(sdl2::window& fenetre, centrale&C, double prod, std::string& pseud
     sdl2::texte remerciements("Merci d'avoir joué ;) Appuyez sur 'Escape' pour quitter le jeu", fonte_titre, fenetre, {0xFF, 0xFF, 0xFF, 0xFF});
     remerciements.at(300, 550);
     fenetre << ps << remerciements << Bilan << texte_prim << texte_sec<< Etat_centrale << titre_MW << moy_circprim << moy_circsec<< sdl2::flush;
-    // sdl2::event_queue queue;
-    // auto events = queue.pull_events();
-
-    // SDL_Delay(3000);
 }
 
