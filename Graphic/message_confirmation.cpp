@@ -63,7 +63,7 @@ void message_confirmation(sdl2::window& fenêtre, int choix){
             message = "Souhaitez-vous retirer les ouvriers du pressuriseur ?"s;
             break;
         case 8:
-            message = "Tentative d'arret d'urgence !"s;
+            message = "Tentative d'arret d'urgence ! Risque de dégradations"s;
             break;
         case 9:
             message = "Souhaitez vous donner l'ordre d'évacuation de la population ?"s;
@@ -109,7 +109,7 @@ void message_confirmation(sdl2::window& fenêtre, int choix){
         fenêtre << titre << sdl2::rectangle({260, 240}, {780, 130}, {0, 0, 0, 0}) << sdl2::rectangle({260, 240}, {780, 130}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 8:
-        titre.at(280,250);
+        titre.at(300,250);
         fenêtre << titre << sdl2::rectangle({260, 200}, {780, 170}, {0, 0, 0, 0}) << sdl2::rectangle({260, 200}, {780, 170}, {0xFF, 0xFF, 0xFF, 0xFF}, false);
         break;
     case 9:
