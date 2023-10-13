@@ -1,7 +1,7 @@
 #include "Graphic_Fonction.hpp"
 #include<iostream>
 #include<array>
-
+""" je suis contributeur """
 void Centrale_tab(sdl2::window& fenetre, centrale& C, bool clignotement){
     sdl2::font fonte_texte("./Graphic/data/Lato-Thin.ttf", 24);
     sdl2::font fonte_titre("./Graphic/data/Lato-Bold.ttf", 28);
